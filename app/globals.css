@@ -90,3 +90,12 @@ html {
     rgba(0, 0, 0, 0) 100%
   );
 }
+
+.body_shadow {
+  box-shadow: 0 4px 8px rgba(29, 29, 27, 0.1);
+}
+
+.hamburger-react {
+  @apply bg-white rounded-3xl;
+  box-shadow: 0 4px 8px rgba(29, 29, 27, 0.1);
+}

@@ -3,9 +3,12 @@
 import About from "@/components/About";
 import Benefits from "@/components/Benefits";
 import Features from "@/components/Features";
+import Footer from "@/components/Footer";
 import Hero from "@/components/Home";
 import Nav from "@/components/Nav";
 import Partners from "@/components/Partners";
+import Pricing from "@/components/Pricing";
+import Testimonials from "@/components/Testimonials";
 import { useEffect, useState } from "react";
 
 export default function Home() {
@@ -54,13 +57,16 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="overflow-x-hidden">
+    <div className="overflow-x-hidden bg-[#f4f5f7] body_shadow mb-4 rounded-b-[60px]">
       <Nav activeSection={activeSection} />
       <Hero />
       <About />
       <Features />
       <Partners />
       <Benefits />
+      <Pricing />
+      <Testimonials />
+      <Footer />
     </div>
   );
 }

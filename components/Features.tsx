@@ -1,50 +1,61 @@
-import { Copy } from "lucide-react";
+import {
+  BarChart3,
+  Contact,
+  Copy,
+  ListChecks,
+  MessageSquareText,
+  Palette,
+  PencilRuler,
+  QrCode,
+  Share2,
+  Speech,
+} from "lucide-react";
 
 const featuresInfo = [
   {
-    icon: <Copy size={19} strokeWidth={2} />,
+    icon: <PencilRuler size={19} strokeWidth={2} />,
     title: "Fully customizable menus",
     description: "Easily customize menu designs, colors, and layouts.",
   },
   {
-    icon: <Copy size={19} strokeWidth={2} />,
+    icon: <BarChart3 size={19} strokeWidth={2} />,
     title: "Client behavior tracking",
     description: "Gain insights into customer preferences and ordering trends.",
   },
   {
-    icon: <Copy size={19} strokeWidth={2} />,
+    icon: <ListChecks size={19} strokeWidth={2} />,
     title: "Seamless order management",
     description: "Manage orders in real-time and streamline operations.",
   },
   {
-    icon: <Copy size={19} strokeWidth={2} />,
+    icon: <Palette size={19} strokeWidth={2} />,
     title: "Menu themes",
     description:
       "Choose from a variety of professionally designed menu themes.",
   },
   {
-    icon: <Copy size={19} strokeWidth={2} />,
+    icon: <QrCode size={19} strokeWidth={2} />,
     title: "QR code generation",
     description: "Generate QR codes for easy menu access at tables.",
   },
   {
-    icon: <Copy size={19} strokeWidth={2} />,
+    icon: <Share2 size={19} strokeWidth={2} />,
     title: "Social media integration",
     description: "Integrate social media profiles to engage with customers.",
   },
   {
-    icon: <Copy size={19} strokeWidth={2} />,
+    icon: <Contact size={19} strokeWidth={2} />,
     title: "Contact information display",
     description: "Display contact details for easy customer communication.",
   },
   {
-    icon: <Copy size={19} strokeWidth={2} />,
+    icon: <MessageSquareText size={19} strokeWidth={2} />,
     title: "Feedback submission",
     description:
       "Allow customers to provide feedback directly through the menu.",
   },
   {
-    icon: <Copy size={19} strokeWidth={2} />,
+    icon: <Speech size={19} strokeWidth={2} />,
     title: "Dish and service claims",
     description:
       "Enable customers to make claims or suggestions about dishes or service.",

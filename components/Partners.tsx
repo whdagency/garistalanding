@@ -17,8 +17,8 @@ const partnersIcon = [
 export default function Partners() {
   return (
     <div id="Partners" className="container md:px-8 px-4">
-      <div className="lg:pt-[150px] md:pt-[100px] pt-[80px] pb-[120px] px-10">
-        <Marquee pauseOnHover={true} gradient={true}>
+      <div className="lg:pt-[120px] md:pt-[100px] pt-[80px] pb-[140px] px-10">
+        <Marquee pauseOnHover={true} gradient={true} gradientColor="#f4f5f7">
           <div className="flex gap-[60px]">
             {partnersIcon.map((icon, i) => (
               <Image

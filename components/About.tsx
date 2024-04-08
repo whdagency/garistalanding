@@ -13,14 +13,15 @@ export default function About() {
               </span>
 
               <h3 className="lg:text-5xl md:text-4xl text-3xl font-semibold">
-                Crafted for native{" "}
-                <span className="text-primaryColor">MacOS experience</span>{" "}
-                integrated with AI
+                <span className="text-primaryColor">Create</span>,{" "}
+                <span className="text-primaryColor">Customize</span>, and{" "}
+                <span className="text-primaryColor">Manage</span>
+                your menus with ease
               </h3>
 
               <div className="relative w-auto group">
                 <Button className="flex flex-row items-center justify-center gap-x-2">
-                  Download Now
+                  Discover Now
                   <ChevronRight
                     size={19}
                     strokeWidth={2}
@@ -33,42 +34,43 @@ export default function About() {
             <div className="relative flex flex-col justify-center items-center gap-y-10 lg:pt-[70px] pt-10">
               <div className="lg:max-w-[580px]">
                 <p className="text-left lg:text-[22px] md:text-xl text-lg font-medium">
-                  Set up your shortcut keys and radically transform how you
-                  work. Got a question? Just ask out loud. Receive answers with
-                  GPT-4 or Claude 3. A quick query? Quick chat is ready for you.
-                  Everything is at your fingertips.
+                  A leading digital menu solution for restaurants and cafes,
+                  offering innovative tools to enhance digital presence and
+                  streamline operations. Our mission is to revolutionize dining
+                  with an intuitive, user-friendly platform for full menu
+                  control.
                 </p>
               </div>
 
               <div className="w-full grid lg:grid-cols-3 grid-cols-3 justify-center gap-8">
                 <div className="flex flex-col flex-nowrap items-start justify-start">
-                  <h3 className="text-primaryColor lg:text-xl md:text-lg text-base font-medium tracking-wide">
-                    Type
+                  <h3 className="text-primaryColor md:text-lg text-base font-medium tracking-wide">
+                    Eco friendly
                   </h3>
 
-                  <p className="lg:text-base text-sm tracking-tight font-medium ">
+                  {/* <p className="lg:text-base text-sm tracking-tight font-medium ">
                     any question
-                  </p>
+                  </p> */}
                 </div>
 
                 <div className="flex flex-col flex-nowrap items-start justify-start">
-                  <h3 className="text-primaryColor lg:text-xl md:text-lg text-base font-medium tracking-wide">
-                    Speak
+                  <h3 className="text-primaryColor md:text-lg text-base font-medium tracking-wide">
+                    Reduce Time
                   </h3>
 
-                  <p className="lg:text-base text-sm tracking-tight font-medium">
+                  {/* <p className="lg:text-base text-sm tracking-tight font-medium">
                     your mind
-                  </p>
+                  </p> */}
                 </div>
 
                 <div className="flex flex-col flex-nowrap items-start justify-start">
-                  <h3 className="text-primaryColor lg:text-xl md:text-lg text-base font-medium tracking-wide">
-                    Capture
+                  <h3 className="text-primaryColor md:text-lg text-base font-medium tracking-wide">
+                    Lower Costs
                   </h3>
 
-                  <p className="lg:text-base text-sm tracking-tight font-medium">
+                  {/* <p className="lg:text-base text-sm tracking-tight font-medium">
                     to explain
-                  </p>
+                  </p> */}
                 </div>
               </div>
             </div>
