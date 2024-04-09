@@ -9,7 +9,7 @@ export default function About() {
           <div className="w-full relative flex lg:flex-row flex-col flex-nowrap justify-center items-start xl:gap-x-20 md:gap-x-8">
             <div className="flex flex-col md:gap-y-8 gap-y-6 items-start justify-start lg:max-w-[470px] md:mr-14">
               <span className="text-primaryColor text-xs border border-primaryColor px-2 py-1 rounded-3xl">
-                Native-like Experience
+                About Garista Solution
               </span>
 
               <h3 className="lg:text-5xl md:text-4xl text-3xl font-semibold">
@@ -79,7 +79,7 @@ export default function About() {
           <div className="relative overflow-hidden">
             <iframe
               className="w-[800px] h-[450px] max-w-full rounded-3xl"
-              src="https://www.youtube.com/embed/0Q2QO4kPT8A?si=ZPmhm9BwxGRRviNc"
+              src="https://www.youtube.com/embed/Xeo5E6lL2GI?si=rcQbDQPsBRqSDcCX"
               title="About Video"
               allowFullScreen
             ></iframe>

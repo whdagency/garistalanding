@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import LangToggle from "@/components/LangToggle";
 
 const myLocalFont = localFont({
   src: [
@@ -45,7 +46,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${myLocalFont.className} scroll-smooth overflow-x-hidden text-secondaryBg`}
+        className={`${myLocalFont.className} relative overflow-x-hidden text-secondaryBg`}
       >
         {children}
 
@@ -142,6 +143,8 @@ export default function RootLayout({
             </svg>
           </div>
         </div>
+
+        <LangToggle />
       </body>
     </html>
   );

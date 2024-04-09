@@ -32,8 +32,8 @@ export default function Home() {
         <div className="max-[1271px] mx-auto md:px-6">
           <div className="relative flex justify-center">
             <Image
-              className="rounded-3xl"
-              src="/home-img.jpg"
+              className="rounded-xl"
+              src="/Home/homeImg.png"
               alt="home-img"
               width={985}
               height={588}

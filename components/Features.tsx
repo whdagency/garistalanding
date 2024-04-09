@@ -74,6 +74,7 @@ export default function Features() {
             >
               <div className="w-fit mr-auto">{f.icon}</div>
               <h4 className="text-base font-medium">{f.title}</h4>
+
               <div className="relative w-[272px] h-[52px]">
                 <p className="text-[13px] text-primaryTwo font-medium ">
                   {f.description}
