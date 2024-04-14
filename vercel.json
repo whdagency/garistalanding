@@ -1,10 +1,8 @@
 {
   "redirects": [
     {
-      "source": "/menudemo",
-      "destination": "/",
-      "permanent": true,
-      "statusCode": 301
+      "source": "/(.*)",
+      "destination": "https://garista.com"
     }
   ]
 }
