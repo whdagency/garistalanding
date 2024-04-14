@@ -34,8 +34,8 @@ const myLocalFont = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Garista",
-  description: "The Ultimate digital menu solution",
+  title: 'Garista',
+  description: 'The Ultimate digital menu solution',
 };
 
 export default function RootLayout({
