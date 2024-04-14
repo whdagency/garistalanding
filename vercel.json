@@ -1,0 +1,10 @@
+{
+  "redirects": [
+    {
+      "source": "/menudemo",
+      "destination": "/",
+      "permanent": true,
+      "statusCode": 301
+    }
+  ]
+}
