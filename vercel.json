@@ -3,7 +3,9 @@
     {
       "source": "/(.*)",
       "destination": "/",
-      "permanant": true
+      "permanent": false,
+      "statusCode": 307
     }
-  ]
+  ],
+  "cleanUrls": true
 }
