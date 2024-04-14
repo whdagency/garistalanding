@@ -8,19 +8,19 @@ export default function Footer() {
       <div className="mb-20">
         <div className="flex flex-col gap-y-8 justify-center items-center">
           <div className="flex flex-nowrap gap-x-8 items-center justify-center">
-            <Link href="#">
+            <Link href="https://instagram.com/garista.official">
               <Instagram width={20} strokeWidth={1.5} absoluteStrokeWidth />
             </Link>
 
-            <Link href="#">
+            <Link href="https://facebook.com/garista.official">
               <Facebook width={20} strokeWidth={1.5} absoluteStrokeWidth />
             </Link>
 
-            <Link href="#">
+            <Link href="https://youtube.com/@garista.official">
               <Youtube width={20} strokeWidth={1.5} absoluteStrokeWidth />
             </Link>
 
-            <Link href="#">
+            <Link href="https://x.com/garistaofficial">
               <Twitter width={20} strokeWidth={1.5} absoluteStrokeWidth />
             </Link>
           </div>
