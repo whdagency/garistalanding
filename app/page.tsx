@@ -9,12 +9,18 @@ import Nav from "@/components/Nav";
 import Partners from "@/components/Partners";
 import Pricing from "@/components/Pricing";
 import Testimonials from "@/components/Testimonials";
+import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 export default function Home() {
   let [activeSection, setActiveSection] = useState("Home");
 
+  
+  
+  const pthes = usePathname();
+  const router = useRouter()
   useEffect(() => {
+    
     let Home = document.getElementById("Home");
     let About = document.getElementById("About");
     let Features = document.getElementById("Features");
@@ -23,6 +29,17 @@ export default function Home() {
 
     let sections = [Home, About, Features, Pricing, Contact];
 
+    console.log("The PathName => ",pthes);
+    if(pthes === '/demomenu')
+    {
+      router.push('/')
+    }
+    
+    // // Redirect logic
+    // if (router.pathname === '/menuDish') {
+    //     router.push('/');
+    // }
+  
     const observerOptions = {
       root: null,
       rootMargin: "0px",
@@ -67,6 +84,7 @@ export default function Home() {
       <Pricing />
       <Testimonials />
       <Footer />
+
     </div>
   );
 }
