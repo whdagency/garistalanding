@@ -3,11 +3,13 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import LangToggle from "@/components/LanguageToggle";
+// import LangToggle from "@/components/LanguageToggle";
 import i18next from "i18next";
 import global_en from "./Translation/en/global.json"
 import global_fr from "./Translation/fr/global.json"
 import { I18nextProvider } from "react-i18next";
+import { FooterBottom } from "@/components/FooterBottom";
+
 const myLocalFont = localFont({
   src: [
     {
@@ -70,7 +72,7 @@ export default function RootLayout({
           >
             {children}
 
-            <div className="sm:px-24 px-4 pt-24 bg-white w-full">
+            {/* <div className="sm:px-24 px-4 pt-24 bg-white w-full">
               <div className="flex lg:flex-row flex-col flex-wrap lg:justify-between mx-auto items-center gap-y-6 text-sm text-center font-medium mb-8">
                 <div className="flex justify-center items-center gap-x-12">
                   <span>Terms of service</span>
@@ -162,9 +164,11 @@ export default function RootLayout({
                   </g>
                 </svg>
               </div>
-            </div>
+            </div> */}
 
-            <LangToggle />
+            <FooterBottom />                                              
+
+            {/* <LangToggle /> */}
           </body>
         </html>
     </I18nextProvider>
