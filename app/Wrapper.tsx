@@ -10,7 +10,6 @@ import Nav from "@/components/Nav";
 import Partners from "@/components/Partners";
 import Pricing from "@/components/Pricing";
 import Testimonials from "@/components/Testimonials";
-import Trans from "@/components/Trans";
 import { useEffect, useState } from "react";
 
 
@@ -66,7 +65,6 @@ function Wrapper() {
         <Nav activeSection={activeSection} />
         <Hero />
         <About />
-        <Trans />
         <Features />
         <Partners />
         <Benefits />
