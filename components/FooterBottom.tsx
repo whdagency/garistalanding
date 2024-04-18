@@ -1,62 +1,19 @@
-import type { Metadata } from "next";
-import localFont from "next/font/local";
-import "./globals.css";
-import LangToggle from "@/components/LangToggle";
-import { useRouter } from "next/router";
-import { usePathname } from "next/navigation";
-import { FooterBottom } from "@/components/FooterBottom";
+"use client"
 
-const myLocalFont = localFont({
-  src: [
-    {
-      path: "../fonts/THICCCBOI-Light.woff2",
-      weight: "300",
-      style: "normal",
-    },
-    {
-      path: "../fonts/THICCCBOI-Regular.woff2",
-      weight: "400",
-      style: "normal  ",
-    },
-    {
-      path: "../fonts/THICCCBOI-Medium.woff2",
-      weight: "500",
-      style: "normal",
-    },
-    {
-      path: "../fonts/THICCCBOI-SemiBold.woff2",
-      weight: "600",
-      style: "normal",
-    },
-    {
-      path: "../fonts/THICCCBOI-Bold.woff2",
-      weight: "700",
-      style: "normal",
-    },
-  ],
-});
+import React from 'react'
+import LangToggle from './LangToggle'
+import { usePathname } from 'next/navigation'
 
-export const metadata: Metadata = {
-  title: 'Garista | The Ultimate digital menu solution for restaurants and cafés',
-  description: 'The Ultimate digital menu solution for restaurants and cafés',
-};
+export const FooterBottom = () => {
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-
-
-
+    const pathes = usePathname();
   return (
-    <html lang="en">
-      <body
-        className={`${myLocalFont.className} relative overflow-x-hidden text-secondaryBg`}
-      >
-        {children}
-
-        {/* <div className="sm:px-24 px-4 pt-24 bg-white w-full">
+    <>
+      {
+        pathes == "/"
+        ?
+        <>
+       <div className="sm:px-24 px-4 pt-24 bg-white w-full">
           <div className="flex lg:flex-row flex-col flex-wrap lg:justify-between mx-auto items-center gap-y-6 text-sm text-center font-medium mb-8">
             <div className="flex justify-center items-center gap-x-12">
               <span>Terms of service</span>
@@ -150,9 +107,11 @@ export default function RootLayout({
           </div>
         </div>
 
-        <LangToggle /> */}
-        <FooterBottom />
-      </body>
-    </html>
-  );
+        <LangToggle />
+        </>
+        :
+        <></>
+      }
+    </>
+  )
 }

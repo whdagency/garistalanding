@@ -3,6 +3,7 @@ import { Button } from "./ui/button";
 import { ChevronRight } from "lucide-react";
 
 export default function Home() {
+
   return (
     <div id="Home" className="container md:px-8 px-4">
       <div className="pt-[180px] lg:pb-[80px] md:pb-[60px] pb-[40px]">
