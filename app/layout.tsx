@@ -47,7 +47,7 @@ const myLocalFont = localFont({
 
 i18next.init({
   interpolation: {escapeValue: false},
-  lng: 'fr',
+  lng: 'en',
   resources:{
     en: {
       global: global_en
