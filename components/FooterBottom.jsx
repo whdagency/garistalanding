@@ -4,8 +4,12 @@ import React from 'react'
 // import LangToggle from './LangToggle'
 import { usePathname } from 'next/navigation'
 import LangToggle from "./LanguageToggle";
+import { useTranslation } from "react-i18next";
+
+
 
 export const FooterBottom = () => {
+  const {t}  = useTranslation("global")
 
     const pathes = usePathname();
   return (
@@ -17,13 +21,14 @@ export const FooterBottom = () => {
        <div className="sm:px-24 px-4 pt-24 bg-white w-full">
           <div className="flex lg:flex-row flex-col flex-wrap lg:justify-between mx-auto items-center gap-y-6 text-sm text-center font-medium mb-8">
             <div className="flex justify-center items-center gap-x-12">
-              <span>Terms of service</span>
-              <span>Privacy policy</span>
-              <span>Legal</span>
+              <span>{t("Terms of service")}</span>
+              <span>{t("Privacy policy")}</span>
+              <span>{t("Legal")}</span>
             </div>
 
+
             <span className="">
-              &copy; 2024 Garista, Inc. All rights reserved.
+              &copy; {t("2024 Garista, Inc. All rights reserved.")}
             </span>
           </div>
 

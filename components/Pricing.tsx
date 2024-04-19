@@ -2,6 +2,7 @@ import Link from "next/link";
 import React from "react";
 import { Button } from "./ui/button";
 import { ChevronRight } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 type PropsType = any;
 
@@ -64,61 +65,64 @@ const PricingCard = ({
   );
 };
 
-const Pricing = () => {
+export default function Pricing() {
+  const {t}  = useTranslation("global")
+  
   return (
     <div id="Pricing" className="container md:px-8 px-4">
       <div className="pb-[80px]">
         <div className="text-center mb-14">
           <span className="inline-block text-primaryColor font-medium md:text-lg text-base mb-1">
-            Pricing Table
+            {t("Pricing Table")}
           </span>
-          <h3 className="md:text-3xl text-xl font-medium">Our Pricing Plan</h3>
+          <h3 className="md:text-3xl text-xl font-medium">{t("Our Pricing Plan")}</h3>
         </div>
 
         <div className="flex flex-wrap justify-center">
           <div className="flex flex-wrap">
             <PricingCard
-              type="Fight Covid-19"
-              price="FREE"
-              subscription="Lifetime"
-              description="Keep your guest and staff safe"
-              buttonText="Choose FREE"
+              type={t("Fight Covid-19")}
+              price={t("FREE")}
+              subscription={t("Lifetime")}
+              description={t("Keep your guest and restaurant staff safe")}
+              buttonText={t("Choose FREE")}
             >
-              <List>Free QR Menu</List>
-              <List>Beautiful QR Menus</List>
-              <List>Unlimited Menu Items</List>
-              <List>1.5% Commission per order</List>
+              <List>{t("Free QR Menu")}</List>
+              <List>{t("Beautiful QR Menus")}</List>
+              <List>{t("Unlimited Menu Items")}</List>
+              <List>{t("Limited Customization")}</List>
+              <List>{t("1.5% Commission per order")}</List>
       
             </PricingCard>
 
             <PricingCard
-              type="Business"
-              price="399 Dhs"
-              subscription="Month"
-              description="Ideal for restaurants with 80 covers"
-              buttonText="Choose Business"
+              type={t("Business")}
+              price={t("399 Dhs")}
+              subscription={t("Month")}
+              description={t("Ideal for restaurants with 80 covers")}
+              buttonText={t("Choose Business")}
               active
             >
-              <List>7 to 12 Tablets</List>
-              <List>1 to 30 QR Codes</List>
-              <List>Online Ordering</List>
-              <List>Free updates</List>
-              <List>4 Months support</List>
+              <List>{t("7 to 12 Tablets")}</List>
+              <List>{t("1 to 30 QR Codes")}</List>
+              <List>{t("Online Ordering")}</List>
+              <List>{t("Free updates")}</List>
+              <List>{t("4 Months support")}</List>
             </PricingCard>
 
             <PricingCard
-              type="Custom"
-              price="Contact us"
+              type={t("Custom")}
+              price={t("Contact us")}
               subscription=""
-              description="Ideal for restaurants with less staffing."
-              buttonText="Choose Professional"
+              description={t("Ideal for restau with less staffing.")}
+              buttonText={t("Choose Professional")}
             >
               
-              <List>Language translation in one additional language</List>
-              <List>Calculate calories and nutritional content</List>
-              <List>Run campaigns to increase uptake on F&B promotions</List>
-              <List>Menu optimization to increase average check value</List>
-              <List>12 Months support</List>
+              <List>{t("Translation in one additional language")}</List>
+              <List>{t("Calculate calories and nutritional")}</List> 
+              <List>{t("Run ads campaigns")}</List>
+              <List>{t("Menu optimization ")}</List>
+              <List>{t("12 Months support")}</List>
             </PricingCard>
           
           </div>
@@ -132,5 +136,3 @@ const Pricing = () => {
 const List = ({ children }: PropsType) => {
   return <p className="text-[15px]">{children}</p>;
 };
-
-export default Pricing;

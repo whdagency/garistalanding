@@ -1,66 +1,70 @@
 import { CircleCheck, CircleX } from "lucide-react";
+import { useTranslation } from "react-i18next";
+
+  
+  export default function Benefits() {
+  const {t}  = useTranslation("global")
 
 const benefitsContent = [
   {
     title: "Garista",
     benefits: [
-      { benefit: "Low cost", check: true },
-      { benefit: "Self manageable", check: true },
-      { benefit: "Advanced functionality", check: true },
-      { benefit: "Accessible everywhere", check: true },
-      { benefit: "View on own device", check: true },
-      { benefit: "Digitally available", check: true },
+      { benefit: t('Low cost'), check: true },
+      { benefit: t("Self manageable"), check: true },
+      { benefit: t("Advanced functionality"), check: true },
+      { benefit: t("Accessible everywhere"), check: true },
+      { benefit: t("View on own device"), check: true },
+      { benefit: t("Digitally available"), check: true },
     ],
   },
-
+  
   {
-    title: "Static website",
+    title: t( "Static website"),
     benefits: [
-      { benefit: "Low cost", check: false },
-      { benefit: "Self manageable", check: false },
-      { benefit: "Advanced functionality", check: false },
-      { benefit: "Accessible everywhere", check: true },
-      { benefit: "View on own device", check: true },
-      { benefit: "Digitally available", check: true },
+      { benefit: t("Low cost"), check: false },
+      { benefit: t("Self manageable"), check: false },
+      { benefit: t("Advanced functionality"), check: false },
+      { benefit: t("Accessible everywhere"), check: true },
+      { benefit: t("View on own device"), check: true },
+      { benefit: t("Digitally available"), check: true },
     ],
   },
-
+  
   {
-    title: "Menu on tablet",
+    title: t("Menu on tablet"),
     benefits: [
-      { benefit: "Low cost", check: false },
-      { benefit: "Self manageable", check: false },
-      { benefit: "Advanced functionality", check: false },
-      { benefit: "Accessible everywhere", check: false },
-      { benefit: "View on own device", check: true },
-      { benefit: "Digitally available", check: true },
+      { benefit: t("Low cost"), check: false },
+      { benefit: t("Self manageable"), check: false },
+      { benefit: t("Advanced functionality"), check: false },
+      { benefit: t("Accessible everywhere"), check: false },
+      { benefit: t("View on own device"), check: true },
+      { benefit: t("Digitally available"), check: true },
     ],
   },
-
+  
   {
-    title: "Printed menu",
+    title: t("Printed menu"),
     benefits: [
-      { benefit: "Low cost", check: false },
-      { benefit: "Self manageable", check: false },
-      { benefit: "Advanced functionality", check: false },
-      { benefit: "Accessible everywhere", check: false },
-      { benefit: "View on own device", check: false },
-      { benefit: "Digitally available", check: false },
+      { benefit: t("Low cost"), check: false },
+      { benefit: t("Self manageable"), check: false },
+      { benefit: t("Advanced functionality"), check: false },
+      { benefit: t("Accessible everywhere"), check: false },
+      { benefit: t("View on own device"), check: false },
+      { benefit: t("Digitally available"), check: false },
+    
     ],
   },
 ];
-
-export default function Benefits() {
   return (
     <div id="Benefits" className="container md:px-8 px-4">
       <div className="pb-[180px]">
         <div className="text-center mb-14">
           <span className="inline-block text-primaryColor font-medium md:text-lg text-base mb-1">
-            Your Digital Menu
+          {t("Your Digital Menu")}
           </span>
           <h3 className="md:text-3xl text-xl font-medium">
-            Why Choose Garista
-          </h3>
+  {t("Why Choose Garista?")}
+</h3>
         </div>
 
         <div className="grid xl:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-8 xl:gap-0 items-center justify-center">

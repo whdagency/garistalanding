@@ -1,8 +1,12 @@
 import { Facebook, Instagram, Twitter, Youtube } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { useTranslation } from "react-i18next";
+
 
 export default function Footer() {
+  const {t}  = useTranslation("global")
+
   return (
     <div id="Footer" className="container md:px-8 px-4">
       <div className="mb-20">
@@ -26,10 +30,12 @@ export default function Footer() {
           </div>
 
           <div className="grid md:grid-cols-4 grid-cols-2 gap-x-12 gap-y-6 items-center place-items-center text-sm font-medium">
-            <Link href="#">Contact</Link>
-            <Link href="#">Be a partner</Link>
-            <Link href="#">Documentation</Link>
-            <Link href="#">Jobs</Link>
+            <Link href="#">{t("Contact")}</Link>
+            <Link href="#">{t("Be a partner")}</Link>
+            <Link href="#">{t("Documentation")}</Link>
+            <Link href="#">{t("Jobs")}</Link>
+
+          
           </div>
         </div>
       </div>
