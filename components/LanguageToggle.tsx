@@ -9,10 +9,13 @@ export default function LangToggle() {
   const [isSwitch, setSwitch] = useState(true);
    
   const {i18n} = useTranslation('global')
+
+  console.log("The I18 => ", i18n.language);
+  
   const handleSwitch = (lang: any) => {
     i18n?.changeLanguage(lang)
   };
-  const [SelectOption, setSelectOption] = useState('fr')
+  const [SelectOption, setSelectOption] = useState(i18n.language)
 
   return (
     // <div

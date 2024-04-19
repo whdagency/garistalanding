@@ -2,10 +2,12 @@ import React, { useRef, useEffect } from 'react';  // Import useRef and useEffec
 import { ChevronRight } from "lucide-react";
 import { Button } from "./ui/button";
 import ReactPlayer from "react-player";
+import { useTranslation } from 'react-i18next';
 
 export default function About() {
   const videoRef = useRef(null);  // Create a ref for the video element
   const videoContainerRef = useRef(null);  // Create a ref for the video container
+  const {t}  = useTranslation("global")
 
   useEffect(() => {
     const videoNode = videoRef.current;
@@ -51,7 +53,7 @@ export default function About() {
               <h3 className="lg:text-5xl md:text-4xl text-3xl font-semibold">
                 <span className="text-primaryColor">Create</span>,{" "}
                 <span className="text-primaryColor">Customize</span>, and{" "}
-                <span className="text-primaryColor">Manage</span>
+                <span className="text-primaryColor">Manage </span>
                 your menus with ease
               </h3>
 

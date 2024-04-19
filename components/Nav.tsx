@@ -5,6 +5,7 @@ import { Cross as Hamburger } from "hamburger-react";
 
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Button } from "./ui/button";
+import { useTranslation } from "react-i18next";
 
 type Links = {
   activeSection: string;
@@ -13,6 +14,7 @@ type Links = {
 function Nav({ activeSection }: Links) {
   const [isOpen, setOpen] = useState(false);
   const [isHamburger, setHamburger] = useState(false);
+  const {t}  = useTranslation("global")
 
   const handleSheet = () => {
     setOpen(!isOpen);
@@ -33,7 +35,7 @@ function Nav({ activeSection }: Links) {
                     : "text-primaryOne hover:text-primaryBg rounded-xl"
                 }`}
               >
-                About
+                {t('About')}
               </a>
 
               <a
@@ -44,7 +46,7 @@ function Nav({ activeSection }: Links) {
                     : "text-primaryOne hover:text-primaryBg rounded-xl"
                 }`}
               >
-                Features
+                {t('Features')}
               </a>
             </div>
 
@@ -68,7 +70,7 @@ function Nav({ activeSection }: Links) {
                     : "text-primaryOne hover:text-primaryBg rounded-xl"
                 }`}
               >
-                Pricing
+                {t('Pricing')}
               </a>
 
               <a

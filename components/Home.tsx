@@ -10,7 +10,7 @@ export default function Home() {
     <div id="Home" className="container md:px-8 px-4">
       <div className="pt-[180px] lg:pb-[80px] md:pb-[60px] pb-[40px]">
         <div className="md:text-center text-left mb-[50px] md:max-w-[744px] md:ml-auto ml-0 mr-auto md:px-6 px-0">
-          <h1 className="text-secondaryBg md:text-[68px] sm:text-[47px] text-[35px] font-semibold mb-4 leading-[1.118em] -tracking-[0.01em]">
+          <h1 className="text-secondaryBg md:text-[68px] sm:text-[47px] text-[35px] font-semibold mb-4 leading-[1.2em] -tracking-[0.01em]">
             {t('Digitize Your')} <span className="text-primaryColor"> Menu.</span>{" "}
             {t('Elevate Your')} <span className="text-primaryColor">{t('Business.')}</span>
           </h1>
