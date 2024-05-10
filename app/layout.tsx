@@ -57,6 +57,7 @@ i18next.init({
     },
   },
 });
+
 export default function RootLayout({
   children,
 }: Readonly<{

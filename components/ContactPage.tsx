@@ -268,7 +268,7 @@ const SubmitButton = ({
       <Button
         disabled={pending}
         type="submit"
-        className="w-full py-2 text-black hover:bg-black hover:text-white bg-white transition md:text-lg rounded font-medium"
+        className="w-full py-3 text-black hover:bg-black hover:text-white bg-white transition md:text-lg rounded font-medium"
       >
         {pending ? `${t("Please wait")}...` : t("Submit")}
       </Button>

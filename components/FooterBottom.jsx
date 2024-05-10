@@ -5,6 +5,7 @@ import React from "react";
 import { usePathname } from "next/navigation";
 import LangToggle from "./LanguageToggle";
 import { useTranslation } from "react-i18next";
+import Link from "next/link";
 
 export const FooterBottom = () => {
   const { t } = useTranslation("global");
@@ -17,8 +18,12 @@ export const FooterBottom = () => {
           <div className="sm:px-24 px-4 pt-24 bg-white w-full">
             <div className="flex lg:flex-row flex-col flex-wrap lg:justify-between mx-auto items-center gap-y-6 text-sm text-center font-medium mb-8">
               <div className="flex justify-center items-center gap-x-12">
-                <span>{t("Terms of service")}</span>
-                <span>{t("Privacy policy")}</span>
+                <Link className="hover:underline" href={"/terms"}>
+                  {t("Terms of service")}
+                </Link>
+                <Link className="hover:underline" href={"/privacy"}>
+                  {t("Privacy policy")}
+                </Link>
                 <span>{t("Legal")}</span>
               </div>
 

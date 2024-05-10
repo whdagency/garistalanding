@@ -1,3 +1,4 @@
+import Reseller from "@/components/Reseller";
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
 import { FaInstagram, FaFacebook, FaYoutube, FaTwitter } from "react-icons/fa";
@@ -32,6 +33,10 @@ export default function Footer() {
             <Link href="#Contact">{t("Be a partner")}</Link>
             <Link href="#">{t("Documentation")}</Link>
             <Link href="#">{t("Jobs")}</Link>
+          </div>
+
+          <div className="w-full mx-auto flex flex-col items-center py-4">
+            <Reseller />
           </div>
         </div>
       </div>
