@@ -4,26 +4,29 @@ import { ChevronRight } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
 export default function Home() {
-
-  const {t}  = useTranslation("global")
+  const { t } = useTranslation("global");
   return (
     <div id="Home" className="container md:px-8 px-4">
       <div className="pt-[180px] lg:pb-[80px] md:pb-[60px] pb-[40px]">
         <div className="md:text-center text-left mb-[50px] md:max-w-[744px] md:ml-auto ml-0 mr-auto md:px-6 px-0">
           <h1 className="text-secondaryBg md:text-[68px] sm:text-[47px] text-[35px] font-semibold mb-4 leading-[1.2em] -tracking-[0.01em]">
-            {t('Digitize Your')} <span className="text-primaryColor"> Menu.</span>{" "}
-            {t('Elevate Your')} <span className="text-primaryColor">{t('Business.')}</span>
+            {t("Digitize Your")}{" "}
+            <span className="text-primaryColor"> Menu.</span>{" "}
+            {t("Elevate Your")}{" "}
+            <span className="text-primaryColor">{t("Business.")}</span>
           </h1>
 
-          <h1>{t('')}</h1>
+          <h1>{t("")}</h1>
 
           <p className="text-primaryTwo md:text-xl text-lg text md:mb-10 mb-6 font-medium">
-          {t('The Ultimate Digital Menu Solution for Restaurants and Cafés - TryNow!')} 
+            {t(
+              "The Ultimate Digital Menu Solution for Restaurants and Cafés - TryNow!"
+            )}
           </p>
 
           <div className="relative w-fit md:mx-auto mr-auto group">
             <Button className="flex flex-row items-center justify-center gap-x-2">
-            {t('Get Started Now')}
+              {t("Get Started Now")}
               <ChevronRight
                 size={19}
                 strokeWidth={2}

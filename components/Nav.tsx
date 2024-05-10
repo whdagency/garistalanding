@@ -14,7 +14,7 @@ type Links = {
 function Nav({ activeSection }: Links) {
   const [isOpen, setOpen] = useState(false);
   const [isHamburger, setHamburger] = useState(false);
-  const {t}  = useTranslation("global")
+  const { t } = useTranslation("global");
 
   const handleSheet = () => {
     setOpen(!isOpen);
@@ -35,7 +35,7 @@ function Nav({ activeSection }: Links) {
                     : "text-primaryOne hover:text-primaryBg rounded-xl"
                 }`}
               >
-                {t('About')}
+                {t("About")}
               </a>
 
               <a
@@ -46,7 +46,7 @@ function Nav({ activeSection }: Links) {
                     : "text-primaryOne hover:text-primaryBg rounded-xl"
                 }`}
               >
-                {t('Features')}
+                {t("Features")}
               </a>
             </div>
 
@@ -70,13 +70,13 @@ function Nav({ activeSection }: Links) {
                     : "text-primaryOne hover:text-primaryBg rounded-xl"
                 }`}
               >
-                {t('Pricing')}
+                {t("Pricing")}
               </a>
 
               <a
-                href="#Testimonials"
+                href="#Contact"
                 className={`navLink ${
-                  activeSection == "Testimonials"
+                  activeSection == "Contact"
                     ? "text-primaryBg bg-primaryBg/10 rounded-xl"
                     : "text-primaryOne hover:text-primaryBg rounded-xl"
                 }`}

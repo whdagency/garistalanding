@@ -1,70 +1,20 @@
+import { benefitsContent } from "@/constants";
 import { CircleCheck, CircleX } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
-  
-  export default function Benefits() {
-  const {t}  = useTranslation("global")
+export default function Benefits() {
+  const { t } = useTranslation("global");
 
-const benefitsContent = [
-  {
-    title: "Garista",
-    benefits: [
-      { benefit: t('Low cost'), check: true },
-      { benefit: t("Self manageable"), check: true },
-      { benefit: t("Advanced functionality"), check: true },
-      { benefit: t("Accessible everywhere"), check: true },
-      { benefit: t("View on own device"), check: true },
-      { benefit: t("Digitally available"), check: true },
-    ],
-  },
-  
-  {
-    title: t( "Static website"),
-    benefits: [
-      { benefit: t("Low cost"), check: false },
-      { benefit: t("Self manageable"), check: false },
-      { benefit: t("Advanced functionality"), check: false },
-      { benefit: t("Accessible everywhere"), check: true },
-      { benefit: t("View on own device"), check: true },
-      { benefit: t("Digitally available"), check: true },
-    ],
-  },
-  
-  {
-    title: t("Menu on tablet"),
-    benefits: [
-      { benefit: t("Low cost"), check: false },
-      { benefit: t("Self manageable"), check: false },
-      { benefit: t("Advanced functionality"), check: false },
-      { benefit: t("Accessible everywhere"), check: false },
-      { benefit: t("View on own device"), check: true },
-      { benefit: t("Digitally available"), check: true },
-    ],
-  },
-  
-  {
-    title: t("Printed menu"),
-    benefits: [
-      { benefit: t("Low cost"), check: false },
-      { benefit: t("Self manageable"), check: false },
-      { benefit: t("Advanced functionality"), check: false },
-      { benefit: t("Accessible everywhere"), check: false },
-      { benefit: t("View on own device"), check: false },
-      { benefit: t("Digitally available"), check: false },
-    
-    ],
-  },
-];
   return (
     <div id="Benefits" className="container md:px-8 px-4">
       <div className="pb-[180px]">
         <div className="text-center mb-14">
           <span className="inline-block text-primaryColor font-medium md:text-lg text-base mb-1">
-          {t("Your Digital Menu")}
+            {t("Your Digital Menu")}
           </span>
           <h3 className="md:text-3xl text-xl font-medium">
-  {t("Why Choose Garista?")}
-</h3>
+            {t("Why Choose Garista?")}
+          </h3>
         </div>
 
         <div className="grid xl:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-8 xl:gap-0 items-center justify-center">
@@ -84,7 +34,7 @@ const benefitsContent = [
                       : "text-secondaryBg"
                   } text-sm font-medium py-7`}
                 >
-                  {content.title}
+                  {t(content.title)}
                 </h5>
               </div>
 
@@ -100,7 +50,7 @@ const benefitsContent = [
                       <CircleX size={19} strokeWidth={2} color="red" />
                     )}
                     <span className="text-sm font-medium">
-                      {benefitContent.benefit}
+                      {t(benefitContent.benefit)}
                     </span>
                   </li>
                 ))}

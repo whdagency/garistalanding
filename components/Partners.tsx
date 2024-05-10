@@ -1,18 +1,6 @@
 import Image from "next/image";
 import Marquee from "react-fast-marquee";
-
-const partnersIcon = [
-  { src: "/Partners/Logo1.svg" },
-  { src: "/Partners/Logo3.svg" },
-  { src: "/Partners/Logo4.svg" },
-  { src: "/Partners/Logo2.svg" },
-  { src: "/Partners/Logo5.svg" },
-  { src: "/Partners/Logo6.svg" },
-  { src: "/Partners/Logo7.svg" },
-  { src: "/Partners/Logo5.svg" },
-  { src: "/Partners/Logo6.svg" },
-  { src: "/Partners/Logo7.svg" },
-];
+import { partnersIcon } from "@/constants";
 
 export default function Partners() {
   return (
