@@ -19,7 +19,7 @@ const Reseller = () => {
               Support the Restaurant Community
             </h2>
 
-            <p className="text-base text-gray-800">
+            <p className="text-base text-gray-800 leading-relaxed">
               It&apos;s time to support the restaurant community! We&apos;re
               transparent about our intentions: we&apos;re here to help, not to
               profit immensely. You can tell by our pricing that we aren&apos;t
@@ -29,7 +29,7 @@ const Reseller = () => {
               ever.
             </p>
 
-            <p className="text-base text-gray-800">
+            <p className="text-base text-gray-800 leading-relaxed">
               If you share our passion for giving back to the hospitality
               industry, please send us an email at{" "}
               <Link
