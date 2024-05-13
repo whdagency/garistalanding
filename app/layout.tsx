@@ -8,7 +8,7 @@ import i18next from "i18next";
 import global_en from "./Translation/en/global.json";
 import global_fr from "./Translation/fr/global.json";
 import { I18nextProvider } from "react-i18next";
-import { FooterBottom } from "@/components/FooterBottom";
+import FooterBottom from "@/components/FooterBottom";
 
 const myLocalFont = localFont({
   src: [
