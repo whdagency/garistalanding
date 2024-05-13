@@ -6,7 +6,7 @@ export const metadata: Metadata = {
     "Garista | The Ultimate digital menu solution for restaurants and cafés",
   description: "The Ultimate digital menu solution for restaurants and cafés",
   icons: {
-    icon: "/Logo/Logo.svg",
+    icon: "/Logo/favicon-garista-white_blue.svg",
   },
 };
 

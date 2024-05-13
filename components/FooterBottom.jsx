@@ -24,19 +24,19 @@ export const FooterBottom = () => {
                 <Link className="hover:underline" href={"/privacy"}>
                   {t("Privacy policy")}
                 </Link>
-                <span>{t("Legal")}</span>
+                <Link className="hover:underline" href={"#"}>
+                  {t("Legal")}
+                </Link>
               </div>
 
-              <span className="">
-                &copy; {t("2024 Garista, Inc. All rights reserved.")}
-              </span>
+              <span>&copy; {t("2024 Garista, Inc. All rights reserved.")}</span>
             </div>
 
-            <div className="w-full mx-auto relative overflow-hidden h-16 md:h-28 lg:h-48">
+            <div className="w-[90%] mx-auto relative overflow-hidden">
               <Image
                 src={"/Footer/footer-logo.svg"}
                 alt="footer logo"
-                className="object-cover mx-auto w-full"
+                className="object-cover w-full -mb-[14px] sm:-mb-[18px] md:-mb-6 lg:-mb-8 xl:-mb-10 2xl:-mb-14"
                 width={500}
                 height={500}
               />

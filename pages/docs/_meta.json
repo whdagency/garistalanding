@@ -1,0 +1,17 @@
+{
+  "*": {
+    "theme": {
+      "breadcrumb": true,
+      "footer": true,
+      "sidebar": true,
+      "toc": false,
+      "pagination": true
+    }
+  },
+  "index": "Introduction",
+  "about": "About Garista",
+  "getting-started": "Getting Started",
+  "menu": "Menu Management",
+  "jobs": "Job Listings",
+  "support": "Support"
+}

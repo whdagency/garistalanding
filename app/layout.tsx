@@ -1,8 +1,8 @@
 "use client";
 
-import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+
 // import LangToggle from "@/components/LanguageToggle";
 import i18next from "i18next";
 import global_en from "./Translation/en/global.json";

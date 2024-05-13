@@ -5,6 +5,7 @@ import { useTranslation } from "react-i18next";
 import { contactFormSchema, ContactFormType } from "@/lib/schema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm, UseFormReset } from "react-hook-form";
+import Link from "next/link";
 
 const Contact = () => {
   const { t } = useTranslation("global");
@@ -221,9 +222,12 @@ const Contact = () => {
 
                   <div className="flex flex-col gap-2">
                     <p>{t("Email:")}</p>
-                    <p className="leading-relaxed text-sm md:text-base">
-                      contact@garista.com
-                    </p>
+                    <Link
+                      href={"mailto:contact@garista.com"}
+                      className="leading-relaxed text-sm md:text-base"
+                    >
+                      Hello@garista.com
+                    </Link>
                   </div>
                 </div>
 
@@ -273,7 +277,7 @@ const SubmitButton = ({
         {pending ? `${t("Please wait")}...` : t("Submit")}
       </Button>
 
-      <Button
+      {/* <Button
         disabled={pending}
         type="reset"
         className="w-full py-2 text-white transition md:text-lg rounded font-medium hidden"
@@ -281,7 +285,7 @@ const SubmitButton = ({
         onClick={() => reset()}
       >
         {t("Reset")}
-      </Button>
+      </Button> */}
     </div>
   );
 };

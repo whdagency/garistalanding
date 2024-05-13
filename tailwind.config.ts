@@ -3,10 +3,10 @@ import type { Config } from "tailwindcss";
 const config = {
   darkMode: ["class"],
   content: [
-    "./pages/**/*.{ts,tsx}",
-    "./components/**/*.{ts,tsx,jsx}",
-    "./app/**/*.{ts,tsx}",
-    "./src/**/*.{ts,tsx}",
+    "./pages/**/*.{ts,tsx,md,mdx,js,jsx}",
+    "./components/**/*.{ts,tsx,md,mdx,js,jsx}",
+    "./app/**/*.ts,tsx,md,mdx,js,jsx}",
+    "./src/**/*.ts,tsx,md,mdx,js,jsx}",
   ],
   prefix: "",
   theme: {
