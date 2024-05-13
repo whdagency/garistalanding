@@ -27,3 +27,11 @@ declare interface PricingPlan {
   active?: boolean;
   features: string[];
 }
+
+declare interface SampleJobs {
+  title: string;
+  location: string;
+  type: string;
+  datePosted: string;
+  description: string;
+}

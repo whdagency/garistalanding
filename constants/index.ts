@@ -169,3 +169,50 @@ export const pricingPlan: PricingPlan[] = [
     ],
   },
 ];
+
+export const sampleJobs: SampleJobs[] = [
+  {
+    title: "Software Engineer",
+    location: "Rabat, MA",
+    type: "Full-time",
+    datePosted: "May 1, 2024",
+    description:
+      "We're looking for talented individuals to join our team and help us achieve our mission.",
+  },
+  {
+    title: "Product Manager",
+    location: "Casablanca, MA",
+    type: "Part-time",
+    datePosted: "April 2, 2024",
+    description: "We're looking for a product manager to join our team.",
+  },
+  {
+    title: "UX Designer",
+    location: "Meknes, MA",
+    type: "Full-time",
+    datePosted: "July 3, 2024",
+    description: "We're looking for a UX designer to join our team.",
+  },
+  {
+    title: "Data Scientist",
+    location: "Los Angeles, CA",
+    type: "Contract",
+    datePosted: "December 4, 2024",
+    description: "We're looking for a data scientist to join our team.",
+  },
+  {
+    title: "Marketing Specialist",
+    location: "Austin, TX",
+    type: "Full-time",
+    datePosted: "March 17, 2024",
+    description: "We're looking for a marketing specialist to join our team.",
+  },
+  {
+    title: "Machine Learning Engineer",
+    location: "Kenitra, MA",
+    type: "Full-time",
+    datePosted: "February 10, 2024",
+    description:
+      "We're looking for a machine learning engineer to join our team.",
+  },
+];
