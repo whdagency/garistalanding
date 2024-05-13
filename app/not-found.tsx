@@ -8,7 +8,7 @@ export default function Custom404() {
 
   useEffect(() => {
     router.push('/');
-  }, []);
+  }, [router]);
 
   return null; // You can optionally render a message or UI here
 }

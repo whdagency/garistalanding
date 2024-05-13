@@ -24,7 +24,7 @@ export const FooterBottom = () => {
                 <Link className="hover:underline" href={"/privacy"}>
                   {t("Privacy policy")}
                 </Link>
-                <Link className="hover:underline" href={"#"}>
+                <Link className="hover:underline" href={"/#"}>
                   {t("Legal")}
                 </Link>
               </div>

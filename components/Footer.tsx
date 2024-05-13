@@ -29,12 +29,12 @@ export default function Footer() {
           </div>
 
           <div className="grid md:grid-cols-4 grid-cols-2 gap-x-12 gap-y-6 items-center place-items-center text-sm font-medium">
-            <Link href="#Contact">{t("Contact")}</Link>
-            <Link href="#Contact">{t("Be a partner")}</Link>
+            <Link href="/#Contact">{t("Contact")}</Link>
+            <Link href="/#Contact">{t("Be a partner")}</Link>
             <Link href="/docs" target="_blank">
               {t("Documentation")}
             </Link>
-            <Link href="#">{t("Jobs")}</Link>
+            <Link href="/#">{t("Jobs")}</Link>
           </div>
 
           <div className="w-full mx-auto flex flex-col items-center py-4">

@@ -28,7 +28,7 @@ function Nav({ activeSection }: Links) {
           <div className="z-10 flex items-center">
             <div className="flex gap-x-5 items-center">
               <a
-                href="#About"
+                href="/#About"
                 className={`navLink ${
                   activeSection == "About"
                     ? "text-primaryBg bg-primaryBg/10 rounded-xl"
@@ -39,7 +39,7 @@ function Nav({ activeSection }: Links) {
               </a>
 
               <a
-                href="#Features"
+                href="/#Features"
                 className={`navLink ${
                   activeSection == "Features"
                     ? "text-primaryBg bg-primaryBg/10 rounded-xl"
@@ -52,7 +52,7 @@ function Nav({ activeSection }: Links) {
 
             <div className="w-[104px] h-12 flex justify-center items-center">
               <Link
-                href="#Home"
+                href="/#Home"
                 className="relative size-12 cursor-pointer flex justify-center items-center hover:rotate-180 hover:scale-[1.2] transition-transform duration-300"
               >
                 <div className="size-full">
@@ -63,7 +63,7 @@ function Nav({ activeSection }: Links) {
 
             <div className="flex gap-x-5 items-center">
               <a
-                href="#Pricing"
+                href="/#Pricing"
                 className={`navLink ${
                   activeSection == "Pricing"
                     ? "text-primaryBg bg-primaryBg/10 rounded-xl"
@@ -74,7 +74,7 @@ function Nav({ activeSection }: Links) {
               </a>
 
               <a
-                href="#Contact"
+                href="/#Contact"
                 className={`navLink ${
                   activeSection == "Contact"
                     ? "text-primaryBg bg-primaryBg/10 rounded-xl"
@@ -91,7 +91,7 @@ function Nav({ activeSection }: Links) {
           <div className="w-full flex justify-between items-center max-w-lg">
             <div className="relative">
               <Link
-                href="#Home"
+                href="/#Home"
                 className="relative size-10 cursor-pointer flex justify-center items-center hover:rotate-180 hover:scale-[1.2] transition-transform duration-300"
               >
                 <div className="size-full">
@@ -118,7 +118,7 @@ function Nav({ activeSection }: Links) {
                       className="text-xl text-primaryTwo"
                       variant="ghost"
                     >
-                      <a href="#About">About</a>
+                      <a href="/#About">About</a>
                     </Button>
                   </SheetTrigger>
 
@@ -128,7 +128,7 @@ function Nav({ activeSection }: Links) {
                       className="text-xl text-primaryTwo"
                       variant="ghost"
                     >
-                      <Link href="#Features">Features</Link>
+                      <Link href="/#Features">Features</Link>
                     </Button>
                   </SheetTrigger>
 
@@ -138,7 +138,7 @@ function Nav({ activeSection }: Links) {
                       className="text-xl text-primaryTwo"
                       variant="ghost"
                     >
-                      <a href="#Pricing">Pricing</a>
+                      <a href="/#Pricing">Pricing</a>
                     </Button>
                   </SheetTrigger>
 
@@ -148,7 +148,7 @@ function Nav({ activeSection }: Links) {
                       className="text-xl text-primaryTwo"
                       variant="ghost"
                     >
-                      <a href="#Contact">Contact</a>
+                      <a href="/#Contact">Contact</a>
                     </Button>
                   </SheetTrigger>
                 </div>
