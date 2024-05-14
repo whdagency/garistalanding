@@ -1,10 +1,10 @@
 import React from "react";
-import { DocsThemeConfig} from "nextra-theme-docs";
-import { NavLogo } from "@/pages/DocsNavLogo";
+import { DocsThemeConfig } from "nextra-theme-docs";
+import NavLogo from "@/pages/DocsNavLogo";
 
 const config: DocsThemeConfig = {
   logo: (
-      <h1 className="flex flex-row items-center justify-start gap-1">
+    <h1 className="flex flex-row items-center justify-start gap-1">
       <NavLogo />
       {/* Text */}
       <span className="text-lg font-medium">Garista Docs</span>
