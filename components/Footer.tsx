@@ -34,7 +34,7 @@ export default function Footer() {
             <Link className="hover:underline" href="/docs" target="_blank">
               {t("Documentation")}
             </Link>
-            <Link className="hover:underline" href="/#">
+            <Link className="hover:underline" href="/jobs">
               {t("Jobs")}
             </Link>
           </div>

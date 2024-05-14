@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Button } from "./ui/button";
 import { ChevronRight } from "lucide-react";
 import { useTranslation } from "react-i18next";
+import InteractiveMenu from "@/components/InteractiveMenu";
 
 export default function Home() {
   const { t } = useTranslation("global");
@@ -37,15 +38,19 @@ export default function Home() {
         </div>
 
         <div className="max-[1271px] mx-auto md:px-6">
-          <div className="relative flex justify-center">
+          <div className="relative flex flex-col gap-4 md:flex-row justify-center rounded shadow">
             <Image
               className="rounded-xl"
-              src="/Home/homeImg.png"
+              src="/Home/home-dashboard.png"
               alt="home-img"
               width={985}
               height={588}
               sizes="(max-width: 479px) 93vw, (max-width: 767px) 94vw, (max-width: 991px) 86vw, (max-width: 1439px) 95vw, 985px"
             />
+
+            <div className="md:absolute right-0 -bottom-10">
+              <InteractiveMenu />
+            </div>
           </div>
         </div>
       </div>

@@ -1,4 +1,5 @@
 "use client";
+import JobPagination from "@/app/jobs/JobPagination";
 import Footer from "@/components/Footer";
 import Nav from "@/components/Nav";
 import { sampleJobs } from "@/constants";
@@ -85,6 +86,8 @@ const Jobs = () => {
             </div>
           ))}
         </div>
+
+        <JobPagination />
       </section>
 
       <Footer />

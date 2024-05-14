@@ -1,3 +1,51 @@
+declare interface InteractiveMenuSocial {
+  name: string;
+  icon: any;
+  url: string;
+}
+
+declare interface InteractiveMenuContentCategory {
+  discount: number;
+  price: number;
+  description: string;
+  name: string;
+  catImage: string;
+  id: string;
+}
+
+declare interface InteractiveMenuButton {
+  name: string;
+  icon: any;
+}
+
+declare interface InteractiveTopMenuCategory {
+  name: string;
+  icon: any;
+}
+
+declare interface InteractiveMenuProps {
+  selectedTheme: number;
+  selectedLayout: string;
+  selectedHeader: string;
+  selectedBgColor: string;
+  selectedPrimaryColor: string;
+  selectedSecondaryColor: string;
+}
+
+declare interface InteractiveMenuContent {
+  themeSelection: InteractiveMenuThemeSelection;
+  name: string;
+  description: string;
+  image: string;
+  bannerImage: string;
+  profileBanner: string;
+  socials: InteractiveMenuSocial[];
+  infoButton: string;
+  categories: InteractiveMenuContentCategory[];
+  menuButtons: InteractiveMenuButton[];
+  menuCategories: InteractiveTopMenuCategory[];
+}
+
 declare interface FeaturesInfo {
   icon: Icon;
   title: string;

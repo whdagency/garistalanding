@@ -7,8 +7,161 @@ import {
   PencilRuler,
   QrCode,
   Share2,
+  Pizza,
+  Sandwich,
   Speech,
 } from "lucide-react";
+import {
+  FaFacebook,
+  FaInstagram,
+  FaSnapchat,
+  FaTiktok,
+  FaBreadSlice,
+} from "react-icons/fa";
+import { BiSolidFoodMenu, BiDrink } from "react-icons/bi";
+import { TbMessage2Cog, TbBowlSpoon, TbBurger, TbMeat } from "react-icons/tb";
+import { PiCallBell } from "react-icons/pi";
+
+export const interactiveMenuContent: InteractiveMenuContent = {
+  themeSelection: {
+    selectedTheme: 1,
+    selectedLayout: "theme-grid",
+    selectedHeader: "logo-header",
+    selectedBgColor: "#ffffff",
+    selectedPrimaryColor: "#262326",
+    selectedSecondaryColor: "#dddddd",
+  },
+  name: "Theme 1",
+  description: "This is theme 1",
+  image: "/Menu/theme-1.png",
+  bannerImage: "/Menu/menu-banner-1.jpeg",
+  profileBanner: "/Menu/menu-banner-1.jpeg",
+  socials: [
+    {
+      name: "Facebook",
+      icon: FaFacebook,
+      url: "https://www.facebook.com/",
+    },
+    {
+      name: "SnapChat",
+      icon: FaSnapchat,
+      url: "https://www.snapchat.com/",
+    },
+    {
+      name: "Instagram",
+      icon: FaInstagram,
+      url: "https://www.instagram.com/",
+    },
+    {
+      name: "TikTok",
+      icon: FaTiktok,
+      url: "https://www.tiktok.com/",
+    },
+  ],
+  infoButton: "/Menu/info-button.png",
+  categories: [
+    {
+      discount: Math.floor(Math.random() * 100),
+      price: Math.floor(Math.random() * 80),
+      description: "Delicious pizzas with a variety of toppings",
+      name: "Pizza",
+      catImage: "/Menu/4.png",
+      id: "pizza",
+    },
+    {
+      discount: Math.floor(Math.random() * 100),
+      price: Math.floor(Math.random() * 80),
+      description: "Crispy and flavorful fried chicken",
+      name: "Fried Chicken",
+      catImage: "/Menu/5.png",
+      id: "fried-chicken",
+    },
+    {
+      discount: Math.floor(Math.random() * 100),
+      price: Math.floor(Math.random() * 80),
+      description: "Stacked high with your favorite toppings.",
+      name: "Burgers",
+      catImage: "/Menu/1.png",
+      id: "burgers",
+    },
+    {
+      discount: Math.floor(Math.random() * 100),
+      price: Math.floor(Math.random() * 80),
+      description: "Authentic Italian pasta dishes",
+      name: "Pasta",
+      catImage: "/Menu/4.png",
+      id: "pasta",
+    },
+    {
+      discount: Math.floor(Math.random() * 100),
+      price: Math.floor(Math.random() * 80),
+      description: "Fresh and succulent seafood dishes",
+      name: "Seafood",
+      catImage: "/Menu/3.png",
+      id: "seafood",
+    },
+    {
+      discount: Math.floor(Math.random() * 100),
+      price: Math.floor(Math.random() * 80),
+      description: "Flavorful tacos",
+      name: "Tacos",
+      catImage: "/Menu/2.png",
+      id: "tacos",
+    },
+    {
+      discount: Math.floor(Math.random() * 100),
+      price: Math.floor(Math.random() * 80),
+      description: "Refreshing salads",
+      name: "Salad",
+      catImage: "/Menu/3.png",
+      id: "salad",
+    },
+  ],
+  menuButtons: [
+    {
+      name: "menu",
+      icon: BiSolidFoodMenu,
+    },
+    {
+      name: "feedback",
+      icon: TbMessage2Cog,
+    },
+    {
+      name: "call",
+      icon: PiCallBell,
+    },
+  ],
+  menuCategories: [
+    {
+      name: "All",
+      icon: TbBowlSpoon,
+    },
+    {
+      name: "Steaks",
+      icon: TbMeat,
+    },
+    {
+      name: "Pizzas",
+      icon: Pizza,
+    },
+    {
+      name: "Burgers",
+      icon: TbBurger,
+    },
+    {
+      name: "Sandwiches",
+      icon: Sandwich,
+    },
+    {
+      name: "Juice",
+      icon: BiDrink,
+    },
+    {
+      name: "Tacos",
+      icon: FaBreadSlice,
+    },
+  ],
+};
 
 export const featuresInfo: FeaturesInfo[] = [
   {
