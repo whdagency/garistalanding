@@ -1,27 +1,48 @@
 "use client";
-import JobPagination from "@/app/jobs/JobPagination";
+
+import {
+  Pagination,
+  PaginationContent,
+  PaginationItem,
+  PaginationLink,
+  PaginationNext,
+  PaginationPrevious,
+} from "@/components/ui/pagination";
 import Footer from "@/components/Footer";
 import Nav from "@/components/Nav";
 import { sampleJobs } from "@/constants";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
-const Jobs = () => {
+const Jobs: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [locationFilter, setLocationFilter] = useState("");
+  const [filteredJobs, setFilteredJobs] = useState<Job[]>(sampleJobs);
+  const [currentPage, setCurrentPage] = useState(1);
+  const jobsPerPage = 4;
 
-  // Filtered jobs based on search term and location
-  const filteredJobs = sampleJobs.filter((job) => {
-    return (
-      job.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      (job.location.toLowerCase().includes(searchTerm.toLowerCase()) &&
+  useEffect(() => {
+    // change the filtered jobs based on search term and location
+    const newFilteredJobs = sampleJobs.filter((job) => {
+      return (
+        job.title.toLowerCase().includes(searchTerm.toLowerCase()) &&
         (locationFilter === "" ||
-          job.location.toLowerCase().includes(locationFilter.toLowerCase())))
-    );
-  });
+          job.location.toLowerCase().includes(locationFilter.toLowerCase()))
+      );
+    });
 
-  const jobLocations = sampleJobs.filter(({ location }) => {
-    return location.toLowerCase();
-  });
+    setFilteredJobs(newFilteredJobs);
+    setCurrentPage(1); // Reset to first page when filtering changes
+  }, [searchTerm, locationFilter]);
+
+  // Pagination
+  const indexOfLastJob = currentPage * jobsPerPage;
+  const indexOfFirstJob = indexOfLastJob - jobsPerPage;
+  const currentJobs = filteredJobs.slice(indexOfFirstJob, indexOfLastJob);
+
+  // Change page
+  const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
+  const nextPage = () => setCurrentPage((prevPage) => prevPage + 1);
+  const prevPage = () => setCurrentPage((prevPage) => prevPage - 1);
 
   return (
     <>
@@ -41,7 +62,7 @@ const Jobs = () => {
         <div className="grid grid-cols-1 gap-5 md:grid-cols-2 place-items-center">
           <input
             type="text"
-            placeholder="Search jobs by title or location"
+            placeholder="Search jobs by title"
             className="border border-gray-300 rounded-md py-3 px-4 mb-4 w-full"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
@@ -53,20 +74,20 @@ const Jobs = () => {
             onChange={(e) => setLocationFilter(e.target.value)}
           >
             <option value="">All Locations</option>
-            {jobLocations.map((location, index) => (
+            {sampleJobs.map((job, index) => (
               <option
                 className="capitalize"
                 key={index}
-                value={location.location}
+                value={job.location.toLowerCase()}
               >
-                {location.location}
+                {job.location}
               </option>
             ))}
           </select>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredJobs.map((job, index) => (
+          {currentJobs.map((job, index) => (
             <div key={index} className="bg-white rounded-lg shadow-md p-6">
               <h2 className="text-xl font-bold mb-2">{job.title}</h2>
               <p>
@@ -87,11 +108,75 @@ const Jobs = () => {
           ))}
         </div>
 
-        <JobPagination />
+        <div className="my-5">
+          <JobPagination
+            jobsPerPage={jobsPerPage}
+            totalJobs={filteredJobs.length}
+            paginate={paginate}
+            currentPage={currentPage}
+            nextPage={nextPage}
+            prevPage={prevPage}
+          />
+        </div>
       </section>
 
       <Footer />
     </>
+  );
+};
+
+interface JobPaginationProps {
+  jobsPerPage: number;
+  totalJobs: number;
+  paginate: (pageNumber: number) => void;
+  currentPage: number;
+  nextPage: () => void;
+  prevPage: () => void;
+}
+
+const JobPagination: React.FC<JobPaginationProps> = ({
+  jobsPerPage,
+  totalJobs,
+  paginate,
+  currentPage,
+  nextPage,
+  prevPage,
+}) => {
+  const pageNumbers = [];
+  for (let i = 1; i <= Math.ceil(totalJobs / jobsPerPage); i++) {
+    pageNumbers.push(i);
+  }
+
+  return (
+    <Pagination>
+      <PaginationContent>
+        <PaginationItem>
+          <PaginationPrevious
+            href="#"
+            onClick={() => prevPage()}
+            aria-disabled={currentPage === 1}
+          />
+        </PaginationItem>
+        {pageNumbers.map((number) => (
+          <PaginationItem key={number}>
+            <PaginationLink
+              href="#"
+              onClick={() => paginate(number)}
+              isActive={currentPage === number}
+            >
+              {number}
+            </PaginationLink>
+          </PaginationItem>
+        ))}
+        <PaginationItem>
+          <PaginationNext
+            href="#"
+            onClick={() => nextPage()}
+            aria-disabled={currentPage === Math.ceil(totalJobs / jobsPerPage)}
+          />
+        </PaginationItem>
+      </PaginationContent>
+    </Pagination>
   );
 };
 

@@ -76,7 +76,7 @@ declare interface PricingPlan {
   features: string[];
 }
 
-declare interface SampleJobs {
+declare interface Job {
   title: string;
   location: string;
   type: string;
