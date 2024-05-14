@@ -323,7 +323,7 @@ export const pricingPlan: PricingPlan[] = [
   },
 ];
 
-export const sampleJobs: SampleJobs[] = [
+export const sampleJobs: Job[] = [
   {
     title: "Software Engineer",
     location: "Rabat, MA",
