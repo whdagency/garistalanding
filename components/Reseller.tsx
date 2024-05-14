@@ -8,7 +8,7 @@ const Reseller = () => {
   const { t } = useTranslation("global");
   return (
     <Dialog>
-      <DialogTrigger className="text-lg font-medium hover:scale-105 transition">
+      <DialogTrigger className="text-base font-medium hover:underline">
         {t("Become A Reseller")}
       </DialogTrigger>
 

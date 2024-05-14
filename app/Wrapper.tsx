@@ -58,7 +58,7 @@ function Wrapper() {
   }, []);
 
   return (
-    <div className="overflow-x-hidden bg-[#f4f5f7] body_shadow mb-4 rounded-b-[60px]">
+    <div className="wrapper">
       <Nav activeSection={activeSection} />
       <Hero />
       <About />

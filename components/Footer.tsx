@@ -1,7 +1,12 @@
 import Reseller from "@/components/Reseller";
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
-import { FaInstagram, FaFacebook, FaYoutube, FaTwitter } from "react-icons/fa";
+import {
+  SlSocialFacebook,
+  SlSocialYoutube,
+  SlSocialTwitter,
+  SlSocialInstagram,
+} from "react-icons/sl";
 
 export default function Footer() {
   const { t } = useTranslation("global");
@@ -12,19 +17,19 @@ export default function Footer() {
         <div className="flex flex-col gap-y-8 justify-center items-center">
           <div className="flex flex-nowrap gap-x-8 items-center justify-center">
             <Link target="_blank" href="https://instagram.com/garista.official">
-              <FaInstagram size={20} strokeWidth={1.5} />
+              <SlSocialInstagram size={20} strokeWidth={1.5} />
             </Link>
 
             <Link target="_blank" href="https://facebook.com/garista.official">
-              <FaFacebook size={20} strokeWidth={1.5} />
+              <SlSocialFacebook size={20} strokeWidth={1.5} />
             </Link>
 
             <Link target="_blank" href="https://youtube.com/@garista.official">
-              <FaYoutube size={20} strokeWidth={1.5} />
+              <SlSocialYoutube size={20} strokeWidth={1.5} />
             </Link>
 
             <Link target="_blank" href="https://x.com/garistaofficial">
-              <FaTwitter size={20} strokeWidth={1.5} />
+              <SlSocialTwitter size={20} strokeWidth={1.5} />
             </Link>
           </div>
 
@@ -39,7 +44,7 @@ export default function Footer() {
             </Link>
           </div>
 
-          <div className="w-full mx-auto flex flex-col items-center py-4">
+          <div className="w-full mx-auto flex flex-col items-center">
             <Reseller />
           </div>
         </div>
