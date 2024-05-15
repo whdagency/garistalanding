@@ -14,18 +14,20 @@ const FooterBottom = () => {
       <div className="sm:px-24 px-4 pt-24 bg-white w-full relative">
         <div className="flex lg:flex-row flex-col flex-wrap lg:justify-between mx-auto items-center gap-y-6 text-sm text-center font-medium mb-8">
           <div className="flex justify-center items-center gap-x-12">
-            <Link className="hover:underline" href={"/terms"}>
+            <Link className="hover:underline text-black" href={"/terms"}>
               {t("Terms of service")}
             </Link>
-            <Link className="hover:underline" href={"/privacy"}>
+            <Link className="hover:underline text-black" href={"/privacy"}>
               {t("Privacy policy")}
             </Link>
-            <Link className="hover:underline" href={"/legal"}>
+            <Link className="hover:underline text-black" href={"/legal"}>
               {t("Legal")}
             </Link>
           </div>
 
-          <span>&copy; {t("2024 Garista, Inc. All rights reserved.")}</span>
+          <span className="text-black">
+            &copy; {t("2024 Garista, Inc. All rights reserved.")}
+          </span>
         </div>
 
         <div className="w-[90%] mx-auto relative overflow-hidden">

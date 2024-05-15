@@ -1,6 +1,8 @@
 import React from "react";
 import { DocsThemeConfig } from "nextra-theme-docs";
 import NavLogo from "@/pages/DocsNavLogo";
+import Footer from "@/components/Footer";
+import FooterBottom from "@/components/FooterBottom";
 
 const config: DocsThemeConfig = {
   logo: (
@@ -28,9 +30,10 @@ const config: DocsThemeConfig = {
     "https://github.com/whdagency/garistalanding/tree/atsu/pages/docs",
   footer: {
     component: (
-      <p className="text-sm text-center w-full py-3 border-t border-t-white">
-        &copy; {new Date().getFullYear()} Garista Docs
-      </p>
+      <>
+        <Footer />
+        <FooterBottom />
+      </>
     ),
   },
   useNextSeoProps() {

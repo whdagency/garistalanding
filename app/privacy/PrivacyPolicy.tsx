@@ -12,7 +12,10 @@ const PrivacyPolicy = () => {
 
       <section className="mb-20 flex flex-col gap-7 container">
         <div className="">
-          <Link href="/" className="text-primaryColor hover:underline w-fit">
+          <Link
+            href="/#Footer"
+            className="text-primaryColor hover:underline w-fit"
+          >
             &larr; Back to Home
           </Link>
         </div>

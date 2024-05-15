@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 const PrivacyPolicyPage = () => {
   return (
-    <section className="max-w-3xl mx-auto pt-[180px] overflow-x-hidden bg-[#f4f5f7] body_shadow mb-4 rounded-b-[60px] md:px-8 px-4">
+    <section className="max-w-3xl mx-auto pt-[180px] wrapper pb-5 md:px-8 px-4">
       <PrivacyPolicy />
     </section>
   );

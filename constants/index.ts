@@ -11,6 +11,7 @@ import {
   Sandwich,
   Speech,
 } from "lucide-react";
+
 import {
   FaFacebook,
   FaInstagram,
@@ -22,6 +23,7 @@ import { BiSolidFoodMenu, BiDrink } from "react-icons/bi";
 import { TbMessage2Cog, TbBowlSpoon, TbBurger, TbMeat } from "react-icons/tb";
 import { PiCallBell } from "react-icons/pi";
 
+// Interactive Menu Content
 export const interactiveMenuContent: InteractiveMenuContent = {
   themeSelection: {
     selectedTheme: 1,
@@ -163,6 +165,7 @@ export const interactiveMenuContent: InteractiveMenuContent = {
   ],
 };
 
+// Features Info Content
 export const featuresInfo: FeaturesInfo[] = [
   {
     icon: PencilRuler,
@@ -214,6 +217,7 @@ export const featuresInfo: FeaturesInfo[] = [
   },
 ];
 
+// Partners Content
 export const partnersIcon: PartnersIcon[] = [
   { src: "/Partners/Logo1.svg" },
   { src: "/Partners/Logo3.svg" },
@@ -227,6 +231,7 @@ export const partnersIcon: PartnersIcon[] = [
   { src: "/Partners/Logo7.svg" },
 ];
 
+// Benefits Content
 export const benefitsContent: BenefitsContent[] = [
   {
     title: "Garista",
@@ -277,6 +282,7 @@ export const benefitsContent: BenefitsContent[] = [
   },
 ];
 
+// Pricing Plan
 export const pricingPlan: PricingPlan[] = [
   {
     type: "Fight Covid-19",
@@ -323,6 +329,7 @@ export const pricingPlan: PricingPlan[] = [
   },
 ];
 
+// Jobs Content
 export const sampleJobs: Job[] = [
   {
     title: "Software Engineer",
