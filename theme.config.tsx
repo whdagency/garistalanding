@@ -2,7 +2,8 @@ import React from "react";
 import { DocsThemeConfig } from "nextra-theme-docs";
 import NavLogo from "@/pages/DocsNavLogo";
 import Footer from "@/components/Footer";
-import FooterBottom from "@/components/FooterBottom";
+import ThemeModeToggle from "@/components/ThemeModeToggle";
+import DocsFooterBottom from "@/pages/DocsFooterBottom";
 
 const config: DocsThemeConfig = {
   logo: (
@@ -23,16 +24,19 @@ const config: DocsThemeConfig = {
       <link rel="icon" href="/Logo/favicon-garista-white_blue.svg" />
     </>
   ),
-  project: {
-    link: "https://github.com/whdagency/garistalanding",
+  darkMode: false,
+  navbar: {
+    extraContent: (
+      <>
+        <ThemeModeToggle />
+      </>
+    ),
   },
-  docsRepositoryBase:
-    "https://github.com/whdagency/garistalanding/tree/atsu/pages/docs",
   footer: {
     component: (
       <>
         <Footer />
-        <FooterBottom />
+        <DocsFooterBottom />
       </>
     ),
   },
