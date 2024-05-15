@@ -1,6 +1,8 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { Mail, MapPin, PhoneCall } from "lucide-react";
-import React from "react";
+import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { contactFormSchema, ContactFormType } from "@/lib/schema";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -9,6 +11,7 @@ import Link from "next/link";
 
 const Contact = () => {
   const { t } = useTranslation("global");
+  const [formSubmitted, setFormSubmitted] = useState(false);
 
   const {
     register,
@@ -21,6 +24,14 @@ const Contact = () => {
 
   const formSubmit = async (data: ContactFormType) => {
     console.log(data);
+
+    setFormSubmitted(true);
+
+    reset();
+
+    setTimeout(() => {
+      setFormSubmitted(false);
+    }, 5000);
   };
 
   return (
@@ -34,137 +45,150 @@ const Contact = () => {
                 {t("How can we help you?")}
               </h2>
 
-              <form
-                onSubmit={handleSubmit(formSubmit)}
-                className="flex flex-col gap-10"
-              >
-                {/* Name */}
-                <div className="flex flex-col">
-                  <label htmlFor="name" className="text-sm text-white/80 my-1">
-                    {t("Name")}
-                  </label>
-
-                  <input
-                    type="text"
-                    id="name"
-                    {...register("name")}
-                    className="w-full rounded bg-transparent border-b-2 border-b-white/80 focus:border-b-white text-white py-2 focus:outline-none"
-                  />
-
-                  {errors.name && (
-                    <p className="text-red-500 text-xs py-2">
-                      {t(errors.name.message!)}
-                    </p>
-                  )}
+              {formSubmitted ? (
+                <div className="flex flex-col items-center justify-center h-full">
+                  <SuccessMessage setFormSubmitted={setFormSubmitted} />
                 </div>
-
-                {/* Email */}
-                <div className="flex flex-col">
-                  <label htmlFor="email" className="text-sm text-white/80 my-1">
-                    {t("Email")}
-                  </label>
-
-                  <input
-                    type="email"
-                    id="email"
-                    {...register("email")}
-                    className="w-full rounded bg-transparent border-b-2 border-b-white/80 focus:border-b-white text-white py-2 focus:outline-none"
-                  />
-
-                  {errors.email && (
-                    <p className="text-red-500 text-xs py-2">
-                      {t(errors.email.message!)}
-                    </p>
-                  )}
-                </div>
-
-                {/* Company */}
-                <div className="flex flex-col">
-                  <label
-                    htmlFor="company"
-                    className="text-sm text-white/80 my-1"
-                  >
-                    {t("Company")}
-                  </label>
-
-                  <input
-                    type="text"
-                    id="company"
-                    {...register("company")}
-                    className="w-full rounded bg-transparent border-b-2 border-b-white/80 focus:border-b-white text-white py-2 focus:outline-none"
-                  />
-
-                  {errors.company && (
-                    <p className="text-red-500 text-xs py-2">
-                      {t(errors.company.message!)}
-                    </p>
-                  )}
-                </div>
-
-                {/* Service */}
-                <div className="flex flex-col">
-                  <label
-                    htmlFor="service"
-                    className="text-sm text-white/80 my-1"
-                  >
-                    {t("What are you looking for?")}
-                  </label>
-
-                  <select
-                    id="service"
-                    {...register("service")}
-                    className="w-full rounded bg-transparent border-b-2 border-b-white/80 focus:border-b-white text-white py-2 focus:outline-none"
-                  >
-                    <option className="text-black">{t("Select one")}</option>
-                    <option className="text-black" value="Be a partner">
-                      {t("Be a partner")}
-                    </option>
-                    <option
-                      className="text-black"
-                      value="Documentation Support"
+              ) : (
+                <form
+                  onSubmit={handleSubmit(formSubmit)}
+                  className="flex flex-col gap-10"
+                  method="POST"
+                >
+                  {/* Name */}
+                  <div className="flex flex-col">
+                    <label
+                      htmlFor="name"
+                      className="text-sm text-white/80 my-1"
                     >
-                      {t("Documentation Support")}
-                    </option>
-                    <option className="text-black" value="Contact Us">
-                      {t("Contact Us")}
-                    </option>
-                    <option className="text-black" value="Other">
-                      {t("Other")}
-                    </option>
-                  </select>
+                      {t("Name")}
+                    </label>
 
-                  {errors.service && (
-                    <p className="text-red-500 text-xs py-2">
-                      {t(errors.service.message!)}
-                    </p>
-                  )}
-                </div>
+                    <input
+                      type="text"
+                      id="name"
+                      {...register("name")}
+                      className="w-full rounded bg-transparent border-b-2 border-b-white/80 focus:border-b-white text-white py-2 focus:outline-none"
+                    />
 
-                {/* Message */}
-                <div className="flex flex-col">
-                  <label
-                    htmlFor="message"
-                    className="text-sm text-white/80 my-1"
-                  >
-                    {t("Message")}
-                  </label>
+                    {errors.name && (
+                      <p className="text-red-500 text-xs py-2">
+                        {t(errors.name.message!)}
+                      </p>
+                    )}
+                  </div>
 
-                  <textarea
-                    id="message"
-                    {...register("message")}
-                    rows={4}
-                    className="w-full rounded bg-transparent border-b-2 border-b-white/80 focus:border-b-white text-white py-2 focus:outline-none"
-                  ></textarea>
+                  {/* Email */}
+                  <div className="flex flex-col">
+                    <label
+                      htmlFor="email"
+                      className="text-sm text-white/80 my-1"
+                    >
+                      {t("Email")}
+                    </label>
 
-                  {errors.message && (
-                    <p className="text-red-500 text-xs py-2">
-                      {t(errors.message.message!)}
-                    </p>
-                  )}
-                </div>
+                    <input
+                      type="email"
+                      id="email"
+                      {...register("email")}
+                      className="w-full rounded bg-transparent border-b-2 border-b-white/80 focus:border-b-white text-white py-2 focus:outline-none"
+                    />
 
-                <SubmitButton pending={pending} reset={reset} />
-              </form>
+                    {errors.email && (
+                      <p className="text-red-500 text-xs py-2">
+                        {t(errors.email.message!)}
+                      </p>
+                    )}
+                  </div>
+
+                  {/* Company */}
+                  <div className="flex flex-col">
+                    <label
+                      htmlFor="company"
+                      className="text-sm text-white/80 my-1"
+                    >
+                      {t("Company")}
+                    </label>
+
+                    <input
+                      type="text"
+                      id="company"
+                      {...register("company")}
+                      className="w-full rounded bg-transparent border-b-2 border-b-white/80 focus:border-b-white text-white py-2 focus:outline-none"
+                    />
+
+                    {errors.company && (
+                      <p className="text-red-500 text-xs py-2">
+                        {t(errors.company.message!)}
+                      </p>
+                    )}
+                  </div>
+
+                  {/* Service */}
+                  <div className="flex flex-col">
+                    <label
+                      htmlFor="service"
+                      className="text-sm text-white/80 my-1"
+                    >
+                      {t("What are you looking for?")}
+                    </label>
+
+                    <select
+                      id="service"
+                      {...register("service")}
+                      className="w-full rounded bg-transparent border-b-2 border-b-white/80 focus:border-b-white text-white py-2 focus:outline-none"
+                    >
+                      <option className="text-black">{t("Select one")}</option>
+                      <option className="text-black" value="Be a partner">
+                        {t("Be a partner")}
+                      </option>
+                      <option
+                        className="text-black"
+                        value="Documentation Support"
+                      >
+                        {t("Documentation Support")}
+                      </option>
+                      <option className="text-black" value="Contact Us">
+                        {t("Contact Us")}
+                      </option>
+                      <option className="text-black" value="Other">
+                        {t("Other")}
+                      </option>
+                    </select>
+
+                    {errors.service && (
+                      <p className="text-red-500 text-xs py-2">
+                        {t(errors.service.message!)}
+                      </p>
+                    )}
+                  </div>
+
+                  {/* Message */}
+                  <div className="flex flex-col">
+                    <label
+                      htmlFor="message"
+                      className="text-sm text-white/80 my-1"
+                    >
+                      {t("Message")}
+                    </label>
+
+                    <textarea
+                      id="message"
+                      {...register("message")}
+                      rows={4}
+                      className="w-full rounded bg-transparent border-b-2 border-b-white/80 focus:border-b-white text-white py-2 focus:outline-none"
+                    ></textarea>
+
+                    {errors.message && (
+                      <p className="text-red-500 text-xs py-2">
+                        {t(errors.message.message!)}
+                      </p>
+                    )}
+                  </div>
+
+                  <SubmitButton pending={pending} reset={reset} />
+                </form>
+              )}
             </div>
 
             {/* Contact Us Content */}
@@ -276,16 +300,42 @@ const SubmitButton = ({
       >
         {pending ? `${t("Please wait")}...` : t("Submit")}
       </Button>
+    </div>
+  );
+};
 
-      {/* <Button
-        disabled={pending}
-        type="reset"
-        className="w-full py-2 text-white transition md:text-lg rounded font-medium hidden"
-        variant={"destructive"}
-        onClick={() => reset()}
-      >
-        {t("Reset")}
-      </Button> */}
+const SuccessMessage = ({
+  setFormSubmitted,
+}: {
+  setFormSubmitted: React.Dispatch<React.SetStateAction<boolean>>;
+}) => {
+  const { t } = useTranslation();
+  return (
+    <div
+      className="bg-green-100 border flex flex-col items-center justify-center border-green-400 text-green-700 px-4 py-5 gap-4 rounded relative w-full"
+      role="alert"
+    >
+      <strong className="font-semibold text-2xl">{t("Thank You!")}</strong>
+      <span className="block sm:inline">
+        {" "}
+        {t("We will get back to you shortly.")}
+      </span>
+      <span className="absolute top-0 bottom-0 right-0 px-4 py-3">
+        <svg
+          className="fill-current h-6 w-6 text-green-500"
+          role="button"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 20 20"
+          onClick={() => setFormSubmitted(false)}
+        >
+          <title>Close</title>
+          <path
+            fillRule="evenodd"
+            d="M2.293 2.293a1 1 0 011.414 0L10 8.586l6.293-6.293a1 1 0 111.414 1.414L11.414 10l6.293 6.293a1 1 0 01-1.414 1.414L10 11.414l-6.293 6.293a1 1 0 01-1.414-1.414L8.586 10 2.293 3.707a1 1 0 010-1.414z"
+            clipRule="evenodd"
+          />
+        </svg>
+      </span>
     </div>
   );
 };
