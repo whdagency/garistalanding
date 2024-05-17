@@ -41,8 +41,20 @@ const Jobs: React.FC = () => {
 
   // Change page
   const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
-  const nextPage = () => setCurrentPage((prevPage) => prevPage + 1);
-  const prevPage = () => setCurrentPage((prevPage) => prevPage - 1);
+  const nextPage = () => {
+    if (currentPage < Math.ceil(filteredJobs.length / jobsPerPage)) {
+      setCurrentPage((prevPage) => prevPage + 1);
+    } else {
+      setCurrentPage(1);
+    }
+  };
+  const prevPage = () => {
+    if (currentPage > 1) {
+      setCurrentPage((prevPage) => prevPage - 1);
+    } else {
+      setCurrentPage(Math.ceil(filteredJobs.length / jobsPerPage));
+    }
+  };
 
   return (
     <>
