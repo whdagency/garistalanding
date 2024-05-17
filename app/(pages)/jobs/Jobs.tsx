@@ -18,7 +18,7 @@ const Jobs: React.FC = () => {
   const [locationFilter, setLocationFilter] = useState("");
   const [filteredJobs, setFilteredJobs] = useState<Job[]>(sampleJobs);
   const [currentPage, setCurrentPage] = useState(1);
-  const jobsPerPage = 4;
+  const jobsPerPage = 6;
 
   useEffect(() => {
     // change the filtered jobs based on search term and location
@@ -74,15 +74,19 @@ const Jobs: React.FC = () => {
             onChange={(e) => setLocationFilter(e.target.value)}
           >
             <option value="">All Locations</option>
-            {sampleJobs.map((job, index) => (
-              <option
-                className="capitalize"
-                key={index}
-                value={job.location.toLowerCase()}
-              >
-                {job.location}
-              </option>
-            ))}
+            {sampleJobs
+              .filter((job) =>
+                Array.from(new Set(job.location.toLowerCase().trim()))
+              )
+              .map((job, index) => (
+                <option
+                  className="capitalize"
+                  key={index}
+                  value={job.location.toLowerCase()}
+                >
+                  {job.location}
+                </option>
+              ))}
           </select>
         </div>
 

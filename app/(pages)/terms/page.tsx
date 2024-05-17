@@ -1,4 +1,4 @@
-import TermsOfService from "@/app/terms/TermsOfService";
+import TermsOfService from "@/app/(pages)/terms/TermsOfService";
 import { Metadata } from "next";
 import React from "react";
 
@@ -11,11 +11,7 @@ export const metadata: Metadata = {
 };
 
 const TermsOfServicePage = () => {
-  return (
-    <section className="max-w-3xl mx-auto pt-[180px] wrapper pb-5 md:px-8 px-4">
-      <TermsOfService />
-    </section>
-  );
+  return <TermsOfService />;
 };
 
 export default TermsOfServicePage;

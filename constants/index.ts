@@ -332,47 +332,163 @@ export const pricingPlan: PricingPlan[] = [
 // Jobs Content
 export const sampleJobs: Job[] = [
   {
-    title: "Software Engineer",
-    location: "Rabat, MA",
+    title: "Data Scientist",
+    location: "Casablanca, MA",
     type: "Full-time",
-    datePosted: "May 1, 2024",
+    datePosted: "April 28, 2024",
     description:
-      "We're looking for talented individuals to join our team and help us achieve our mission.",
+      "Seeking a data enthusiast to help us derive insights from complex data sets.",
+  },
+  {
+    title: "Graphic Designer",
+    location: "Marrakech, MA",
+    type: "Part-time",
+    datePosted: "May 3, 2024",
+    description:
+      "Join our creative team to design stunning visuals for our digital products.",
   },
   {
     title: "Product Manager",
-    location: "Casablanca, MA",
-    type: "Part-time",
-    datePosted: "April 2, 2024",
-    description: "We're looking for a product manager to join our team.",
-  },
-  {
-    title: "UX Designer",
-    location: "Meknes, MA",
+    location: "Fes, MA",
     type: "Full-time",
-    datePosted: "July 3, 2024",
-    description: "We're looking for a UX designer to join our team.",
-  },
-  {
-    title: "Data Scientist",
-    location: "Los Angeles, CA",
-    type: "Contract",
-    datePosted: "December 4, 2024",
-    description: "We're looking for a data scientist to join our team.",
+    datePosted: "May 2, 2024",
+    description:
+      "Lead the development and launch of innovative products in a fast-paced environment.",
   },
   {
     title: "Marketing Specialist",
-    location: "Austin, TX",
-    type: "Full-time",
-    datePosted: "March 17, 2024",
-    description: "We're looking for a marketing specialist to join our team.",
+    location: "Tangier, MA",
+    type: "Contract",
+    datePosted: "May 4, 2024",
+    description:
+      "Develop and execute marketing strategies to drive brand awareness and growth.",
   },
   {
-    title: "Machine Learning Engineer",
+    title: "Sales Representative",
+    location: "Agadir, MA",
+    type: "Full-time",
+    datePosted: "April 30, 2024",
+    description:
+      "We need a dynamic salesperson to grow our customer base and drive revenue.",
+  },
+  {
+    title: "HR Manager",
+    location: "Tetouan, MA",
+    type: "Full-time",
+    datePosted: "May 1, 2024",
+    description:
+      "Manage our HR operations and contribute to building a positive work culture.",
+  },
+  {
+    title: "Customer Support Specialist",
+    location: "Oujda, MA",
+    type: "Remote",
+    datePosted: "April 29, 2024",
+    description:
+      "Provide exceptional support to our customers and ensure their satisfaction.",
+  },
+  {
+    title: "Business Analyst",
     location: "Kenitra, MA",
     type: "Full-time",
-    datePosted: "February 10, 2024",
+    datePosted: "May 5, 2024",
     description:
-      "We're looking for a machine learning engineer to join our team.",
+      "Analyze business processes and help us improve efficiency and effectiveness.",
+  },
+  {
+    title: "UI/UX Designer",
+    location: "Meknes, MA",
+    type: "Full-time",
+    datePosted: "May 2, 2024",
+    description:
+      "Design intuitive and engaging user interfaces for our web and mobile applications.",
+  },
+  {
+    title: "DevOps Engineer",
+    location: "Safi, MA",
+    type: "Full-time",
+    datePosted: "April 28, 2024",
+    description:
+      "Join our tech team to streamline our development and deployment processes.",
+  },
+  {
+    title: "Financial Analyst",
+    location: "El Jadida, MA",
+    type: "Full-time",
+    datePosted: "May 3, 2024",
+    description:
+      "Help us make informed financial decisions through detailed analysis and reporting.",
+  },
+  {
+    title: "Content Writer",
+    location: "Nador, MA",
+    type: "Part-time",
+    datePosted: "May 1, 2024",
+    description:
+      "Create compelling content for our blogs, social media, and marketing materials.",
+  },
+  {
+    title: "Operations Manager",
+    location: "Khemisset, MA",
+    type: "Full-time",
+    datePosted: "April 30, 2024",
+    description:
+      "Oversee daily operations and ensure our business runs smoothly and efficiently.",
+  },
+  {
+    title: "Mobile App Developer",
+    location: "Taza, MA",
+    type: "Full-time",
+    datePosted: "May 4, 2024",
+    description:
+      "Develop and maintain high-quality mobile applications for our growing user base.",
+  },
+  {
+    title: "IT Support Technician",
+    location: "Beni Mellal, MA",
+    type: "Full-time",
+    datePosted: "April 29, 2024",
+    description:
+      "Provide technical support and troubleshoot issues for our employees.",
+  },
+  {
+    title: "Digital Marketing Manager",
+    location: "Errachidia, MA",
+    type: "Full-time",
+    datePosted: "May 2, 2024",
+    description:
+      "Lead our digital marketing efforts to drive online engagement and sales.",
+  },
+  {
+    title: "Supply Chain Coordinator",
+    location: "Ksar El Kebir, MA",
+    type: "Full-time",
+    datePosted: "May 3, 2024",
+    description:
+      "Manage our supply chain operations to ensure timely delivery of products.",
+  },
+  {
+    title: "Legal Advisor",
+    location: "Larache, MA",
+    type: "Full-time",
+    datePosted: "April 30, 2024",
+    description:
+      "Provide legal advice and support to ensure compliance with regulations.",
+  },
+  {
+    title: "Cybersecurity Analyst",
+    location: "Guelmim, MA",
+    type: "Full-time",
+    datePosted: "May 1, 2024",
+    description:
+      "Protect our systems and data from cyber threats and vulnerabilities.",
+  },
+  {
+    title: "Project Manager",
+    location: "Ouarzazate, MA",
+    type: "Full-time",
+    datePosted: "May 4, 2024",
+    description:
+      "Lead and manage projects to ensure they are completed on time and within budget.",
   },
 ];
