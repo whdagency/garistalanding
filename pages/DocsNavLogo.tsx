@@ -10,13 +10,13 @@ const NavLogo = () => {
         <clipPath id="3eb355032e">
           <path
             d="M 52.742188 106.074219 L 187.554688 106.074219 L 187.554688 227 L 52.742188 227 Z M 52.742188 106.074219 "
-            clip-rule="nonzero"
+            clipRule="nonzero"
           />
         </clipPath>
         <clipPath id="079ea4f743">
           <path
             d="M 52.742188 12.910156 L 187.359375 12.910156 L 187.359375 134.816406 L 52.742188 134.816406 Z M 52.742188 12.910156 "
-            clip-rule="nonzero"
+            clipRule="nonzero"
           />
         </clipPath>
       </defs>
