@@ -247,7 +247,7 @@ const Contact = () => {
                   <div className="flex flex-col gap-2">
                     <p>{t("Email:")}</p>
                     <Link
-                      href={"mailto:contact@garista.com"}
+                      href={"mailto:Hello@garista.com"}
                       className="leading-relaxed text-sm md:text-base"
                     >
                       Hello@garista.com
