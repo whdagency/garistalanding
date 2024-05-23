@@ -136,8 +136,8 @@ const ThemeOne = ({
                 <div
                   key={idx}
                   className={`flex items-center justify-center gap-1 px-2 py-1  rounded-full ${
-                    idx === 0 ? "bg-green-500 text-white" : ""
-                  } hover:bg-green-500 hover:text-white cursor-pointer`}
+                    idx === 0 ? "bg-primaryColor text-white" : ""
+                  } hover:bg-primaryColor hover:text-white cursor-pointer`}
                 >
                   <item.icon size={10} />
                   <p className="text-xs font-medium">{item.name}</p>
