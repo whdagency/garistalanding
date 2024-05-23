@@ -77,9 +77,11 @@ declare interface PricingPlan {
 }
 
 declare interface Job {
+  jobLink: string
   title: string;
   location: string;
   type: string;
   datePosted: string;
   description: string;
+  jobEmailBody: string;
 }

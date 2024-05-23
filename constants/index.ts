@@ -300,7 +300,7 @@ export const pricingPlan: PricingPlan[] = [
   },
   {
     type: "Business",
-    price: "399 Dhs",
+    price: "399 USD",
     subscription: "Month",
     description: "Ideal for restaurants with 80 covers",
     buttonText: "Choose Business",
@@ -332,6 +332,8 @@ export const pricingPlan: PricingPlan[] = [
 // Jobs Content
 export const sampleJobs: Job[] = [
   {
+    jobEmailBody: "Dear Hiring Team, I am excited to apply for the this position. Attached are my resume and portfolio. Looking forward to discussing this opportunity further.",
+    jobLink: "Jobs@Garista.com",
     title: "Data Scientist",
     location: "Casablanca, MA",
     type: "Full-time",
@@ -340,6 +342,8 @@ export const sampleJobs: Job[] = [
       "Seeking a data enthusiast to help us derive insights from complex data sets.",
   },
   {
+    jobEmailBody: "Dear Hiring Team, I am excited to apply for the this position. Attached are my resume and portfolio. Looking forward to discussing this opportunity further.",
+    jobLink: "Jobs@Garista.com",
     title: "Graphic Designer",
     location: "Marrakech, MA",
     type: "Part-time",
@@ -348,6 +352,8 @@ export const sampleJobs: Job[] = [
       "Join our creative team to design stunning visuals for our digital products.",
   },
   {
+    jobEmailBody: "Dear Hiring Team, I am excited to apply for the this position. Attached are my resume and portfolio. Looking forward to discussing this opportunity further.",
+    jobLink: "Jobs@Garista.com",
     title: "Product Manager",
     location: "Fes, MA",
     type: "Full-time",
@@ -356,6 +362,8 @@ export const sampleJobs: Job[] = [
       "Lead the development and launch of innovative products in a fast-paced environment.",
   },
   {
+    jobEmailBody: "Dear Hiring Team, I am excited to apply for the this position. Attached are my resume and portfolio. Looking forward to discussing this opportunity further.",
+    jobLink: "Jobs@Garista.com",
     title: "Marketing Specialist",
     location: "Tangier, MA",
     type: "Contract",
@@ -364,6 +372,8 @@ export const sampleJobs: Job[] = [
       "Develop and execute marketing strategies to drive brand awareness and growth.",
   },
   {
+    jobEmailBody: "Dear Hiring Team, I am excited to apply for the this position. Attached are my resume and portfolio. Looking forward to discussing this opportunity further.",
+    jobLink: "Jobs@Garista.com",
     title: "Sales Representative",
     location: "Agadir, MA",
     type: "Full-time",
@@ -372,6 +382,8 @@ export const sampleJobs: Job[] = [
       "We need a dynamic salesperson to grow our customer base and drive revenue.",
   },
   {
+    jobEmailBody: "Dear Hiring Team, I am excited to apply for the this position. Attached are my resume and portfolio. Looking forward to discussing this opportunity further.",
+    jobLink: "Jobs@Garista.com",
     title: "HR Manager",
     location: "Tetouan, MA",
     type: "Full-time",
@@ -380,6 +392,8 @@ export const sampleJobs: Job[] = [
       "Manage our HR operations and contribute to building a positive work culture.",
   },
   {
+    jobEmailBody: "Dear Hiring Team, I am excited to apply for the this position. Attached are my resume and portfolio. Looking forward to discussing this opportunity further.",
+    jobLink: "Jobs@Garista.com",
     title: "Customer Support Specialist",
     location: "Oujda, MA",
     type: "Remote",
@@ -388,6 +402,8 @@ export const sampleJobs: Job[] = [
       "Provide exceptional support to our customers and ensure their satisfaction.",
   },
   {
+    jobEmailBody: "Dear Hiring Team, I am excited to apply for the this position. Attached are my resume and portfolio. Looking forward to discussing this opportunity further.",
+    jobLink: "Jobs@Garista.com",
     title: "Business Analyst",
     location: "Kenitra, MA",
     type: "Full-time",
@@ -396,6 +412,8 @@ export const sampleJobs: Job[] = [
       "Analyze business processes and help us improve efficiency and effectiveness.",
   },
   {
+    jobEmailBody: "Dear Hiring Team, I am excited to apply for the this position. Attached are my resume and portfolio. Looking forward to discussing this opportunity further.",
+    jobLink: "Jobs@Garista.com",
     title: "UI/UX Designer",
     location: "Meknes, MA",
     type: "Full-time",
@@ -404,6 +422,8 @@ export const sampleJobs: Job[] = [
       "Design intuitive and engaging user interfaces for our web and mobile applications.",
   },
   {
+    jobEmailBody: "Dear Hiring Team, I am excited to apply for the this position. Attached are my resume and portfolio. Looking forward to discussing this opportunity further.",
+    jobLink: "Jobs@Garista.com",
     title: "DevOps Engineer",
     location: "Safi, MA",
     type: "Full-time",
@@ -412,6 +432,8 @@ export const sampleJobs: Job[] = [
       "Join our tech team to streamline our development and deployment processes.",
   },
   {
+    jobEmailBody: "Dear Hiring Team, I am excited to apply for the this position. Attached are my resume and portfolio. Looking forward to discussing this opportunity further.",
+    jobLink: "Jobs@Garista.com",
     title: "Financial Analyst",
     location: "El Jadida, MA",
     type: "Full-time",
@@ -420,6 +442,8 @@ export const sampleJobs: Job[] = [
       "Help us make informed financial decisions through detailed analysis and reporting.",
   },
   {
+    jobEmailBody: "Dear Hiring Team, I am excited to apply for the this position. Attached are my resume and portfolio. Looking forward to discussing this opportunity further.",
+    jobLink: "Jobs@Garista.com",
     title: "Content Writer",
     location: "Nador, MA",
     type: "Part-time",
@@ -428,6 +452,8 @@ export const sampleJobs: Job[] = [
       "Create compelling content for our blogs, social media, and marketing materials.",
   },
   {
+    jobEmailBody: "Dear Hiring Team, I am excited to apply for the this position. Attached are my resume and portfolio. Looking forward to discussing this opportunity further.",
+    jobLink: "Jobs@Garista.com",
     title: "Operations Manager",
     location: "Khemisset, MA",
     type: "Full-time",
@@ -436,6 +462,8 @@ export const sampleJobs: Job[] = [
       "Oversee daily operations and ensure our business runs smoothly and efficiently.",
   },
   {
+    jobEmailBody: "Dear Hiring Team, I am excited to apply for the this position. Attached are my resume and portfolio. Looking forward to discussing this opportunity further.",
+    jobLink: "Jobs@Garista.com",
     title: "Mobile App Developer",
     location: "Taza, MA",
     type: "Full-time",
@@ -444,6 +472,8 @@ export const sampleJobs: Job[] = [
       "Develop and maintain high-quality mobile applications for our growing user base.",
   },
   {
+    jobEmailBody: "Dear Hiring Team, I am excited to apply for the this position. Attached are my resume and portfolio. Looking forward to discussing this opportunity further.",
+    jobLink: "Jobs@Garista.com",
     title: "IT Support Technician",
     location: "Beni Mellal, MA",
     type: "Full-time",
@@ -452,6 +482,8 @@ export const sampleJobs: Job[] = [
       "Provide technical support and troubleshoot issues for our employees.",
   },
   {
+    jobEmailBody: "Dear Hiring Team, I am excited to apply for the this position. Attached are my resume and portfolio. Looking forward to discussing this opportunity further.",
+    jobLink: "Jobs@Garista.com",
     title: "Digital Marketing Manager",
     location: "Errachidia, MA",
     type: "Full-time",
@@ -460,6 +492,8 @@ export const sampleJobs: Job[] = [
       "Lead our digital marketing efforts to drive online engagement and sales.",
   },
   {
+    jobEmailBody: "Dear Hiring Team, I am excited to apply for the this position. Attached are my resume and portfolio. Looking forward to discussing this opportunity further.",
+    jobLink: "Jobs@Garista.com",
     title: "Supply Chain Coordinator",
     location: "Ksar El Kebir, MA",
     type: "Full-time",
@@ -468,6 +502,8 @@ export const sampleJobs: Job[] = [
       "Manage our supply chain operations to ensure timely delivery of products.",
   },
   {
+    jobEmailBody: "Dear Hiring Team, I am excited to apply for the this position. Attached are my resume and portfolio. Looking forward to discussing this opportunity further.",
+    jobLink: "Jobs@Garista.com",
     title: "Legal Advisor",
     location: "Larache, MA",
     type: "Full-time",
@@ -476,6 +512,8 @@ export const sampleJobs: Job[] = [
       "Provide legal advice and support to ensure compliance with regulations.",
   },
   {
+    jobEmailBody: "Dear Hiring Team, I am excited to apply for the this position. Attached are my resume and portfolio. Looking forward to discussing this opportunity further.",
+    jobLink: "Jobs@Garista.com",
     title: "Cybersecurity Analyst",
     location: "Guelmim, MA",
     type: "Full-time",
@@ -484,6 +522,8 @@ export const sampleJobs: Job[] = [
       "Protect our systems and data from cyber threats and vulnerabilities.",
   },
   {
+    jobEmailBody: "Dear Hiring Team, I am excited to apply for the this position. Attached are my resume and portfolio. Looking forward to discussing this opportunity further.",
+    jobLink: "Jobs@Garista.com",
     title: "Project Manager",
     location: "Ouarzazate, MA",
     type: "Full-time",

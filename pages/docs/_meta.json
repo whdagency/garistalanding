@@ -8,10 +8,18 @@
       "pagination": true
     }
   },
-  "index": "Introduction",
-  "about": "About Garista",
-  "getting-started": "Getting Started",
-  "menu": "Menu Management",
-  "jobs": "Job Listings",
-  "support": "Support"
+  "index": "What is Garista?",
+  "create-and-customize-menu": "Create and Customize Menu",
+  "manage-dish-categories": "Manage Dish Categories",
+  "manage-dishes": "Manage Dishes",
+  "manage-drinks": "Manage Drinks",
+  "manage-qr-codes": " Manage Qr Codes",
+  "manage-staff": " Manage Your Staff",
+  "orders-management": "Orders Management",
+  "promotions-management": "Promotions Management",
+  "claims": "Claims",
+  "profile": "Profile Section",
+  "reporting": "Reporting",
+  "dashboard": "Dashboard"
 }
+

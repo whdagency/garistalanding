@@ -58,7 +58,7 @@ const PricingCard = ({
 
           <div className="mb-10 flex flex-col gap-5">{children}</div>
 
-          <Link href="#">
+          <Link href="/#Contact">
             <Button
               className={`group flex flex-row items-center justify-center gap-x-2 w-full transition-colors duration-300 ${
                 active &&

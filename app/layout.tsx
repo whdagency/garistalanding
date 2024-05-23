@@ -67,7 +67,7 @@ export default function RootLayout({
     <I18nextProvider i18n={i18next}>
       <html lang="en">
         <body
-          className={`${myLocalFont.className} relative overflow-x-hidden text-secondaryBg`}
+          className={`${myLocalFont.className} scroll-smooth relative overflow-x-hidden text-secondaryBg`}
         >
           {children}
 

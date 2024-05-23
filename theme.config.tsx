@@ -10,7 +10,7 @@ const config: DocsThemeConfig = {
     <h1 className="flex flex-row items-center justify-start gap-1">
       <NavLogo />
       {/* Text */}
-      <span className="text-lg font-medium">Garista Docs</span>
+      <span className="text-lg font-medium">Garista Documentation</span>
     </h1>
   ),
   logoLink: "/docs",
@@ -42,7 +42,7 @@ const config: DocsThemeConfig = {
   },
   useNextSeoProps() {
     return {
-      titleTemplate: "%s | Garista Docs",
+      titleTemplate: "%s | Garista Documentation",
       defaultTitle: "Garista",
       description:
         "The Ultimate digital menu solution for restaurants and cuisines",

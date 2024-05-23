@@ -12,6 +12,8 @@ import Footer from "@/components/Footer";
 import Nav from "@/components/Nav";
 import { sampleJobs } from "@/constants";
 import React, { useEffect, useState } from "react";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 const Jobs: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -113,13 +115,26 @@ const Jobs: React.FC = () => {
                 <strong>Type:</strong> {job.type}
               </p>
               <p>
-                <strong>Posted:</strong> {job.datePosted}
+                <strong>Posted:</strong>
+                {job.datePosted}
               </p>
+
               <p className="mt-4 text-gray-500 text-sm">{job.description}</p>
 
-              <button className="bg-primaryColor hover:scale-105 transition text-white font-bold py-2 px-4 rounded mt-4">
-                Apply Now
-              </button>
+              <Button
+                asChild
+                className="bg-primaryColor hover:scale-105 transition text-white font-bold py-2 px-4 rounded mt-4"
+              >
+                <Link
+                  href={`mailto:${job.jobLink}?subject=${encodeURIComponent(
+                    `Application for ${job.title} role`
+                  )}&body=${encodeURIComponent(job.jobEmailBody)}`}
+                  target="_blank"
+                  className=""
+                >
+                  Apply Now
+                </Link>
+              </Button>
             </div>
           ))}
         </div>

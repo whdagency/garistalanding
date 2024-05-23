@@ -5,9 +5,10 @@ export default function MyApp({ Component, pageProps }) {
   return (
     <ThemeProvider
       attribute="class"
-      defaultTheme="system"
+      defaultTheme="dark"
       enableSystem
       disableTransitionOnChange
+      themes={["light", "dark"]}
     >
       <Component {...pageProps} />
     </ThemeProvider>
