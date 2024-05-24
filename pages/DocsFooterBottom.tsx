@@ -5,7 +5,6 @@ import { useTranslation } from "react-i18next";
 import Link from "next/link";
 import Image from "next/image";
 import { useTheme } from "next-themes";
-import LangToggle from "@/components/LanguageToggle";
 
 const DocsFooterBottom = () => {
   const { t } = useTranslation("global");
@@ -62,8 +61,6 @@ const DocsFooterBottom = () => {
           )}
         </div>
       </div>
-
-      <LangToggle />
     </>
   );
 };
