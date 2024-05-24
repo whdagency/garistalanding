@@ -11,6 +11,7 @@ declare interface InteractiveMenuContentCategory {
   name: string;
   catImage: string;
   id: string;
+  currency: string;
 }
 
 declare interface InteractiveMenuButton {

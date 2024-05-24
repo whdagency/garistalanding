@@ -1,31 +1,28 @@
 import { interactiveMenuContent } from "@/constants";
 import { Search } from "lucide-react";
+import { AiOutlinePlus } from "react-icons/ai";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useCallback, useEffect, useState } from "react";
 
 const InteractiveMenu = () => {
   const {
     selectedBgColor,
-    selectedHeader,
     selectedLayout,
     selectedPrimaryColor,
     selectedSecondaryColor,
-    selectedTheme,
   } = interactiveMenuContent.themeSelection;
 
   return (
     <div className="relative flex flex-col items-center justify-center w-full max-h-screen overflow-hidden">
       <div className="flex flex-col max-w-full max-h-full gap-4 overflow-auto">
-        <div className="relative border-black dark:border-black bg-black border-[14px] rounded-[2.5rem] w-[240px] max-w-full">
-          <div className="rounded-[2rem] scrollbar-hide w-full h-[452px] bg-white dark:bg-black overflow-y-scroll">
+        <div className="relative border-black dark:border-black bg-black border-[14px] rounded-[2rem] w-[280px] max-w-full">
+          <div className="rounded-[1rem] scrollbar-hide w-full h-[500px] bg-white dark:bg-black overflow-y-scroll">
             <ThemeOne
               selectedBgColor={selectedBgColor}
-              selectedHeader={selectedHeader}
               selectedLayout={selectedLayout}
               selectedPrimaryColor={selectedPrimaryColor}
               selectedSecondaryColor={selectedSecondaryColor}
-              selectedTheme={selectedTheme}
             />
           </div>
         </div>
@@ -36,210 +33,314 @@ const InteractiveMenu = () => {
 
 const ThemeOne = ({
   selectedBgColor,
-  selectedHeader,
   selectedLayout,
   selectedPrimaryColor,
   selectedSecondaryColor,
-  selectedTheme,
-}: InteractiveMenuProps) => {
-  // All, Steaks, Pizzas, Burgers, Sandwichm Juice, Tacos
+}: Omit<InteractiveMenuProps, "selectedTheme" | "selectedHeader">) => {
+  const [filteredProducts, setFilteredProducts] = useState(
+    interactiveMenuContent.categories
+  );
+  const [searchTerm, setSearchTerm] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState("all");
+
+  // Tab Hover Effect
+  const handleHoverActive = (
+    e: React.MouseEvent<HTMLDivElement, MouseEvent>
+  ) => {
+    e.currentTarget.style.backgroundColor = selectedPrimaryColor;
+    e.currentTarget.style.color = selectedBgColor;
+    e.currentTarget.style.border = `1px solid ${selectedPrimaryColor}`;
+  };
+
+  // Tab Hover Effect
+  const handleHoverInactive = (
+    e: React.MouseEvent<HTMLDivElement, MouseEvent>
+  ) => {
+    e.currentTarget.style.backgroundColor = "";
+    e.currentTarget.style.color = selectedSecondaryColor;
+    e.currentTarget.style.border = "";
+  };
+
+  const getFilteredProducts = useCallback(() => {
+    if (searchTerm) {
+      const newFilteredProducts = interactiveMenuContent.categories.filter(
+        (product) =>
+          product.name.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+      setFilteredProducts(newFilteredProducts);
+    } else {
+      if (selectedCategory === "all") {
+        setFilteredProducts(interactiveMenuContent.categories);
+      } else {
+        const newFilteredProducts = interactiveMenuContent.categories.filter(
+          (product) => product.id === selectedCategory
+        );
+        setFilteredProducts(newFilteredProducts);
+      }
+    }
+  }, [searchTerm, selectedCategory]);
+
+  useEffect(() => {
+    getFilteredProducts();
+  }, [getFilteredProducts, selectedCategory]);
 
   return (
-    <section className="flex flex-col w-full min-h-screen bg-transparent">
-      {/* Header */}
-      <div className="w-full h-[150px] relative">
-        {/* Banner Overlay */}
-        <div className="opacity-35 absolute top-0 left-0 w-full h-full bg-black"></div>
-
-        {/* Banner Image */}
-        <Image
-          src={interactiveMenuContent.bannerImage}
-          className="object-cover w-full h-full"
-          alt="Banner Image"
-          width={500}
-          height={500}
-        />
-
-        <div className="absolute top-0 left-0 flex items-center justify-center w-full h-full">
-          <h1 className="text-lg font-bold text-white uppercase">
-            House of Taste
-          </h1>
-        </div>
-
-        {/* Social Icons and Logo */}
-        <div className="absolute top-0 left-0 flex flex-col items-center justify-center w-full h-full">
+    <section
+      style={{ backgroundColor: `${selectedBgColor}` }}
+      className="flex flex-col w-full min-h-screen"
+    >
+      {/* Menu Header */}
+      <div className="px-2 py-3">
+        <div className="relative mx-auto h-[170px] max-w-md overflow-hidden rounded-[.5rem] shadow">
+          {/* Banner */}
+          <div className="bg-secondary-gray overflow-hidden">
+            <Image
+              src={interactiveMenuContent.bannerImage}
+              loading="lazy"
+              className="max-h-44 bg-secondary-gray object-cover w-full h-screen"
+              alt={interactiveMenuContent.name}
+              width={100}
+              height={100}
+            />
+          </div>
+          {/* Banner Overlay and Restaurant Name */}
+          <div className="bg-black/50 absolute inset-0 z-10"></div>
+          <div className="bottom-16 absolute inset-x-0 z-20 p-4 text-center">
+            <h3 className="text-xl font-medium text-white">
+              {interactiveMenuContent.name}
+            </h3>
+          </div>
+          {/* cover_image currency description email id logo name phone resto_id
+        slug  */}
           {/* Social Icons */}
-          <div className="absolute top-0 left-0 px-4 mt-4">
-            <div className="flex items-center gap-4">
-              {interactiveMenuContent.socials.map((item) => (
-                <Link key={item.name} href={item.url} target="_blank">
-                  <item.icon size={20} className="text-white" />
+          <div className="absolute inset-x-0 bottom-0 z-20 flex justify-between p-3 text-center">
+            <div className="flex gap-2">
+              {interactiveMenuContent.socials.map((social, id) => (
+                <Link key={id} href={social.url} target="_blank">
+                  <social.icon color="white" size={17} />
                 </Link>
               ))}
             </div>
           </div>
-
-          {/* Info Button */}
-          <div className="absolute top-0 right-0 mt-4">
-            {selectedHeader === "logo-header" ? (
-              <Image
-                src={interactiveMenuContent.infoButton}
-                alt="Info"
-                className="h-[25px] w-[25px] cursor-pointer mr-4"
-                width={25}
-                height={25}
-              />
-            ) : (
-              <h2 className="text-lg font-bold text-white mr-2">LOGO</h2>
-            )}
-          </div>
         </div>
       </div>
 
-      {/* Products Section */}
-      <div
-        style={{
-          backgroundColor: `${selectedBgColor}`,
-          color: `${selectedPrimaryColor}`,
-        }}
-        className="flex-1 rounded-tl-[15px] rounded-tr-[15px] z-20 -mt-4 w-full mx-auto"
-      >
-        {/* Profile Banner */}
-        <div className="w-full -mt-5">
-          <Image
-            src={interactiveMenuContent.profileBanner}
-            alt="Profile Banner"
-            className="z-20 object-cover w-14 h-16 mx-auto -mt-3 border border-orange-400 rounded-lg"
-            width={80}
-            height={80}
-          />
-        </div>
-
-        {/* Store Details */}
-        <div className="flex flex-col gap-1 pb-24 mt-4 w-full">
-          <div className="flex flex-col gap-3 px-2">
-            {/* Search Input */}
-            <div className="relative rounded-full w-full mx-auto bg-gray-400">
-              <input
-                type="text"
-                placeholder="what would you like to eat today ?"
-                className="w-full rounded-full px-3 py-1 border border-secondaryBg focus:outline-none focus:ring-0 text-xs placeholder:text-[9px]"
-              />
-              <button className="absolute right-2 top-[6px]">
-                <Search size={15} />
-              </button>
-            </div>
-
-            {/* Top Categories */}
-            <div className="scrollbar-hide overflow-x-scroll gap-2 flex items-center">
-              {interactiveMenuContent.menuCategories.map((item, idx) => (
-                <div
-                  key={idx}
-                  className={`flex items-center justify-center gap-1 px-2 py-1  rounded-full ${
-                    idx === 0 ? "bg-primaryColor text-white" : ""
-                  } hover:bg-primaryColor hover:text-white cursor-pointer`}
-                >
-                  <item.icon size={10} />
-                  <p className="text-xs font-medium">{item.name}</p>
-                </div>
-              ))}
-            </div>
+      {/* Menu Content */}
+      <div className="w-full mx-auto">
+        {/* Search & Categories Section */}
+        <div className="flex flex-col gap-3 px-2 py-4">
+          {/* Categories */}
+          <div className="scrollbar-hide flex items-center gap-2 overflow-x-scroll">
+            {interactiveMenuContent.categories.map((item, idx) => (
+              <div
+                key={idx}
+                className={`flex items-center justify-center gap-1 px-4 py-1  rounded-[0.5rem] cursor-pointer border border-gray-300 shadow-md`}
+                style={{
+                  backgroundColor:
+                    item.id === selectedCategory ? selectedPrimaryColor : "",
+                  color:
+                    item.id === selectedCategory
+                      ? selectedBgColor
+                      : selectedSecondaryColor,
+                  border:
+                    item.id === selectedCategory
+                      ? `1px solid ${selectedPrimaryColor}`
+                      : "",
+                }}
+                onClick={() => setSelectedCategory(item.id)}
+                onMouseOver={(e) => {
+                  item.id !== selectedCategory ? handleHoverActive(e) : null;
+                }}
+                onMouseOut={(e) => {
+                  item.id !== selectedCategory ? handleHoverInactive(e) : null;
+                }}
+              >
+                <p className="text-xs font-medium capitalize">{item.id}</p>
+              </div>
+            ))}
           </div>
 
-          {selectedLayout === "theme-grid" && (
-            <div className="grid grid-cols-2 gap-3 px-2 py-4">
-              {interactiveMenuContent.categories.map(
-                ({ name, catImage, id }) => (
-                  <div
-                    key={id}
-                    style={{
-                      backgroundImage: `linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(${catImage})`,
-                    }}
-                    className={`rounded-lg w-full h-[120px] bg-center bg-contain bg-no-repeat shadow-md relative transition-all hover:bg-blend-difference hover:bg-bottom`}
-                  >
-                    <Link href={`#`}>
-                      <h1
-                        style={{
-                          color: `${selectedSecondaryColor}`,
-                        }}
-                        className="relative w-full h-full p-3 text-sm font-medium rounded-lg"
-                      >
-                        <span className="top-2 left-2 absolute px-2 py-1 text-xs text-center text-white bg-black rounded-full">
-                          {name}
-                        </span>
-                      </h1>
-                    </Link>
-                  </div>
-                )
-              )}
+          {/* Search Input */}
+          <div className="relative w-full mx-auto bg-transparent rounded-full">
+            <button className="absolute left-2 top-[10px] flex flex-col items-center justify-center pointer-events-none">
+              <Search size={13} className="text-gray-500" />
+            </button>
+            <input
+              style={{ color: `${selectedSecondaryColor}` }}
+              type="search"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              placeholder="Search menu..."
+              className="w-full rounded-[.5rem] pl-7 pr-2 py-2 border border-gray-300 focus:outline-none focus:ring-0 text-xs placeholder:text-xs bg-transparent"
+            />
+          </div>
+        </div>
+
+        {/* Products based on the selected category */}
+        <div className="flex-col w-full gap-1 pb-24 mt-2">
+          <div className="flex items-center justify-between px-2">
+            <h2
+              style={{ color: `${selectedSecondaryColor}` }}
+              className="text-base font-medium capitalize"
+            >
+              {selectedCategory}
+            </h2>
+          </div>
+
+          {!(filteredProducts?.length > 0) ? (
+            <div
+              style={{ color: `${selectedSecondaryColor}` }}
+              className="w-full my-3 text-center"
+            >
+              No Products Found
             </div>
-          )}
-
-          {selectedLayout === "theme-list" && (
-            <div className="flex flex-col w-full gap-3 px-2 py-4">
-              {interactiveMenuContent.categories.map(
-                ({ name, description, catImage, id, price }) => (
-                  <Link
-                    href={"#"}
-                    key={id}
-                    className="group grid items-start grid-cols-2 gap-5"
-                  >
-                    <div className="w-full">
-                      <h1
-                        style={{ color: `${selectedPrimaryColor}` }}
-                        className="text-base font-medium"
-                      >
-                        {name}
-                      </h1>
-                      <p
-                        style={{ color: `${selectedPrimaryColor}` }}
-                        className="text-[10px] leading-snug opacity-80"
-                      >
-                        {description}
-                      </p>
-                      <p
-                        style={{ color: `${selectedPrimaryColor}` }}
-                        className="pt-3 text-sm font-semibold opacity-70"
-                      >
-                        {price} MAD
-                      </p>
-                    </div>
-
-                    <div className="w-[100px] h-[100px] bg-black/50 group-hover:bg-black/70 rounded-lg border border-gray-200">
+          ) : (
+            <>
+              {/* Categories Grid */}
+              {selectedLayout === "theme-grid" && (
+                <div className="grid grid-cols-2 gap-3 px-2 py-4">
+                  {filteredProducts?.map(({ id, ...item }) => (
+                    <div
+                      key={id}
+                      className="group items-center justify-center h-full w-full overflow-hidden p-1.5 text-lg font-semibold rounded-[8px] cursor-pointer transition-colors border border-gray-300"
+                    >
                       <Image
-                        src={catImage}
-                        alt="Category"
-                        className="group-hover:scale-105 object-cover w-full h-full transition rounded-lg"
-                        width={500}
-                        height={500}
+                        src={item.catImage}
+                        alt="Menu Icon"
+                        className="w-full group-hover:scale-[1.02] transition object-cover rounded-[10px] h-24"
+                        width={100}
+                        height={100}
+                        loading="lazy"
                       />
+
+                      <div
+                        style={{ color: selectedSecondaryColor }}
+                        className="flex items-center justify-between gap-2 px-1 pt-2"
+                      >
+                        <div className="flex flex-col gap-1">
+                          <h2 className="text-xs">
+                            {item.name.length > 20
+                              ? item.name.slice(0, 20) + "..."
+                              : item.name}
+                          </h2>
+
+                          <p className="text-start text-xs">
+                            {item.price} {item.currency}
+                          </p>
+                        </div>
+
+                        <button
+                          type="button"
+                          style={{
+                            backgroundColor: selectedPrimaryColor,
+                            color: selectedBgColor,
+                          }}
+                          className="leading-0 w-fit p-1 flex items-center justify-center rounded-[8px]"
+                        >
+                          <AiOutlinePlus
+                            style={{
+                              color: selectedBgColor,
+                            }}
+                          />
+                        </button>
+                      </div>
                     </div>
-                  </Link>
-                )
+                  ))}
+                </div>
               )}
-            </div>
+
+              {/* Categories List */}
+              {selectedLayout === "theme-list" && (
+                <div className="grid w-full grid-cols-1 gap-4 px-2 py-4">
+                  {filteredProducts?.map(
+                    ({ name, catImage, id, price, currency }) => (
+                      <Link
+                        href={"#"}
+                        key={id}
+                        className="group place-items-end grid items-start grid-cols-2 gap-5 p-2 border border-gray-300"
+                      >
+                        <div className="w-full">
+                          <div className="text-start flex flex-col gap-3">
+                            {/* Item Name */}
+                            <h2
+                              style={{ color: `${selectedSecondaryColor}` }}
+                              className="text-wrap text-sm"
+                            >
+                              {name.length > 20
+                                ? name.slice(0, 20) + "..."
+                                : name}
+                            </h2>
+
+                            {/* Item Price */}
+                            <p
+                              style={{ color: `${selectedSecondaryColor}` }}
+                              className="opacity-80 text-base font-medium"
+                            >
+                              {price} {currency}
+                            </p>
+
+                            {/* Add to cart */}
+                            <button
+                              type="button"
+                              style={{
+                                backgroundColor: selectedPrimaryColor,
+                                color: selectedBgColor,
+                              }}
+                              className="leading-0 w-full px-2 py-1 mt-auto flex items-center justify-center rounded-[5px]"
+                            >
+                              <AiOutlinePlus
+                                style={{
+                                  color: selectedBgColor,
+                                }}
+                              />
+                            </button>
+                          </div>
+                        </div>
+
+                        <div className="w-[100px] h-[100px] bg-black/50 group-hover:bg-black/70 rounded-lg border border-gray-200">
+                          <Image
+                            src={catImage}
+                            alt="Category"
+                            className="group-hover:scale-105 group-hover:border-gray-200 object-cover w-full h-full transition border rounded-lg"
+                            loading="lazy"
+                            width={100}
+                            height={100}
+                          />
+                        </div>
+                      </Link>
+                    )
+                  )}
+                </div>
+              )}
+            </>
           )}
         </div>
 
-        {/* Menu Buttons */}
-        <div className="flex flex-col justify-center items-center max-w-full">
-          <div
-            style={{ backgroundColor: `${selectedPrimaryColor}` }}
-            className="bottom-2 rounded-2xl absolute"
+        {/* Menu Footer Buttons */}
+        <div className="flex flex-col items-center justify-center max-w-full">
+          <footer
+            style={{ backgroundColor: `${selectedBgColor}` }}
+            className="rounded-b-2xl absolute bottom-0 flex items-center justify-around w-full px-1 py-2 mx-auto shadow-lg"
           >
-            <ul className="flex flex-row items-center justify-between gap-5 px-5 py-1">
-              {interactiveMenuContent.menuButtons.map((item) => (
-                <li key={item.name}>
-                  <button type="button" className="py-2">
-                    <item.icon
-                      size={25}
-                      style={{ color: `${selectedSecondaryColor}` }}
-                    />
-                  </button>
-                </li>
-              ))}
-            </ul>
-          </div>
+            {interactiveMenuContent.menuButtons.map((item, id) => (
+              <Link
+                href={`#`}
+                key={id}
+                className="flex flex-col items-center justify-center gap-1"
+              >
+                <item.icon
+                  style={{ color: `${selectedSecondaryColor}` }}
+                  className="w-5 h-5"
+                />
+                <span
+                  style={{ color: `${selectedSecondaryColor}` }}
+                  className="text-xs font-medium"
+                >
+                  {item.name}
+                </span>
+              </Link>
+            ))}
+          </footer>
         </div>
       </div>
     </section>
