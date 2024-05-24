@@ -23,9 +23,8 @@ import {
   FaTiktok,
   FaBreadSlice,
 } from "react-icons/fa";
-import { BiSolidFoodMenu, BiDrink } from "react-icons/bi";
-import { TbMessage2Cog, TbBowlSpoon, TbBurger, TbMeat, TbMessageQuestion } from "react-icons/tb";
-import { PiCallBell } from "react-icons/pi";
+import { BiDrink } from "react-icons/bi";
+import { TbBowlSpoon, TbBurger, TbMeat, TbMessageQuestion } from "react-icons/tb";
 
 // Interactive Menu Content
 export const interactiveMenuContent: InteractiveMenuContent = {
@@ -37,8 +36,8 @@ export const interactiveMenuContent: InteractiveMenuContent = {
     selectedPrimaryColor: "#28509E",
     selectedSecondaryColor: "#262326",
   },
-  name: "Hunger man go",
-  description: "Hunger man go",
+  name: "Savory Haven Bistro",
+  description: "Savory Haven Bistro",
   image: "/Menu/theme-1.png",
   bannerImage: "/Menu/menu-banner-1.jpeg",
   profileBanner: "/Menu/menu-banner-1.jpeg",
@@ -71,7 +70,7 @@ export const interactiveMenuContent: InteractiveMenuContent = {
       price: Math.floor(Math.random() * 80),
       description: "All Toppings",
       name: "Hamburger",
-      catImage: `/Menu/${Math.floor(Math.random() * 5)}.png`,
+      catImage: "/Menu/1.png",
       currency: 'USD',
       id: "all",
     },

@@ -38,7 +38,7 @@ export default function Home() {
         </div>
 
         <div className="max-[1271px] mx-auto md:px-6">
-          <div className="relative flex flex-col gap-4 md:flex-row justify-center rounded shadow">
+          <div className="relative flex flex-col items-center gap-4 lg:flex-row justify-center rounded shadow">
             <Image
               className="rounded-xl"
               src="/Home/home-dashboard.png"
@@ -48,7 +48,7 @@ export default function Home() {
               sizes="(max-width: 479px) 93vw, (max-width: 767px) 94vw, (max-width: 991px) 86vw, (max-width: 1439px) 95vw, 985px"
             />
 
-            <div className="md:absolute right-0 -bottom-10">
+            <div className="lg:absolute -right-5 -bottom-16">
               <InteractiveMenu />
             </div>
           </div>

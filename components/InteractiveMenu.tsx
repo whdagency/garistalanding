@@ -4,6 +4,8 @@ import { AiOutlinePlus } from "react-icons/ai";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useCallback, useEffect, useState } from "react";
+import { DeviceFrameset } from "react-device-frameset";
+import "react-device-frameset/styles/marvel-devices.min.css";
 
 const InteractiveMenu = () => {
   const {
@@ -14,20 +16,54 @@ const InteractiveMenu = () => {
   } = interactiveMenuContent.themeSelection;
 
   return (
-    <div className="relative flex flex-col items-center justify-center w-full max-h-screen overflow-hidden">
-      <div className="flex flex-col max-w-full max-h-full gap-4 overflow-auto">
-        <div className="relative border-black dark:border-black bg-black border-[14px] rounded-[2rem] w-[280px] max-w-full">
-          <div className="rounded-[1rem] scrollbar-hide w-full h-[500px] bg-white dark:bg-black overflow-y-scroll">
-            <ThemeOne
-              selectedBgColor={selectedBgColor}
-              selectedLayout={selectedLayout}
-              selectedPrimaryColor={selectedPrimaryColor}
-              selectedSecondaryColor={selectedSecondaryColor}
-            />
-          </div>
+    <DeviceFrameset
+      suppressHydrationWarning
+      color="black"
+      width={280}
+      height={450}
+      device="iPhone 8"
+    >
+      <div
+        suppressHydrationWarning
+        className="relative flex flex-col items-center justify-center w-full max-h-screen overflow-hidden"
+      >
+        <div className="flex relative flex-col max-w-full max-h-full scrollbar-hide gap-4 overflow-y-scroll">
+          <ThemeOne
+            selectedBgColor={selectedBgColor}
+            selectedLayout={selectedLayout}
+            selectedPrimaryColor={selectedPrimaryColor}
+            selectedSecondaryColor={selectedSecondaryColor}
+          />
         </div>
       </div>
-    </div>
+
+      {/* Menu Footer Buttons */}
+      <div className="flex flex-col items-center justify-center max-w-full">
+        <footer
+          style={{ backgroundColor: `${selectedBgColor}` }}
+          className="rounded-b-2xl absolute bottom-0 flex items-center justify-around w-full px-1 py-2 mx-auto shadow-lg"
+        >
+          {interactiveMenuContent.menuButtons.map((item, id) => (
+            <Link
+              href={`#`}
+              key={id}
+              className="flex flex-col items-center justify-center gap-1"
+            >
+              <item.icon
+                style={{ color: `${selectedSecondaryColor}` }}
+                className="w-5 h-5"
+              />
+              <span
+                style={{ color: `${selectedSecondaryColor}` }}
+                className="text-xs font-medium"
+              >
+                {item.name}
+              </span>
+            </Link>
+          ))}
+        </footer>
+      </div>
+    </DeviceFrameset>
   );
 };
 
@@ -316,7 +352,10 @@ const ThemeOne = ({
           )}
         </div>
 
+        <div className="py-10 w-full h-32" />
+
         {/* Menu Footer Buttons */}
+        {/*
         <div className="flex flex-col items-center justify-center max-w-full">
           <footer
             style={{ backgroundColor: `${selectedBgColor}` }}
@@ -341,7 +380,7 @@ const ThemeOne = ({
               </Link>
             ))}
           </footer>
-        </div>
+        </div> */}
       </div>
     </section>
   );
