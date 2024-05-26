@@ -17,7 +17,7 @@ const InteractiveMenu = () => {
 
   return (
     <>
-      <DeviceFrameset device="iPhone X" width={340} height={700} color="black">
+      <DeviceFrameset device="iPhone X" width={330} height={650} color="black">
         <div
           suppressHydrationWarning
           className="relative flex flex-col items-center justify-center w-full max-h-screen overflow-hidden"
@@ -31,6 +31,7 @@ const InteractiveMenu = () => {
             />
           </div>
         </div>
+
         {/* Menu Footer Buttons */}
         <div className="flex flex-col items-center justify-center max-w-full">
           <footer
@@ -208,7 +209,7 @@ const ThemeOne = ({
         </div>
 
         {/* Products based on the selected category */}
-        <div className="flex-col w-full gap-1 pb-24 mt-2">
+        <div className="flex-col w-full gap-1 pb-24 md:pb-5 mt-2">
           <div className="flex items-center justify-between px-2">
             <h2
               style={{ color: `${selectedSecondaryColor}` }}
@@ -347,7 +348,7 @@ const ThemeOne = ({
           )}
         </div>
 
-        <div className="py-10 w-full h-32" />
+        <div className="w-full h-32 md:h-5" />
 
         {/* Menu Footer Buttons */}
         {/*
