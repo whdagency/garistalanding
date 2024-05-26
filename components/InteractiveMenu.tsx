@@ -16,54 +16,49 @@ const InteractiveMenu = () => {
   } = interactiveMenuContent.themeSelection;
 
   return (
-    <DeviceFrameset
-      suppressHydrationWarning
-      color="black"
-      width={280}
-      height={450}
-      device="iPhone 8"
-    >
-      <div
-        suppressHydrationWarning
-        className="relative flex flex-col items-center justify-center w-full max-h-screen overflow-hidden"
-      >
-        <div className="flex relative flex-col max-w-full max-h-full scrollbar-hide gap-4 overflow-y-scroll">
-          <ThemeOne
-            selectedBgColor={selectedBgColor}
-            selectedLayout={selectedLayout}
-            selectedPrimaryColor={selectedPrimaryColor}
-            selectedSecondaryColor={selectedSecondaryColor}
-          />
-        </div>
-      </div>
-
-      {/* Menu Footer Buttons */}
-      <div className="flex flex-col items-center justify-center max-w-full">
-        <footer
-          style={{ backgroundColor: `${selectedBgColor}` }}
-          className="rounded-b-2xl absolute bottom-0 flex items-center justify-around w-full px-1 py-2 mx-auto shadow-lg"
+    <>
+      <DeviceFrameset device="iPhone X" width={340} height={700} color="black">
+        <div
+          suppressHydrationWarning
+          className="relative flex flex-col items-center justify-center w-full max-h-screen overflow-hidden"
         >
-          {interactiveMenuContent.menuButtons.map((item, id) => (
-            <Link
-              href={`#`}
-              key={id}
-              className="flex flex-col items-center justify-center gap-1"
-            >
-              <item.icon
-                style={{ color: `${selectedSecondaryColor}` }}
-                className="w-5 h-5"
-              />
-              <span
-                style={{ color: `${selectedSecondaryColor}` }}
-                className="text-xs font-medium"
+          <div className="flex relative flex-col max-w-full max-h-full scrollbar-hide gap-4 overflow-y-scroll">
+            <ThemeOne
+              selectedBgColor={selectedBgColor}
+              selectedLayout={selectedLayout}
+              selectedPrimaryColor={selectedPrimaryColor}
+              selectedSecondaryColor={selectedSecondaryColor}
+            />
+          </div>
+        </div>
+        {/* Menu Footer Buttons */}
+        <div className="flex flex-col items-center justify-center max-w-full">
+          <footer
+            style={{ backgroundColor: `${selectedBgColor}` }}
+            className="rounded-b-2xl absolute bottom-0 flex items-center justify-around w-full px-1 py-2 mx-auto shadow-lg"
+          >
+            {interactiveMenuContent.menuButtons.map((item, id) => (
+              <Link
+                href={`#`}
+                key={id}
+                className="flex flex-col items-center justify-center gap-1"
               >
-                {item.name}
-              </span>
-            </Link>
-          ))}
-        </footer>
-      </div>
-    </DeviceFrameset>
+                <item.icon
+                  style={{ color: `${selectedSecondaryColor}` }}
+                  className="w-5 h-5"
+                />
+                <span
+                  style={{ color: `${selectedSecondaryColor}` }}
+                  className="text-xs font-medium"
+                >
+                  {item.name}
+                </span>
+              </Link>
+            ))}
+          </footer>
+        </div>
+      </DeviceFrameset>
+    </>
   );
 };
 
@@ -126,14 +121,14 @@ const ThemeOne = ({
       className="flex flex-col w-full min-h-screen"
     >
       {/* Menu Header */}
-      <div className="px-2 py-3">
-        <div className="relative mx-auto h-[170px] max-w-md overflow-hidden rounded-[.5rem] shadow">
+      <div className="px-2 py-3 !w-full !h-full mt-7">
+        <div className="!relative mx-auto !h-[170px] !w-full max-w-md overflow-hidden !rounded-[.5rem] shadow">
           {/* Banner */}
-          <div className="bg-secondary-gray overflow-hidden">
+          <div className="bg-secondary-gray overflow-hidden !w-full !h-full">
             <Image
               src={interactiveMenuContent.bannerImage}
               loading="lazy"
-              className="max-h-44 bg-secondary-gray object-cover w-full h-screen"
+              className="!max-h-44 bg-secondary-gray object-cover !h-screen !w-full"
               alt={interactiveMenuContent.name}
               width={100}
               height={100}
