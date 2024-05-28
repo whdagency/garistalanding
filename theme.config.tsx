@@ -28,6 +28,7 @@ const config: DocsThemeConfig = {
   navbar: {
     extraContent: (
       <>
+
         <ThemeModeToggle />
       </>
     ),

@@ -28,7 +28,7 @@ export default function Features() {
         </div>
       </div>
 
-      <div className="h-[1px] w-full homeFooter"></div>
+      {/* <div className="h-[1px] w-full homeFooter"></div> */}
     </div>
   );
 }

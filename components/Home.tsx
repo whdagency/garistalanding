@@ -1,14 +1,19 @@
+"use client"
+
 import Image from "next/image";
 import { Button } from "./ui/button";
 import { ChevronRight } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import InteractiveMenu from "@/components/InteractiveMenu";
+import { useState } from "react";
 
 export default function Home() {
   const { t } = useTranslation("global");
+
+
   return (
     <div id="Home" className="container md:px-8 px-4">
-      <div className="pt-[180px] lg:pb-[80px] md:pb-[60px] pb-[40px]">
+      <div className="pt-[180px] lg:pb-[80px] md:pb-[60px] pb-[0px]">
         <div className="md:text-center text-left mb-[50px] md:max-w-[744px] md:ml-auto ml-0 mr-auto md:px-6 px-0">
           <h1 className="text-secondaryBg md:text-[68px] sm:text-[47px] text-[35px] font-semibold mb-4 leading-[1.2em] -tracking-[0.01em]">
             {t("Digitize Your")}{" "}
@@ -38,7 +43,7 @@ export default function Home() {
         </div>
 
         <div className="max-[1271px] mx-auto md:px-6">
-          <div className="relative flex flex-col items-center gap-4 lg:flex-row justify-center rounded shadow">
+          <div className="relative flex flex-col items-center gap-4 lg:flex-row justify-center rounded ">
             <Image
               className="rounded-xl"
               src="/Home/home-dashboard.png"
@@ -48,13 +53,14 @@ export default function Home() {
               sizes="(max-width: 479px) 93vw, (max-width: 767px) 94vw, (max-width: 991px) 86vw, (max-width: 1439px) 95vw, 985px"
             />
 
-            <div className="lg:absolute -right-5 -bottom-16">
+            <div className="lg:absolute -right-[196px] -bottom-[10rem]">
               <InteractiveMenu />
             </div>
+
           </div>
         </div>
       </div>
-
+  
       <div className="h-[1px] w-full homeFooter"></div>
     </div>
   );

@@ -15,9 +15,11 @@ const InteractiveMenu = () => {
     selectedSecondaryColor,
   } = interactiveMenuContent.themeSelection;
 
+
+
   return (
-    <>
-      <DeviceFrameset device="iPhone X" width={330} height={650} color="black">
+    <div>
+      <DeviceFrameset device="iPhone X"  color="black">
         <div
           suppressHydrationWarning
           className="relative flex flex-col items-center justify-center w-full max-h-screen overflow-hidden"
@@ -33,10 +35,10 @@ const InteractiveMenu = () => {
         </div>
 
         {/* Menu Footer Buttons */}
-        <div className="flex flex-col items-center justify-center max-w-full">
+        <div className="flex flex-col items-center justify-center max-w-full bg-bl">
           <footer
             style={{ backgroundColor: `${selectedBgColor}` }}
-            className="rounded-b-2xl absolute bottom-0 flex items-center justify-around w-full px-1 py-2 mx-auto shadow-lg"
+            className="rounded-b-2xl absolute bottom-0 flex items-center justify-around w-full px-1 py-2 mx-auto shadow-lg z-50"
           >
             {interactiveMenuContent.menuButtons.map((item, id) => (
               <Link
@@ -59,7 +61,9 @@ const InteractiveMenu = () => {
           </footer>
         </div>
       </DeviceFrameset>
-    </>
+
+
+    </div>
   );
 };
 
@@ -239,7 +243,7 @@ const ThemeOne = ({
                       <Image
                         src={item.catImage}
                         alt="Menu Icon"
-                        className="w-full group-hover:scale-[1.02] transition object-cover rounded-[10px] h-24"
+                        className="w-full group-hover:scale-[1.02] transition object-cover rounded-[10px] h-24 relative"
                         width={100}
                         height={100}
                         loading="lazy"

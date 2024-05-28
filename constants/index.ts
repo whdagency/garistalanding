@@ -327,7 +327,7 @@ export const pricingPlan: PricingPlan[] = [
   },
   {
     type: "Business",
-    price: "399 USD",
+    price: "39 USD",
     subscription: "Month",
     description: "Ideal for restaurants with 80 covers",
     buttonText: "Choose Business",

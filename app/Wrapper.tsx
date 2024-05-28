@@ -63,7 +63,7 @@ function Wrapper() {
       <Hero />
       <About />
       <Features />
-      <Partners />
+      {/* <Partners /> */}
       <Benefits />
       <Pricing />
       <Contact />

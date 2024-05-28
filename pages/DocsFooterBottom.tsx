@@ -10,6 +10,11 @@ const DocsFooterBottom = () => {
   const { t } = useTranslation("global");
   const { theme } = useTheme();
 
+
+  const footerImageSrc = theme === "dark" ? "/Footer/footer-logo-white.svg" : "/Footer/footer-logo.svg";
+
+  
+
   return (
     <>
       <hr className="h-[1px] w-full dark:bg-white" />
@@ -42,23 +47,14 @@ const DocsFooterBottom = () => {
         </div>
 
         <div className="w-[90%] mx-auto relative overflow-hidden">
-          {theme === "light" ? (
             <Image
-              src={"/Footer/footer-logo.svg"}
+              src={footerImageSrc}
               alt="footer logo"
               className="object-cover w-full -mb-[14px] sm:-mb-[18px] md:-mb-6 lg:-mb-8 xl:-mb-10 2xl:-mb-14"
               width={500}
               height={500}
             />
-          ) : (
-            <Image
-              src={"/Footer/footer-logo-white.svg"}
-              alt="footer logo"
-              className="object-cover w-full -mb-[14px] sm:-mb-[18px] md:-mb-6 lg:-mb-8 xl:-mb-10 2xl:-mb-14"
-              width={500}
-              height={500}
-            />
-          )}
+
         </div>
       </div>
     </>
