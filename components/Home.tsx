@@ -53,7 +53,7 @@ export default function Home() {
               sizes="(max-width: 479px) 93vw, (max-width: 767px) 94vw, (max-width: 991px) 86vw, (max-width: 1439px) 95vw, 985px"
             />
 
-            <div className="lg:absolute -right-[196px] -bottom-[10rem]">
+            <div className="sm:absolute lg:-right-[16px] -right-[10rem] 2xl:-right-[196px] 2xl:-bottom-[10rem] lg:-bottom-[15rem] -bottom-[21rem]">
               <InteractiveMenu />
             </div>
 

@@ -65,7 +65,7 @@ function Wrapper() {
       <Features />
       {/* <Partners /> */}
       <Benefits />
-      <Pricing />
+      {/* <Pricing /> */}
       <Contact />
       <Testimonials />
       <Footer />

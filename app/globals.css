@@ -108,3 +108,16 @@ html {
   transform: scale(.5);
   margin-top: -10rem;
 }
+
+@media screen and (max-width: 860px) {
+  .marvel-device.iphone-x{
+    transform: scale(.3);
+    margin-top: -10rem;
+  } 
+}
+@media screen and (max-width: 450px) {
+  .marvel-device.iphone-x{
+    transform: scale(.6);
+    margin-top: -1rem;
+  } 
+}

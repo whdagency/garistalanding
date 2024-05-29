@@ -22,7 +22,7 @@ const InteractiveMenu = () => {
       <DeviceFrameset device="iPhone X"  color="black">
         <div
           suppressHydrationWarning
-          className="relative flex flex-col items-center justify-center w-full max-h-screen overflow-hidden"
+          className="relative flex flex-col items-center justify-center w-full max-h-[150vh] md:max-h-screen overflow-hidden"
         >
           <div className="flex relative flex-col max-w-full max-h-full scrollbar-hide gap-4 overflow-y-scroll">
             <ThemeOne
