@@ -9,7 +9,7 @@ import global_en from "./Translation/en/global.json";
 import global_fr from "./Translation/fr/global.json";
 import { I18nextProvider } from "react-i18next";
 import FooterBottom from "@/components/FooterBottom";
-
+import GoogleTagManager from '@/components/GoogleTagManager';
 const myLocalFont = localFont({
   src: [
     {
@@ -66,6 +66,9 @@ export default function RootLayout({
   return (
     <I18nextProvider i18n={i18next}>
       <html lang="en">
+        <Head>
+          <GoogleTagManager  containerId='GTM-WHQRVMSC'/>
+        </Head>
         <body
           className={`${myLocalFont.className} scroll-smooth relative overflow-x-hidden text-secondaryBg`}
         >
