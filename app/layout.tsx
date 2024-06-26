@@ -10,6 +10,8 @@ import global_fr from "./Translation/fr/global.json";
 import { I18nextProvider } from "react-i18next";
 import FooterBottom from "@/components/FooterBottom";
 import GoogleTagManager from '@/components/GoogleTagManager';
+import Document, { Head } from 'next/document';
+
 const myLocalFont = localFont({
   src: [
     {
