@@ -72,6 +72,14 @@ export default function RootLayout({
         <body
           className={`${myLocalFont.className} scroll-smooth relative overflow-x-hidden text-secondaryBg`}
         >
+            <noscript>
+            <iframe
+              src="https://www.googletagmanager.com/ns.html?id=GTM-WHQRVMSC"
+              height="0"
+              width="0"
+              style={{ display: 'none', visibility: 'hidden' }}
+            ></iframe>
+          </noscript>
           {children}
 
           {/* <div className="sm:px-24 px-4 pt-24 bg-white w-full">
