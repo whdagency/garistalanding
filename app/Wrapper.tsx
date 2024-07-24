@@ -1,6 +1,7 @@
 "use client";
 
 import About from "@/components/About";
+import Articles from "@/components/Articles";
 import Benefits from "@/components/Benefits";
 import Contact from "@/components/ContactPage";
 import Features from "@/components/Features";
@@ -68,6 +69,7 @@ function Wrapper() {
       {/* <Pricing /> */}
       <Contact />
       <Testimonials />
+      <Articles />
       <Footer />
     </div>
   );

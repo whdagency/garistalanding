@@ -1,7 +1,16 @@
 import nextra from "nextra";
 
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "images.ctfassets.net",
+      }
+    ]
+  }
+};
 
 const withNextra = nextra({
   theme: "nextra-theme-docs",

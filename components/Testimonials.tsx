@@ -11,7 +11,7 @@ export default function Testimonials() {
 
   return (
     <div id="Testimonials" className="container md:px-8 px-4">
-      <div className="pb-[180px]">
+      <div className="pb-[100px]">
         <div className="w-full rounded-3xl bg-white py-14 px-14 transition-all duration-300">
           <div className="grid lg:grid-cols-2 grid-cols-1 gap-14">
             <div className="flex flex-nowrap flex-col justify-center items-start gap-y-3">
