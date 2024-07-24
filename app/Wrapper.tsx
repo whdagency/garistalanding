@@ -49,6 +49,9 @@ function Wrapper() {
           if (entry.target.id == "Contact") {
             setActiveSection("Contact");
           }
+          if (entry.target.id == "articles") {
+            setActiveSection("articles");
+          }
         }
       });
     }, observerOptions);
