@@ -8,6 +8,7 @@ import { contactFormSchema, ContactFormType } from "@/lib/schema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm, UseFormReset } from "react-hook-form";
 import Link from "next/link";
+import { createEntry } from "@/app/actions/contentful.action";
 
 const Contact = () => {
   const { t } = useTranslation("global");
@@ -23,15 +24,38 @@ const Contact = () => {
   });
 
   const formSubmit = async (data: ContactFormType) => {
-    console.log(data);
+    const contentfulDataEntry = {
+      name: {
+        "en-US": data.name,
+      },
+      email: {
+        "en-US": data.email,
+      },
+      company: {
+        "en-US": data.company,
+      },
+      reason: {
+        "en-US": data.service,
+      },
+      message: {
+        "en-US": data.message,
+      },
+    };
 
-    setFormSubmitted(true);
+    const publishedEntry = await createEntry<typeof contentfulDataEntry>(
+      "contactForm",
+      contentfulDataEntry
+    );
 
-    reset();
+    if (publishedEntry.sys.id) {
+      setFormSubmitted(true);
 
-    setTimeout(() => {
-      setFormSubmitted(false);
-    }, 5000);
+      reset();
+
+      setTimeout(() => {
+        setFormSubmitted(false);
+      }, 5000);
+    }
   };
 
   return (
