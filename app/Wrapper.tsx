@@ -7,6 +7,7 @@ import Contact from "@/components/ContactPage";
 import Features from "@/components/Features";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Home";
+import KeyAdvantages from "@/components/KeyAdvantages";
 import Nav from "@/components/Nav";
 import Partners from "@/components/Partners";
 import Pricing from "@/components/Pricing";
@@ -31,27 +32,49 @@ function Wrapper() {
       threshold: 0.2,
     };
 
+    const ids = [
+      "Home",
+      "Dashboard",
+      "Features",
+      "Benefits",
+      "FAQ",
+      "Help",
+      "About",
+      "Features",
+      "Pricing",
+      "Contact",
+    ];
+
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          if (entry.target.id == "Home") {
-            setActiveSection("Home");
+          if (ids.includes(entry.target.id)) {
+            setActiveSection(
+              entry.target.id.charAt(0).toUpperCase() + entry.target.id.slice(1)
+            );
           }
-          if (entry.target.id == "About") {
-            setActiveSection("About");
-          }
-          if (entry.target.id == "Features") {
-            setActiveSection("Features");
-          }
-          if (entry.target.id == "Pricing") {
-            setActiveSection("Pricing");
-          }
-          if (entry.target.id == "Contact") {
-            setActiveSection("Contact");
-          }
-          if (entry.target.id == "articles") {
-            setActiveSection("articles");
-          }
+
+          // if (entry.target.id == "Home") {
+          //   setActiveSection("Home");
+          // }
+          // if (entry.target.id == "Dashboard") {
+          //   setActiveSection("Dashboard");
+          // }
+          // if (entry.target.id == "About") {
+          //   setActiveSection("About");
+          // }
+          // if (entry.target.id == "Features") {
+          //   setActiveSection("Features");
+          // }
+          // if (entry.target.id == "Pricing") {
+          //   setActiveSection("Pricing");
+          // }
+          // if (entry.target.id == "Contact") {
+          //   setActiveSection("Contact");
+          // }
+          // if (entry.target.id == "articles") {
+          //   setActiveSection("articles");
+          // }
         }
       });
     }, observerOptions);
@@ -66,10 +89,11 @@ function Wrapper() {
     <div className="w-full">
       <Nav activeSection={activeSection} />
       <Hero />
+      <Partners />
       <About />
-      <Features />
-      {/* <Partners /> */}
-      <Benefits />
+      <KeyAdvantages />
+      {/* <Features /> */}
+      {/* <Benefits />  */}
       <Pricing />
       <Contact />
       <Testimonials />

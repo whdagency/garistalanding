@@ -23,37 +23,14 @@ function Nav({ activeSection }: Links) {
 
   return (
     <div className="bg-transparent pt-4 fixed z-50 top-[0%] left-[0%] right-[0%] bottom-auto">
-      <div className="sm:flex sm:justify-center sm:items-center">
-        <div className="hidden relative h-[72px] sm:flex justify-center items-center px-6 bg-secondaryBg rounded-3xl shadow-navShadow">
-          <div className="z-10 flex items-center">
-            <div className="flex gap-x-5 items-center">
-              <a
-                href="/#About"
-                className={`navLink ${
-                  activeSection == "About"
-                    ? "text-primaryBg bg-primaryBg/10 rounded-xl"
-                    : "text-primaryOne hover:text-primaryBg rounded-xl"
-                }`}
-              >
-                {t("About")}
-              </a>
-
-              <a
-                href="/#Features"
-                className={`navLink ${
-                  activeSection == "Features"
-                    ? "text-primaryBg bg-primaryBg/10 rounded-xl"
-                    : "text-primaryOne hover:text-primaryBg rounded-xl"
-                }`}
-              >
-                {t("Features")}
-              </a>
-            </div>
-
-            <div className="w-[104px] h-12 flex justify-center items-center">
+      <div className="md:flex md:justify-center md:items-center">
+        <div className="hidden relative h-[72px] md:flex justify-center items-center px-6">
+          <div className="z-10 flex items-center gap-x-5">
+            {/* Logo */}
+            <div className="relative bg-secondaryBg rounded-xl shadow-navShadow p-2">
               <Link
                 href="/#Home"
-                className="relative size-12 cursor-pointer flex justify-center items-center hover:rotate-180 hover:scale-[1.2] transition-transform duration-300"
+                className="relative size-10 cursor-pointer flex justify-center items-center hover:rotate-180 hover:scale-[1.2] transition-transform duration-300"
               >
                 <div className="size-full">
                   <Image src="/Logo/Logo White.svg" alt="logo" fill />
@@ -61,34 +38,85 @@ function Nav({ activeSection }: Links) {
               </Link>
             </div>
 
-            <div className="flex gap-x-5 items-center">
-              <a
-                href="/#Pricing"
-                className={`navLink ${
-                  activeSection == "Pricing"
-                    ? "text-primaryBg bg-primaryBg/10 rounded-xl"
-                    : "text-primaryOne hover:text-primaryBg rounded-xl"
-                }`}
-              >
-                {t("Pricing")}
-              </a>
+            {/* Nav Links */}
+            <div className="flex gap-3 items-center bg-secondaryBg shadow-navShadow rounded-xl py-1 justify-between px-3">
+              <div className="flex gap-2 items-center">
+                <a
+                  href="/#Dashboard"
+                  className={`navLink ${
+                    activeSection == "Dashboard"
+                      ? "text-primaryBg bg-primaryBg/10 rounded-xl"
+                      : "text-primaryOne hover:text-primaryBg rounded-xl"
+                  }`}
+                >
+                  {t("Dashboard")}
+                </a>
 
-              <a
-                href="/#Contact"
-                className={`navLink ${
-                  activeSection == "Contact"
-                    ? "text-primaryBg bg-primaryBg/10 rounded-xl"
-                    : "text-primaryOne hover:text-primaryBg rounded-xl"
-                }`}
-              >
-                Contact
-              </a>
+                <a
+                  href="/#Features"
+                  className={`navLink ${
+                    activeSection == "Features"
+                      ? "text-primaryBg bg-primaryBg/10 rounded-xl"
+                      : "text-primaryOne hover:text-primaryBg rounded-xl"
+                  }`}
+                >
+                  {t("Features")}
+                </a>
+
+                <a
+                  href="/#Benefits"
+                  className={`navLink ${
+                    activeSection == "Benefits"
+                      ? "text-primaryBg bg-primaryBg/10 rounded-xl"
+                      : "text-primaryOne hover:text-primaryBg rounded-xl"
+                  }`}
+                >
+                  {t("Benefits")}
+                </a>
+
+                <a
+                  href="/#About"
+                  className={`navLink ${
+                    activeSection == "About"
+                      ? "text-primaryBg bg-primaryBg/10 rounded-xl"
+                      : "text-primaryOne hover:text-primaryBg rounded-xl"
+                  }`}
+                >
+                  {t("About")}
+                </a>
+
+                <a
+                  href="/#FAQ"
+                  className={`navLink ${
+                    activeSection == "FAQ"
+                      ? "text-primaryBg bg-primaryBg/10 rounded-xl"
+                      : "text-primaryOne hover:text-primaryBg rounded-xl"
+                  }`}
+                >
+                  {t("FAQ")}
+                </a>
+
+                <a
+                  href="/#Help"
+                  className={`navLink ${
+                    activeSection == "Help"
+                      ? "text-primaryBg bg-primaryBg/10 rounded-xl"
+                      : "text-primaryOne hover:text-primaryBg rounded-xl"
+                  }`}
+                >
+                  {t("Help")}
+                </a>
+              </div>
+
+              <button className="mx-10 me-auto font-semibold text-black/80 text-sm px-7 py-2 rounded-xl bg-white text-center">
+                Login
+              </button>
             </div>
           </div>
         </div>
 
-        <div className="relative h-[72px] sm:hidden flex justify-center items-center mx-3 px-6 bg-secondaryBg rounded-3xl shadow-navShadow">
-          <div className="w-full flex justify-between items-center max-w-lg">
+        <div className="relative h-[72px] md:hidden flex justify-center items-center mx-3 px-6 bg-secondaryBg rounded-3xl shadow-navShadow">
+          <div className="w-full flex justify-between items-center">
             <div className="relative">
               <Link
                 href="/#Home"
@@ -100,60 +128,12 @@ function Nav({ activeSection }: Links) {
               </Link>
             </div>
 
-            <Sheet open={isOpen} onOpenChange={handleSheet}>
-              <SheetTrigger>
-                <Hamburger
-                  toggled={isHamburger}
-                  toggle={setHamburger}
-                  size={20}
-                  direction="left"
-                />
-              </SheetTrigger>
-
-              <SheetContent side={"bottom"}>
-                <div className="flex flex-col gap-y-4 mt-4 pb-4">
-                  <SheetTrigger asChild>
-                    <Button
-                      asChild
-                      className="text-xl text-primaryTwo"
-                      variant="ghost"
-                    >
-                      <a href="/#About">About</a>
-                    </Button>
-                  </SheetTrigger>
-
-                  <SheetTrigger asChild>
-                    <Button
-                      asChild
-                      className="text-xl text-primaryTwo"
-                      variant="ghost"
-                    >
-                      <Link href="/#Features">Features</Link>
-                    </Button>
-                  </SheetTrigger>
-
-                  <SheetTrigger asChild>
-                    <Button
-                      asChild
-                      className="text-xl text-primaryTwo"
-                      variant="ghost"
-                    >
-                      <a href="/#Pricing">Pricing</a>
-                    </Button>
-                  </SheetTrigger>
-
-                  <SheetTrigger asChild>
-                    <Button
-                      asChild
-                      className="text-xl text-primaryTwo"
-                      variant="ghost"
-                    >
-                      <a href="/#Contact">Contact</a>
-                    </Button>
-                  </SheetTrigger>
-                </div>
-              </SheetContent>
-            </Sheet>
+            <MobileNav
+              isOpen={isOpen}
+              handleSheet={handleSheet}
+              isHamburger={isHamburger}
+              setHamburger={setHamburger}
+            />
           </div>
         </div>
       </div>
@@ -162,3 +142,76 @@ function Nav({ activeSection }: Links) {
 }
 
 export default Nav;
+
+type MobileNavProps = {
+  isOpen: boolean;
+  handleSheet: () => void;
+  isHamburger: boolean;
+  setHamburger: React.Dispatch<React.SetStateAction<boolean>>;
+};
+
+const MobileNav = ({
+  isOpen,
+  handleSheet,
+  isHamburger,
+  setHamburger,
+}: MobileNavProps) => {
+  return (
+    <Sheet open={isOpen} onOpenChange={handleSheet}>
+      <SheetTrigger>
+        <Hamburger
+          toggled={isHamburger}
+          toggle={setHamburger}
+          size={20}
+          direction="left"
+        />
+      </SheetTrigger>
+
+      <SheetContent side={"bottom"}>
+        <div className="flex flex-col gap-y-4 mt-4 pb-4">
+          <SheetTrigger asChild>
+            <Button asChild className="text-xl text-primaryTwo" variant="ghost">
+              <a href="/#Dashboard">Dashboard</a>
+            </Button>
+          </SheetTrigger>
+
+          <SheetTrigger asChild>
+            <Button asChild className="text-xl text-primaryTwo" variant="ghost">
+              <a href="/#Features">Features</a>
+            </Button>
+          </SheetTrigger>
+
+          <SheetTrigger asChild>
+            <Button asChild className="text-xl text-primaryTwo" variant="ghost">
+              <Link href="/#Benefits">Benefits</Link>
+            </Button>
+          </SheetTrigger>
+
+          <SheetTrigger asChild>
+            <Button asChild className="text-xl text-primaryTwo" variant="ghost">
+              <Link href="/#About">About</Link>
+            </Button>
+          </SheetTrigger>
+
+          <SheetTrigger asChild>
+            <Button asChild className="text-xl text-primaryTwo" variant="ghost">
+              <a href="/#FAQ">FAQ</a>
+            </Button>
+          </SheetTrigger>
+
+          <SheetTrigger asChild>
+            <Button asChild className="text-xl text-primaryTwo" variant="ghost">
+              <Link href="/#Help">Help</Link>
+            </Button>
+          </SheetTrigger>
+
+          <SheetTrigger asChild>
+            <Button asChild className="text-xl text-primaryTwo" variant="ghost">
+              <a href="/#Contact">Contact</a>
+            </Button>
+          </SheetTrigger>
+        </div>
+      </SheetContent>
+    </Sheet>
+  );
+};

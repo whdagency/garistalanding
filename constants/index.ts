@@ -131,6 +131,70 @@ export const footerSocials = [
   },
 ];
 
+// About Us Content
+export const aboutUsContent: AboutUsContent[] = [
+  {
+    type: "display",
+    items: [
+      {
+        title: "Elevate Your Guests' Experience",
+        description:
+          "Upgrade the visual allure of your restaurant with our elegant and fully customizable menu solutions. Craft a memorable dining experience that captivates your diners and brings your culinary vision and brand to life.",
+      },
+      {
+        title: "Enhance Guest Well-Being and Boost Value",
+        description:
+          "With Garista, you can take additional measures to safeguard your guests. Offer allergen, calorie, and nutritional information for each dish to help them make informed and safe choices. Blend aesthetics with valuable information to increase order value by up to 40%.",
+      },
+    ],
+  },
+  {
+    type: "order",
+    items: [
+      {
+        title: "Seamless Order Management",
+        description:
+          "Manage your orders in real-time and streamline your operations with our intuitive and user-friendly order management system. Ensure timely delivery of your orders and enhance your customer experience with our advanced order tracking and notification features.",
+      },
+      {
+        title: "Enhanced Customer Experience",
+        description:
+          "With our intuitive and user-friendly order management system, you can easily manage your orders in real-time. Our advanced order tracking and notification features ensure a seamless and efficient customer experience.",
+      },
+    ],
+  },
+  {
+    type: "manage",
+    items: [
+      {
+        title: "Streamlined Menu Management",
+        description:
+          "With our intuitive and user-friendly menu management system, you can easily manage your menus and create a personalized experience for your customers. Our advanced menu customization features allow you to tailor your menus to your specific needs and preferences.",
+      },
+      {
+        title: "Enhanced Customer Experience",
+        description:
+          "With our intuitive and user-friendly menu management system, you can easily manage your menus and create a personalized experience for your customers. Our advanced menu customization features allow you to tailor your menus to your specific needs and preferences.",
+      },
+    ],
+  },
+  {
+    type: "market",
+    items: [
+      {
+        title: "Seamless Integration",
+        description:
+          "With our intuitive and user-friendly menu management system, you can easily manage your menus and create a personalized experience for your customers. Our advanced menu customization features allow you to tailor your menus to your specific needs and preferences.",
+      },
+      {
+        title: "Enhanced Customer Experience",
+        description:
+          "With our intuitive and user-friendly menu management system, you can easily manage your menus and create a personalized experience for your customers. Our advanced menu customization features allow you to tailor your menus to your specific needs and preferences.",
+      },
+    ],
+  },
+];
+
 // Interactive Menu Content
 export const interactiveMenuContent: InteractiveMenuContent = {
   themeSelection: {
@@ -351,16 +415,13 @@ export const featuresInfo: FeaturesInfo[] = [
 
 // Partners Content
 export const partnersIcon: PartnersIcon[] = [
-  { src: "/Partners/Logo1.svg" },
-  { src: "/Partners/Logo3.svg" },
-  { src: "/Partners/Logo4.svg" },
-  { src: "/Partners/Logo2.svg" },
-  { src: "/Partners/Logo5.svg" },
-  { src: "/Partners/Logo6.svg" },
-  { src: "/Partners/Logo7.svg" },
-  { src: "/Partners/Logo5.svg" },
-  { src: "/Partners/Logo6.svg" },
-  { src: "/Partners/Logo7.svg" },
+  { src: "/Partners/door-dash.svg" },
+  { src: "/Partners/dropbox.svg" },
+  { src: "/Partners/factly.svg" },
+  { src: "/Partners/palo-alto-networks.svg" },
+  { src: "/Partners/soundhound-ai.svg" },
+  { src: "/Partners/together-ai.svg" },
+  { src: "/Partners/zoom.svg" },
 ];
 
 // Benefits Content
@@ -411,6 +472,47 @@ export const benefitsContent: BenefitsContent[] = [
       { benefit: "View on own device", check: false },
       { benefit: "Digitally available", check: false },
     ],
+  },
+];
+
+// Key Advantages
+export const keyAdvantages: KeyAdvantages[] = [
+  {
+    content:
+      "Faster service! Digital menus can significantly reduce your customers wait times",
+    reduction: "30%",
+    bgColor: "#1E1E1C",
+    textColor: "#ffffff",
+  },
+  {
+    content:
+      "Diminished Staff Stress by automating order entry and reducing workload.",
+    reduction: "30%",
+    textColor: "#1E1E1C",
+  },
+  {
+    content:
+      "The integrated loyalty program tracks regular customer habits, offers rewards, and boosts customer loyalty while simplifying program management for staff.",
+    textColor: "#1E1E1C",
+  },
+  {
+    content:
+      "Easy and quick digital payment methods reduce processing time and minimize errors associated with cash or card payments, enhancing service efficiency.",
+    textColor: "#1E1E1C",
+  },
+  {
+    content:
+      "Menu updates in real-time, ensuring customers always have the latest menu offerings.",
+    reduction: "100%",
+    bgColor: "#6380DA",
+    textColor: "#ffffff",
+  },
+  {
+    content:
+      "More customers prefer digital payments over cash or card payments. ",
+    reduction: "90%",
+    bgColor: "#ffffff",
+    textColor: "#1E1E1C",
   },
 ];
 

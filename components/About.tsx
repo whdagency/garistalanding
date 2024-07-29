@@ -1,50 +1,137 @@
-import React, { useRef, useEffect } from "react";
-import { ChevronRight } from "lucide-react";
-import { Button } from "./ui/button";
+import InteractiveMenu from "@/components/InteractiveMenu";
+import { aboutUsContent } from "@/constants";
+import Image from "next/image";
+import React, { useRef, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
+const tabs: AboutUsTab[] = ["display", "order", "manage", "market"];
+
 export default function About() {
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const videoContainerRef = useRef(null);
+  const [selectedTab, setSelectedTab] = useState<AboutUsTab>(tabs[0]);
   const { t } = useTranslation("global");
+  // const videoRef = useRef<HTMLVideoElement>(null);
+  // const videoContainerRef = useRef(null);
 
-  useEffect(() => {
-    const videoNode = videoRef.current;
-    const videoContainerNode = videoContainerRef.current;
+  // useEffect(() => {
+  //   const videoNode = videoRef.current;
+  //   const videoContainerNode = videoContainerRef.current;
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (!videoNode) return;
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            videoNode.play(); // Play the video if the video section is in view
-          } else {
-            videoNode.pause(); // Pause the video if the video section is out of view
-          }
-        });
-      },
-      {
-        root: null,
-        rootMargin: "0px",
-        threshold: 0.5,
-      }
-    );
+  //   const observer = new IntersectionObserver(
+  //     (entries) => {
+  //       if (!videoNode) return;
+  //       entries.forEach((entry) => {
+  //         if (entry.isIntersecting) {
+  //           videoNode.play(); // Play the video if the video section is in view
+  //         } else {
+  //           videoNode.pause(); // Pause the video if the video section is out of view
+  //         }
+  //       });
+  //     },
+  //     {
+  //       root: null,
+  //       rootMargin: "0px",
+  //       threshold: 0.5,
+  //     }
+  //   );
 
-    if (videoContainerNode) {
-      observer.observe(videoContainerNode);
-    }
+  //   if (videoContainerNode) {
+  //     observer.observe(videoContainerNode);
+  //   }
 
-    return () => {
-      if (videoContainerNode) {
-        observer.unobserve(videoContainerNode);
-      }
-    };
-  }, []);
+  //   return () => {
+  //     if (videoContainerNode) {
+  //       observer.unobserve(videoContainerNode);
+  //     }
+  //   };
+  // }, []);
 
   return (
-    <div id="About" className="container md:px-8 px-4">
-      <div className="lg:pt-[150px] md:pt-[100px] pt-[80px]">
-        <div className="flex flex-nowrap flex-col gap-y-20 items-center justify-start">
+    <div
+      id="About"
+      className="container md:px-8 px-4 mt-20 rounded-[100px] bg-white mb-20"
+    >
+      <div className="lg:pt-[100px] md:pt-[07px] pt-[50px]">
+        <div className="flex flex-nowrap flex-col gap-y-20 items-center justify-start bg-white rounded-[100px] pt-10 pb-[100px]">
+          <div className="flex flex-col gap-8">
+            <div className="flex flex-col items-center gap-5 text-center">
+              <h2 className="lg:text-5xl md:text-4xl text-3xl font-semibold max-w-3xl capitalize">
+                <span className="text-primaryColor">{t("Create")}</span>,{" "}
+                <span className="text-primaryColor">{t("Customize")}</span>,{" "}
+                {t("and")}{" "}
+                <span className="text-primaryColor">{t("Manage")}</span>{" "}
+                {t("your menus with ease")}
+              </h2>
+
+              {/* Tabs */}
+              <div className="text-center mt-5 w-fit rounded-full bg-white border-primaryColor/50 border p-2">
+                <div className="flex items-center justify-center gap-4">
+                  {tabs.map((tab, index) => (
+                    <button
+                      key={index}
+                      className={`
+                        "flex flex-row items-center justify-center gap-x-2 py-2 px-4 rounded-full cursor-pointer",
+                        ${selectedTab === tab ? "bg-primaryColor text-white" : "text-primaryColor"}
+                      )`}
+                      onClick={() => setSelectedTab(tab)}
+                    >
+                      <span className="capitalize text-sm md:text-base font-semibold">
+                        {tab}
+                      </span>
+                    </button>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Tab Content */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 p-10 relative">
+              {/* Tab Content */}
+              <div className="flex flex-col col-span-1 order-2 lg:order-1">
+                {aboutUsContent
+                  .filter((content) => content.type === selectedTab)
+                  .map((content, index) => (
+                    <div
+                      key={index}
+                      className="flex flex-col items-center lg:items-start gap-10"
+                    >
+                      {content.items.map((item, index) => (
+                        <div
+                          key={index}
+                          className="flex flex-col gap-y-4 text-center lg:text-left"
+                        >
+                          <h3 className="text-black md:text-lg lg:text-xl text-base font-semibold tracking-wide font-['Inter']">
+                            {item.title}
+                          </h3>
+
+                          <p className="text-[#525252] lg:text-left md:text-base text-sm font-medium">
+                            {item.description}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
+                  ))}
+              </div>
+
+              {/* Interactive Menu */}
+              <div className="order-1 lg:order-2 col-span-1 place-self-center lg:place-self-end">
+                <Image
+                  src="/assets/about-us-menu.png"
+                  alt="Interactive Menu"
+                  width={400}
+                  height={500}
+                  loading="lazy"
+                  className="object-contain"
+                />
+              </div>
+
+              {/* <div className="sm:absolute order-1 lg:order-2 col-span-1 lg:-right-[16px] -right-[10rem] 2xl:-right-[196px] 2xl:-bottom-[10rem] lg:-bottom-[15rem] -bottom-[21rem]">
+                <InteractiveMenu />
+              </div> */}
+            </div>
+          </div>
+        </div>
+
+        {/* <div className="flex flex-nowrap flex-col gap-y-20 items-center justify-start bg-white rounded-[100px]">
           <div className="w-full relative flex lg:flex-row flex-col flex-nowrap justify-center items-start xl:gap-x-20 md:gap-x-8">
             <div className="flex flex-col md:gap-y-8 gap-y-6 items-start justify-start lg:max-w-[470px] md:mr-14">
               <span className="text-primaryColor text-xs border border-primaryColor px-2 py-1 rounded-3xl">
@@ -114,7 +201,7 @@ export default function About() {
               <source src="/video/next.mp4" type="video/mp4" />
             </video>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );

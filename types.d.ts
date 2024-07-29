@@ -1,3 +1,15 @@
+declare type AboutUsTab = "display" | "order" | "manage" | "market";
+
+declare interface AboutUsContent {
+  type: AboutUsTab;
+  items: AboutUsItem[];
+}
+
+declare interface AboutUsItem {
+  title: string;
+  description: string;
+}
+
 declare interface InteractiveMenuSocial {
   name: string;
   icon: any;
@@ -65,6 +77,13 @@ declare interface BenefitsContent {
 declare interface Benefit {
   benefit: string;
   check: boolean;
+}
+
+declare interface KeyAdvantages {
+  content: string;
+  textColor: string;
+  reduction?: string;
+  bgColor?: string;
 }
 
 declare interface PricingPlan {
