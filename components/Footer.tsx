@@ -1,3 +1,5 @@
+"use client";
+
 import Reseller from "@/components/Reseller";
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
@@ -12,7 +14,7 @@ export default function Footer() {
   const { t } = useTranslation("global");
 
   return (
-    <div id="Footer" >
+    <div id="Footer">
       <div className="mb-20">
         <div className="flex flex-col gap-y-8 justify-center items-center">
           <div className="flex flex-nowrap gap-x-8 items-center justify-center">
@@ -34,19 +36,29 @@ export default function Footer() {
           </div>
 
           <div className="grid md:grid-cols-5 grid-cols-2 gap-x-12 gap-y-6 items-center place-items-center text-sm font-medium">
-            <Link href="/#Contact" className="text-base font-medium">{t("Contact")}</Link>
-            <Link href="/#Contact" className="text-base font-medium">{t("Be a partner")}</Link>
-            <Link className="hover:underline text-base font-medium" href="/docs" target="_blank" >
+            <Link href="/#Contact" className="text-base font-medium">
+              {t("Contact")}
+            </Link>
+            <Link href="/#Contact" className="text-base font-medium">
+              {t("Be a partner")}
+            </Link>
+            <Link
+              className="hover:underline text-base font-medium"
+              href="/docs"
+              target="_blank"
+            >
               {t("Documentation")}
             </Link>
-            <Link className="hover:underline text-base font-medium" href="/jobs" >
+            <Link
+              className="hover:underline text-base font-medium"
+              href="/jobs"
+            >
               {t("Jobs")}
             </Link>
-          <div className="w-full mx-auto flex flex-col items-center">
-            <Reseller />
+            <div className="w-full mx-auto flex flex-col items-center">
+              <Reseller />
+            </div>
           </div>
-          </div>
-
         </div>
       </div>
     </div>

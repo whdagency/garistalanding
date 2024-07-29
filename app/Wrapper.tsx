@@ -62,18 +62,19 @@ function Wrapper() {
   }, []);
 
   return (
-    <div className="wrapper">
+    // <div className="wrapper">
+    <div className="w-full">
       <Nav activeSection={activeSection} />
       <Hero />
       <About />
       <Features />
       {/* <Partners /> */}
       <Benefits />
-      {/* <Pricing /> */}
+      <Pricing />
       <Contact />
       <Testimonials />
       <Articles />
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }

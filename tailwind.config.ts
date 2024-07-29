@@ -18,6 +18,9 @@ const config = {
       },
     },
     extend: {
+      backgroundImage: {
+        hero: "url('/assets/hero-section.png')",
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -53,6 +56,8 @@ const config = {
           foreground: "hsl(var(--card-foreground))",
         },
         primaryColor: "#28509E",
+        primaryBlue: "#6380DA",
+        primaryGray: "#848199",
         primaryBg: "#FFFFFF",
         primaryOne: "#DBDBDB",
         primaryTwo: "#7D7D7D",
@@ -82,7 +87,11 @@ const config = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate"), require('tailwind-scrollbar-hide')],
+  plugins: [
+    require("tailwindcss-animate"),
+    require("tailwind-scrollbar-hide"),
+    require("@tailwindcss/typography"),
+  ],
 } satisfies Config;
 
 export default config;

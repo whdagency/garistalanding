@@ -59,12 +59,12 @@ const Contact = () => {
   };
 
   return (
-    <section id="Contact" className="container md:px-8 px-4">
+    <section id="Contact" className="container md:px-20 px-4">
       <div className="pb-20">
-        <div className="w-full rounded-3xl bg-white transition-all duration-300">
+        <div className="w-full rounded-3xl transition-all duration-300 md:bg-white">
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2 w-full">
             {/* Contact form */}
-            <div className="flex rounded-s-3xl flex-col gap-5 col-span-1 bg-primaryColor px-5 py-10 md:py-14 md:px-14">
+            <div className="flex rounded-3xl md:rounded-none md:rounded-s-3xl flex-col gap-5 col-span-1 bg-[#6985DB] px-5 py-10 md:py-14 md:px-14">
               <h2 className="text-2xl md:text-3xl font-semibold capitalize text-white mb-5">
                 {t("How can we help you?")}
               </h2>
@@ -216,12 +216,12 @@ const Contact = () => {
             </div>
 
             {/* Contact Us Content */}
-            <div className="col-span-1 px-5 py-10 md:py-14 md:px-14">
-              <h2 className="text-2xl uppercase md:text-3xl font-semibold text-primaryColor mb-3 space-y-1">
+            <div className="col-span-1 mt-8 rounded-3xl md:rounded-none md:mt-0 px-5 py-10 md:py-14 md:px-14 bg-white">
+              <h2 className="text-2xl uppercase md:text-3xl font-semibold text-primaryColor mb-3 space-y-1 text-center md:text-start">
                 {t("Visit Garista")}
               </h2>
 
-              <p className="text-sm text-gray-500 mb-7 space-y-1 flex flex-col">
+              <p className="text-sm text-center md:text-start text-gray-500 mb-7 space-y-1 flex flex-col">
                 <span>
                   {t("Call us to schedule a tour of our Head Office.")}
                 </span>

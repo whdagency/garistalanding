@@ -70,6 +70,7 @@ declare interface Benefit {
 declare interface PricingPlan {
   type: string;
   price: string;
+  priceYearly: string;
   subscription: string;
   description: string;
   buttonText: string;
@@ -77,8 +78,18 @@ declare interface PricingPlan {
   features: string[];
 }
 
+declare interface FooterSection {
+  title: string;
+  links: FooterSectionLink[];
+}
+
+declare interface FooterSectionLink {
+  name: string;
+  href: string;
+}
+
 declare interface Job {
-  jobLink: string
+  jobLink: string;
   title: string;
   location: string;
   type: string;

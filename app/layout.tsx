@@ -9,8 +9,9 @@ import global_en from "./Translation/en/global.json";
 import global_fr from "./Translation/fr/global.json";
 import { I18nextProvider } from "react-i18next";
 import FooterBottom from "@/components/FooterBottom";
-import GoogleTagManager from '@/components/GoogleTagManager';
-import Head from 'next/head';
+import GoogleTagManager from "@/components/GoogleTagManager";
+import Head from "next/head";
+import { usePathname } from "next/navigation";
 
 const myLocalFont = localFont({
   src: [
@@ -65,21 +66,23 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const pathname = usePathname();
+
   return (
     <I18nextProvider i18n={i18next}>
       <html lang="en">
         <Head>
-          <GoogleTagManager  containerId='GTM-WHQRVMSC'/>
+          <GoogleTagManager containerId="GTM-WHQRVMSC" />
         </Head>
         <body
           className={`${myLocalFont.className} scroll-smooth relative overflow-x-hidden text-secondaryBg`}
         >
-            <noscript>
+          <noscript>
             <iframe
               src="https://www.googletagmanager.com/ns.html?id=GTM-WHQRVMSC"
               height="0"
               width="0"
-              style={{ display: 'none', visibility: 'hidden' }}
+              style={{ display: "none", visibility: "hidden" }}
             ></iframe>
           </noscript>
           {children}
@@ -178,7 +181,7 @@ export default function RootLayout({
               </div>
             </div> */}
 
-          <FooterBottom />
+          {pathname === "/" && <FooterBottom />}
 
           {/* <LangToggle /> */}
         </body>

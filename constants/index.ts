@@ -22,9 +22,114 @@ import {
   FaSnapchat,
   FaTiktok,
   FaBreadSlice,
+  FaYoutube,
+  FaLinkedin,
+  FaTwitter,
 } from "react-icons/fa";
 import { BiDrink } from "react-icons/bi";
-import { TbBowlSpoon, TbBurger, TbMeat, TbMessageQuestion } from "react-icons/tb";
+import {
+  TbBowlSpoon,
+  TbBurger,
+  TbMeat,
+  TbMessageQuestion,
+} from "react-icons/tb";
+
+// Footer Sections
+export const footerSections: FooterSection[] = [
+  {
+    title: "Services",
+    links: [
+      {
+        name: "Pay at Table",
+        href: "#",
+      },
+      {
+        name: "Order & Pay",
+        href: "#",
+      },
+      {
+        name: "Click & Collect",
+        href: "#",
+      },
+    ],
+  },
+  {
+    title: "Garista",
+    links: [
+      {
+        name: "Partners & Integrations",
+        href: "#",
+      },
+      {
+        name: "Who we are",
+        href: "#about",
+      },
+      {
+        name: "Pricing",
+        href: "#pricing",
+      },
+    ],
+  },
+  {
+    title: "Resources",
+    links: [
+      {
+        name: "Blog",
+        href: "/articles",
+      },
+      {
+        name: "Careers",
+        href: "/jobs",
+      },
+    ],
+  },
+  {
+    title: "Sectors",
+    links: [
+      {
+        name: "Fast Food",
+        href: "#",
+      },
+      {
+        name: "Cafe",
+        href: "#",
+      },
+      {
+        name: "Restaurant",
+        href: "#",
+      },
+    ],
+  },
+];
+
+// Footer Socials
+export const footerSocials = [
+  {
+    icon: FaFacebook,
+    url: "https://facebook.com/garista.official",
+    id: "facebook",
+  },
+  {
+    icon: FaYoutube,
+    url: "https://youtube.com/@garista.official",
+    id: "youtube",
+  },
+  {
+    icon: FaInstagram,
+    url: "https://instagram.com/garista.official",
+    id: "instagram",
+  },
+  {
+    icon: FaLinkedin,
+    url: "https://www.linkedin.com/company/garistaofficial/",
+    id: "linkedin",
+  },
+  {
+    icon: FaTwitter,
+    url: "https://x.com/garistaofficial",
+    id: "twitter",
+  },
+];
 
 // Interactive Menu Content
 export const interactiveMenuContent: InteractiveMenuContent = {
@@ -71,7 +176,7 @@ export const interactiveMenuContent: InteractiveMenuContent = {
       description: "All Toppings",
       name: "Hamburger",
       catImage: "/Menu/1.png",
-      currency: 'USD',
+      currency: "USD",
       id: "all",
     },
     {
@@ -80,7 +185,7 @@ export const interactiveMenuContent: InteractiveMenuContent = {
       description: "Delicious pizzas with a variety of toppings",
       name: "Pizza",
       catImage: "/Menu/4.png",
-      currency: 'USD',
+      currency: "USD",
       id: "pizza",
     },
     {
@@ -89,7 +194,7 @@ export const interactiveMenuContent: InteractiveMenuContent = {
       description: "Crispy and flavorful fried chicken",
       name: "Chicken",
       catImage: "/Menu/5.png",
-      currency: 'USD',
+      currency: "USD",
       id: "chicken",
     },
     {
@@ -98,7 +203,7 @@ export const interactiveMenuContent: InteractiveMenuContent = {
       description: "Stacked high with your favorite toppings.",
       name: "Burgers",
       catImage: "/Menu/1.png",
-      currency: 'USD',
+      currency: "USD",
       id: "burgers",
     },
     {
@@ -107,7 +212,7 @@ export const interactiveMenuContent: InteractiveMenuContent = {
       description: "Authentic Italian pasta dishes",
       name: "Pasta",
       catImage: "/Menu/4.png",
-      currency: 'USD',
+      currency: "USD",
       id: "pasta",
     },
     {
@@ -116,7 +221,7 @@ export const interactiveMenuContent: InteractiveMenuContent = {
       description: "Fresh and succulent seafood dishes",
       name: "Seafood",
       catImage: "/Menu/3.png",
-      currency: 'USD',
+      currency: "USD",
       id: "seafood",
     },
     {
@@ -125,7 +230,7 @@ export const interactiveMenuContent: InteractiveMenuContent = {
       description: "Flavorful tacos",
       name: "Tacos",
       catImage: "/Menu/2.png",
-      currency: 'USD',
+      currency: "USD",
       id: "tacos",
     },
     {
@@ -134,7 +239,7 @@ export const interactiveMenuContent: InteractiveMenuContent = {
       description: "Refreshing salads",
       name: "Salad",
       catImage: "/Menu/3.png",
-      currency: 'USD',
+      currency: "USD",
       id: "salad",
     },
   ],
@@ -312,11 +417,12 @@ export const benefitsContent: BenefitsContent[] = [
 // Pricing Plan
 export const pricingPlan: PricingPlan[] = [
   {
-    type: "Fight Covid-19",
-    price: "FREE",
+    type: "Intro",
+    price: "$20",
+    priceYearly: "$17",
     subscription: "Lifetime",
     description: "Keep your guest and restaurant staff safe",
-    buttonText: "Choose FREE",
+    buttonText: "Choose plan",
     features: [
       "Free QR Menu",
       "Beautiful QR Menus",
@@ -326,11 +432,12 @@ export const pricingPlan: PricingPlan[] = [
     ],
   },
   {
-    type: "Business",
-    price: "39 USD",
+    type: "Pro",
+    price: "$100",
+    priceYearly: "$95",
     subscription: "Month",
     description: "Ideal for restaurants with 80 covers",
-    buttonText: "Choose Business",
+    buttonText: "Choose plan",
     active: true,
     features: [
       "7 to 12 Tablets",
@@ -341,11 +448,12 @@ export const pricingPlan: PricingPlan[] = [
     ],
   },
   {
-    type: "Custom",
-    price: "Contact us",
+    type: "Entreprise",
+    price: "$200",
+    priceYearly: "$195",
     subscription: "",
-    description: "Ideal for restaurants with less staffing.",
-    buttonText: "Choose Professional",
+    description: "Ideal for restaurants with more staffing.",
+    buttonText: "Choose plan",
     features: [
       "Translation in one additional language",
       "Calculate calories and nutritional",

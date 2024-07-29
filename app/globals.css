@@ -72,10 +72,10 @@ html {
 
 @layer base {
   * {
-    @apply border-border;
+    @apply border-border scrollbar-hide;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-[#F4F5F8] text-foreground;
   }
 }
 
@@ -104,20 +104,20 @@ html {
   box-shadow: 0 4px 8px rgba(29, 29, 27, 0.1);
 }
 
-.marvel-device.iphone-x{
-  transform: scale(.5);
+.marvel-device.iphone-x {
+  transform: scale(0.5);
   margin-top: -10rem;
 }
 
 @media screen and (max-width: 860px) {
-  .marvel-device.iphone-x{
-    transform: scale(.3);
+  .marvel-device.iphone-x {
+    transform: scale(0.3);
     margin-top: -10rem;
-  } 
+  }
 }
 @media screen and (max-width: 450px) {
-  .marvel-device.iphone-x{
-    transform: scale(.6);
+  .marvel-device.iphone-x {
+    transform: scale(0.6);
     margin-top: -1rem;
-  } 
+  }
 }
