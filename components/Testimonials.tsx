@@ -15,10 +15,10 @@ export default function Testimonials() {
         <div className="w-full rounded-3xl bg-white py-14 px-14 transition-all duration-300">
           <div className="grid lg:grid-cols-2 grid-cols-1 gap-14">
             <div className="flex flex-nowrap flex-col justify-center items-start gap-y-3">
-              <h2 className="md:text-5xl text-4xl font-medium">
+              <h2 className="md:text-5xl text-center md:text-start text-3xl font-medium">
                 {t("You ask - we answer.")}
               </h2>
-              <p className="text-lg text-secondaryBg/80 font-medium">
+              <p className="text-lg text-center md:text-start text-secondaryBg/80 font-medium">
                 {t("All you want to know about the product")}
               </p>
             </div>

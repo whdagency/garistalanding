@@ -137,8 +137,8 @@ const PricingCard = ({
         <div
           className={`relative z-10 mb-10 overflow-hidden rounded-3xl px-6 py-12 sm:p-12 lg:px-6 xl:p-[50px] ${
             type === t("Pro")
-              ? "bg-primaryBlue text-white md:-mt-16 md:shadow-[0px_65.159px_52.748px_0px_rgba(82,_67,_194,_0.3)]"
-              : "bg-[#F5F8FF] md:bg-transparent"
+              ? "bg-primaryBlue text-white md:-mt-16 shadow-[0px_65.159px_52.748px_0px_rgba(82,_67,_194,_0.3)]"
+              : "bg-[#F5F8FF] md:bg-transparent shadow-[0px_46.94px_37.999px_0px_rgba(82,_67,_194,_0.3)] md:shadow-none"
           }`}
         >
           {active && (
