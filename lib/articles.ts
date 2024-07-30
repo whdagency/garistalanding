@@ -7,9 +7,16 @@ import { documentToPlainTextString } from "@contentful/rich-text-plain-text-rend
 
 export const getArticles = async (): Promise<Article[]> => {
   const entries = await getEntries("article");
+
   const formattedArticles = entries.map(({ fields, sys }) => {
     const imageUrl = (fields.coverImage as Asset).fields?.file?.url;
     const category = (fields.category as Entry).fields?.name;
+    const author = (fields.author as Entry).fields?.name;
+    const authorFacebook = (fields.author as Entry).fields?.facebook;
+    const authorTwitter = (fields.author as Entry).fields?.twitter;
+    const authorInstagram = (fields.author as Entry).fields?.instagram;
+    const authorLinkedin = (fields.author as Entry).fields?.linkedin;
+
     const plainTextContent = documentToPlainTextString(
       fields.content as Document
     );
@@ -26,6 +33,25 @@ export const getArticles = async (): Promise<Article[]> => {
       createdAt: sys.createdAt as string,
       updatedAt: sys.updatedAt as string,
       readingTime: readingTimeEstimate.text,
+      author: author as string,
+      socials: [
+        {
+          name: "Facebook",
+          link: authorFacebook as string,
+        },
+        {
+          name: "Twitter",
+          link: authorTwitter as string,
+        },
+        {
+          name: "Instagram",
+          link: authorInstagram as string,
+        },
+        {
+          name: "LinkedIn",
+          link: authorLinkedin as string,
+        },
+      ],
     };
   });
 

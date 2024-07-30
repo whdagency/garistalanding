@@ -13,9 +13,9 @@ const ArticleHero = () => {
         backgroundRepeat: "no-repeat",
         height: "90vh",
       }}
-      className="w-full"
+      className="w-full overflow-x-hidden"
     >
-      <div className="flex flex-col items-center justify-center gap-5 text-center pt-20 pb-32">
+      <div className="flex flex-col px-4 md:px-8 items-center justify-center gap-5 text-center pt-20 pb-32 relative">
         <div className="pt-4 bg-blue-500 flex flex-col items-center gap-5 relative">
           <Image
             src="/icons/hero-top-left.svg"
@@ -38,7 +38,7 @@ const ArticleHero = () => {
             style={{
               position: "absolute",
               top: "50%",
-              left: "-200px",
+              left: "-170px",
             }}
             className="hidden md:block"
           />
@@ -68,7 +68,7 @@ const ArticleHero = () => {
             style={{
               position: "absolute",
               top: "10px",
-              right: "-120px",
+              right: "-80px",
             }}
             className="hidden md:block"
           />
@@ -81,7 +81,7 @@ const ArticleHero = () => {
             style={{
               position: "absolute",
               top: "50%",
-              right: "-200px",
+              right: "-100px",
             }}
             className="hidden md:block"
           />
@@ -94,7 +94,7 @@ const ArticleHero = () => {
             style={{
               position: "absolute",
               bottom: "-40px",
-              right: "-120px",
+              right: "-80px",
             }}
             className="hidden md:block"
           />
@@ -105,8 +105,9 @@ const ArticleHero = () => {
               style={{
                 position: "absolute",
                 top: "-25px",
-                right: "-30px",
+                right: "-25px",
               }}
+              className="block"
             >
               <Image
                 src="/icons/hero-line-1.svg"

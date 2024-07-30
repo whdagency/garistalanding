@@ -126,6 +126,13 @@ declare interface Article {
   category: string;
   id: string;
   createdAt: string;
+  author: string;
   updatedAt: string;
   readingTime: string;
+  socials: Social[];
+}
+
+declare interface Social {
+  name: string;
+  link: string;
 }

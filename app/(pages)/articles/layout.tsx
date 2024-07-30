@@ -5,7 +5,7 @@ const ArticleLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <section className="w-full">
       <Nav activeSection="articles" />
-      {children}
+      <div className="overflow-x-hidden w-full">{children}</div>
     </section>
   );
 };
