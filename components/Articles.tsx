@@ -7,18 +7,7 @@ import { Document } from "@contentful/rich-text-types";
 import { Asset, Entry } from "contentful";
 import Image from "next/image";
 import Link from "next/link";
-
-interface Article {
-  title: string;
-  slug: string;
-  coverImage: string;
-  excerpt: string;
-  content: React.ReactNode;
-  category: string;
-  id: string;
-  createdAt: string;
-  updatedAt: string;
-}
+import { getArticles } from "@/lib/articles";
 
 const Articles = () => {
   const [articles, setArticles] = useState<Article[]>([]);
@@ -27,30 +16,8 @@ const Articles = () => {
 
   useEffect(() => {
     const fetchArticles = async () => {
-      const entries = await getEntries("article");
-      const formattedArticles = entries.map(({ fields, sys }) => {
-        const imageUrl = (fields.coverImage as Asset).fields?.file?.url;
-        const category = (fields.category as Entry).fields?.name;
-
-        return {
-          title: fields.title as string,
-          slug: fields.slug as string,
-          coverImage: `https:${imageUrl}`,
-          excerpt: fields.excerpt as string,
-          content: documentToReactComponents(fields.content as Document),
-          category: category as string,
-          id: sys.id as string,
-          createdAt: sys.createdAt as string,
-          updatedAt: sys.updatedAt as string,
-        };
-      });
-
-      setArticles(
-        formattedArticles.sort(
-          (a, b) =>
-            new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
-        )
-      );
+      const formattedArticles = await getArticles();
+      setArticles(formattedArticles);
     };
 
     const interval = setInterval(fetchArticles, 60 * 1000 * 5); // refetch articles every 5 minutes

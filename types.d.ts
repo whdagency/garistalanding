@@ -116,3 +116,16 @@ declare interface Job {
   description: string;
   jobEmailBody: string;
 }
+
+declare interface Article {
+  title: string;
+  slug: string;
+  coverImage: string;
+  excerpt: string;
+  content: React.ReactNode;
+  category: string;
+  id: string;
+  createdAt: string;
+  updatedAt: string;
+  readingTime: string;
+}

@@ -23,8 +23,22 @@ function Wrapper() {
     let Features = document.getElementById("Features");
     let Pricing = document.getElementById("Pricing");
     let Contact = document.getElementById("Contact");
+    let FAQ = document.getElementById("FAQ");
+    let Help = document.getElementById("Help");
+    let Benefits = document.getElementById("Benefits");
+    let Dashboard = document.getElementById("Dashboard");
 
-    let sections = [Home, About, Features, Pricing, Contact];
+    let sections = [
+      Home,
+      About,
+      Features,
+      Pricing,
+      Contact,
+      FAQ,
+      Help,
+      Benefits,
+      Dashboard,
+    ];
 
     const observerOptions = {
       root: null,
