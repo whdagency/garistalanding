@@ -129,10 +129,12 @@ declare interface Article {
   author: string;
   updatedAt: string;
   readingTime: string;
-  socials: Social[];
+  social: Social;
 }
 
 declare interface Social {
-  name: string;
-  link: string;
+  facebook: string;
+  twitter: string;
+  instagram: string;
+  linkedin: string;
 }

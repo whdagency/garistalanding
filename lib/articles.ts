@@ -34,24 +34,12 @@ export const getArticles = async (): Promise<Article[]> => {
       updatedAt: sys.updatedAt as string,
       readingTime: readingTimeEstimate.text,
       author: author as string,
-      socials: [
-        {
-          name: "Facebook",
-          link: authorFacebook as string,
-        },
-        {
-          name: "Twitter",
-          link: authorTwitter as string,
-        },
-        {
-          name: "Instagram",
-          link: authorInstagram as string,
-        },
-        {
-          name: "LinkedIn",
-          link: authorLinkedin as string,
-        },
-      ],
+      social: {
+        facebook: authorFacebook as string,
+        twitter: authorTwitter as string,
+        instagram: authorInstagram as string,
+        linkedin: authorLinkedin as string,
+      },
     };
   });
 

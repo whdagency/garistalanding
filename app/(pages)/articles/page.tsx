@@ -27,8 +27,8 @@ const Articles = async () => {
       </div>
 
       <div
-        style={{ marginTop: "-220px" }}
-        className="max-w-3xl mx-auto flex-col hidden md:flex items-center gap-8 pb-20"
+        style={{ marginTop: "-200px" }}
+        className="max-w-4xl mx-auto flex-col hidden md:flex items-center gap-8 pb-20"
       >
         <div className="grid grid-cols-2 gap-5">
           {articles.slice(0, 2).map((article) => (

@@ -6,7 +6,11 @@ import { notFound } from "next/navigation";
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, Minus } from "lucide-react";
+import { getArticles } from "@/lib/articles";
+import ArticleDetailsHero from "@/app/(pages)/articles/[slug]/ArticleDetailsHero";
+import ArticleCard from "@/app/(pages)/articles/ArticleCard";
+import ArticleDetailsBanner from "@/app/(pages)/articles/[slug]/ArticleDetailsBanner";
 
 type ArticleDetailsProps = {
   params: {
@@ -15,23 +19,7 @@ type ArticleDetailsProps = {
 };
 
 const getArticle = async (slug: string) => {
-  const entries = await getEntries("article");
-  const articles = entries.map(({ fields, sys }) => {
-    const imageUrl = (fields.coverImage as Asset).fields?.file?.url;
-    const category = (fields.category as Entry).fields?.name;
-
-    return {
-      title: fields.title as string,
-      slug: fields.slug as string,
-      coverImage: `https:${imageUrl}`,
-      excerpt: fields.excerpt as string,
-      content: documentToReactComponents(fields.content as Document),
-      category: category as string,
-      id: sys.id as string,
-      createdAt: sys.createdAt as string,
-      updatedAt: sys.updatedAt as string,
-    };
-  });
+  const articles = await getArticles();
 
   const article = articles.find((article) => article.slug === slug);
 
@@ -77,97 +65,39 @@ const ArticleDetails = async ({ params: { slug } }: ArticleDetailsProps) => {
   const relatedArticles = articles.filter((a) => a.slug !== slug);
 
   return (
-    <div className="container md:px-8 px-4 mb-10 flex flex-col gap-5">
-      <Link
-        href="/#articles"
-        className="flex items-center gap-2 text-[#231D4F] font-bold group"
-      >
-        <ArrowLeft
-          size={20}
-          className="text-[#231D4F] group-hover:translate-x-1 transition-transform"
-        />
-        <span className="text-base">Go Back</span>
-      </Link>
+    <div className="flex flex-col bg-white gap-10">
+      <ArticleDetailsHero article={article} />
 
-      <article className="flex flex-col gap-10 items-center mb-20">
-        <header className="w-full text-center">
-          <h1 className="text-3xl md:text-4xl text-[#231D4F] font-bold">
-            {article.title}
-          </h1>
-          <div className="flex items-center justify-center gap-3 mt-4">
-            <span className="text-sm rounded-full bg-[#001B790A] text-center text-capitalize text-[#6B7589] px-5 py-1 font-medium">
-              {article.category}
-            </span>
-            <hr className="w-9 border-t-2 border-[#9BA5B9]" />
-            <span className="text-xs text-[#9BA5B9] font-medium">
-              {new Date(article.createdAt).toLocaleDateString("en-US", {
-                dateStyle: "medium",
-              })}
-            </span>
+      <ArticleDetailsBanner article={article} className="-mt-44 md:-mt-60" />
+
+      <div className="bg-white pb-20">
+        <div className="px-4 flex flex-col items-center mx-auto">
+          <div className="pt-5 max-w-4xl">
+            <hr className="bg-black mb-5 hidden md:block" />
+
+            <article className="prose sm:pt-5">{article.content}</article>
           </div>
-        </header>
 
-        <div className="w-full">
-          <Image
-            src={article.coverImage}
-            alt={article.title}
-            width={1200}
-            height={600}
-            className="object-cover w-full h-auto"
-          />
-        </div>
+          <div className="flex flex-col gap-10 items-center pt-20 max-w-7xl">
+            <div className="flex flex-col gap-2 items-center text-center">
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-center">
+                You May Also Like
+              </h2>
 
-        <section className="prose lg:prose-xl max-w-none">
-          {article.content}
-        </section>
-      </article>
-
-      {/* Related Articles Section */}
-      <section className="w-full flex flex-col gap-5">
-        <h2 className="text-xl underline text-[#231D4F] font-semibold">
-          Read More Articles
-        </h2>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
-          {relatedArticles.slice(0, 3).map((article, index) => (
-            <div className="grid grid-cols-1 gap-5" key={index}>
-              <Image
-                src={article?.coverImage}
-                alt={article?.title}
-                width={800}
-                height={800}
-                className="object-cover"
-              />
-
-              <div className="flex flex-col gap-4">
-                <div className="flex items-center gap-3">
-                  <span className="text-xs rounded-full bg-[#001B790A] text-center text-capitalize text-[#6B7589] px-4 py-1 font-medium">
-                    {article?.category}
-                  </span>
-                  <hr className="w-9 border-t-2 border-[#9BA5B9]" />
-                  <span className="text-xs text-[#9BA5B9] font-medium">
-                    {new Date(article?.createdAt).toLocaleDateString("en-US", {
-                      dateStyle: "medium",
-                    })}
-                  </span>
-                </div>
-
-                <div className="flex flex-col gap-3">
-                  <Link
-                    href={`/articles/${article?.slug}`}
-                    className="text-xl text-[#111827] font-semibold"
-                  >
-                    {article?.title}
-                  </Link>
-                  <p className="text-sm text-[#3F4654] font-normal">
-                    {article?.excerpt}
-                  </p>
-                </div>
-              </div>
+              <p className="text-sm text-center text-black/80 font-normal md:text-base">
+                Explore trends, tips and strategies to elevate your restaurant’s
+                success.
+              </p>
             </div>
-          ))}
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+              {relatedArticles.slice(0, 3).map((article) => (
+                <ArticleCard article={article} key={article.id} />
+              ))}
+            </div>
+          </div>
         </div>
-      </section>
+      </div>
     </div>
   );
 };

@@ -11,12 +11,11 @@ const ArticleHero = () => {
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
-        height: "90vh",
       }}
-      className="w-full overflow-x-hidden"
+      className="w-full overflow-x-hidden h-[90vh] pt-[150px]"
     >
-      <div className="flex flex-col px-4 md:px-8 items-center justify-center gap-5 text-center pt-20 pb-32 relative">
-        <div className="pt-4 bg-blue-500 flex flex-col items-center gap-5 relative">
+      <div className="flex flex-col px-4 md:px-8 items-center justify-center gap-5 text-center pb-32 relative">
+        <div className="pt-4 flex flex-col items-center gap-5 relative">
           <Image
             src="/icons/hero-top-left.svg"
             width={50}
@@ -24,8 +23,8 @@ const ArticleHero = () => {
             alt="layout image"
             style={{
               position: "absolute",
-              top: "10px",
-              left: "-120px",
+              top: "5px",
+              left: "-80px",
             }}
             className="hidden md:block"
           />
@@ -38,7 +37,7 @@ const ArticleHero = () => {
             style={{
               position: "absolute",
               top: "50%",
-              left: "-170px",
+              left: "-100px",
             }}
             className="hidden md:block"
           />
@@ -50,13 +49,13 @@ const ArticleHero = () => {
             alt="layout image"
             style={{
               position: "absolute",
-              bottom: "-40px",
-              left: "-120px",
+              bottom: "-50px",
+              left: "-80px",
             }}
             className="hidden md:block"
           />
 
-          <h1 className="uppercase text-primaryColor font-bold text-base md:text-lg pt-5">
+          <h1 className="uppercase text-primaryColor font-bold text-base md:text-lg pt-5 md:-mt-10">
             Blog
           </h1>
 
@@ -81,7 +80,7 @@ const ArticleHero = () => {
             style={{
               position: "absolute",
               top: "50%",
-              right: "-100px",
+              right: "-120px",
             }}
             className="hidden md:block"
           />

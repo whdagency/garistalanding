@@ -5,6 +5,7 @@ const config = {
   content: [
     "./pages/**/*.{ts,tsx,md,mdx,js,jsx}",
     "./components/**/*.{ts,tsx,md,mdx,js,jsx}",
+    "./app/(pages)/**/*.{ts,tsx,md,mdx,js,jsx}",
     "./app/**/*.ts,tsx,md,mdx,js,jsx}",
     "./src/**/*.ts,tsx,md,mdx,js,jsx}",
   ],
@@ -15,6 +16,7 @@ const config = {
       padding: "2rem",
       screens: {
         "2xl": "1400px",
+        "3xl": "1536px",
       },
     },
     extend: {

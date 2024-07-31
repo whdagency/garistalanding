@@ -7,27 +7,23 @@ const HeroArticleCard = ({ article }: { article: Article }) => {
   return (
     <div
       key={article.id}
-      className="bg-white flex flex-col gap-3 rounded-xl py-5 px-5 overflow-hidden"
+      className="bg-white flex flex-col gap-3 md:rounded-xl md:py-5 md:px-5 overflow-hidden"
       style={{
         boxShadow: "0px 15px 80px 0px #161E240D",
       }}
     >
-      <div className="px-5">
+      <div className="md:px-5 w-full">
         <Image
           src={article.coverImage}
           alt={"article cover image"}
-          width={600}
-          height={400}
+          width={800}
+          height={500}
           loading="lazy"
-          className="object-cover"
-          style={{
-            width: "600px",
-            height: "200px",
-          }}
+          className="object-cover w-full"
         />
       </div>
 
-      <div className="flex flex-col items-start gap-3 flex-1">
+      <div className="flex flex-col items-start gap-3 flex-1 px-5 md:px-0">
         <p
           style={{ background: "#D4E0F7" }}
           className="text-sm font-semibold text-primaryColor w-fit px-3 py-1 rounded-md"
@@ -47,7 +43,7 @@ const HeroArticleCard = ({ article }: { article: Article }) => {
 
       <Link
         href={`/articles/${article.slug}`}
-        className="text-primaryColor group w-fit text-base md:text-base font-semibold flex items-center gap-1"
+        className="text-primaryColor group w-fit text-base md:text-base font-semibold flex items-center gap-1 px-5 md:px-0 pb-5 md:pb-0"
       >
         <span>Read More</span>
         <ChevronRight
