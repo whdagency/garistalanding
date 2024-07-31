@@ -8,6 +8,7 @@ import { Cross as Hamburger } from "hamburger-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Button } from "./ui/button";
 import { useTranslation } from "react-i18next";
+import LanguageModal from "@/components/LanguageModal";
 
 type Links = {
   activeSection: string;
@@ -108,6 +109,8 @@ function Nav({ activeSection }: Links) {
                 >
                   {t("Help")}
                 </a>
+
+                <LanguageModal />
               </div>
 
               <button className="mx-10 me-auto font-semibold text-black/80 text-sm px-7 py-2 rounded-xl bg-white text-center">
