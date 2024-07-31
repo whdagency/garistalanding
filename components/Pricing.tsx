@@ -90,6 +90,79 @@ export default function Pricing() {
             ))}
           </div>
         </div>
+
+        <div className="md:mx-10 flex flex-col items-center gap-20 pb-16 pt-20">
+          {/* Our Trusted POS Partners */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:place-items-center">
+            <div className="order-2 md:order-1 col-span-1 w-full h-full flex flex-col items-center">
+              <Image
+                src="/assets/trusted-partners.png"
+                alt="trusted partners"
+                width={500}
+                height={400}
+                loading="lazy"
+                className="object-cover"
+              />
+            </div>
+
+            <div className="order-1 md:order-2 col-span-1 flex flex-col gap-4 items-center md:items-start">
+              <h2 className="text-center md:text-start text-[#212529] font-bold text-2xl md:text-3xl lg:text-4xl w-fit">
+                Our Trusted{" "}
+                <span className="relative">
+                  POS Partners{" "}
+                  <Image
+                    src={"/icons/partner-vector.svg"}
+                    alt="partner-vector"
+                    width={350}
+                    height={40}
+                    className="absolute top-6 right-0"
+                  />
+                </span>
+              </h2>
+
+              <p className="font-normal text-center md:text-start text-base text-[#212529]">
+                At Garista, we partner with leading POS providers to offer
+                seamless and efficient solutions for enhanced restaurant
+                management.
+              </p>
+            </div>
+          </div>
+
+          {/* Our Secured Payment Method */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:place-items-center">
+            <div className="order-2 col-span-1 w-full h-full flex flex-col items-center">
+              <Image
+                src="/assets/payment-method.png"
+                alt="payment method"
+                width={500}
+                height={400}
+                loading="lazy"
+                className="object-cover"
+              />
+            </div>
+
+            <div className="order-1 col-span-1 flex flex-col items-center md:items-start gap-4">
+              <h2 className="text-center md:text-start text-[#212529] font-bold text-2xl md:text-3xl lg:text-4xl w-fit">
+                Our Secure{" "}
+                <span className="relative">
+                  Payment Method{" "}
+                  <Image
+                    src={"/icons/partner-vector.svg"}
+                    alt="partner-vector"
+                    width={350}
+                    height={40}
+                    className="absolute top-6 right-0"
+                  />
+                </span>
+              </h2>
+
+              <p className="font-normal text-center md:text-start text-base text-[#212529]">
+                Garista collaborates with top payment providers to ensure secure
+                and convenient transactions for all our customers.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
