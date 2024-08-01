@@ -55,9 +55,10 @@ const LanguageModal = () => {
         <Image
           src={selectedLanguage.flag}
           alt={selectedLanguage.name}
-          width={selectedLanguage.name === "Italy" ? 40 : 20}
-          height={selectedLanguage.name === "Italy" ? 40 : 20}
+          width={20}
+          height={20}
           loading="lazy"
+          className="object-contain rounded-full"
         />
 
         {selectedLanguage.name}
@@ -86,9 +87,10 @@ const LanguageModal = () => {
                 <Image
                   src={language.flag}
                   alt={language.name}
-                  width={20}
-                  height={20}
+                  width={30}
+                  height={30}
                   loading="lazy"
+                  className="object-contain rounded-full"
                 />
                 {language.name}
               </button>
