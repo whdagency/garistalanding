@@ -117,6 +117,17 @@ declare interface Job {
   jobEmailBody: string;
 }
 
+declare interface Career {
+  id: string;
+  jobLink: string;
+  title: string;
+  location: string;
+  type: string;
+  datePosted: string;
+  description: string;
+  createdAt: string;
+}
+
 declare interface Article {
   title: string;
   slug: string;

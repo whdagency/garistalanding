@@ -58,15 +58,15 @@ export const footerSections: FooterSection[] = [
     links: [
       {
         name: "Partners & Integrations",
-        href: "#",
+        href: "#Partners",
       },
       {
         name: "Who we are",
-        href: "#about",
+        href: "#About",
       },
       {
         name: "Pricing",
-        href: "#pricing",
+        href: "#Pricing",
       },
     ],
   },

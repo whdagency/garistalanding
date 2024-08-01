@@ -1,4 +1,5 @@
 import Jobs from "@/app/(pages)/jobs/Jobs";
+import { getJobs } from "@/lib/get-jobs";
 import { Metadata } from "next";
 import React from "react";
 
@@ -10,7 +11,8 @@ export const metadata: Metadata = {
   },
 };
 
-const JobsPage = () => {
-  return <Jobs />;
+const JobsPage = async () => {
+  const jobs = await getJobs();
+  return <Jobs jobs={jobs} />;
 };
 export default JobsPage;

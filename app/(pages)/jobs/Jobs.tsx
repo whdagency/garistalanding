@@ -8,23 +8,26 @@ import {
   PaginationNext,
   PaginationPrevious,
 } from "@/components/ui/pagination";
-import Footer from "@/components/Footer";
 import Nav from "@/components/Nav";
-import { sampleJobs } from "@/constants";
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import FooterBottom from "@/components/FooterBottom";
 
-const Jobs: React.FC = () => {
+type JobsProps = {
+  jobs: Career[];
+};
+
+const Jobs = ({ jobs }: JobsProps) => {
   const [searchTerm, setSearchTerm] = useState("");
   const [locationFilter, setLocationFilter] = useState("");
-  const [filteredJobs, setFilteredJobs] = useState<Job[]>(sampleJobs);
+  const [filteredJobs, setFilteredJobs] = useState<Career[]>(jobs);
   const [currentPage, setCurrentPage] = useState(1);
   const jobsPerPage = 6;
 
   useEffect(() => {
     // change the filtered jobs based on search term and location
-    const newFilteredJobs = sampleJobs.filter((job) => {
+    const newFilteredJobs = jobs.filter((job) => {
       return (
         job.title.toLowerCase().includes(searchTerm.toLowerCase()) &&
         (locationFilter === "" ||
@@ -34,7 +37,7 @@ const Jobs: React.FC = () => {
 
     setFilteredJobs(newFilteredJobs);
     setCurrentPage(1); // Reset to first page when filtering changes
-  }, [searchTerm, locationFilter]);
+  }, [jobs, locationFilter, searchTerm]);
 
   // Pagination
   const indexOfLastJob = currentPage * jobsPerPage;
@@ -59,10 +62,10 @@ const Jobs: React.FC = () => {
   };
 
   return (
-    <>
+    <div className="flex flex-col min-h-screen">
       <Nav activeSection="Jobs" />
 
-      <section className="mb-20 flex flex-col gap-7 container mx-auto">
+      <section className="mb-auto flex-1 flex-grow pt-32 flex flex-col gap-7 container mx-auto">
         <h1 className="text-4xl font-semibold text-center mx-auto">
           Join Our Team
         </h1>
@@ -88,7 +91,7 @@ const Jobs: React.FC = () => {
             onChange={(e) => setLocationFilter(e.target.value)}
           >
             <option value="">All Locations</option>
-            {sampleJobs
+            {jobs
               .filter((job) =>
                 Array.from(new Set(job.location.toLowerCase().trim()))
               )
@@ -115,7 +118,7 @@ const Jobs: React.FC = () => {
                 <strong>Type:</strong> {job.type}
               </p>
               <p>
-                <strong>Posted:</strong>
+                <strong>Posted: </strong>
                 {job.datePosted}
               </p>
 
@@ -125,13 +128,7 @@ const Jobs: React.FC = () => {
                 asChild
                 className="bg-primaryColor hover:scale-105 transition text-white font-bold py-2 px-4 rounded mt-4"
               >
-                <Link
-                  href={`mailto:${job.jobLink}?subject=${encodeURIComponent(
-                    `Application for ${job.title} role`
-                  )}&body=${encodeURIComponent(job.jobEmailBody)}`}
-                  target="_blank"
-                  className=""
-                >
+                <Link href={job.jobLink} target="_blank">
                   Apply Now
                 </Link>
               </Button>
@@ -139,7 +136,7 @@ const Jobs: React.FC = () => {
           ))}
         </div>
 
-        <div className="my-5">
+        <div className="my-5 pb-20">
           <JobPagination
             jobsPerPage={jobsPerPage}
             totalJobs={filteredJobs.length}
@@ -151,8 +148,8 @@ const Jobs: React.FC = () => {
         </div>
       </section>
 
-      <Footer />
-    </>
+      <FooterBottom />
+    </div>
   );
 };
 
