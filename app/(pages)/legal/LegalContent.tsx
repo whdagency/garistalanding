@@ -1,6 +1,6 @@
 "use client";
 
-import Footer from "@/components/Footer";
+import FooterBottom from "@/components/FooterBottom";
 import Nav from "@/components/Nav";
 import Link from "next/link";
 import React from "react";
@@ -10,9 +10,12 @@ const LegalContent = () => {
     <>
       <Nav activeSection="Privacy" />
 
-      <section className="mb-20 flex flex-col gap-7 container">
+      <section className="mb-20 pt-32 flex flex-col gap-7 container">
         <div className="">
-          <Link href="/#Footer" className="text-primaryColor hover:underline w-fit">
+          <Link
+            href="/#Footer"
+            className="text-primaryColor hover:underline w-fit"
+          >
             &larr; Back to Home
           </Link>
         </div>
@@ -98,7 +101,8 @@ const LegalContent = () => {
           </Link>
         </div>
       </section>
-      <Footer />
+
+      <FooterBottom />
     </>
   );
 };

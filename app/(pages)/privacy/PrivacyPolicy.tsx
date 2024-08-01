@@ -1,6 +1,6 @@
 "use client";
 
-import Footer from "@/components/Footer";
+import FooterBottom from "@/components/FooterBottom";
 import Nav from "@/components/Nav";
 import Link from "next/link";
 import React from "react";
@@ -10,7 +10,7 @@ const PrivacyPolicy = () => {
     <>
       <Nav activeSection="Privacy" />
 
-      <section className="mb-20 flex flex-col gap-7 container">
+      <section className="mb-20 pt-32 flex flex-col gap-7 container">
         <div className="">
           <Link
             href="/#Footer"
@@ -79,7 +79,8 @@ const PrivacyPolicy = () => {
           contact us at privacy@garista.com.
         </p>
       </section>
-      <Footer />
+
+      <FooterBottom />
     </>
   );
 };

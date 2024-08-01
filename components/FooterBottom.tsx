@@ -11,7 +11,10 @@ const FooterBottom = () => {
   const { t } = useTranslation("global");
 
   return (
-    <footer className="bg-white w-screen relative rounded-t-[50px] flex flex-col gap-5">
+    <footer
+      id="Footer"
+      className="bg-white w-screen relative rounded-t-[50px] flex flex-col gap-5"
+    >
       <div className="grid grid-cols-2 pt-16 md:flex md:flex-items-start md:justify-between sm:px-32 px-4 relative place-items-start gap-7 md:gap-10">
         {footerSections.map((section, index) => (
           <div key={index} className="col-span-1 flex flex-col gap-10">
