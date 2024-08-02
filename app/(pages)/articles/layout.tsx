@@ -3,9 +3,9 @@ import React from "react";
 
 const ArticleLayout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <section className="w-full h-full">
-      <Nav activeSection="articles" />
-      <div className="overflow-x-hidden w-full">{children}</div>
+    <section className="w-full flex-col min-h-screen">
+      <Nav activeSection="Articles" />
+      <div className="overflow-x-hidden w-full mb-auto">{children}</div>
     </section>
   );
 };

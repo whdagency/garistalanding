@@ -48,13 +48,13 @@ export default function About() {
   return (
     <div
       id="About"
-      className="container md:px-8 px-4 mt-20 rounded-[100px] bg-white mb-20"
+      className="container md:px-8 px-4 mt-20 rounded-[50px] md:rounded-[100px] bg-white mb-20"
     >
-      <div className="lg:pt-[100px] md:pt-[07px] pt-[50px]">
+      <div className="lg:pt-[100px] md:pt-[7px] pt-[50px]">
         <div className="flex flex-nowrap flex-col gap-y-20 items-center justify-start bg-white rounded-[100px] pt-10 pb-[100px]">
           <div className="flex flex-col gap-8">
             <div className="flex flex-col items-center gap-5 text-center">
-              <h2 className="lg:text-5xl md:text-4xl text-3xl font-semibold max-w-3xl capitalize">
+              <h2 className="lg:text-5xl md:text-4xl sm:text-3xl text-2xl font-semibold max-w-3xl capitalize">
                 <span className="text-primaryColor">{t("Create")}</span>,{" "}
                 <span className="text-primaryColor">{t("Customize")}</span>,{" "}
                 {t("and")}{" "}

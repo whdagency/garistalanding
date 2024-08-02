@@ -148,7 +148,7 @@ const Jobs = ({ jobs }: JobsProps) => {
         </div>
       </section>
 
-      <FooterBottom />
+      {/* <FooterBottom /> */}
     </div>
   );
 };

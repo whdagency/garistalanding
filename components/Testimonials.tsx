@@ -26,7 +26,7 @@ export default function Testimonials() {
             <div className="relative w-full">
               <Accordion type="single" collapsible className="w-full">
                 <AccordionItem value="item-1" className="py-6">
-                  <AccordionTrigger className="text-left text-xl">
+                  <AccordionTrigger className="text-left sm:text-xl">
                     {t("What is a digital menu ?")}
                   </AccordionTrigger>
                   <AccordionContent>
@@ -37,7 +37,7 @@ export default function Testimonials() {
                 </AccordionItem>
 
                 <AccordionItem value="item-2" className="py-6">
-                  <AccordionTrigger className="text-left text-xl">
+                  <AccordionTrigger className="text-left sm:text-xl">
                     {t(
                       "How does the PDF to QR Code menu differ from the Build from Scratch Menu ?"
                     )}
@@ -50,7 +50,7 @@ export default function Testimonials() {
                 </AccordionItem>
 
                 <AccordionItem value="item-3" className="py-6">
-                  <AccordionTrigger className="text-left text-xl">
+                  <AccordionTrigger className="text-left sm:text-xl">
                     {t(
                       "Can we use the menu on social networks or on our website ?"
                     )}
@@ -63,7 +63,7 @@ export default function Testimonials() {
                 </AccordionItem>
 
                 <AccordionItem value="item-4" className="py-6">
-                  <AccordionTrigger className="text-left text-xl">
+                  <AccordionTrigger className="text-left sm:text-xl">
                     {t("Do you have a free trial of paid plans ?")}
                   </AccordionTrigger>
                   <AccordionContent>

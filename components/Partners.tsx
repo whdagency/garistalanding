@@ -4,19 +4,19 @@ import { partnersIcon } from "@/constants";
 
 export default function Partners() {
   return (
-    <div id="Partners" className="container md:px-8 px-4">
-      <div className="lg:pt-[120px] md:pt-[100px] pt-[80px] px-10">
-        <Marquee pauseOnHover={true} gradient={true} gradientColor="#f4f5f7">
-          <div className="flex items-center gap-10 bg-[#EAF1F9] p-4">
+    <div id="Partners" className="mt-20">
+      <div className="bg-[#EAF1F9]">
+        <Marquee pauseOnHover={true} autoFill={true}>
+          <div className="flex items-center gap-10 py-5 bg-[#EAF1F9]">
             {partnersIcon.map((icon, i) => (
               <Image
                 key={i}
-                className={`inline-block ${i === 3 && "w-[140px]"}`}
+                className={`inline-block mx-5`}
                 src={icon.src}
                 alt="logo"
                 sizes="100px"
-                width={68}
-                height={68}
+                width={80}
+                height={80}
                 loading="eager"
               />
             ))}

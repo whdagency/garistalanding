@@ -3,10 +3,10 @@ import React from "react";
 
 const PagesLayout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <section className="pb-5 flex flex-col min-h-screen">
-      <main className="flex-1 w-full z-50">{children}</main>
+    <section className="flex flex-col min-h-screen">
+      <main className="mb-auto w-full z-50 pb-20">{children}</main>
 
-      {/* <FooterBottom /> */}
+      <FooterBottom />
     </section>
   );
 };

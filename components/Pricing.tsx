@@ -1,7 +1,6 @@
 import Link from "next/link";
 import React, { useState } from "react";
 import { Button } from "./ui/button";
-import { ChevronRight } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { pricingPlan } from "@/constants";
 import Image from "next/image";
@@ -13,7 +12,7 @@ export default function Pricing() {
   return (
     <div
       id="Pricing"
-      className="container md:px-8 px-4 rounded-[100px] bg-white mb-20"
+      className="container md:px-8 px-4 rounded-[50px] md:rounded-[100px] bg-white mb-20"
     >
       <div className="pb-[80px] flex flex-col gap-10">
         {/* <div className="text-center mb-14">
@@ -25,7 +24,7 @@ export default function Pricing() {
           </h3>
         </div> */}
         <div className="flex flex-col items-center gap-10 py-20 text-center">
-          <h2 className="text-[#231D4F] font-bold text-5xl">
+          <h2 className="text-[#231D4F] font-bold text-3xl md:text-5xl">
             Simple, transparent pricing
           </h2>
 
@@ -91,9 +90,9 @@ export default function Pricing() {
           </div>
         </div>
 
-        <div className="md:mx-10 flex flex-col items-center gap-20 pb-16 pt-20">
+        <div className="md:mx-10 flex flex-col items-center gap-24 pb-16 pt-20">
           {/* Our Trusted POS Partners */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:place-items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:place-items-center">
             <div className="order-2 md:order-1 col-span-1 w-full h-full flex flex-col items-center">
               <Image
                 src="/assets/trusted-partners.png"
@@ -129,7 +128,7 @@ export default function Pricing() {
           </div>
 
           {/* Our Secured Payment Method */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:place-items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:place-items-center">
             <div className="order-2 col-span-1 w-full h-full flex flex-col items-center">
               <Image
                 src="/assets/payment-method.png"

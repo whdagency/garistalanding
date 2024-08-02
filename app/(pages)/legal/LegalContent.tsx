@@ -102,7 +102,7 @@ const LegalContent = () => {
         </div>
       </section>
 
-      <FooterBottom />
+      {/* <FooterBottom /> */}
     </>
   );
 };

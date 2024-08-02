@@ -26,8 +26,8 @@ function Nav({ activeSection }: Links) {
 
   return (
     <div className="bg-transparent pt-4 fixed z-50 top-[0%] left-[0%] right-[0%] bottom-auto">
-      <div className="md:flex md:justify-center md:items-center">
-        <div className="hidden relative h-[72px] md:flex justify-center items-center px-6">
+      <div className="lg:flex lg:justify-center lg:items-center">
+        <div className="hidden relative h-[72px] lg:flex justify-center items-center px-6">
           <div className="z-10 flex items-center gap-x-5">
             {/* Logo */}
             <div className="relative bg-secondaryBg rounded-xl shadow-navShadow p-2">
@@ -120,7 +120,7 @@ function Nav({ activeSection }: Links) {
           </div>
         </div>
 
-        <div className="relative h-[72px] md:hidden flex justify-center items-center mx-3 px-6 bg-secondaryBg rounded-3xl shadow-navShadow">
+        <div className="relative h-[72px] lg:hidden flex justify-center items-center mx-3 px-6 bg-secondaryBg rounded-3xl shadow-navShadow">
           <div className="w-full flex justify-between items-center">
             <div className="relative">
               <Link

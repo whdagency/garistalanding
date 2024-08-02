@@ -75,7 +75,7 @@ const TermsOfService = () => {
         </p>
       </section>
 
-      <FooterBottom />
+      {/* <FooterBottom /> */}
     </>
   );
 };

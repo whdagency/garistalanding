@@ -15,14 +15,14 @@ const FooterBottom = () => {
       id="Footer"
       className="bg-white w-screen relative rounded-t-[50px] flex flex-col gap-5"
     >
-      <div className="grid grid-cols-2 pt-16 md:flex md:flex-items-start md:justify-between sm:px-32 px-4 relative place-items-start gap-7 md:gap-10">
+      <div className="grid grid-cols-2 pt-16 md:flex md:flex-items-start md:justify-between px-5 sm:px-32 relative gap-7 md:gap-10">
         {footerSections.map((section, index) => (
-          <div key={index} className="col-span-1 flex flex-col gap-10">
+          <div key={index} className={`col-span-1 flex flex-col gap-10`}>
             <h2 className="text-black/80 font-extrabold md:font-bold text-2xl md:text-xl">
               {section.title}
             </h2>
 
-            <div className="flex flex-col gap-4 font-['Poppins']">
+            <div className="flex flex-col gap-4">
               {section.links.map((link, index) => (
                 <Link
                   key={index}
@@ -78,7 +78,7 @@ const FooterBottom = () => {
         </div>
       </div>
 
-      <LangToggle />
+      {/* <LangToggle /> */}
     </footer>
   );
 };

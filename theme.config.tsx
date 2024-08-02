@@ -1,7 +1,6 @@
 import React from "react";
 import { DocsThemeConfig } from "nextra-theme-docs";
 import NavLogo from "@/pages/DocsNavLogo";
-import Footer from "@/components/Footer";
 import ThemeModeToggle from "@/components/ThemeModeToggle";
 import DocsFooterBottom from "@/pages/DocsFooterBottom";
 
@@ -28,7 +27,6 @@ const config: DocsThemeConfig = {
   navbar: {
     extraContent: (
       <>
-
         <ThemeModeToggle />
       </>
     ),
@@ -36,7 +34,6 @@ const config: DocsThemeConfig = {
   footer: {
     component: (
       <>
-        <Footer />
         <DocsFooterBottom />
       </>
     ),

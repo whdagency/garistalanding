@@ -80,7 +80,7 @@ const PrivacyPolicy = () => {
         </p>
       </section>
 
-      <FooterBottom />
+      {/* <FooterBottom /> */}
     </>
   );
 };

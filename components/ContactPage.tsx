@@ -59,13 +59,13 @@ const Contact = () => {
   };
 
   return (
-    <section id="Contact" className="container md:px-20 px-4">
+    <section id="Contact" className="container lg:px-20 px-4">
       <div className="pb-20">
-        <div className="w-full rounded-3xl transition-all duration-300 md:bg-white">
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 w-full">
+        <div className="w-full rounded-3xl transition-all duration-300 lg:bg-white">
+          <div className="grid grid-cols-1 gap-6 lg:grid-cols-2 w-full">
             {/* Contact form */}
-            <div className="flex rounded-3xl md:rounded-none md:rounded-s-3xl flex-col gap-5 col-span-1 bg-[#6985DB] px-5 py-10 md:py-14 md:px-14">
-              <h2 className="text-2xl md:text-3xl font-semibold capitalize text-white mb-5">
+            <div className="flex rounded-3xl lg:rounded-none lg:rounded-s-3xl flex-col gap-5 col-span-1 bg-[#6985DB] px-5 py-10 lg:py-14 lg:px-14">
+              <h2 className="text-2xl lg:text-3xl font-semibold capitalize text-white mb-5">
                 {t("How can we help you?")}
               </h2>
 
@@ -216,12 +216,12 @@ const Contact = () => {
             </div>
 
             {/* Contact Us Content */}
-            <div className="col-span-1 mt-8 rounded-3xl md:rounded-none md:mt-0 px-5 py-10 md:py-14 md:px-14 bg-white">
-              <h2 className="text-2xl uppercase md:text-3xl font-semibold text-primaryColor mb-3 space-y-1 text-center md:text-start">
+            <div className="col-span-1 mt-8 rounded-3xl lg:rounded-none lg:mt-0 px-5 py-10 lg:py-14 lg:px-14 bg-white">
+              <h2 className="text-2xl uppercase lg:text-3xl font-semibold text-primaryColor mb-3 space-y-1 text-center lg:text-start">
                 {t("Visit Garista")}
               </h2>
 
-              <p className="text-sm text-center md:text-start text-gray-500 mb-7 space-y-1 flex flex-col">
+              <p className="text-sm text-center lg:text-start text-gray-500 mb-7 space-y-1 flex flex-col">
                 <span>
                   {t("Call us to schedule a tour of our Head Office.")}
                 </span>
@@ -236,7 +236,7 @@ const Contact = () => {
 
               <div className="flex flex-col gap-6 mt-5">
                 <div className="flex items-center justify-start gap-5">
-                  <span className="flex items-center justify-center bg-white shadow-md flex-col rounded-full p-3">
+                  <span className="flex items-center justify-center bg-white shadow-lg flex-col rounded-full p-3">
                     <PhoneCall
                       size={30}
                       strokeWidth={2}
@@ -246,13 +246,13 @@ const Contact = () => {
                   <div className="flex flex-col gap-2">
                     <p className="flex items-center gap-2">
                       <span>Tel:</span>
-                      <span className="leading-relaxed text-sm md:text-base">
+                      <span className="leading-relaxed text-sm lg:text-base">
                         +212 530 456 789
                       </span>
                     </p>
                     <p className="flex items-center gap-2">
                       <span>GSM:</span>
-                      <span className="leading-relaxed text-sm md:text-base">
+                      <span className="leading-relaxed text-sm lg:text-base">
                         +212 777 456 789
                       </span>
                     </p>
@@ -260,7 +260,7 @@ const Contact = () => {
                 </div>
 
                 <div className="flex items-center justify-start gap-5">
-                  <span className="flex items-center justify-center bg-white shadow-md flex-col rounded-full p-3">
+                  <span className="flex items-center justify-center bg-white shadow-lg flex-col rounded-full p-3">
                     <Mail
                       size={30}
                       strokeWidth={2}
@@ -272,7 +272,7 @@ const Contact = () => {
                     <p>{t("Email:")}</p>
                     <Link
                       href={"mailto:Hello@garista.com"}
-                      className="leading-relaxed text-sm md:text-base"
+                      className="leading-relaxed text-sm lg:text-base"
                     >
                       Hello@garista.com
                     </Link>
@@ -280,7 +280,7 @@ const Contact = () => {
                 </div>
 
                 <div className="flex items-center justify-start gap-5">
-                  <span className="flex items-center justify-center bg-white shadow-md flex-col rounded-full p-3">
+                  <span className="flex items-center justify-center bg-white shadow-lg flex-col rounded-full p-3">
                     <MapPin
                       size={30}
                       strokeWidth={2}
@@ -290,10 +290,10 @@ const Contact = () => {
 
                   <div className="flex flex-col gap-2">
                     <p>{t("Address:")}</p>
-                    <p className="leading-relaxed text-sm md:text-base">
+                    <p className="leading-relaxed text-sm lg:text-base">
                       Bd Mohamed Jamal Addorra,{" "}
-                      <br className="hidden md:block" /> Imm BR1B, N 3 2eme
-                      etage, Lot al Hamd, <br className="hidden md:block" />{" "}
+                      <br className="hidden lg:block" /> Imm BR1B, N 3 2eme
+                      etage, Lot al Halg, <br className="hidden lg:block" />{" "}
                       Casablanca 20250
                     </p>
                   </div>
@@ -316,11 +316,11 @@ const SubmitButton = ({
 }) => {
   const { t } = useTranslation();
   return (
-    <div className="flex flex-col w-full gap-4 md:flex-row md:items-center">
+    <div className="flex flex-col w-full gap-4 lg:flex-row lg:items-center">
       <Button
         disabled={pending}
         type="submit"
-        className="w-full py-3 text-black hover:bg-black hover:text-white bg-white transition md:text-lg rounded font-medium"
+        className="w-full py-3 text-black hover:bg-black hover:text-white bg-white transition lg:text-lg rounded font-medium"
       >
         {pending ? `${t("Please wait")}...` : t("Submit")}
       </Button>
