@@ -5,18 +5,17 @@ import { partnersIcon } from "@/constants";
 export default function Partners() {
   return (
     <div id="Partners" className="mt-20">
-      <div className="bg-[#EAF1F9]">
-        <Marquee pauseOnHover={true} autoFill={true}>
-          <div className="flex items-center gap-10 py-5 bg-[#EAF1F9]">
+      <div>
+        <Marquee autoFill={true}>
+          <div className="flex items-center gap-5 py-5">
             {partnersIcon.map((icon, i) => (
               <Image
                 key={i}
                 className={`inline-block mx-5`}
                 src={icon.src}
                 alt="logo"
-                sizes="100px"
-                width={80}
-                height={80}
+                width={100}
+                height={100}
                 loading="eager"
               />
             ))}

@@ -415,13 +415,13 @@ export const featuresInfo: FeaturesInfo[] = [
 
 // Partners Content
 export const partnersIcon: PartnersIcon[] = [
-  { src: "/Partners/door-dash.svg" },
-  { src: "/Partners/dropbox.svg" },
-  { src: "/Partners/factly.svg" },
-  { src: "/Partners/palo-alto-networks.svg" },
-  { src: "/Partners/soundhound-ai.svg" },
-  { src: "/Partners/together-ai.svg" },
-  { src: "/Partners/zoom.svg" },
+  { src: "/Partners/door-dash.png" },
+  { src: "/Partners/dropbox.png" },
+  { src: "/Partners/factly.png" },
+  { src: "/Partners/palo-alto-networks.png" },
+  { src: "/Partners/soundhound-ai.png" },
+  { src: "/Partners/together-ai.png" },
+  { src: "/Partners/zoom.png" },
 ];
 
 // Benefits Content

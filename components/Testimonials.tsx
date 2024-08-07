@@ -10,7 +10,7 @@ export default function Testimonials() {
   const { t } = useTranslation("global");
 
   return (
-    <div id="Testimonials" className="container md:px-20 px-4">
+    <div id="FAQ" className="container md:px-20 px-4">
       <div className="pb-[100px]">
         <div className="w-full rounded-3xl bg-white py-14 px-14 transition-all duration-300">
           <div className="grid lg:grid-cols-2 grid-cols-1 gap-14">

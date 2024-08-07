@@ -13,6 +13,8 @@ import Partners from "@/components/Partners";
 import Pricing from "@/components/Pricing";
 import Testimonials from "@/components/Testimonials";
 import { useEffect, useState } from "react";
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 function Wrapper() {
   let [activeSection, setActiveSection] = useState("Home");
@@ -95,6 +97,18 @@ function Wrapper() {
 
     sections?.forEach((section) => {
       section && observer.observe(section);
+    });
+  }, []);
+
+  // AOS - Animate on scroll
+  useEffect(() => {
+    // initialising library
+    Aos.init({
+      // delay: 10, // values from 0 to 3000, with step 50ms
+      // duration: 700, // values from 0 to 3000, with step 50ms
+      // easing: "ease-in-out", // default easing for AOS animations
+      once: true, // whether animation should happen only once
+      mirror: false, // whether elements should animate out while scrolling past them
     });
   }, []);
 

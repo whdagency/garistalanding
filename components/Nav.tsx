@@ -8,7 +8,7 @@ import { Cross as Hamburger } from "hamburger-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Button } from "./ui/button";
 import { useTranslation } from "react-i18next";
-import LanguageModal from "@/components/LanguageModal";
+import LanguageModal, { LanguageMobileModal } from "@/components/LanguageModal";
 
 type Links = {
   activeSection: string;
@@ -100,7 +100,7 @@ function Nav({ activeSection }: Links) {
                 </a>
 
                 <a
-                  href="/#Help"
+                  href="/#FAQ"
                   className={`navLink ${
                     activeSection == "Help"
                       ? "text-primaryBg bg-primaryBg/10 rounded-xl"
@@ -133,12 +133,14 @@ function Nav({ activeSection }: Links) {
               </Link>
             </div>
 
-            <MobileNav
-              isOpen={isOpen}
-              handleSheet={handleSheet}
-              isHamburger={isHamburger}
-              setHamburger={setHamburger}
-            />
+            <div className="lg:hidden">
+              <MobileNav
+                isOpen={isOpen}
+                handleSheet={handleSheet}
+                isHamburger={isHamburger}
+                setHamburger={setHamburger}
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -162,61 +164,95 @@ const MobileNav = ({
   setHamburger,
 }: MobileNavProps) => {
   return (
-    <Sheet open={isOpen} onOpenChange={handleSheet}>
-      <SheetTrigger>
-        <Hamburger
-          toggled={isHamburger}
-          toggle={setHamburger}
-          size={20}
-          direction="left"
-        />
-      </SheetTrigger>
+    <>
+      <Sheet open={isOpen} onOpenChange={handleSheet}>
+        <SheetTrigger>
+          <Hamburger
+            toggled={isHamburger}
+            toggle={setHamburger}
+            size={20}
+            direction="left"
+          />
+        </SheetTrigger>
 
-      <SheetContent side={"bottom"}>
-        <div className="flex flex-col gap-y-4 mt-4 pb-4">
-          <SheetTrigger asChild>
-            <Button asChild className="text-xl text-primaryTwo" variant="ghost">
-              <a href="/#Dashboard">Dashboard</a>
-            </Button>
-          </SheetTrigger>
+        <SheetContent side={"bottom"}>
+          <div className="flex flex-col gap-y-4 mt-4 pb-4">
+            <SheetTrigger asChild>
+              <Button
+                asChild
+                className="text-xl text-primaryTwo"
+                variant="ghost"
+              >
+                <a href="/#Dashboard">Dashboard</a>
+              </Button>
+            </SheetTrigger>
 
-          <SheetTrigger asChild>
-            <Button asChild className="text-xl text-primaryTwo" variant="ghost">
-              <a href="/#Features">Features</a>
-            </Button>
-          </SheetTrigger>
+            <SheetTrigger asChild>
+              <Button
+                asChild
+                className="text-xl text-primaryTwo"
+                variant="ghost"
+              >
+                <a href="/#Features">Features</a>
+              </Button>
+            </SheetTrigger>
 
-          <SheetTrigger asChild>
-            <Button asChild className="text-xl text-primaryTwo" variant="ghost">
-              <Link href="/#Benefits">Benefits</Link>
-            </Button>
-          </SheetTrigger>
+            <SheetTrigger asChild>
+              <Button
+                asChild
+                className="text-xl text-primaryTwo"
+                variant="ghost"
+              >
+                <Link href="/#Benefits">Benefits</Link>
+              </Button>
+            </SheetTrigger>
 
-          <SheetTrigger asChild>
-            <Button asChild className="text-xl text-primaryTwo" variant="ghost">
-              <Link href="/#About">About</Link>
-            </Button>
-          </SheetTrigger>
+            <SheetTrigger asChild>
+              <Button
+                asChild
+                className="text-xl text-primaryTwo"
+                variant="ghost"
+              >
+                <Link href="/#About">About</Link>
+              </Button>
+            </SheetTrigger>
 
-          <SheetTrigger asChild>
-            <Button asChild className="text-xl text-primaryTwo" variant="ghost">
-              <a href="/#FAQ">FAQ</a>
-            </Button>
-          </SheetTrigger>
+            <SheetTrigger asChild>
+              <Button
+                asChild
+                className="text-xl text-primaryTwo"
+                variant="ghost"
+              >
+                <a href="/#FAQ">FAQ</a>
+              </Button>
+            </SheetTrigger>
 
-          <SheetTrigger asChild>
-            <Button asChild className="text-xl text-primaryTwo" variant="ghost">
-              <Link href="/#Help">Help</Link>
-            </Button>
-          </SheetTrigger>
+            <SheetTrigger asChild>
+              <Button
+                asChild
+                className="text-xl text-primaryTwo"
+                variant="ghost"
+              >
+                <Link href="/#Help">Help</Link>
+              </Button>
+            </SheetTrigger>
 
-          <SheetTrigger asChild>
-            <Button asChild className="text-xl text-primaryTwo" variant="ghost">
-              <a href="/#Contact">Contact</a>
-            </Button>
-          </SheetTrigger>
-        </div>
-      </SheetContent>
-    </Sheet>
+            <SheetTrigger asChild>
+              <Button
+                asChild
+                className="text-xl text-primaryTwo"
+                variant="ghost"
+              >
+                <a href="/#Contact">Contact</a>
+              </Button>
+            </SheetTrigger>
+
+            <SheetTrigger asChild>
+              <LanguageModal />
+            </SheetTrigger>
+          </div>
+        </SheetContent>
+      </Sheet>
+    </>
   );
 };

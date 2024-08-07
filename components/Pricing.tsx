@@ -4,6 +4,8 @@ import { Button } from "./ui/button";
 import { useTranslation } from "react-i18next";
 import { pricingPlan } from "@/constants";
 import Image from "next/image";
+import PaymentMethod from "@/components/PaymentMethod";
+import PosPartners from "@/components/PosPartners";
 
 export default function Pricing() {
   const { t } = useTranslation("global");
@@ -92,20 +94,11 @@ export default function Pricing() {
 
         <div className="md:mx-10 flex flex-col items-center gap-24 pb-16 pt-20">
           {/* Our Trusted POS Partners */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:place-items-center">
-            <div className="order-2 md:order-1 col-span-1 w-full h-full flex flex-col items-center">
-              <Image
-                src="/assets/trusted-partners.png"
-                alt="trusted partners"
-                width={500}
-                height={400}
-                loading="lazy"
-                className="object-cover"
-              />
-            </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:place-items-center">
+            <PosPartners className="order-2 lg:order-1 col-span-1" />
 
-            <div className="order-1 md:order-2 col-span-1 flex flex-col gap-4 items-center md:items-start">
-              <h2 className="text-center md:text-start text-[#212529] font-bold text-2xl md:text-3xl lg:text-4xl w-fit">
+            <div className="order-1 lg:order-2 col-span-1 flex flex-col gap-4 items-center lg:items-start w-full">
+              <h2 className="text-center lg:text-start text-[#212529] font-bold text-2xl md:text-3xl lg:text-4xl w-fit">
                 Our Trusted{" "}
                 <span className="relative">
                   POS Partners{" "}
@@ -119,29 +112,22 @@ export default function Pricing() {
                 </span>
               </h2>
 
-              <p className="font-normal text-center md:text-start text-base text-[#212529]">
-                At Garista, we partner with leading POS providers to offer
-                seamless and efficient solutions for enhanced restaurant
-                management.
+              <p className="font-normal text-center lg:text-start text-base text-[#212529]">
+                {t(
+                  "At Garista, we partner with leading POS providers to offer seamless and efficient solutions for enhanced restaurant management."
+                )}
               </p>
             </div>
           </div>
 
           {/* Our Secured Payment Method */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:place-items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-10 lg:place-items-center">
             <div className="order-2 col-span-1 w-full h-full flex flex-col items-center">
-              <Image
-                src="/assets/payment-method.png"
-                alt="payment method"
-                width={500}
-                height={400}
-                loading="lazy"
-                className="object-cover"
-              />
+              <PaymentMethod />
             </div>
 
-            <div className="order-1 col-span-1 flex flex-col items-center md:items-start gap-4">
-              <h2 className="text-center md:text-start text-[#212529] font-bold text-2xl md:text-3xl lg:text-4xl w-fit">
+            <div className="order-1 col-span-1 flex flex-col items-center lg:items-start gap-4">
+              <h2 className="text-center lg:text-start text-[#212529] font-bold text-2xl md:text-3xl lg:text-4xl w-fit">
                 Our Secure{" "}
                 <span className="relative">
                   Payment Method{" "}
@@ -155,7 +141,7 @@ export default function Pricing() {
                 </span>
               </h2>
 
-              <p className="font-normal text-center md:text-start text-base text-[#212529]">
+              <p className="font-normal text-center lg:text-start text-base text-[#212529]">
                 Garista collaborates with top payment providers to ensure secure
                 and convenient transactions for all our customers.
               </p>

@@ -216,7 +216,7 @@ const Contact = () => {
             </div>
 
             {/* Contact Us Content */}
-            <div className="col-span-1 mt-8 rounded-3xl lg:rounded-none lg:mt-0 px-5 py-10 lg:py-14 lg:px-14 bg-white">
+            <div className="col-span-1 mt-8 rounded-3xl lg:mt-0 px-5 py-10 lg:py-14 lg:px-14 bg-white">
               <h2 className="text-2xl uppercase lg:text-3xl font-semibold text-primaryColor mb-3 space-y-1 text-center lg:text-start">
                 {t("Visit Garista")}
               </h2>
@@ -320,7 +320,7 @@ const SubmitButton = ({
       <Button
         disabled={pending}
         type="submit"
-        className="w-full py-3 text-black hover:bg-black hover:text-white bg-white transition lg:text-lg rounded font-medium"
+        className="w-full py-3 text-[#5243C2] hover:bg-[#e9eaf1] hover:text-[#5243C2] bg-[#A3B9FF] transition lg:text-lg font-medium rounded-full"
       >
         {pending ? `${t("Please wait")}...` : t("Submit")}
       </Button>

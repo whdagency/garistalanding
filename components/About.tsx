@@ -47,7 +47,7 @@ export default function About() {
 
   return (
     <div
-      id="About"
+      id="Features"
       className="container md:px-8 px-4 mt-20 rounded-[50px] md:rounded-[100px] bg-white mb-20"
     >
       <div className="lg:pt-[100px] md:pt-[7px] pt-[50px]">
