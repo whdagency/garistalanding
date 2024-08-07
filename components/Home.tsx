@@ -13,12 +13,12 @@ export default function Home() {
   const { t } = useTranslation("global");
 
   return (
-    <div id="Dashboard" className="container md:px-8 px-4 flex flex-col gap-5">
+    <div id="Home" className="container md:px-8 px-4 flex flex-col gap-5">
       <div className="pt-[220px] lg:pb-[50px] md:pb-[60px] pb-[0px]">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 relative">
           <div data-aos="fade-right" className="flex flex-col gap-5">
-            <h2 className="px-7 py-2 rounded-3xl bg-[#BECEFF] text-[#284396] uppercase text-sm w-fit font-semibold">
-              A Digital Menu Project
+            <h2 className="px-7 py-2 rounded-3xl bg-[#BECEFF] text-[#284396] uppercase text-sm w-fit font-black">
+              {t("Grow With Garista")}
             </h2>
 
             <div className="text-black text-3xl md:text-4xl lg:text-5xl flex flex-col gap-2">
@@ -51,7 +51,7 @@ export default function Home() {
 
             <p className="text-[#737373] text-sm font-medium leading-relaxed">
               {t(
-                "This is a digital menu project that allows you to digitize your menu, orders, payments, and marketing. It is designed to be user-friendly and easy to use, making it accessible to both restaurants and cafes."
+                "All-in-one digital solution for menu customization, marketing, Payment, and management. Simplify operations and elevate guest experiences for restaurants, cafes, and hotels."
               )}
             </p>
 
@@ -65,7 +65,7 @@ export default function Home() {
                 />
               </Button>
 
-              <button className="flex flex-row items-center justify-center gap-x-2 text-[#5D6B6E] font-normal text-sm">
+              <button className="flex flex-row items-center justify-center gap-x-2 text-[#5D6B6E] font-bold text-sm">
                 <Image
                   src="/icons/video-player.svg"
                   alt="video-player"
@@ -73,7 +73,7 @@ export default function Home() {
                   height={40}
                   className="rounded-full object-contain"
                 />
-                {t("Watch Our Journey")}
+                {t("Garista Overview")}
               </button>
             </div>
           </div>
@@ -155,7 +155,7 @@ export default function Home() {
                   height={40}
                   className="rounded-full object-contain"
                 />
-                {t("Watch Our Journey")}
+                {t("Garista Overview")}
               </button>
             </div>
           </div>
@@ -218,12 +218,17 @@ const HeroRevenueTime = ({
       </p>
 
       <p className="flex items-center gap-2 font-medium">
-        <span className="text-[#38D271] text-sm sm:text-base flex items-center gap-1">
-          <ArrowUp size={20} color="#38D271" />
-          <span>{type === "revenue" ? "2.1" : "5.6"} %</span>
-        </span>
+        {type === "revenue" && (
+          <span className="text-[#38D271] text-sm sm:text-base flex items-center gap-1">
+            <ArrowUp size={20} color="#38D271" />
+            <span>2.1%</span>
+          </span>
+        )}
+
         <span className="text-[#798190] text-sm sm:text-base">
-          vs without garista
+          {type === "revenue"
+            ? "vs without garista"
+            : "Decreasing customer waiting"}
         </span>
       </p>
     </div>
@@ -263,7 +268,7 @@ const HeroPanier = ({ className, ...props }: HeroPanierProps) => {
           %
         </span>
         <span className="text-[#737B8B] text-xs sm:text-sm font-semibold">
-          Panier moyen after garista solution
+          On your customers average basket
         </span>
       </p>
     </div>

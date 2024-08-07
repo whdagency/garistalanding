@@ -1,12 +1,5 @@
-import { getEntries } from "@/app/actions/contentful.action";
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-import { Document } from "@contentful/rich-text-types";
-import { Asset, Entry } from "contentful";
 import { notFound } from "next/navigation";
 import React from "react";
-import Image from "next/image";
-import Link from "next/link";
-import { ArrowLeft, Minus } from "lucide-react";
 import { getArticles } from "@/lib/articles";
 import ArticleDetailsHero from "@/app/(pages)/articles/[slug]/ArticleDetailsHero";
 import ArticleCard from "@/app/(pages)/articles/ArticleCard";

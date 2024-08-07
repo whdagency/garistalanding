@@ -1,9 +1,6 @@
 "use client";
 
 import ArticleCard from "@/app/(pages)/articles/ArticleCard";
-import { ArrowRight } from "lucide-react";
-import Image from "next/image";
-import Link from "next/link";
 import React, { useState } from "react";
 
 const LatestBlogs = ({ articles }: { articles: Article[] }) => {

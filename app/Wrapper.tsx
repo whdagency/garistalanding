@@ -2,12 +2,9 @@
 
 import About from "@/components/About";
 import Articles from "@/components/Articles";
-import Benefits from "@/components/Benefits";
 import Contact from "@/components/ContactPage";
-import Features from "@/components/Features";
-import Footer from "@/components/Footer";
 import Hero from "@/components/Home";
-import KeyAdvantages from "@/components/KeyAdvantages";
+import Benefits from "@/components/KeyAdvantages";
 import Nav from "@/components/Nav";
 import Partners from "@/components/Partners";
 import Pricing from "@/components/Pricing";
@@ -26,9 +23,9 @@ function Wrapper() {
     let Pricing = document.getElementById("Pricing");
     let Contact = document.getElementById("Contact");
     let FAQ = document.getElementById("FAQ");
+    let Blog = document.getElementById("Blog");
     let Help = document.getElementById("Help");
     let Benefits = document.getElementById("Benefits");
-    let Dashboard = document.getElementById("Dashboard");
 
     let sections = [
       Home,
@@ -37,9 +34,9 @@ function Wrapper() {
       Pricing,
       Contact,
       FAQ,
+      Blog,
       Help,
       Benefits,
-      Dashboard,
     ];
 
     const observerOptions = {
@@ -50,10 +47,10 @@ function Wrapper() {
 
     const ids = [
       "Home",
-      "Dashboard",
       "Features",
       "Benefits",
       "FAQ",
+      "Blog",
       "Help",
       "About",
       "Features",
@@ -119,14 +116,11 @@ function Wrapper() {
       <Hero />
       <Partners />
       <About />
-      <KeyAdvantages />
-      {/* <Features /> */}
-      {/* <Benefits />  */}
+      <Benefits />
       <Pricing />
       <Contact />
       <Testimonials />
       <Articles />
-      {/* <Footer /> */}
     </div>
   );
 }

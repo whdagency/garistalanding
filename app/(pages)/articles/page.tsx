@@ -14,7 +14,7 @@ const Articles = async () => {
   const articles = await getArticles();
 
   return (
-    <div id="Articles" className="flex flex-col gap-5 bg-white">
+    <div id="Blog" className="flex flex-col gap-5 bg-white">
       <ArticleHero />
 
       <div

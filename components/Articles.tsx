@@ -36,7 +36,7 @@ const Articles = () => {
   const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
 
   return (
-    <div id="articles" className="container md:px-8 px-4">
+    <div id="Blog" className="container md:px-8 px-4">
       <div className="pb-[100px] flex flex-col gap-10 items-center">
         <section className="flex flex-col gap-4 items-center text-center">
           <h2 className="text-3xl md:text-4xl text-[#231D4F] font-bold">

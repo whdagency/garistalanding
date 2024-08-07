@@ -45,17 +45,6 @@ function Nav({ activeSection }: Links) {
             <div className="flex gap-3 items-center bg-secondaryBg shadow-navShadow rounded-xl py-1 justify-between px-3">
               <div className="flex gap-2 items-center">
                 <a
-                  href="/#Dashboard"
-                  className={`navLink ${
-                    activeSection == "Dashboard"
-                      ? "text-primaryBg bg-primaryBg/10 rounded-xl"
-                      : "text-primaryOne hover:text-primaryBg rounded-xl"
-                  }`}
-                >
-                  {t("Dashboard")}
-                </a>
-
-                <a
                   href="/#Features"
                   className={`navLink ${
                     activeSection == "Features"
@@ -85,7 +74,7 @@ function Nav({ activeSection }: Links) {
                       : "text-primaryOne hover:text-primaryBg rounded-xl"
                   }`}
                 >
-                  {t("About")}
+                  {t("About Us")}
                 </a>
 
                 <a
@@ -97,6 +86,17 @@ function Nav({ activeSection }: Links) {
                   }`}
                 >
                   {t("FAQ")}
+                </a>
+
+                <a
+                  href="/#Blog"
+                  className={`navLink ${
+                    activeSection == "Blog"
+                      ? "text-primaryBg bg-primaryBg/10 rounded-xl"
+                      : "text-primaryOne hover:text-primaryBg rounded-xl"
+                  }`}
+                >
+                  {t("Blog")}
                 </a>
 
                 <a
@@ -114,7 +114,7 @@ function Nav({ activeSection }: Links) {
               </div>
 
               <button className="mx-10 me-auto font-semibold text-black/80 text-sm px-7 py-2 rounded-xl bg-white text-center">
-                Login
+                <a href="/#Contact">Contact Us</a>
               </button>
             </div>
           </div>
@@ -183,16 +183,6 @@ const MobileNav = ({
                 className="text-xl text-primaryTwo"
                 variant="ghost"
               >
-                <a href="/#Dashboard">Dashboard</a>
-              </Button>
-            </SheetTrigger>
-
-            <SheetTrigger asChild>
-              <Button
-                asChild
-                className="text-xl text-primaryTwo"
-                variant="ghost"
-              >
                 <a href="/#Features">Features</a>
               </Button>
             </SheetTrigger>
@@ -213,7 +203,7 @@ const MobileNav = ({
                 className="text-xl text-primaryTwo"
                 variant="ghost"
               >
-                <Link href="/#About">About</Link>
+                <Link href="/#About">About Us</Link>
               </Button>
             </SheetTrigger>
 
@@ -233,6 +223,16 @@ const MobileNav = ({
                 className="text-xl text-primaryTwo"
                 variant="ghost"
               >
+                <a href="/#Blog">Blog</a>
+              </Button>
+            </SheetTrigger>
+
+            <SheetTrigger asChild>
+              <Button
+                asChild
+                className="text-xl text-primaryTwo"
+                variant="ghost"
+              >
                 <Link href="/#Help">Help</Link>
               </Button>
             </SheetTrigger>
@@ -243,7 +243,7 @@ const MobileNav = ({
                 className="text-xl text-primaryTwo"
                 variant="ghost"
               >
-                <a href="/#Contact">Contact</a>
+                <a href="/#Contact">Contact Us</a>
               </Button>
             </SheetTrigger>
 
