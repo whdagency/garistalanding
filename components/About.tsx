@@ -84,9 +84,9 @@ export default function About() {
             </div>
 
             {/* Tab Content */}
-            <div className="flex flex-col gap-10 lg:flex-row lg:gap-16 p-5 xl:p-10 relative">
+            <div className="flex flex-col items-center gap-10 lg:flex-row lg:gap-16 p-5 xl:p-10 relative">
               {/* Tab Content */}
-              <div className="flex flex-col col-span-1 order-2 lg:order-1">
+              <div className="flex flex-col col-span-1 order-2 lg:order-1 lg:-mt-5">
                 {aboutUsContent
                   .filter((content) => content.type === selectedTab)
                   .map((content, index) => (
