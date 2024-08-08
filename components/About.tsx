@@ -84,7 +84,7 @@ export default function About() {
             </div>
 
             {/* Tab Content */}
-            <div className="flex flex-col gap-10 lg:flex-row lg:gap-16 p-10 relative">
+            <div className="flex flex-col gap-10 lg:flex-row lg:gap-16 p-5 xl:p-10 relative">
               {/* Tab Content */}
               <div className="flex flex-col col-span-1 order-2 lg:order-1">
                 {aboutUsContent
@@ -99,11 +99,11 @@ export default function About() {
                           key={index}
                           className="flex flex-col gap-y-4 text-center lg:text-left"
                         >
-                          <h3 className="text-black md:text-lg lg:text-xl text-base font-semibold tracking-wide font-['Inter']">
+                          <h3 className="text-black text-xl lg:text-2xl xl:text-[28px] 2xl:text-[32px] font-extrabold tracking-wide">
                             {item.title}
                           </h3>
 
-                          <p className="text-[#525252] lg:text-left md:text-base text-sm font-medium">
+                          <p className="text-[#5A586A] text-center text-base lg:text-left lg:text-lg 2xl:text-[26px] font-medium">
                             {item.description}
                           </p>
                         </div>
