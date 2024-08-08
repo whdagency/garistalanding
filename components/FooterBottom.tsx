@@ -13,7 +13,7 @@ const FooterBottom = () => {
   return (
     <footer
       id="Footer"
-      className="bg-white w-screen relative rounded-t-[50px] flex flex-col gap-5"
+      className="bg-white w-full relative rounded-t-[50px] flex flex-col gap-5"
     >
       <div className="grid grid-cols-2 pt-16 md:flex md:flex-items-start md:justify-between px-5 sm:px-32 relative gap-7 md:gap-10">
         {footerSections.map((section, index) => (

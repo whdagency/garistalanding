@@ -95,7 +95,7 @@ export default function Home() {
             {/* Line - Revenue */}
             <HeroRevenueTime
               type="revenue"
-              className="top-10 md:top-5 -left-5 lg:-top-20 lg:-left-20"
+              className="top-10 md:top-5 -left-0 sm:-left-3 lg:-top-20 lg:-left-20"
               tickerNumber={30}
             />
 
@@ -108,13 +108,13 @@ export default function Home() {
 
             <HeroRevenueTime
               type="time"
-              className="top-10 md:top-5 -right-5 lg:hidden"
+              className="top-10 md:top-5 -right-0 sm:-right-3 lg:hidden"
               tickerNumber={70}
             />
 
             {/* Line - Panier */}
             <HeroPanier className="-top-7 right-5 hidden lg:flex" />
-            <HeroPanier className="flex bottom-16 left-[20%] sm:left-1/3 lg:hidden" />
+            <HeroPanier className="flex bottom-36 left-[20%] sm:left-1/3 lg:hidden" />
 
             <Image
               src="/assets/hero-dashboard.png"
@@ -137,7 +137,7 @@ export default function Home() {
             />
 
             {/* Button */}
-            <div className="flex-row items-center gap-5 flex lg:hidden justify-center pt-5">
+            <div className="flex-col items-center gap-5 flex lg:hidden justify-center pt-10">
               <Button className="flex flex-row items-center justify-center gap-x-2 text-white bg-primaryBlue rounded-xl text-center">
                 {t("Get Started Now")}
                 <ChevronRight
@@ -188,7 +188,7 @@ const HeroRevenueTime = ({
     >
       <div className="flex items-center gap-3">
         <div
-          className={`flex w-fit flex-col items-center justify-center gap-2 ${type === "revenue" ? "bg-red-500" : "bg-[#FF6937]"} rounded-full p-3`}
+          className={`flex w-fit flex-col items-center justify-center gap-2 ${type === "revenue" ? "bg-red-500" : "bg-[#FF6937]"} rounded-full p-2 md:p-3`}
         >
           <Image
             src={
@@ -200,32 +200,32 @@ const HeroRevenueTime = ({
             width={25}
             height={25}
             loading="lazy"
-            className="object-contain"
+            className="object-contain w-3 h-3 md:w-5 md:h-5"
           />
         </div>
 
-        <span className="font-black text-black text-base sm:text-lg">
+        <span className="font-black text-black text-sm md:text-base sm:text-lg">
           {type === "revenue" ? "Revenue" : "Time"}
         </span>
       </div>
-      <p className="text-black text-3xl font-black">
+      <p className="text-black text-xl md:text-3xl font-black">
         {type === "revenue" ? "+" : "-"}
         <NumberTicker
           value={tickerNumber}
-          className="text-black font-black text-2xl sm:text-3xl"
+          className="text-black font-black text-xl sm:text-3xl"
         />
         %
       </p>
 
-      <p className="flex items-center gap-2 font-medium">
+      <p className="flex items-center gap-1 md:gap-2 font-medium">
         {type === "revenue" && (
-          <span className="text-[#38D271] text-sm sm:text-base flex items-center gap-1">
+          <span className="text-[#38D271] text-xs sm:text-sm md:text-base flex items-center gap-1">
             <ArrowUp size={20} color="#38D271" />
             <span>2.1%</span>
           </span>
         )}
 
-        <span className="text-[#798190] text-sm sm:text-base">
+        <span className="text-[#798190] text-xs sm:text-sm md:text-base">
           {type === "revenue"
             ? "vs without garista"
             : "Decreasing customer waiting"}
@@ -250,21 +250,24 @@ const HeroPanier = ({ className, ...props }: HeroPanierProps) => {
       data-aos="zoom-in"
       data-aos-delay="800"
     >
-      <div className="flex w-fit flex-col items-center justify-center gap-2 bg-[#49A847] rounded-full p-3">
+      <div className="flex w-fit flex-col items-center justify-center gap-2 bg-[#49A847] rounded-full p-2 md:p-3">
         <Image
           src="/icons/hero-panier.svg"
           alt="hero-revenue"
           width={25}
           height={25}
           loading="lazy"
-          className="object-contain"
+          className="object-contain w-3 h-3 md:w-5 md:h-5"
         />
       </div>
 
       <p className="flex flex-col gap-1">
-        <span className="text-black text-2xl font-black">
+        <span className="text-black text-base md:text-2xl font-black">
           +
-          <NumberTicker value={35} className="text-black font-black text-2xl" />
+          <NumberTicker
+            value={35}
+            className="text-black font-black text-base md:text-2xl"
+          />
           %
         </span>
         <span className="text-[#737B8B] text-xs sm:text-sm font-semibold">
