@@ -13,9 +13,11 @@ export default function Home() {
   const { t } = useTranslation("global");
 
   return (
-    <div id="Home" className="container md:px-8 px-4 flex flex-col gap-5">
-      <div className="pt-[150px] xl:pt-[220px] lg:pb-[50px] md:pb-[60px] pb-[0px]">
+    <div id="Home" className="container flex flex-col gap-5 overflow-hidden">
+      <div className="pt-[150px] xl:pt-[220px] lg:pb-[60px] md:pb-[70px] pb-[0px]">
+        {/* Hero Container */}
         <div className="grid grid-cols-1 xl:grid-cols-2 gap-5 xl:gap-16 relative">
+          {/* Hero Content */}
           <div data-aos="fade-right" className="flex flex-col gap-5">
             <h2 className="px-7 py-2 rounded-3xl bg-[#BECEFF] text-[#284396] uppercase text-sm w-fit font-black">
               {t("Grow With Garista")}
@@ -78,9 +80,10 @@ export default function Home() {
             </div>
           </div>
 
+          {/* Hero Dashboard Image */}
           <div
             data-aos="fade-left"
-            className="relative items-center pt-20 xl:pt-0 flex flex-col gap-5"
+            className="relative items-center pt-20 xl:pt-0 flex flex-col gap-5 xl:gap-0 xl:px-0"
           >
             {/* Line - Curve Vector */}
             <Image
@@ -119,11 +122,10 @@ export default function Home() {
             <Image
               src="/assets/hero-dashboard.png"
               alt="dashboard"
-              width={985}
-              height={588}
+              width={1000}
+              height={600}
               loading="lazy"
-              sizes="(max-width: 479px) 93vw, (max-width: 767px) 94vw, (max-width: 991px) 86vw, (max-width: 1439px) 95vw, 985px"
-              className="object-cover"
+              className="object-cover xl:-mr-32 2xl:mr-0"
             />
 
             {/* Button */}
@@ -170,7 +172,7 @@ const HeroRevenueTime = ({
     <div
       {...props}
       className={cn(
-        "flex flex-col gap-4 p-2 sm:p-4 absolute z-10 bg-white rounded-xl md:rounded-[21.32px]",
+        "flex flex-col gap-4 p-2 sm:p-4 absolute bg-white rounded-xl md:rounded-[21.32px] z-10",
         className
       )}
       data-aos="zoom-in"
