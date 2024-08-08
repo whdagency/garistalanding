@@ -8,11 +8,21 @@ import { Cross as Hamburger } from "hamburger-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Button } from "./ui/button";
 import { useTranslation } from "react-i18next";
-import LanguageModal, { LanguageMobileModal } from "@/components/LanguageModal";
+import LanguageModal from "@/components/LanguageModal";
 
 type Links = {
   activeSection: string;
 };
+
+const navLinks = [
+  "Features",
+  "Benefits",
+  "About",
+  "Contact",
+  "FAQ",
+  "Blog",
+  "Log In",
+];
 
 function Nav({ activeSection }: Links) {
   const [isOpen, setOpen] = useState(false);
@@ -44,77 +54,25 @@ function Nav({ activeSection }: Links) {
             {/* Nav Links */}
             <div className="flex gap-3 items-center bg-secondaryBg shadow-navShadow rounded-xl py-1 justify-between px-3">
               <div className="flex gap-2 items-center">
-                <a
-                  href="/#Features"
-                  className={`navLink ${
-                    activeSection == "Features"
-                      ? "text-primaryBg bg-primaryBg/10 rounded-xl"
-                      : "text-primaryOne hover:text-primaryBg rounded-xl"
-                  }`}
-                >
-                  {t("Features")}
-                </a>
-
-                <a
-                  href="/#Benefits"
-                  className={`navLink ${
-                    activeSection == "Benefits"
-                      ? "text-primaryBg bg-primaryBg/10 rounded-xl"
-                      : "text-primaryOne hover:text-primaryBg rounded-xl"
-                  }`}
-                >
-                  {t("Benefits")}
-                </a>
-
-                <a
-                  href="/#About"
-                  className={`navLink ${
-                    activeSection == "About"
-                      ? "text-primaryBg bg-primaryBg/10 rounded-xl"
-                      : "text-primaryOne hover:text-primaryBg rounded-xl"
-                  }`}
-                >
-                  {t("About Us")}
-                </a>
-
-                <a
-                  href="/#FAQ"
-                  className={`navLink ${
-                    activeSection == "FAQ"
-                      ? "text-primaryBg bg-primaryBg/10 rounded-xl"
-                      : "text-primaryOne hover:text-primaryBg rounded-xl"
-                  }`}
-                >
-                  {t("FAQ")}
-                </a>
-
-                <a
-                  href="/#Blog"
-                  className={`navLink ${
-                    activeSection == "Blog"
-                      ? "text-primaryBg bg-primaryBg/10 rounded-xl"
-                      : "text-primaryOne hover:text-primaryBg rounded-xl"
-                  }`}
-                >
-                  {t("Blog")}
-                </a>
-
-                <a
-                  href="/#FAQ"
-                  className={`navLink ${
-                    activeSection == "Help"
-                      ? "text-primaryBg bg-primaryBg/10 rounded-xl"
-                      : "text-primaryOne hover:text-primaryBg rounded-xl"
-                  }`}
-                >
-                  {t("Help")}
-                </a>
+                {navLinks.slice(0, navLinks.length - 1).map((link, index) => (
+                  <a
+                    key={index}
+                    href={`/#${link}`}
+                    className={`navLink ${
+                      activeSection == link
+                        ? "text-primaryBg bg-primaryBg/10 rounded-xl"
+                        : "text-primaryOne hover:text-primaryBg rounded-xl"
+                    }`}
+                  >
+                    {link === "About" ? t("About Us") : t(link)}
+                  </a>
+                ))}
 
                 <LanguageModal />
               </div>
 
               <button className="mx-10 me-auto font-semibold text-black/80 text-sm px-7 py-2 rounded-xl bg-white text-center">
-                <a href="/#Contact">Contact Us</a>
+                <a href="#">Log In</a>
               </button>
             </div>
           </div>
@@ -163,6 +121,8 @@ const MobileNav = ({
   isHamburger,
   setHamburger,
 }: MobileNavProps) => {
+  const { t } = useTranslation("global");
+
   return (
     <>
       <Sheet open={isOpen} onOpenChange={handleSheet}>
@@ -177,75 +137,19 @@ const MobileNav = ({
 
         <SheetContent side={"bottom"}>
           <div className="flex flex-col gap-y-4 mt-4 pb-4">
-            <SheetTrigger asChild>
-              <Button
-                asChild
-                className="text-xl text-primaryTwo"
-                variant="ghost"
-              >
-                <a href="/#Features">Features</a>
-              </Button>
-            </SheetTrigger>
-
-            <SheetTrigger asChild>
-              <Button
-                asChild
-                className="text-xl text-primaryTwo"
-                variant="ghost"
-              >
-                <Link href="/#Benefits">Benefits</Link>
-              </Button>
-            </SheetTrigger>
-
-            <SheetTrigger asChild>
-              <Button
-                asChild
-                className="text-xl text-primaryTwo"
-                variant="ghost"
-              >
-                <Link href="/#About">About Us</Link>
-              </Button>
-            </SheetTrigger>
-
-            <SheetTrigger asChild>
-              <Button
-                asChild
-                className="text-xl text-primaryTwo"
-                variant="ghost"
-              >
-                <a href="/#FAQ">FAQ</a>
-              </Button>
-            </SheetTrigger>
-
-            <SheetTrigger asChild>
-              <Button
-                asChild
-                className="text-xl text-primaryTwo"
-                variant="ghost"
-              >
-                <a href="/#Blog">Blog</a>
-              </Button>
-            </SheetTrigger>
-
-            <SheetTrigger asChild>
-              <Button
-                asChild
-                className="text-xl text-primaryTwo"
-                variant="ghost"
-              >
-                <Link href="/#Help">Help</Link>
-              </Button>
-            </SheetTrigger>
-
-            <SheetTrigger asChild>
-              <Button
-                asChild
-                className="text-xl text-primaryTwo"
-                variant="ghost"
-              >
-                <a href="/#Contact">Contact Us</a>
-              </Button>
-            </SheetTrigger>
+            {navLinks.map((link, index) => (
+              <SheetTrigger asChild key={index}>
+                <Button
+                  asChild
+                  className="text-xl text-primaryTwo"
+                  variant="ghost"
+                >
+                  <a href={`/#${link}`}>
+                    {link === "About" ? t("About Us") : t(link)}
+                  </a>
+                </Button>
+              </SheetTrigger>
+            ))}
 
             <SheetTrigger asChild>
               <LanguageModal />
