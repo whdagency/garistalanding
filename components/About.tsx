@@ -1,7 +1,6 @@
-import InteractiveMenu from "@/components/InteractiveMenu";
 import { aboutUsContent } from "@/constants";
 import Image from "next/image";
-import React, { useRef, useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 
 const tabs: AboutUsTab[] = ["display", "order", "manage", "market"];
