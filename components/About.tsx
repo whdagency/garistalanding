@@ -84,7 +84,7 @@ export default function About() {
             </div>
 
             {/* Tab Content */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 p-10 relative">
+            <div className="flex flex-col gap-10 lg:flex-row lg:gap-16 p-10 relative">
               {/* Tab Content */}
               <div className="flex flex-col col-span-1 order-2 lg:order-1">
                 {aboutUsContent
@@ -113,7 +113,7 @@ export default function About() {
               </div>
 
               {/* Interactive Menu */}
-              <div className="order-1 lg:order-2 col-span-1 place-self-center lg:place-self-end">
+              <div className="order-1 w-full lg:order-2 flex flex-col items-center lg:block">
                 <Image
                   src="/assets/about-us-menu.png"
                   alt="Interactive Menu"

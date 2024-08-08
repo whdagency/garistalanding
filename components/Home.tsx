@@ -14,8 +14,8 @@ export default function Home() {
 
   return (
     <div id="Home" className="container md:px-8 px-4 flex flex-col gap-5">
-      <div className="pt-[220px] lg:pb-[50px] md:pb-[60px] pb-[0px]">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 relative">
+      <div className="pt-[150px] xl:pt-[220px] lg:pb-[50px] md:pb-[60px] pb-[0px]">
+        <div className="grid grid-cols-1 xl:grid-cols-2 gap-5 xl:gap-16 relative">
           <div data-aos="fade-right" className="flex flex-col gap-5">
             <h2 className="px-7 py-2 rounded-3xl bg-[#BECEFF] text-[#284396] uppercase text-sm w-fit font-black">
               {t("Grow With Garista")}
@@ -49,13 +49,13 @@ export default function Home() {
               </p>
             </div>
 
-            <p className="text-[#737373] text-sm font-medium leading-relaxed">
+            <p className="text-[#737373] text-sm font-medium leading-relaxed max-w-2xl">
               {t(
                 "All-in-one digital solution for menu customization, marketing, Payment, and management. Simplify operations and elevate guest experiences for restaurants, cafes, and hotels."
               )}
             </p>
 
-            <div className="flex-row items-center gap-5 hidden lg:flex">
+            <div className="flex-row items-center gap-5 hidden xl:flex">
               <Button className="flex flex-row items-center justify-center gap-x-2 text-white bg-primaryBlue rounded-xl text-center">
                 {t("Get Started Now")}
                 <ChevronRight
@@ -80,7 +80,7 @@ export default function Home() {
 
           <div
             data-aos="fade-left"
-            className="relative pt-20 lg:pt-0 flex flex-col gap-5"
+            className="relative items-center pt-20 xl:pt-0 flex flex-col gap-5"
           >
             {/* Line - Curve Vector */}
             <Image
@@ -89,32 +89,32 @@ export default function Home() {
               width={100}
               height={50}
               loading="lazy"
-              className="object-contain absolute hidden lg:block lg:-top-32 lg:-left-44 z-10"
+              className="object-contain absolute hidden xl:block xl:-top-32 xl:-left-44 z-10"
             />
 
             {/* Line - Revenue */}
             <HeroRevenueTime
               type="revenue"
-              className="top-10 md:top-5 -left-0 sm:-left-3 lg:-top-20 lg:-left-20"
+              className="top-10 md:top-5 -left-0 sm:-left-3 xl:-top-20 xl:-left-20"
               tickerNumber={30}
             />
 
             {/* Line - Time */}
             <HeroRevenueTime
               type="time"
-              className="hidden lg:flex absolute -bottom-16 -left-20"
+              className="hidden xl:flex absolute -bottom-16 -left-20"
               tickerNumber={70}
             />
 
             <HeroRevenueTime
               type="time"
-              className="top-10 md:top-5 -right-0 sm:-right-3 lg:hidden"
+              className="top-10 md:top-5 -right-0 sm:-right-3 xl:hidden"
               tickerNumber={70}
             />
 
             {/* Line - Panier */}
-            <HeroPanier className="-top-7 right-5 hidden lg:flex" />
-            <HeroPanier className="flex bottom-36 left-[20%] sm:left-1/3 lg:hidden" />
+            <HeroAverage className="-top-7 right-16 hidden xl:flex" />
+            <HeroAverage className="flex bottom-36 left-[20%] sm:left-1/3 xl:hidden" />
 
             <Image
               src="/assets/hero-dashboard.png"
@@ -122,22 +122,12 @@ export default function Home() {
               width={985}
               height={588}
               loading="lazy"
-              // sizes="(max-width: 479px) 93vw, (max-width: 767px) 94vw, (max-width: 991px) 86vw, (max-width: 1439px) 95vw, 985px"
-              className="object-contain hidden lg:block"
-            />
-
-            <Image
-              src="/assets/hero-dashboard-mobile.png"
-              alt="dashboard"
-              width={985}
-              height={588}
-              loading="lazy"
-              // sizes="(max-width: 479px) 93vw, (max-width: 767px) 94vw, (max-width: 991px) 86vw, (max-width: 1439px) 95vw, 985px"
-              className="object-contain lg:hidden"
+              sizes="(max-width: 479px) 93vw, (max-width: 767px) 94vw, (max-width: 991px) 86vw, (max-width: 1439px) 95vw, 985px"
+              className="object-cover"
             />
 
             {/* Button */}
-            <div className="flex-col items-center gap-5 flex lg:hidden justify-center pt-10">
+            <div className="flex-col items-center gap-5 flex xl:hidden justify-center pt-10">
               <Button className="flex flex-row items-center justify-center gap-x-2 text-white bg-primaryBlue rounded-xl text-center">
                 {t("Get Started Now")}
                 <ChevronRight
@@ -235,11 +225,11 @@ const HeroRevenueTime = ({
   );
 };
 
-interface HeroPanierProps extends HTMLAttributes<HTMLDivElement> {
+interface HeroAverageProps extends HTMLAttributes<HTMLDivElement> {
   className?: string;
 }
 
-const HeroPanier = ({ className, ...props }: HeroPanierProps) => {
+const HeroAverage = ({ className, ...props }: HeroAverageProps) => {
   return (
     <div
       {...props}

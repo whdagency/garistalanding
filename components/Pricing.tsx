@@ -17,14 +17,6 @@ export default function Pricing() {
       className="container md:px-8 px-4 rounded-[50px] md:rounded-[100px] bg-white mb-20"
     >
       <div className="pb-[80px] flex flex-col gap-10">
-        {/* <div className="text-center mb-14">
-          <span className="inline-block text-primaryColor font-medium md:text-lg text-base mb-1">
-            {t("Pricing Table")}
-          </span>
-          <h3 className="md:text-3xl text-xl font-medium">
-            {t("Our Pricing Plan")}
-          </h3>
-        </div> */}
         <div className="flex flex-col items-center gap-10 py-20 text-center">
           <h2 className="text-[#231D4F] font-bold text-3xl md:text-5xl">
             Simple, transparent pricing
@@ -92,9 +84,9 @@ export default function Pricing() {
           </div>
         </div>
 
-        <div className="md:mx-10 flex flex-col items-center gap-24 pb-16 pt-20">
+        <div className="md:mx-10 flex flex-col items-center gap-8 lg:gap-0 pt-10">
           {/* Our Trusted POS Partners */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:place-items-center">
+          <div className="flex flex-col items-center gap-10 lg:flex-row">
             <PosPartners className="order-2 lg:order-1 col-span-1" />
 
             <div className="order-1 lg:order-2 col-span-1 flex flex-col gap-4 items-center lg:items-start w-full">
@@ -121,7 +113,7 @@ export default function Pricing() {
           </div>
 
           {/* Our Secured Payment Method */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-10 lg:place-items-center">
+          <div className="flex flex-col items-center gap-0 lg:gap-10 lg:flex-row">
             <div className="order-2 col-span-1 w-full h-full flex flex-col items-center">
               <PaymentMethod />
             </div>
