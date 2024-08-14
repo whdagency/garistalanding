@@ -43,8 +43,8 @@ export default function Pricing() {
           </div>
         </div>
 
-        <div className="flex flex-wrap justify-center md:mx-14 md:bg-[#F5F8FF] md:rounded-[40px]">
-          <div className="flex flex-wrap">
+        <div className="flex flex-wrap justify-center xl:mx-10 md:bg-[#F5F8FF] md:rounded-[40px]">
+          <div className="grid grid-cols-1 md:grid-cols-3">
             {pricingPlan.map(({ features, ...pricing }, idx) => (
               <PricingCard
                 key={idx}
@@ -176,16 +176,16 @@ const PricingCard = ({
   return (
     <>
       <div
-        className={`w-full md:w-1/2 lg:w-1/3 ${
+        className={`w-full ${
           type === t("Intro")
-            ? "md:pr-4 px-0"
+            ? "xl:pr-4 px-0"
             : type === t("Pro")
-              ? "md:px-4 px-0"
-              : "lg:pl-4 md:mx-auto"
+              ? "xl:px-4 px-0"
+              : "xl:pl-4 md:mx-auto"
         }`}
       >
         <div
-          className={`relative z-10 mb-10 overflow-hidden rounded-3xl px-6 py-12 sm:p-12 lg:px-6 xl:p-[50px] ${
+          className={`relative z-10 mb-10 overflow-hidden rounded-3xl px-6 py-12 sm:p-10 md:p-4 lg:px-6 xl:p-[50px] ${
             type === t("Pro")
               ? "bg-primaryBlue text-white md:-mt-16 shadow-[0px_65.159px_52.748px_0px_rgba(82,_67,_194,_0.3)]"
               : "bg-[#F5F8FF] md:bg-transparent shadow-[0px_46.94px_37.999px_0px_rgba(82,_67,_194,_0.3)] md:shadow-none"
@@ -198,7 +198,7 @@ const PricingCard = ({
           )}
 
           <h2
-            className={`mb-5 text-[45px] font-extrabold ${active ? "text-white" : "text-[#231D4F]"}`}
+            className={`mb-5 text-[45px] font-extrabold ${active ? "text-white md:mt-10" : "text-[#231D4F]"}`}
           >
             {selected === "monthly" ? price : yearlyPrice}{" "}
             <span

@@ -53,7 +53,7 @@ export default function About() {
         <div className="flex flex-nowrap flex-col gap-y-20 items-center justify-start bg-white rounded-[100px] pt-10 pb-[100px]">
           <div className="flex flex-col gap-8">
             <div className="flex flex-col items-center gap-5 text-center">
-              <h2 className="lg:text-5xl md:text-4xl sm:text-3xl text-2xl font-semibold max-w-3xl capitalize">
+              <h2 className="lg:text-5xl md:text-4xl sm:text-3xl text-2xl font-semibold max-w-3xl capitalize px-4">
                 <span className="text-primaryColor">{t("Create")}</span>,{" "}
                 <span className="text-primaryColor">{t("Customize")}</span>,{" "}
                 {t("and")}{" "}
@@ -63,7 +63,7 @@ export default function About() {
 
               {/* Tabs */}
               <div className="text-center mt-5 w-fit rounded-full bg-white border-primaryColor/50 border p-2">
-                <div className="flex items-center justify-center gap-4">
+                <div className="flex items-center justify-center gap-1 sm:gap-4">
                   {tabs.map((tab, index) => (
                     <button
                       key={index}

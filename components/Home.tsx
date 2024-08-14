@@ -98,26 +98,29 @@ export default function Home() {
             {/* Line - Revenue */}
             <HeroRevenueTime
               type="revenue"
-              className="top-10 md:top-5 -left-0 sm:-left-3 xl:-top-20 xl:-left-20"
+              className="top-10 md:top-5 -left-5 sm:-left-3 xl:-top-20 xl:-left-20"
               tickerNumber={30}
             />
 
-            {/* Line - Time */}
+            {/* Line - Time: Desktop */}
             <HeroRevenueTime
               type="time"
               className="hidden xl:flex absolute -bottom-16 -left-20"
               tickerNumber={70}
             />
 
+            {/* Line - Time : Mobile */}
             <HeroRevenueTime
               type="time"
-              className="top-10 md:top-5 -right-0 sm:-right-3 xl:hidden"
+              className="top-10 md:top-5 -right-5 sm:-right-3 xl:hidden"
               tickerNumber={70}
             />
 
-            {/* Line - Panier */}
+            {/* Line - Average: Desktop */}
             <HeroAverage className="-top-7 right-16 hidden xl:flex" />
-            <HeroAverage className="flex bottom-36 left-[20%] sm:left-1/3 xl:hidden" />
+
+            {/* Line - Average: Mobile */}
+            <HeroAverage className="flex bottom-36 left-3 xs:left-10 sm:left-1/3 xl:hidden" />
 
             <Image
               src="/assets/hero-dashboard.png"
