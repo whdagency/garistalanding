@@ -66,28 +66,6 @@ function Wrapper() {
               entry.target.id.charAt(0).toUpperCase() + entry.target.id.slice(1)
             );
           }
-
-          // if (entry.target.id == "Home") {
-          //   setActiveSection("Home");
-          // }
-          // if (entry.target.id == "Dashboard") {
-          //   setActiveSection("Dashboard");
-          // }
-          // if (entry.target.id == "About") {
-          //   setActiveSection("About");
-          // }
-          // if (entry.target.id == "Features") {
-          //   setActiveSection("Features");
-          // }
-          // if (entry.target.id == "Pricing") {
-          //   setActiveSection("Pricing");
-          // }
-          // if (entry.target.id == "Contact") {
-          //   setActiveSection("Contact");
-          // }
-          // if (entry.target.id == "articles") {
-          //   setActiveSection("articles");
-          // }
         }
       });
     }, observerOptions);
@@ -97,7 +75,6 @@ function Wrapper() {
     });
   }, []);
 
-  // AOS - Animate on scroll
   useEffect(() => {
     // initialising library
     Aos.init({
@@ -110,7 +87,6 @@ function Wrapper() {
   }, []);
 
   return (
-    // <div className="wrapper">
     <div className="w-full">
       <Nav activeSection={activeSection} />
       <Hero />

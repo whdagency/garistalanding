@@ -12,6 +12,8 @@ import FooterBottom from "@/components/FooterBottom";
 import GoogleTagManager from "@/components/GoogleTagManager";
 import Head from "next/head";
 import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
+import SplashScreen from "@/components/SplashScreen";
 
 const myLocalFont = localFont({
   src: [
@@ -67,6 +69,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   const pathname = usePathname();
+  const [loadSplashScreen, setLoadSplashScreen] = useState(true);
 
   return (
     <I18nextProvider i18n={i18next}>
@@ -85,7 +88,11 @@ export default function RootLayout({
               style={{ display: "none", visibility: "hidden" }}
             ></iframe>
           </noscript>
-          {children}
+          {loadSplashScreen ? (
+            <SplashScreen setLoadSplashScreen={setLoadSplashScreen} />
+          ) : (
+            children
+          )}
 
           {/* <div className="sm:px-24 px-4 pt-24 bg-white w-full">
               <div className="flex lg:flex-row flex-col flex-wrap lg:justify-between mx-auto items-center gap-y-6 text-sm text-center font-medium mb-8">
@@ -181,7 +188,7 @@ export default function RootLayout({
               </div>
             </div> */}
 
-          {pathname === "/" && <FooterBottom />}
+          {!loadSplashScreen && pathname === "/" && <FooterBottom />}
 
           {/* <LangToggle /> */}
         </body>

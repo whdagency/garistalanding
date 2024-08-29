@@ -16,15 +16,18 @@ export default function Home() {
     <div id="Home" className="container flex flex-col gap-5 overflow-hidden">
       <div className="pt-[150px] xl:pt-[220px] lg:pb-[60px] md:pb-[70px] pb-[0px]">
         {/* Hero Container */}
-        <div className="grid grid-cols-1 xl:grid-cols-2 gap-5 xl:gap-16 relative">
+        <div className="grid grid-cols-1 xl:grid-cols-2 gap-5 xl:gap-16 relative mb-8">
           {/* Hero Content */}
-          <div data-aos="fade-right" className="flex flex-col gap-5">
-            <h2 className="px-7 py-2 rounded-3xl bg-[#BECEFF] text-[#284396] uppercase text-sm w-fit font-black">
+          <div
+            data-aos="fade-right"
+            className="flex flex-col gap-5 items-center xl:items-start"
+          >
+            <h2 className="px-7 py-2 rounded-3xl bg-[#BECEFF] text-[#284396] uppercase text-sm w-fit font-black text-center xl:text-left">
               {t("Grow With Garista")}
             </h2>
 
             <div className="text-black text-3xl md:text-4xl lg:text-5xl flex flex-col gap-2">
-              <p className="font-semibold">
+              <p className="font-semibold text-center xl:text-left">
                 Digitize Your{" "}
                 <TypeAnimation
                   preRenderFirstString={true}
@@ -45,19 +48,19 @@ export default function Home() {
                 />
               </p>
 
-              <p className="font-semibold">
+              <p className="font-semibold text-center xl:text-left">
                 Elevate Your{" "}
                 <span className="text-primaryColor">Business.</span>
               </p>
             </div>
 
-            <p className="text-[#737373] text-sm font-medium leading-relaxed max-w-2xl">
+            <p className="text-[#737373] text-sm font-medium leading-relaxed max-w-2xl text-center xl:text-left">
               {t(
                 "All-in-one digital solution for menu customization, marketing, Payment, and management. Simplify operations and elevate guest experiences for restaurants, cafes, and hotels."
               )}
             </p>
 
-            <div className="flex-row items-center gap-5 hidden xl:flex">
+            <div className="flex-row items-center gap-5 hidden xs:flex mt-5 -mb-5 xl:mt-0 xl:-mb-0">
               <Button className="flex flex-row items-center justify-center gap-x-2 text-white bg-primaryBlue rounded-xl text-center">
                 {t("Get Started Now")}
                 <ChevronRight
@@ -120,7 +123,7 @@ export default function Home() {
             <HeroAverage className="-top-7 right-16 hidden xl:flex" />
 
             {/* Line - Average: Mobile */}
-            <HeroAverage className="flex bottom-36 left-3 xs:left-10 sm:left-1/3 xl:hidden" />
+            <HeroAverage className="flex bottom-36 xs:-bottom-7 -translate-x-1/2 xl:hidden" />
 
             <Image
               src="/assets/hero-dashboard.png"
@@ -132,7 +135,7 @@ export default function Home() {
             />
 
             {/* Button */}
-            <div className="flex-col items-center gap-5 flex xl:hidden justify-center pt-10">
+            <div className="items-center gap-5 flex-col flex xs:hidden justify-center pt-10">
               <Button className="flex flex-row items-center justify-center gap-x-2 text-white bg-primaryBlue rounded-xl text-center">
                 {t("Get Started Now")}
                 <ChevronRight
@@ -239,7 +242,7 @@ const HeroAverage = ({ className, ...props }: HeroAverageProps) => {
     <div
       {...props}
       className={cn(
-        "items-center gap-3 absolute z-10 bg-white rounded-[20.53px] w-fit p-2 sm:p-3 border border-[#49A847]",
+        "items-center gap-3 absolute bg-white rounded-[20.53px] w-fit p-2 sm:p-3 border border-[#49A847] z-10",
         className
       )}
       data-aos="zoom-in"
