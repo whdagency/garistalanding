@@ -1,3 +1,6 @@
+"use client";
+import TimelineProgress, { AboutUsMobile } from "@/components/TimelineProgress";
+import { type CarouselApi } from "@/components/ui/carousel";
 import { aboutUsContent } from "@/constants";
 import Image from "next/image";
 import React, { useState } from "react";
@@ -7,6 +10,8 @@ const tabs: AboutUsTab[] = ["display", "order", "manage", "market"];
 
 export default function About() {
   const [selectedTab, setSelectedTab] = useState<AboutUsTab>(tabs[0]);
+  const [api, setApi] = useState<CarouselApi>();
+
   const { t } = useTranslation("global");
   // const videoRef = useRef<HTMLVideoElement>(null);
   // const videoContainerRef = useRef(null);
@@ -47,13 +52,13 @@ export default function About() {
   return (
     <div
       id="Features"
-      className="container md:px-8 px-4 mt-20 rounded-[50px] md:rounded-[100px] bg-white mb-20"
+      className="container md:px-8 px-4 mt-20 rounded-[50px] md:rounded-[100px] bg-white mb-20 overflow-hidden"
     >
       <div className="lg:pt-[100px] md:pt-[7px] pt-[50px]">
         <div className="flex flex-nowrap flex-col gap-y-20 items-center justify-start bg-white rounded-[100px] pt-10 pb-[100px]">
           <div className="flex flex-col gap-8">
             <div className="flex flex-col items-center gap-5 text-center">
-              <h2 className="lg:text-5xl md:text-4xl sm:text-3xl text-2xl font-semibold max-w-3xl capitalize px-4">
+              <h2 className="lg:text-5xl md:text-4xl sm:text-3xl text-2xl font-semibold max-w-[80%] xs:max-w-[90%] md:max-w-3xl capitalize px-4 ">
                 <span className="text-primaryColor">{t("Create")}</span>,{" "}
                 <span className="text-primaryColor">{t("Customize")}</span>,{" "}
                 {t("and")}{" "}
@@ -62,7 +67,7 @@ export default function About() {
               </h2>
 
               {/* Tabs */}
-              <div className="text-center mt-5 w-fit rounded-full bg-white border-primaryColor/50 border p-2">
+              <div className="text-center mt-5 lg:hidden w-fit rounded-full bg-white border-primaryColor/50 border p-2">
                 <div className="flex items-center justify-center gap-1 sm:gap-4">
                   {tabs.map((tab, index) => (
                     <button
@@ -71,7 +76,10 @@ export default function About() {
                         "flex flex-row items-center justify-center gap-x-2 py-2 px-4 rounded-full cursor-pointer",
                         ${selectedTab === tab ? "bg-primaryColor text-white" : "text-primaryColor"}
                       )`}
-                      onClick={() => setSelectedTab(tab)}
+                      onClick={() => {
+                        setSelectedTab(tab);
+                        api?.scrollTo(index);
+                      }}
                     >
                       <span className="capitalize text-sm md:text-base font-semibold">
                         {tab}
@@ -83,8 +91,19 @@ export default function About() {
             </div>
 
             {/* Tab Content */}
-            <div className="flex flex-col items-center gap-10 lg:flex-row lg:gap-16 p-5 xl:p-10 relative">
-              {/* Tab Content */}
+            <div className="pt-10 hidden lg:block">
+              <TimelineProgress />
+            </div>
+            <div className="lg:hidden">
+              <AboutUsMobile
+                setSelectedTab={setSelectedTab}
+                selectedTab={selectedTab}
+                setApi={setApi}
+                api={api}
+              />
+            </div>
+
+            {/* <div className="flex lg:hidden flex-col items-center gap-10 lg:flex-row lg:gap-16 p-5 xl:p-10 relative">
               <div className="flex flex-col col-span-1 order-2 lg:order-1 lg:-mt-5">
                 {aboutUsContent
                   .filter((content) => content.type === selectedTab)
@@ -111,7 +130,6 @@ export default function About() {
                   ))}
               </div>
 
-              {/* Interactive Menu */}
               <div className="order-1 w-full lg:order-2 flex flex-col items-center lg:block">
                 <Image
                   src="/assets/about-us-menu.png"
@@ -122,11 +140,7 @@ export default function About() {
                   className="object-contain"
                 />
               </div>
-
-              {/* <div className="sm:absolute order-1 lg:order-2 col-span-1 lg:-right-[16px] -right-[10rem] 2xl:-right-[196px] 2xl:-bottom-[10rem] lg:-bottom-[15rem] -bottom-[21rem]">
-                <InteractiveMenu />
-              </div> */}
-            </div>
+            </div> */}
           </div>
         </div>
 
