@@ -22,7 +22,7 @@ export default function Home() {
             data-aos="fade-right"
             className="flex flex-col justify-between gap-5 items-center xl:items-start"
           >
-            <div className="flex flex-col gap-5">
+            <div className="flex flex-col gap-5 items-center xl:items-start">
               <h2 className="px-7 py-2 rounded-3xl bg-[#BECEFF] text-[#284396] uppercase text-sm w-fit font-black text-center xl:text-left">
                 {t("Grow With Garista")}
               </h2>
