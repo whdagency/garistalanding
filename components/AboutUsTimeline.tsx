@@ -26,7 +26,7 @@ const sections = aboutUsContent.map((content, index) => {
   };
 });
 
-const TimelineProgress = () => {
+const AboutUsTimeline = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
   const [currentSectionIndex, setCurrentSectionIndex] = useState(0);
   const [isCustomScrolling, setIsCustomScrolling] = useState(false);
@@ -131,7 +131,7 @@ const TimelineProgress = () => {
 
           {/* Single progress line */}
           <motion.div
-            className="absolute left-[34px] top-0 w-px bg-primary origin-top"
+            className="absolute left-[34px] top-0 w-px bg-primaryColor origin-top"
             initial={{ scaleY: 0 }}
             animate={{
               scaleY: scrollProgress / (sections.length - 1),
@@ -149,7 +149,7 @@ const TimelineProgress = () => {
               <motion.div
                 className={`w-6 h-6 rounded-full absolute left-6 cursor-pointer flex items-center justify-center text-sm font-bold ${
                   scrollProgress >= index
-                    ? "bg-primary text-primary-foreground"
+                    ? "bg-primaryColor text-white"
                     : "bg-gray-300 text-gray-600"
                 }`}
                 initial={false}
@@ -227,7 +227,7 @@ const TimelineProgress = () => {
   );
 };
 
-export default TimelineProgress;
+export default AboutUsTimeline;
 
 type AboutUsMobileProps = {
   selectedTab: AboutUsTab;
@@ -330,12 +330,12 @@ export const AboutUsMobile = ({
         <CarouselPrevious
           onClick={handleCarouselPrevious}
           size={"icon"}
-          className="bg-primary p-2 rounded-full text-white"
+          className="bg-primaryColor p-2 rounded-full text-white"
         />
         <CarouselNext
           onClick={handleCarouselNext}
           size={"icon"}
-          className="bg-primary p-2 rounded-full text-white"
+          className="bg-primaryColor p-2 rounded-full text-white"
         />
       </div>
     </Carousel>

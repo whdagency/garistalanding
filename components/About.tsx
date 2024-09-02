@@ -1,7 +1,6 @@
 "use client";
-import TimelineProgress, { AboutUsMobile } from "@/components/TimelineProgress";
+import AboutUsTimeline, { AboutUsMobile } from "@/components/AboutUsTimeline";
 import { type CarouselApi } from "@/components/ui/carousel";
-import { aboutUsContent } from "@/constants";
 import Image from "next/image";
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -92,7 +91,7 @@ export default function About() {
 
             {/* Tab Content */}
             <div className="pt-10 hidden lg:block">
-              <TimelineProgress />
+              <AboutUsTimeline />
             </div>
             <div className="lg:hidden">
               <AboutUsMobile
