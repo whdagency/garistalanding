@@ -42,13 +42,8 @@ const AboutUsTimeline = () => {
       const isAtTop = scrollProgress <= 0;
       const isAtEnd = scrollProgress >= sections.length - 1;
 
-      if (isAtTop && !isScrollingDown) {
-        // Allow default scrolling when at the top and scrolling up
-        return;
-      }
-
-      if (isAtEnd && isScrollingDown) {
-        // Allow default scrolling when at the end and scrolling down
+      // Allow default scrolling when at the top and scrolling up or at the end and scrolling down
+      if ((isAtTop && !isScrollingDown) || (isAtEnd && isScrollingDown)) {
         return;
       }
 
@@ -90,13 +85,7 @@ const AboutUsTimeline = () => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            // When the section is in view, enable custom scrolling
-            setIsCustomScrolling(true);
-          } else {
-            // When the section is out of view, disable custom scrolling
-            setIsCustomScrolling(false);
-          }
+          setIsCustomScrolling(entry.isIntersecting);
         });
       },
       { root: containerRef.current, threshold: 0.5 }

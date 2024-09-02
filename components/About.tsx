@@ -1,6 +1,5 @@
 "use client";
-import AboutUsTimeline, { AboutUsMobile } from "@/components/AboutUsTimeline";
-import { type CarouselApi } from "@/components/ui/carousel";
+import HowItWorks, { HowItWorksMobile } from "@/components/HowItWorks";
 import Image from "next/image";
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
@@ -8,10 +7,9 @@ import { useTranslation } from "react-i18next";
 const tabs: AboutUsTab[] = ["display", "order", "manage", "market"];
 
 export default function About() {
-  const [selectedTab, setSelectedTab] = useState<AboutUsTab>(tabs[0]);
-  const [api, setApi] = useState<CarouselApi>();
-
   const { t } = useTranslation("global");
+  // const [selectedTab, setSelectedTab] = useState<AboutUsTab>(tabs[0]);
+
   // const videoRef = useRef<HTMLVideoElement>(null);
   // const videoContainerRef = useRef(null);
 
@@ -53,11 +51,11 @@ export default function About() {
       id="Features"
       className="container md:px-8 px-4 mt-20 rounded-[50px] md:rounded-[100px] bg-white mb-20 overflow-hidden"
     >
-      <div className="lg:pt-[100px] md:pt-[7px] pt-[50px]">
-        <div className="flex flex-nowrap flex-col gap-y-20 items-center justify-start bg-white rounded-[100px] pt-10 pb-[100px]">
+      <div className="pt-10">
+        <div className="flex flex-col gap-y-20 items-center justify-start bg-white rounded-[100px] pt-10 pb-[100px]">
           <div className="flex flex-col gap-8">
             <div className="flex flex-col items-center gap-5 text-center">
-              <h2 className="lg:text-5xl md:text-4xl sm:text-3xl text-2xl font-semibold max-w-[80%] xs:max-w-[90%] md:max-w-3xl capitalize px-4 ">
+              <h2 className="lg:text-5xl md:text-4xl xs:text-3xl text-2xl font-semibold max-w-xs sm:max-w-xl w-full md:max-w-3xl capitalize px-4 pb-5">
                 <span className="text-primaryColor">{t("Create")}</span>,{" "}
                 <span className="text-primaryColor">{t("Customize")}</span>,{" "}
                 {t("and")}{" "}
@@ -66,7 +64,7 @@ export default function About() {
               </h2>
 
               {/* Tabs */}
-              <div className="text-center mt-5 lg:hidden w-fit rounded-full bg-white border-primaryColor/50 border p-2">
+              {/* <div className="text-center mt-5 lg:hidden w-fit rounded-full bg-white border-primaryColor/50 border p-2">
                 <div className="flex items-center justify-center gap-1 sm:gap-4">
                   {tabs.map((tab, index) => (
                     <button
@@ -77,7 +75,6 @@ export default function About() {
                       )`}
                       onClick={() => {
                         setSelectedTab(tab);
-                        api?.scrollTo(index);
                       }}
                     >
                       <span className="capitalize text-sm md:text-base font-semibold">
@@ -86,20 +83,18 @@ export default function About() {
                     </button>
                   ))}
                 </div>
-              </div>
+              </div> */}
             </div>
 
             {/* Tab Content */}
-            <div className="pt-10 hidden lg:block">
-              <AboutUsTimeline />
+            <div className="hidden lg:block -mt-10">
+              <HowItWorks />
             </div>
             <div className="lg:hidden">
-              <AboutUsMobile
-                setSelectedTab={setSelectedTab}
-                selectedTab={selectedTab}
-                setApi={setApi}
-                api={api}
-              />
+              <h2 className="text-[#6985DB] font-semibold mb-2 uppercase text-center">
+                How It Works
+              </h2>
+              <HowItWorksMobile />
             </div>
 
             {/* <div className="flex lg:hidden flex-col items-center gap-10 lg:flex-row lg:gap-16 p-5 xl:p-10 relative">
