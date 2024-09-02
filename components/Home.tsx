@@ -20,41 +20,43 @@ export default function Home() {
           {/* Hero Content */}
           <div
             data-aos="fade-right"
-            className="flex flex-col gap-5 items-center xl:items-start"
+            className="flex flex-col justify-between gap-5 items-center xl:items-start"
           >
-            <h2 className="px-7 py-2 rounded-3xl bg-[#BECEFF] text-[#284396] uppercase text-sm w-fit font-black text-center xl:text-left">
-              {t("Grow With Garista")}
-            </h2>
+            <div className="flex flex-col gap-5">
+              <h2 className="px-7 py-2 rounded-3xl bg-[#BECEFF] text-[#284396] uppercase text-sm w-fit font-black text-center xl:text-left">
+                {t("Grow With Garista")}
+              </h2>
 
-            <div className="text-black text-3xl md:text-4xl lg:text-5xl flex flex-col gap-2">
-              <p className="font-semibold text-center xl:text-left">
-                Digitize Your{" "}
-                <TypeAnimation
-                  preRenderFirstString={true}
-                  sequence={[
-                    "Menu.",
-                    1500,
-                    "Orders.",
-                    1500,
-                    "Payment.",
-                    1500,
-                    "Marketing.",
-                    1500,
-                  ]}
-                  wrapper="span"
-                  speed={50}
-                  className="text-primaryColor font-semibold"
-                  repeat={Infinity}
-                />
-              </p>
+              <div className="text-black text-3xl md:text-4xl lg:text-5xl 2xl:text-6xl flex flex-col gap-2">
+                <p className="font-semibold text-center xl:text-left">
+                  Digitize Your{" "}
+                  <TypeAnimation
+                    preRenderFirstString={true}
+                    sequence={[
+                      "Menu.",
+                      1500,
+                      "Orders.",
+                      1500,
+                      "Payment.",
+                      1500,
+                      "Marketing.",
+                      1500,
+                    ]}
+                    wrapper="span"
+                    speed={50}
+                    className="text-primaryColor font-semibold"
+                    repeat={Infinity}
+                  />
+                </p>
 
-              <p className="font-semibold text-center xl:text-left">
-                Elevate Your{" "}
-                <span className="text-primaryColor">Business.</span>
-              </p>
+                <p className="font-semibold text-center xl:text-left">
+                  Elevate Your{" "}
+                  <span className="text-primaryColor">Business.</span>
+                </p>
+              </div>
             </div>
 
-            <p className="text-[#737373] text-sm font-medium leading-relaxed max-w-2xl text-center xl:text-left">
+            <p className="text-[#737373] text-sm font-medium leading-loose max-w-2xl text-center xl:text-left xl:text-lg 2xl:text-2xl">
               {t(
                 "All-in-one digital solution for menu customization, marketing, Payment, and management. Simplify operations and elevate guest experiences for restaurants, cafes, and hotels."
               )}
@@ -130,8 +132,8 @@ export default function Home() {
               alt="dashboard"
               width={1000}
               height={600}
-              loading="lazy"
               className="object-cover xl:-mr-32 2xl:mr-0"
+              priority
             />
 
             {/* Button */}

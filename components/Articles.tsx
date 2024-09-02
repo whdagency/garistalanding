@@ -1,10 +1,6 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { getEntries } from "@/app/actions/contentful.action";
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-import { Document } from "@contentful/rich-text-types";
-import { Asset, Entry } from "contentful";
 import Image from "next/image";
 import Link from "next/link";
 import { getArticles } from "@/lib/articles";
@@ -48,11 +44,11 @@ const Articles = () => {
           </p>
         </section>
 
-        <section className="flex flex-col gap-16">
+        <section className="flex flex-col gap-20 max-w-6xl 2xl:max-w-7xl">
           {articles.length > 0 && (
             <>
               {/* Latest Article */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-14">
                 <Image
                   src={articles[0]?.coverImage}
                   alt={articles[0]?.title}
@@ -77,14 +73,14 @@ const Articles = () => {
                     </span>
                   </div>
 
-                  <div className="flex flex-col gap-3">
+                  <div className="flex flex-col gap-5">
                     <Link
                       href={`/articles/${articles[0]?.slug}`}
-                      className="text-2xl md:text-3xl text-[#111827] font-semibold"
+                      className="text-2xl md:text-3xl xl:text-[33px] 2xl:text-4xl text-[#111827] font-semibold"
                     >
                       {articles[0]?.title}
                     </Link>
-                    <p className="text-base text-[#3F4654] font-normal">
+                    <p className="text-base xl:text-lg text-[#3F4654] font-normal">
                       {articles[0]?.excerpt}
                     </p>
                   </div>
@@ -127,7 +123,8 @@ const Articles = () => {
                           >
                             {article?.title}
                           </Link>
-                          <p className="text-sm text-[#3F4654] font-normal">
+
+                          <p className="text-sm text-[#3F4654] font-normal tracking-wide">
                             {article?.excerpt}
                           </p>
                         </div>
