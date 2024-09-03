@@ -11,10 +11,10 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 
-import anim1 from "@/components/customize-menu-1.json" assert { type: "json" };
+import anim1 from "@/components/customize-menu-2.json" assert { type: "json" };
 import anim2 from "@/components/customize-menu-3.json" assert { type: "json" };
 import anim3 from "@/components/customize-menu-4.json" assert { type: "json" };
-import anim4 from "@/components/customize-menu-2.json" assert { type: "json" };
+import anim4 from "@/components/customize-menu-1.json" assert { type: "json" };
 import Image from "next/image";
 
 const steps = [
