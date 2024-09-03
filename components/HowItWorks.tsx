@@ -26,7 +26,7 @@ const steps = [
     icon: anim1,
   },
   {
-    stepTitle: "Better Customer Engagement",
+    stepTitle: "Boosted Customer Engagement",
     title: "Boosted Customer Engagement",
     description:
       "Connect with your customers like never before. Utilize QR code menus, gather feedback, and allow guests to place orders directly from their smartphones. Improve the dining experience and build stronger customer relationships.",
