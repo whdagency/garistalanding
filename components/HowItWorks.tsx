@@ -5,7 +5,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import Lottie from "lottie-react";
 import {
   Carousel,
-  type CarouselApi,
   CarouselContent,
   CarouselItem,
   CarouselNext,
@@ -13,38 +12,38 @@ import {
 } from "@/components/ui/carousel";
 
 import anim1 from "@/components/customize-menu-1.json" assert { type: "json" };
-import anim2 from "@/components/customize-menu-2.json" assert { type: "json" };
-import anim3 from "@/components/customize-menu-3.json" assert { type: "json" };
-import anim4 from "@/components/customize-menu-4.json" assert { type: "json" };
+import anim2 from "@/components/customize-menu-3.json" assert { type: "json" };
+import anim3 from "@/components/customize-menu-4.json" assert { type: "json" };
+import anim4 from "@/components/customize-menu-2.json" assert { type: "json" };
 import Image from "next/image";
 
 const steps = [
   {
-    stepTitle: "Showcase Your Menus with Ease",
-    title: "Effortless Menu Personalization",
+    stepTitle: "Efficient Menu Management",
+    title: "Efficient Menu Management",
     description:
-      "Seamless Integration: Effortlessly manage and customize your menus to deliver a personalized customer experience with our intuitive system.",
+      "Easily customize your menu with just a few clicks. Update dishes, prices, and descriptions in real-time without any design or coding skills. Keep your offerings fresh and exciting to attract more customers.",
     icon: anim1,
   },
   {
-    stepTitle: "Track and Manage Orders Seamlessly",
-    title: "Real-Time Order Control",
+    stepTitle: "Better Customer Engagement",
+    title: "Boosted Customer Engagement",
     description:
-      "Seamless Order Management: Manage orders in real-time, streamline operations, and enhance customer experience with advanced tracking and notifications.",
+      "Connect with your customers like never before. Utilize QR code menus, gather feedback, and allow guests to place orders directly from their smartphones. Improve the dining experience and build stronger customer relationships.",
     icon: anim2,
   },
   {
-    stepTitle: "Customize Menus Effortlessly",
-    title: "Personalized Menu Control",
+    stepTitle: "Powerful Marketing Tools",
+    title: "Powerful Marketing Tools",
     description:
-      "Streamlined Menu Management: Easily manage and customize your menus to create a personalized experience for your customers with our intuitive system.",
+      "Boost your visibility and attract new customers with integrated marketing features. Promote special offers, share updates on social media, and analyze customer behavior to optimize your marketing strategies effectively.",
     icon: anim3,
   },
   {
-    stepTitle: "Enhance Customer Experience Instantly",
-    title: "Effortless Menu Enhancement",
+    stepTitle: "Comprehensive Restaurant Management",
+    title: "Comprehensive Restaurant Management",
     description:
-      "Upgrade your restaurant’s ambiance and boost guest well-being with Garista’s customizable, informative menus.",
+      "Streamline operations with Garista’s platform. Manage orders, track performance, and gain insights from one dashboard. Simplify management and focus on delivering great food and service.",
     icon: anim4,
   },
 ];
