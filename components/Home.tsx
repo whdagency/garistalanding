@@ -17,18 +17,18 @@ export default function Home() {
     <div id="Home" className="container flex flex-col gap-5 overflow-hidden">
       <div className="pt-[150px] xl:pt-[220px] lg:pb-[60px] md:pb-[70px] pb-[0px]">
         {/* Hero Container */}
-        <div className="grid grid-cols-1 xl:grid-cols-2 gap-5 xl:gap-16 relative mb-8">
+        <div className="grid grid-cols-1 xl:grid-cols-2 gap-5 xl:gap-10 2xl:gap-20 relative mb-8">
           {/* Hero Content */}
           <div
             data-aos="fade-right"
-            className="flex flex-col justify-between gap-5 items-center xl:items-start xl:ps-5"
+            className="flex flex-col justify-between gap-5 items-center xl:items-start xl:px-5 2xl:px-0"
           >
             <div className="flex flex-col gap-5 items-center xl:items-start">
               <h2 className="px-7 py-2 rounded-3xl bg-[#BECEFF] text-[#284396] uppercase text-sm w-fit font-black text-center xl:text-left">
                 {t("Grow With Garista")}
               </h2>
 
-              <div className="text-black text-3xl md:text-4xl lg:text-5xl 2xl:text-6xl flex flex-col gap-2">
+              <div className="text-black text-3xl md:text-4xl lg:text-[44px] 2xl:text-[55px] flex flex-col gap-2">
                 <p className="font-semibold text-center xl:text-left">
                   Digitize Your{" "}
                   <TypeAnimation
