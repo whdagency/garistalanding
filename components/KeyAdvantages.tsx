@@ -12,7 +12,7 @@ const KeyAdvantages = () => {
             Key advantages of <br /> our platform
           </h2>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-2 pt-6 md:px-16">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-2 pt-6">
             {keyAdvantages.map((item, index) => {
               const hasShadow = item.reduction !== undefined;
               return (
@@ -23,7 +23,7 @@ const KeyAdvantages = () => {
                       : "transparent",
                   }}
                   key={index}
-                  className={`flex w-full h-full rounded-3xl p-5 col-span-1 flex-col items-center gap-3 ${hasShadow ? "shadow-[0px_3.558px_7.115px_0px_rgba(0,_0,_0,_0.25)]" : "shadow-none hidden lg:block"}`}
+                  className={`flex w-[300px] h-full rounded-3xl p-5 col-span-1 flex-col items-center gap-3 ${hasShadow ? "shadow-[0px_3.558px_7.115px_0px_rgba(0,_0,_0,_0.25)]" : "shadow-none hidden lg:block"}`}
                 >
                   <div
                     style={{ color: item.textColor }}

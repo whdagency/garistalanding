@@ -40,7 +40,7 @@ export default function Home() {
                       1500,
                       "Payments.",
                       1500,
-                      "Marketings.",
+                      "Marketing.",
                       1500,
                     ]}
                     wrapper="span"
