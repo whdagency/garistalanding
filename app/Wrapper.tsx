@@ -12,6 +12,7 @@ import Testimonials from "@/components/Testimonials";
 import { useEffect, useState } from "react";
 import Aos from "aos";
 import "aos/dist/aos.css";
+import Features from "@/components/Features";
 
 function Wrapper() {
   let [activeSection, setActiveSection] = useState("Home");
@@ -93,6 +94,7 @@ function Wrapper() {
       <Partners />
       <About />
       <Benefits />
+      <Features />
       <Pricing />
       <Contact />
       <Testimonials />

@@ -71,9 +71,11 @@ function Nav({ activeSection }: Links) {
                 <LanguageModal />
               </div>
 
-              <button className="mx-10 me-auto font-semibold text-black/80 text-sm px-7 py-2 rounded-xl bg-white text-center">
-                <a href="#">Log In</a>
-              </button>
+              <Link href={"https://admin.garista.com/login"} target={"_blank"}>
+                <button className="mx-10 me-auto font-semibold text-black/80 text-sm px-7 py-2 rounded-xl bg-white text-center">
+                  <a href="#">Log In</a>
+                </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -144,7 +146,14 @@ const MobileNav = ({
                   className="text-xl text-primaryTwo"
                   variant="ghost"
                 >
-                  <a href={`/#${link}`}>
+                  <a
+                    href={
+                      link === "Log In"
+                        ? "https://admin.garista.com/login"
+                        : `#/${link}`
+                    }
+                    target={link === "Log In" ? "_blank" : ""}
+                  >
                     {link === "About" ? t("About Us") : t(link)}
                   </a>
                 </Button>

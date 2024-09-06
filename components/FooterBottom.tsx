@@ -28,6 +28,7 @@ const FooterBottom = () => {
                   key={index}
                   className="font-normal text-black w-fit"
                   href={link.href}
+                  target={link.blank ? "_blank" : ""}
                 >
                   {link.name}
                 </Link>

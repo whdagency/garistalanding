@@ -105,6 +105,7 @@ declare interface FooterSection {
 declare interface FooterSectionLink {
   name: string;
   href: string;
+  blank?: boolean;
 }
 
 declare interface Job {

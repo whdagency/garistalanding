@@ -6,7 +6,7 @@ export default function Features() {
 
   return (
     <div id="Features" className="container md:px-8 px-4">
-      <div className="lg:pt-[150px] md:pt-[100px] pt-[80px] pb-[80px]">
+      <div className="pt-[50px] pb-[80px]">
         <div className="grid lg:grid-cols-3 sm:grid-cols-2 grid-rows-3 gap-10 place-items-center pt-5">
           {featuresInfo.map((f, i) => (
             <div

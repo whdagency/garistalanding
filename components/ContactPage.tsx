@@ -247,13 +247,14 @@ const Contact = () => {
                     <p className="flex items-center gap-2">
                       <span>Tel:</span>
                       <span className="leading-relaxed text-sm lg:text-base">
-                        +212 530 456 789
+                        +212 5 20 37 68 69
                       </span>
                     </p>
+
                     <p className="flex items-center gap-2">
                       <span>GSM:</span>
                       <span className="leading-relaxed text-sm lg:text-base">
-                        +212 777 456 789
+                        +212 5 20 37 68 69
                       </span>
                     </p>
                   </div>
@@ -320,7 +321,7 @@ const SubmitButton = ({
       <Button
         disabled={pending}
         type="submit"
-        className="w-full py-3 text-[#5243C2] hover:bg-[#e9eaf1] hover:text-[#5243C2] bg-[#A3B9FF] transition lg:text-lg font-medium rounded-full"
+        className="w-full py-3 text-[#5243C2] hover:bg-[#e9eaf1] hover:text-[#5243C2] bg-white transition lg:text-lg font-medium rounded-full"
       >
         {pending ? `${t("Please wait")}...` : t("Submit")}
       </Button>

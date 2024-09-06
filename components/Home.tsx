@@ -8,6 +8,7 @@ import { HTMLAttributes } from "react";
 import { TypeAnimation } from "react-type-animation";
 import NumberTicker from "@/components/magicui/number-ticker";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 export default function Home() {
   const { t } = useTranslation("global");
@@ -20,7 +21,7 @@ export default function Home() {
           {/* Hero Content */}
           <div
             data-aos="fade-right"
-            className="flex flex-col justify-between gap-5 items-center xl:items-start"
+            className="flex flex-col justify-between gap-5 items-center xl:items-start xl:ps-5"
           >
             <div className="flex flex-col gap-5 items-center xl:items-start">
               <h2 className="px-7 py-2 rounded-3xl bg-[#BECEFF] text-[#284396] uppercase text-sm w-fit font-black text-center xl:text-left">
@@ -33,13 +34,13 @@ export default function Home() {
                   <TypeAnimation
                     preRenderFirstString={true}
                     sequence={[
-                      "Menu.",
+                      "Menus.",
                       1500,
                       "Orders.",
                       1500,
-                      "Payment.",
+                      "Payments.",
                       1500,
-                      "Marketing.",
+                      "Marketings.",
                       1500,
                     ]}
                     wrapper="span"
@@ -63,21 +64,26 @@ export default function Home() {
             </p>
 
             <div className="flex-row items-center gap-5 hidden xs:flex mt-5 -mb-5 xl:mt-0 xl:-mb-0">
-              <Button className="flex flex-row items-center justify-center gap-x-2 text-white bg-primaryBlue rounded-xl text-center">
-                {t("Get Started Now")}
-                <ChevronRight
-                  size={19}
-                  strokeWidth={2}
-                  className="group-hover:translate-x-1 transition-transform duration-300"
-                />
-              </Button>
+              <Link
+                href={"https://admin.garista.com/register"}
+                target={"_blank"}
+              >
+                <Button className="flex flex-row items-center justify-center gap-x-2 text-white bg-primaryBlue rounded-xl text-center">
+                  {t("Get Started Now")}
+                  <ChevronRight
+                    size={19}
+                    strokeWidth={2}
+                    className="group-hover:translate-x-1 transition-transform duration-300"
+                  />
+                </Button>
+              </Link>
 
-              <button className="flex flex-row items-center justify-center gap-x-2 text-[#5D6B6E] font-bold text-sm">
+              <button className="flex flex-row items-center justify-center gap-x-1 text-[#5D6B6E] font-bold text-base">
                 <Image
                   src="/icons/video-player.svg"
                   alt="video-player"
-                  width={40}
-                  height={40}
+                  width={45}
+                  height={45}
                   className="rounded-full object-contain"
                 />
                 {t("Garista Overview")}
@@ -138,21 +144,26 @@ export default function Home() {
 
             {/* Button */}
             <div className="items-center gap-5 flex-col flex xs:hidden justify-center pt-10">
-              <Button className="flex flex-row items-center justify-center gap-x-2 text-white bg-primaryBlue rounded-xl text-center">
-                {t("Get Started Now")}
-                <ChevronRight
-                  size={19}
-                  strokeWidth={2}
-                  className="group-hover:translate-x-1 transition-transform duration-300"
-                />
-              </Button>
+              <Link
+                href={"https://admin.garista.com/register"}
+                target={"_blank"}
+              >
+                <Button className="flex flex-row items-center justify-center gap-x-2 text-white bg-primaryBlue rounded-xl text-center">
+                  {t("Get Started Now")}
+                  <ChevronRight
+                    size={19}
+                    strokeWidth={2}
+                    className="group-hover:translate-x-1 transition-transform duration-300"
+                  />
+                </Button>
+              </Link>
 
-              <button className="flex flex-row items-center justify-center gap-x-2 text-[#5D6B6E] font-normal text-sm">
+              <button className="flex flex-row items-center justify-center gap-x-2 text-[#5D6B6E] font-normal text-base">
                 <Image
                   src="/icons/video-player.svg"
                   alt="video-player"
-                  width={40}
-                  height={40}
+                  width={45}
+                  height={45}
                   className="rounded-full object-contain"
                 />
                 {t("Garista Overview")}

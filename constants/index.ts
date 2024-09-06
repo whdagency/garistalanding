@@ -68,6 +68,11 @@ export const footerSections: FooterSection[] = [
         name: "Pricing",
         href: "#Pricing",
       },
+      {
+        name: "Documentation",
+        href: "https://www.garista.com/docs",
+        blank: true,
+      },
     ],
   },
   {
