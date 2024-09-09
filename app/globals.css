@@ -109,6 +109,10 @@ html {
   margin-top: -10rem;
 }
 
+#garista-overview iframe {
+  border-radius: 50px;
+}
+
 @media screen and (max-width: 860px) {
   .marvel-device.iphone-x {
     transform: scale(0.3);

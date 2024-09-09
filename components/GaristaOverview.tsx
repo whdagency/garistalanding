@@ -14,8 +14,11 @@ const GaristaOverview = ({ isOpen, setIsOpen }: GaristaOverviewProps) => {
         className="max-w-full max-h-full p-0 bg-transparent border-none shadow-none"
       >
         <div className="fixed inset-0 bg-black/60" aria-hidden="true" />
-        <div className="fixed inset-0 flex items-center justify-center p-4">
-          <div className="relative w-full max-w-5xl aspect-video">
+        <div className="fixed inset-0 flex items-center justify-center p-4 rounded-full">
+          <div
+            className="relative w-full max-w-5xl aspect-video"
+            id="garista-overview"
+          >
             <ReactPlayer
               url={"https://youtu.be/52b5a_wXZtQ"}
               playing={true}
