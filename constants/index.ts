@@ -562,8 +562,8 @@ export const keyAdvantages: KeyAdvantages[] = [
 export const pricingPlan: PricingPlan[] = [
   {
     type: "Silver",
-    price: "$25",
-    priceYearly: "$35",
+    price: "$35",
+    priceYearly: "$25",
     subscription: "Lifetime",
     description: "Keep your guest and restaurant staff safe",
     buttonText: "Choose plan",
@@ -596,8 +596,8 @@ export const pricingPlan: PricingPlan[] = [
   },
   {
     type: "Gold",
-    price: "$45",
-    priceYearly: "$55",
+    price: "$55",
+    priceYearly: "$45",
     subscription: "Month",
     description: "Ideal for restaurants with 80 covers",
     buttonText: "Choose plan",
@@ -631,8 +631,8 @@ export const pricingPlan: PricingPlan[] = [
   },
   {
     type: "Platinum",
-    price: "$85",
-    priceYearly: "$95",
+    price: "$95",
+    priceYearly: "$85",
     subscription: "",
     description: "Ideal for restaurants with more staffing.",
     buttonText: "Choose plan",
