@@ -4,14 +4,16 @@ import Image from "next/image";
 import { Button } from "./ui/button";
 import { ArrowUp, ChevronRight } from "lucide-react";
 import { useTranslation } from "react-i18next";
-import { HTMLAttributes } from "react";
+import { HTMLAttributes, useState } from "react";
 import { TypeAnimation } from "react-type-animation";
 import NumberTicker from "@/components/magicui/number-ticker";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
+import GaristaOverview from "@/components/GaristaOverview";
 
 export default function Home() {
   const { t } = useTranslation("global");
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <div id="Home" className="container flex flex-col gap-5 overflow-hidden">
@@ -78,7 +80,10 @@ export default function Home() {
                 </Button>
               </Link>
 
-              <button className="flex flex-row items-center justify-center gap-x-1 text-[#5D6B6E] font-bold text-base">
+              <button
+                onClick={() => setIsOpen(true)}
+                className="flex flex-row items-center justify-center gap-x-1 text-[#5D6B6E] font-bold text-base"
+              >
                 <Image
                   src="/icons/video-player.svg"
                   alt="video-player"
@@ -158,7 +163,10 @@ export default function Home() {
                 </Button>
               </Link>
 
-              <button className="flex flex-row items-center justify-center gap-x-2 text-[#5D6B6E] font-normal text-base">
+              <button
+                onClick={() => setIsOpen(true)}
+                className="flex flex-row items-center justify-center gap-x-2 text-[#5D6B6E] font-normal text-base"
+              >
                 <Image
                   src="/icons/video-player.svg"
                   alt="video-player"
@@ -172,6 +180,8 @@ export default function Home() {
           </div>
         </div>
       </div>
+
+      <GaristaOverview isOpen={isOpen} setIsOpen={setIsOpen} />
     </div>
   );
 }

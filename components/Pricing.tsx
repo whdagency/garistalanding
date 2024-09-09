@@ -14,7 +14,7 @@ export default function Pricing() {
   return (
     <div
       id="Pricing"
-      className="container md:px-8 px-4 rounded-[50px] md:rounded-[100px] bg-white mb-20"
+      className="container md:px-8 px-4 rounded-[50px] md:rounded-[100px] mb-20"
     >
       <div className="pb-[80px] flex flex-col gap-10">
         <div className="flex flex-col items-center gap-10 py-20 text-center">
@@ -26,9 +26,9 @@ export default function Pricing() {
             No contracts. No surprise fees.
           </p>
 
-          <div className="flex items-center">
+          <div className="flex items-center bg-white rounded-full">
             <button
-              className={`text-sm uppercase py-4 px-6 ${selected === "monthly" ? "rounded-full bg-primaryBlue shadow-[0px_6.481px_9.073px_0px_rgba(82,_67,_194,_0.23)] text-white" : "text-[#848199]"}`}
+              className={`text-sm uppercase py-3 px-6 ${selected === "monthly" ? "rounded-full bg-primaryBlue shadow-[0px_6.481px_9.073px_0px_rgba(82,_67,_194,_0.23)] text-[#DAE3FF]" : "text-[#848199]"}`}
               onClick={() => setSelected("monthly")}
             >
               Monthly
@@ -36,14 +36,14 @@ export default function Pricing() {
 
             <button
               onClick={() => setSelected("yearly")}
-              className={`text-sm uppercase py-4 px-6 ${selected === "yearly" ? "rounded-full bg-primaryBlue shadow-[0px_6.481px_9.073px_0px_rgba(82,_67,_194,_0.23)] text-white" : "text-[#848199]"}`}
+              className={`text-sm uppercase py-3 px-6 ${selected === "yearly" ? "rounded-full bg-primaryBlue shadow-[0px_6.481px_9.073px_0px_rgba(82,_67,_194,_0.23)] text-[#DAE3FF]" : "text-[#848199]"}`}
             >
               Yearly
             </button>
           </div>
         </div>
 
-        <div className="flex flex-wrap justify-center xl:mx-10 md:bg-[#F5F8FF] md:rounded-[40px]">
+        <div className="flex flex-wrap justify-center md:shadow-sm xl:mx-10 md:bg-[#F5F8FF] md:rounded-[40px]">
           <div className="grid grid-cols-1 md:grid-cols-3">
             {pricingPlan.map(({ features, ...pricing }, idx) => (
               <PricingCard
@@ -60,13 +60,9 @@ export default function Pricing() {
                 {features.map((feature, index) => (
                   <List key={index}>
                     <Image
-                      src={
-                        pricing.active
-                          ? "/icons/check-circle-white.svg"
-                          : "/icons/check-circle.svg"
-                      }
-                      width={16}
-                      height={16}
+                      src={feature.icon}
+                      width={20}
+                      height={20}
                       alt="check-circle"
                       className="object-contain"
                     />
@@ -75,7 +71,7 @@ export default function Pricing() {
                         pricing.active ? "text-white" : "text-primaryGray"
                       }
                     >
-                      {t(feature)}
+                      {t(feature.name)}
                     </span>
                   </List>
                 ))}
@@ -177,16 +173,16 @@ const PricingCard = ({
     <>
       <div
         className={`w-full ${
-          type === t("Intro")
+          type === t("Silver")
             ? "xl:pr-4 px-0"
-            : type === t("Pro")
+            : type === t("Gold")
               ? "xl:px-4 px-0"
               : "xl:pl-4 md:mx-auto"
         }`}
       >
         <div
           className={`relative z-10 mb-10 overflow-hidden rounded-3xl px-6 py-12 sm:p-10 md:p-4 lg:px-6 xl:p-[50px] ${
-            type === t("Pro")
+            type === t("Gold")
               ? "bg-primaryBlue text-white md:-mt-16 shadow-[0px_65.159px_52.748px_0px_rgba(82,_67,_194,_0.3)]"
               : "bg-[#F5F8FF] md:bg-transparent shadow-[0px_46.94px_37.999px_0px_rgba(82,_67,_194,_0.3)] md:shadow-none"
           }`}
@@ -198,18 +194,18 @@ const PricingCard = ({
           )}
 
           <h2
-            className={`mb-5 text-[45px] font-extrabold ${active ? "text-white md:mt-10" : "text-[#231D4F]"}`}
+            className={`mb-2 text-[45px] font-black ${active ? "text-white md:mt-5" : "text-[#231D4F]"}`}
           >
-            {selected === "monthly" ? price : yearlyPrice}{" "}
+            {selected === "monthly" ? price : yearlyPrice}
             <span
               className={`text-base lowercase font-medium  ${active ? "text-white" : "text-[#848199]"}`}
             >
-              / {"Month"}
+              /{"Month"}
             </span>
           </h2>
 
           <span
-            className={`mb-3 block text-3xl font-semibold ${active ? "text-white" : "text-[#231D4F]"}`}
+            className={`mb-3 block text-3xl font-extrabold ${active ? "text-white" : "text-[#231D4F]"}`}
           >
             {type}
           </span>
@@ -224,9 +220,9 @@ const PricingCard = ({
 
           <Link href="/#Contact">
             <Button
-              className={`group flex flex-row items-center justify-center gap-x-2 w-full transition-colors duration-300 rounded-full ${
+              className={`group flex flex-row items-center justify-center gap-x-2 w-full font-bold transition-colors duration-300 rounded-full ${
                 active
-                  ? "bg-[#A3B9FF] text-[#5243C2]"
+                  ? "bg-[#A3B9FF] text-white"
                   : "bg-primaryBlue/10 text-primaryBlue "
               }`}
             >

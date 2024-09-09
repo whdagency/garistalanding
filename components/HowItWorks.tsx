@@ -3,6 +3,8 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Lottie from "lottie-react";
+import Image from "next/image";
+import { useTranslation } from "react-i18next";
 import {
   Carousel,
   CarouselContent,
@@ -10,51 +12,21 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-
-import anim1 from "@/components/customize-menu-2.json" assert { type: "json" };
-import anim2 from "@/components/customize-menu-3.json" assert { type: "json" };
-import anim3 from "@/components/customize-menu-4.json" assert { type: "json" };
-import anim4 from "@/components/customize-menu-1.json" assert { type: "json" };
-import Image from "next/image";
-
-const steps = [
-  {
-    stepTitle: "Efficient Menu Management",
-    title: "Efficient Menu Management",
-    description:
-      "Easily customize your menu with just a few clicks. Update dishes, prices, and descriptions in real-time without any design or coding skills. Keep your offerings fresh and exciting to attract more customers.",
-    icon: anim1,
-  },
-  {
-    stepTitle: "Boosted Customer Engagement",
-    title: "Boosted Customer Engagement",
-    description:
-      "Connect with your customers like never before. Utilize QR code menus, gather feedback, and allow guests to place orders directly from their smartphones. Improve the dining experience and build stronger customer relationships.",
-    icon: anim2,
-  },
-  {
-    stepTitle: "Powerful Marketing Tools",
-    title: "Powerful Marketing Tools",
-    description:
-      "Boost your visibility and attract new customers with integrated marketing features. Promote special offers, share updates on social media, and analyze customer behavior to optimize your marketing strategies effectively.",
-    icon: anim3,
-  },
-  {
-    stepTitle: "Comprehensive Restaurant Management",
-    title: "Comprehensive Restaurant Management",
-    description:
-      "Streamline operations with Garista’s platform. Manage orders, track performance, and gain insights from one dashboard. Simplify management and focus on delivering great food and service.",
-    icon: anim4,
-  },
-];
+import { aboutUsSteps as steps } from "@/constants";
 
 const HowItWorks = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
   const [currentStep, setCurrentStep] = useState(0);
   const stepsContainerRef = useRef<HTMLDivElement>(null);
+  const [isInView, setIsInView] = useState(false);
+  const [customScrollActive, setCustomScrollActive] = useState(true);
+  const { t } = useTranslation("global");
 
   useEffect(() => {
     const handleWheel = (e: WheelEvent) => {
+      // Only custom scroll when section is in view and custom scroll is active
+      if (!isInView || !customScrollActive) return;
+
       const container = stepsContainerRef.current;
       if (!container) return;
 
@@ -62,20 +34,30 @@ const HowItWorks = () => {
       const isAtTop = scrollProgress <= 0;
       const isAtEnd = scrollProgress >= steps.length - 1;
 
+      // Prevent default scrolling beyond the first or last step
       if ((isAtTop && !isScrollingDown) || (isAtEnd && isScrollingDown)) {
         return;
       }
 
       e.preventDefault();
+
+      // Adjust the scroll sensitivity
       const delta = e.deltaY / 1000;
       const newProgress = scrollProgress + delta;
-
-      const clampedProgress = Math.max(0, Math.min(newProgress, steps.length));
+      const clampedProgress = Math.max(
+        0,
+        Math.min(newProgress, steps.length - 1)
+      );
       setScrollProgress(clampedProgress);
 
       const newSectionIndex = Math.floor(clampedProgress);
       if (newSectionIndex !== currentStep) {
         setCurrentStep(newSectionIndex);
+      }
+
+      // Disable custom scroll after all steps are viewed
+      if (newSectionIndex === steps.length - 1 && isScrollingDown) {
+        setCustomScrollActive(false);
       }
     };
 
@@ -89,19 +71,23 @@ const HowItWorks = () => {
         container.removeEventListener("wheel", handleWheel);
       }
     };
-  }, [currentStep, scrollProgress]);
+  }, [currentStep, scrollProgress, isInView, customScrollActive]);
 
+  // Observer to track if the section is in view
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          // setScrollProgress(0); // Reset to the start when entering
-          // if (entry.isIntersecting) {
-          //   setCurrentStep(0);
-          // }
+          if (entry.isIntersecting) {
+            setIsInView(true);
+            setCustomScrollActive(true); // Enable custom scroll when section is in view
+          } else {
+            setIsInView(false);
+            setCustomScrollActive(false);
+          }
         });
       },
-      { root: null, threshold: 0.1 } // Adjusting threshold for triggering
+      { root: null, threshold: 0.65 } // Adjust threshold as necessary
     );
 
     if (stepsContainerRef.current) {
@@ -122,106 +108,130 @@ const HowItWorks = () => {
   };
 
   return (
-    <div className="max-w-6xl mx-auto bg-white">
-      <div className="max-w-6xl mx-auto px-4 py-16">
-        <div
-          ref={stepsContainerRef}
-          className="flex flex-col md:flex-row gap-12 items-center md:items-start"
-        >
-          <div className="w-full md:w-1/2 flex flex-col gap-5">
-            <div className="mb-8">
-              <h2 className="text-[#6985DB] font-semibold mb-2 uppercase">
-                How It Works
-              </h2>
-              <h1 className="text-4xl font-bold mb-4">
-                {steps[currentStep].title}
-              </h1>
-              <p className="text-[#90A3BF] max-w-2xl">
-                {steps[currentStep].description}
-              </p>
-            </div>
+    <div
+      ref={stepsContainerRef}
+      className="container md:px-8 px-4 mt-20 rounded-[50px] md:rounded-[100px] bg-white mb-20 overflow-hidden"
+      id="Features"
+    >
+      <div className="flex flex-col gap-y-20 items-center justify-start bg-white rounded-[100px] pt-10 pb-[100px]">
+        <div className="flex flex-col gap-8">
+          <div className="flex flex-col items-center gap-5 text-center pt-10 pb-14">
+            <h2 className="lg:text-5xl md:text-4xl xs:text-3xl text-2xl font-semibold max-w-xs sm:max-w-xl w-full md:max-w-3xl capitalize px-4 pb-5 text-center">
+              <span className="text-primaryColor">{t("Create")}</span>,{" "}
+              <span className="text-primaryColor">{t("Customize")}</span>,{" "}
+              {t("and")}{" "}
+              <span className="text-primaryColor">{t("Manage")}</span>{" "}
+              {t("your menus with ease")}
+            </h2>
+          </div>
 
-            <div className="relative px-8 pb-4 pt-8 bg-[#FBFBFB] rounded-[14.4px] w-fit -mt-5">
-              {/* Dotted Line */}
-              <div className="absolute left-[46px] w-px top-8 bottom-[64px] border-l-[1.5px] border-dotted border-primaryColor" />
+          <div className="hidden lg:block -mt-10">
+            <div className="flex flex-col md:flex-row gap-12 items-center md:items-start">
+              <div className="w-full md:w-1/2 flex ps-10 flex-col gap-5">
+                <div className="mb-8 lg:h-48">
+                  <h2 className="text-[#6985DB] font-semibold mb-2 uppercase">
+                    How It Works
+                  </h2>
+                  <h1 className="text-4xl font-bold mb-4">
+                    {steps[currentStep].title}
+                  </h1>
+                  <p className="text-[#90A3BF] max-w-2xl">
+                    {steps[currentStep].description}
+                  </p>
+                </div>
 
-              {/* Active Line */}
-              <motion.div
-                className="absolute left-[46px] top-8 w-px bg-primaryColor origin-top"
-                initial={{ scaleY: 0 }}
-                animate={{
-                  scaleY: scrollProgress / steps.length,
-                }}
-                transition={{ duration: 0.2 }}
-                style={{ height: `calc(100% - 32px)` }}
-              />
+                <div className="flex-grow flex-1 relative px-8 pb-4 pt-8 bg-[#FBFBFB] rounded-[14.4px] w-fit -mt-5 flex-shrink-0">
+                  {/* Dotted Line */}
+                  <div className="absolute left-[46px] w-px top-8 bottom-[64px] border-l-[1.5px] border-dotted border-primaryColor" />
 
-              {steps.map((step, index) => (
-                <div
-                  key={index}
-                  className="mb-12 relative"
-                  onClick={() => goToSection(index)}
-                >
+                  {/* Active Line */}
                   <motion.div
-                    className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold relative z-10 cursor-pointer ${
-                      index <= currentStep
-                        ? "bg-primaryColor text-white"
-                        : "bg-[#E7E7E7] text-white"
-                    }`}
-                    initial={false}
+                    className="absolute left-[46px] top-8 w-px bg-primaryColor origin-top"
+                    initial={{ scaleY: 0 }}
                     animate={{
-                      scale:
-                        currentStep === steps.length - 1
-                          ? 1
-                          : currentStep === index
-                            ? 1.2
-                            : 1,
+                      scaleY: scrollProgress / steps.length,
                     }}
+                    transition={{ duration: 0.1, ease: "easeInOut" }}
+                    style={{ height: `calc(100% - 32px)` }}
+                  />
+
+                  {steps.map((step, index) => (
+                    <div
+                      key={index}
+                      className="mb-12 relative"
+                      onClick={() => goToSection(index)}
+                    >
+                      <motion.div
+                        className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold relative z-10 cursor-pointer ${
+                          index <= currentStep
+                            ? "bg-primaryColor text-white"
+                            : "bg-[#E7E7E7] text-white"
+                        }`}
+                        initial={false}
+                        animate={{
+                          scale:
+                            currentStep === steps.length - 1
+                              ? 1
+                              : currentStep === index
+                                ? 1.2
+                                : 1,
+                        }}
+                        transition={{ duration: 0.3 }}
+                      >
+                        {index + 1}
+                      </motion.div>
+                      <div className="ml-12 -mt-8">
+                        <h3
+                          className={`font-semibold ${
+                            index <= currentStep
+                              ? "text-black"
+                              : "text-gray-500"
+                          }`}
+                        >
+                          {step.stepTitle}
+                        </h3>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="w-full md:w-1/2">
+                <AnimatePresence mode="wait">
+                  <motion.div
+                    key={currentStep}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -20 }}
                     transition={{ duration: 0.3 }}
                   >
-                    {index + 1}
+                    {currentStep === 0 ? (
+                      <Image
+                        src="/assets/about-us-menu.png"
+                        alt="Interactive Menu"
+                        width={500}
+                        height={450}
+                        loading="lazy"
+                        className="object-contain w-[500px] h-[500px]"
+                      />
+                    ) : (
+                      <Lottie
+                        animationData={steps[currentStep].icon}
+                        loop={true}
+                        className="w-[500px] h-[450px] mx-auto mb-6"
+                      />
+                    )}
                   </motion.div>
-                  <div className="ml-12 -mt-8">
-                    <h3
-                      className={`font-semibold ${
-                        index <= currentStep ? "text-black" : "text-gray-500"
-                      }`}
-                    >
-                      {step.stepTitle}
-                    </h3>
-                  </div>
-                </div>
-              ))}
+                </AnimatePresence>
+              </div>
             </div>
           </div>
 
-          <div className="w-full md:w-1/2">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={currentStep}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.3 }}
-              >
-                {currentStep === 0 ? (
-                  <Image
-                    src="/assets/about-us-menu.png"
-                    alt="Interactive Menu"
-                    width={500}
-                    height={450}
-                    loading="lazy"
-                    className="object-contain w-[500px] h-[500px]"
-                  />
-                ) : (
-                  <Lottie
-                    animationData={steps[currentStep].icon}
-                    loop={true}
-                    className="w-[500px] h-[450px] mx-auto mb-6"
-                  />
-                )}
-              </motion.div>
-            </AnimatePresence>
+          <div className="lg:hidden">
+            <h2 className="text-[#6985DB] font-semibold mb-2 uppercase text-center">
+              How It Works
+            </h2>
+            <HowItWorksMobile />
           </div>
         </div>
       </div>

@@ -13,6 +13,7 @@ import { useEffect, useState } from "react";
 import Aos from "aos";
 import "aos/dist/aos.css";
 import Features from "@/components/Features";
+import HowItWorks from "@/components/HowItWorks";
 
 function Wrapper() {
   let [activeSection, setActiveSection] = useState("Home");
@@ -92,7 +93,7 @@ function Wrapper() {
       <Nav activeSection={activeSection} />
       <Hero />
       <Partners />
-      <About />
+      <HowItWorks />
       <Benefits />
       <Features />
       <Pricing />

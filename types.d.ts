@@ -94,7 +94,10 @@ declare interface PricingPlan {
   description: string;
   buttonText: string;
   active?: boolean;
-  features: string[];
+  features: {
+    name: string;
+    icon: string;
+  }[];
 }
 
 declare interface FooterSection {

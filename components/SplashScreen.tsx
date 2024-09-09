@@ -1,6 +1,6 @@
 import React from "react";
 import Lottie from "lottie-react";
-import loaderAnimation from "./loader.json";
+import loaderAnimation from "@/components/lottie/loader.json" assert { type: "json" };
 
 type SplashScreenProps = {
   setLoadSplashScreen: (loadSplashScreen: boolean) => void;

@@ -34,6 +34,11 @@ import {
   TbMessageQuestion,
 } from "react-icons/tb";
 
+import anim1 from "@/components/lottie/customize-menu-2.json" assert { type: "json" };
+import anim2 from "@/components/lottie/customize-menu-3.json" assert { type: "json" };
+import anim3 from "@/components/lottie/customize-menu-4.json" assert { type: "json" };
+import anim4 from "@/components/lottie/customize-menu-1.json" assert { type: "json" };
+
 // Footer Sections
 export const footerSections: FooterSection[] = [
   {
@@ -68,16 +73,16 @@ export const footerSections: FooterSection[] = [
         name: "Pricing",
         href: "#Pricing",
       },
-      {
-        name: "Documentation",
-        href: "https://www.garista.com/docs",
-        blank: true,
-      },
     ],
   },
   {
     title: "Resources",
     links: [
+      {
+        name: "Documentation",
+        href: "https://www.garista.com/docs",
+        blank: true,
+      },
       {
         name: "Blog",
         href: "/articles",
@@ -197,6 +202,38 @@ export const aboutUsContent: AboutUsContent[] = [
           "With our intuitive and user-friendly menu management system, you can easily manage your menus and create a personalized experience for your customers. Our advanced menu customization features allow you to tailor your menus to your specific needs and preferences.",
       },
     ],
+  },
+];
+
+// About Us Content - How It Works
+export const aboutUsSteps = [
+  {
+    stepTitle: "Efficient Menu Management",
+    title: "Efficient Menu Management",
+    description:
+      "Easily customize your menu with just a few clicks. Update dishes, prices, and descriptions in real-time without any design or coding skills. Keep your offerings fresh and exciting to attract more customers.",
+    icon: anim1,
+  },
+  {
+    stepTitle: "Boosted Customer Engagement",
+    title: "Boosted Customer Engagement",
+    description:
+      "Connect with your customers like never before. Utilize QR code menus, gather feedback, and allow guests to place orders directly from their smartphones. Improve the dining experience and build stronger customer relationships.",
+    icon: anim2,
+  },
+  {
+    stepTitle: "Powerful Marketing Tools",
+    title: "Powerful Marketing Tools",
+    description:
+      "Boost your visibility and attract new customers with integrated marketing features. Promote special offers, share updates on social media, and analyze customer behavior to optimize your marketing strategies effectively.",
+    icon: anim3,
+  },
+  {
+    stepTitle: "Comprehensive Restaurant Management",
+    title: "Comprehensive Restaurant Management",
+    description:
+      "Streamline operations with Garista’s platform. Manage orders, track performance, and gain insights from one dashboard. Simplify management and focus on delivering great food and service.",
+    icon: anim4,
   },
 ];
 
@@ -524,49 +561,106 @@ export const keyAdvantages: KeyAdvantages[] = [
 // Pricing Plan
 export const pricingPlan: PricingPlan[] = [
   {
-    type: "Intro",
-    price: "$20",
-    priceYearly: "$17",
+    type: "Silver",
+    price: "$25",
+    priceYearly: "$35",
     subscription: "Lifetime",
     description: "Keep your guest and restaurant staff safe",
     buttonText: "Choose plan",
     features: [
-      "Free QR Menu",
-      "Beautiful QR Menus",
-      "Unlimited Menu Items",
-      "Limited Customization",
-      "1.5% Commission per order",
+      {
+        name: "20 Tables",
+        icon: "/icons/check-circle.svg",
+      },
+      {
+        name: "2 themes",
+        icon: "/icons/check-circle.svg",
+      },
+      {
+        name: "Staff Management",
+        icon: "/icons/check-circle.svg",
+      },
+      {
+        name: "Payment Integration",
+        icon: "/icons/cross-circle.svg",
+      },
+      {
+        name: "POS Integration",
+        icon: "/icons/cross-circle.svg",
+      },
+      {
+        name: "Free Garista POS",
+        icon: "/icons/cross-circle.svg",
+      },
     ],
   },
   {
-    type: "Pro",
-    price: "$100",
-    priceYearly: "$95",
+    type: "Gold",
+    price: "$45",
+    priceYearly: "$55",
     subscription: "Month",
     description: "Ideal for restaurants with 80 covers",
     buttonText: "Choose plan",
     active: true,
     features: [
-      "7 to 12 Tablets",
-      "1 to 30 QR Codes",
-      "Online Ordering",
-      "Free updates",
-      "4 Months support",
+      {
+        name: "30 Tables",
+        icon: "/icons/check-circle-white.svg",
+      },
+      {
+        name: "4 themes",
+        icon: "/icons/check-circle-white.svg",
+      },
+      {
+        name: "Staff Management",
+        icon: "/icons/check-circle-white.svg",
+      },
+      {
+        name: "Payment Integration",
+        icon: "/icons/check-circle-white.svg",
+      },
+      {
+        name: "POS Integration",
+        icon: "/icons/check-circle-white.svg",
+      },
+      {
+        name: "Free Garista POS",
+        icon: "/icons/cross-circle-white.svg",
+      },
     ],
   },
   {
-    type: "Entreprise",
-    price: "$200",
-    priceYearly: "$195",
+    type: "Platinum",
+    price: "$85",
+    priceYearly: "$95",
     subscription: "",
     description: "Ideal for restaurants with more staffing.",
     buttonText: "Choose plan",
     features: [
-      "Translation in one additional language",
-      "Calculate calories and nutritional",
-      "Run ads campaigns",
-      "Menu optimization ",
-      "12 Months support",
+      {
+        name: "60 Tables",
+        icon: "/icons/check-circle.svg",
+      },
+      {
+        name: "VIP Themes",
+        icon: "/icons/check-circle.svg",
+      },
+      {
+        name: "Staff Management",
+        icon: "/icons/check-circle.svg",
+      },
+      {
+        name: "Payment Integration",
+        icon: "/icons/check-circle.svg",
+      },
+      {
+        name: "POS Integration",
+        icon: "/icons/check-circle.svg",
+      },
+      {
+        name: "Free Garista POS",
+        icon: "/icons/check-circle.svg",
+      },
     ],
   },
 ];
