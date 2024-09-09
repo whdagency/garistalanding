@@ -9,10 +9,10 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import anim1 from "@/components/customize-menu-1.json" assert { type: "json" };
-import anim2 from "@/components/customize-menu-2.json" assert { type: "json" };
-import anim3 from "@/components/customize-menu-3.json" assert { type: "json" };
-import anim4 from "@/components/customize-menu-4.json" assert { type: "json" };
+import anim1 from "@/components/lottie/customize-menu-1.json" assert { type: "json" };
+import anim2 from "@/components/lottie/customize-menu-2.json" assert { type: "json" };
+import anim3 from "@/components/lottie/customize-menu-3.json" assert { type: "json" };
+import anim4 from "@/components/lottie/customize-menu-4.json" assert { type: "json" };
 
 import { aboutUsContent } from "@/constants";
 import Image from "next/image";
