@@ -14,7 +14,7 @@ export default function Pricing() {
   return (
     <div
       id="Pricing"
-      className="container md:px-8 px-4 rounded-[50px] md:rounded-[100px] mb-20"
+      className="container md:px-8 px-4 rounded-[50px] md:rounded-[100px] mb-20 bg-white"
     >
       <div className="pb-[80px] flex flex-col gap-10">
         <div className="flex flex-col items-center gap-10 py-20 text-center">
@@ -26,7 +26,7 @@ export default function Pricing() {
             No contracts. No surprise fees.
           </p>
 
-          <div className="flex items-center bg-white rounded-full">
+          <div className="flex items-center bg-white rounded-full shadow">
             <button
               className={`text-sm uppercase py-3 px-6 ${selected === "monthly" ? "rounded-full bg-primaryBlue shadow-[0px_6.481px_9.073px_0px_rgba(82,_67,_194,_0.23)] text-[#DAE3FF]" : "text-[#848199]"}`}
               onClick={() => setSelected("monthly")}
