@@ -117,7 +117,9 @@ const HowItWorks = () => {
                   <h2 className="text-[#6985DB] font-semibold mb-2 uppercase">
                     How It Works
                   </h2>
-                  <h1 className="text-4xl font-bold mb-4">
+                  <h1
+                    className={`font-bold mb-4 ${currentStep === steps.length - 1 ? "text-3xl" : "text-4xl"}`}
+                  >
                     {steps[currentStep].title}
                   </h1>
                   <p className="text-[#90A3BF] max-w-2xl">
