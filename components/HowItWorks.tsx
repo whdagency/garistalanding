@@ -19,12 +19,11 @@ const HowItWorks = () => {
   const [currentStep, setCurrentStep] = useState(0);
   const stepsContainerRef = useRef<HTMLDivElement>(null);
   const [isInView, setIsInView] = useState(false);
-  const [customScrollActive, setCustomScrollActive] = useState(true);
   const { t } = useTranslation("global");
 
   useEffect(() => {
     const handleWheel = (e: WheelEvent) => {
-      if (!isInView || !customScrollActive) return;
+      if (!isInView) return;
 
       const container = stepsContainerRef.current;
       if (!container) return;
@@ -41,7 +40,7 @@ const HowItWorks = () => {
       e.preventDefault();
 
       // Adjust scroll sensitivity
-      const delta = e.deltaY / 1000;
+      const delta = e.deltaY / 900;
       const newProgress = scrollProgress + delta;
       const clampedProgress = Math.max(0, Math.min(newProgress, steps.length));
 
@@ -50,14 +49,6 @@ const HowItWorks = () => {
       const newSectionIndex = Math.floor(clampedProgress);
       if (newSectionIndex !== currentStep) {
         setCurrentStep(newSectionIndex);
-      }
-
-      // Disable custom scroll only when moving beyond the last step
-      if (
-        newSectionIndex === steps.length - 1 &&
-        clampedProgress > steps.length - 1
-      ) {
-        setCustomScrollActive(false);
       }
     };
 
@@ -71,23 +62,17 @@ const HowItWorks = () => {
         container.removeEventListener("wheel", handleWheel);
       }
     };
-  }, [currentStep, scrollProgress, isInView, customScrollActive]);
+  }, [currentStep, scrollProgress, isInView]);
 
   // Observer to track if the section is in view
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setIsInView(true);
-            setCustomScrollActive(true); // Enable custom scroll when section is in view
-          } else {
-            setIsInView(false);
-            setCustomScrollActive(false);
-          }
+          setIsInView(entry.isIntersecting);
         });
       },
-      { root: null, threshold: 0.65 } // Adjust threshold as necessary
+      { root: null, threshold: 0.6 } // Adjust threshold as necessary
     );
 
     if (stepsContainerRef.current) {
@@ -126,9 +111,9 @@ const HowItWorks = () => {
           </div>
 
           <div className="hidden lg:block -mt-10">
-            <div className="flex flex-col md:flex-row gap-12 items-center md:items-start">
+            <div className="flex flex-col md:flex-row gap-12 items-center md:items-center">
               <div className="w-full md:w-1/2 flex ps-10 flex-col gap-5">
-                <div className="mb-8 lg:h-48">
+                <div className="mb-8 lg:h-60">
                   <h2 className="text-[#6985DB] font-semibold mb-2 uppercase">
                     How It Works
                   </h2>
@@ -151,7 +136,7 @@ const HowItWorks = () => {
                     animate={{
                       scaleY: scrollProgress / steps.length,
                     }}
-                    transition={{ duration: 0.1, ease: "easeInOut" }}
+                    transition={{ duration: 0.2, ease: "easeInOut" }}
                     style={{ height: `calc(100% - 32px)` }}
                   />
 
@@ -176,13 +161,13 @@ const HowItWorks = () => {
                                 ? 1.2
                                 : 1,
                         }}
-                        transition={{ duration: 0.3 }}
+                        transition={{ duration: 0.2 }}
                       >
                         {index + 1}
                       </motion.div>
-                      <div className="ml-12 -mt-8">
+                      <div className="ml-12 -mt-7">
                         <h3
-                          className={`font-semibold ${
+                          className={`font-semibold cursor-pointer w-fit ${
                             index <= currentStep
                               ? "text-black"
                               : "text-gray-500"
@@ -218,7 +203,7 @@ const HowItWorks = () => {
                       <Lottie
                         animationData={steps[currentStep].icon}
                         loop={true}
-                        className="w-[500px] h-[450px] mx-auto mb-6"
+                        className="w-[500px] h-[500px] mx-auto mb-6"
                       />
                     )}
                   </motion.div>
