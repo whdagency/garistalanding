@@ -24,7 +24,6 @@ const HowItWorks = () => {
 
   useEffect(() => {
     const handleWheel = (e: WheelEvent) => {
-      // Only custom scroll when section is in view and custom scroll is active
       if (!isInView || !customScrollActive) return;
 
       const container = stepsContainerRef.current;
@@ -41,13 +40,11 @@ const HowItWorks = () => {
 
       e.preventDefault();
 
-      // Adjust the scroll sensitivity
+      // Adjust scroll sensitivity
       const delta = e.deltaY / 1000;
       const newProgress = scrollProgress + delta;
-      const clampedProgress = Math.max(
-        0,
-        Math.min(newProgress, steps.length - 1)
-      );
+      const clampedProgress = Math.max(0, Math.min(newProgress, steps.length));
+
       setScrollProgress(clampedProgress);
 
       const newSectionIndex = Math.floor(clampedProgress);
@@ -55,8 +52,11 @@ const HowItWorks = () => {
         setCurrentStep(newSectionIndex);
       }
 
-      // Disable custom scroll after all steps are viewed
-      if (newSectionIndex === steps.length - 1 && isScrollingDown) {
+      // Disable custom scroll only when moving beyond the last step
+      if (
+        newSectionIndex === steps.length - 1 &&
+        clampedProgress > steps.length - 1
+      ) {
         setCustomScrollActive(false);
       }
     };
