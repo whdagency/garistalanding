@@ -1,5 +1,15 @@
 import FooterBottom from "@/components/FooterBottom";
+import { Metadata } from "next";
 import React from "react";
+
+export const metadata: Metadata = {
+  title:
+    "Garista | The Ultimate digital menu solution for restaurants and cafés",
+  description: "The Ultimate digital menu solution for restaurants and cafés",
+  icons: {
+    icon: "/Logo/favicon-garista-white_blue.svg",
+  },
+};
 
 const PagesLayout = ({ children }: { children: React.ReactNode }) => {
   return (

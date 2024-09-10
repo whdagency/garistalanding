@@ -72,7 +72,10 @@ export default function RootLayout({
   const [loadSplashScreen, setLoadSplashScreen] = useState(true);
 
   useEffect(() => {
-    if (pathname !== "/") {
+    const hash = window.location.hash;
+    if (pathname === "/" && !hash) {
+      setLoadSplashScreen(true);
+    } else {
       setLoadSplashScreen(false);
     }
   }, [pathname]);
