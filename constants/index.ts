@@ -457,13 +457,17 @@ export const featuresInfo: FeaturesInfo[] = [
 
 // Partners Content
 export const partnersIcon: PartnersIcon[] = [
-  { src: "/Partners/door-dash.png" },
-  { src: "/Partners/dropbox.png" },
-  { src: "/Partners/factly.png" },
-  { src: "/Partners/palo-alto-networks.png" },
-  { src: "/Partners/soundhound-ai.png" },
-  { src: "/Partners/together-ai.png" },
-  { src: "/Partners/zoom.png" },
+  { src: "/Partners/bam.png" },
+  { src: "/Partners/hunger-station.png" },
+  { src: "/Partners/tahiri.png" },
+  { src: "/Partners/hot-spicy.png" },
+  { src: "/Partners/relax.png" },
+  { src: "/Partners/burger.png" },
+  { src: "/Partners/entre.png" },
+  { src: "/Partners/fast-food.png" },
+  { src: "/Partners/riassi.png" },
+  { src: "/Partners/g-k.png" },
+  { src: "/Partners/borcelle.png" },
 ];
 
 // Benefits Content

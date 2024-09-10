@@ -5,7 +5,8 @@ import Link from "next/link";
 import React, { useState } from "react";
 import { Cross as Hamburger } from "hamburger-react";
 
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Drawer, DrawerContent, DrawerTrigger } from "@/components/ui/drawer";
+
 import { Button } from "./ui/button";
 import { useTranslation } from "react-i18next";
 import LanguageModal from "@/components/LanguageModal";
@@ -15,13 +16,41 @@ type Links = {
 };
 
 const navLinks = [
-  "Features",
-  "Benefits",
-  "About",
-  "Contact",
-  "FAQ",
-  "Blog",
-  "Log In",
+  {
+    name: "Features",
+    url: "Features",
+    redirect: false,
+  },
+  {
+    name: "Benefits",
+    url: "Benefits",
+    redirect: false,
+  },
+  {
+    name: "About Us",
+    url: "About",
+    redirect: false,
+  },
+  {
+    name: "Contact",
+    url: "Contact",
+    redirect: false,
+  },
+  {
+    name: "FAQ",
+    url: "FAQ",
+    redirect: false,
+  },
+  {
+    name: "Blog",
+    url: "/articles",
+    redirect: false,
+  },
+  {
+    name: "Log In",
+    url: "https://admin.garista.com/login",
+    redirect: true,
+  },
 ];
 
 function Nav({ activeSection }: Links) {
@@ -57,14 +86,15 @@ function Nav({ activeSection }: Links) {
                 {navLinks.slice(0, navLinks.length - 1).map((link, index) => (
                   <a
                     key={index}
-                    href={`/#${link}`}
+                    href={link.name === "Blog" ? link.url : `/#${link.url}`}
                     className={`navLink ${
-                      activeSection == link
+                      activeSection == link.url
                         ? "text-primaryBg bg-primaryBg/10 rounded-xl"
                         : "text-primaryOne hover:text-primaryBg rounded-xl"
                     }`}
+                    target={link.redirect ? "_blank" : ""}
                   >
-                    {link === "About" ? t("About Us") : t(link)}
+                    {t(link.name)}
                   </a>
                 ))}
 
@@ -99,6 +129,7 @@ function Nav({ activeSection }: Links) {
                 handleSheet={handleSheet}
                 isHamburger={isHamburger}
                 setHamburger={setHamburger}
+                setOpen={setOpen}
               />
             </div>
           </div>
@@ -115,6 +146,7 @@ type MobileNavProps = {
   handleSheet: () => void;
   isHamburger: boolean;
   setHamburger: React.Dispatch<React.SetStateAction<boolean>>;
+  setOpen: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
 const MobileNav = ({
@@ -122,50 +154,65 @@ const MobileNav = ({
   handleSheet,
   isHamburger,
   setHamburger,
+  setOpen,
 }: MobileNavProps) => {
   const { t } = useTranslation("global");
 
   return (
     <>
-      <Sheet open={isOpen} onOpenChange={handleSheet}>
-        <SheetTrigger>
+      <Drawer
+        open={isOpen}
+        onOpenChange={(open) => {
+          setOpen(open);
+          setHamburger(open);
+        }}
+      >
+        <DrawerTrigger>
           <Hamburger
             toggled={isHamburger}
             toggle={setHamburger}
             size={20}
             direction="left"
           />
-        </SheetTrigger>
+        </DrawerTrigger>
 
-        <SheetContent side={"bottom"}>
+        <DrawerContent>
           <div className="flex flex-col gap-y-4 mt-4 pb-4">
-            {navLinks.map((link, index) => (
-              <SheetTrigger asChild key={index}>
+            {navLinks.slice(0, navLinks.length - 1).map((link, index) => (
+              <DrawerTrigger asChild key={index}>
                 <Button
                   asChild
                   className="text-xl text-primaryTwo"
                   variant="ghost"
                 >
                   <a
-                    href={
-                      link === "Log In"
-                        ? "https://admin.garista.com/login"
-                        : `#/${link}`
-                    }
-                    target={link === "Log In" ? "_blank" : ""}
+                    href={link.name === "Blog" ? link.url : `/#${link.url}`}
+                    target={link.redirect ? "_blank" : ""}
                   >
-                    {link === "About" ? t("About Us") : t(link)}
+                    {t(link.name)}
                   </a>
                 </Button>
-              </SheetTrigger>
+              </DrawerTrigger>
             ))}
 
-            <SheetTrigger asChild>
+            <DrawerTrigger asChild>
               <LanguageModal />
-            </SheetTrigger>
+            </DrawerTrigger>
+
+            <DrawerTrigger asChild>
+              <Button
+                asChild
+                className="text-xl text-primaryTwo"
+                variant="ghost"
+              >
+                <a href={"https://admin.garista.com/login"} target={"_blank"}>
+                  {t("Log In")}
+                </a>
+              </Button>
+            </DrawerTrigger>
           </div>
-        </SheetContent>
-      </Sheet>
+        </DrawerContent>
+      </Drawer>
     </>
   );
 };

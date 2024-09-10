@@ -31,7 +31,7 @@ export default function Home() {
               </h2>
 
               <div className="text-black text-3xl md:text-4xl lg:text-[44px] 2xl:text-[55px] flex flex-col gap-2">
-                <p className="font-semibold text-center xl:text-left">
+                <p className="font-semibold text-center xl:text-left whitespace-nowrap text-ellipsis overflow-hidden">
                   Digitize Your{" "}
                   <TypeAnimation
                     preRenderFirstString={true}
@@ -242,7 +242,7 @@ const HeroRevenueTime = ({
         {type === "revenue" && (
           <span className="text-[#38D271] text-xs sm:text-sm md:text-base flex items-center gap-1">
             <ArrowUp size={20} color="#38D271" />
-            <span>2.1%</span>
+            <span>30%</span>
           </span>
         )}
 

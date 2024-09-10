@@ -14,7 +14,7 @@ const ArticleCard = ({ article }: { article: Article }) => {
         className="object-cover"
       />
 
-      <div className="flex flex-col gap-4 p-5">
+      <div className="flex flex-col gap-4 p-5 h-full">
         <div className="flex flex-col gap-4 flex-1">
           <p className="flex items-center gap-3">
             <span className="text-base font-bold text-black">
@@ -31,9 +31,10 @@ const ArticleCard = ({ article }: { article: Article }) => {
           </p>
         </div>
 
+        {/* Ensure this link stays at the bottom */}
         <Link
           href={`/articles/${article.slug}`}
-          className="flex items-center gap-2 text-sm text-primaryColor font-semibold"
+          className="flex items-center gap-2 text-sm text-primaryColor font-semibold mt-auto"
         >
           <span>Read More</span>
           <ArrowRight className="w-5 h-5 text-primaryColor" />

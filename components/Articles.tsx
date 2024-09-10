@@ -137,7 +137,7 @@ const Articles = () => {
         </section>
 
         {/* Pagination */}
-        {articles.length > 4 && (
+        {/* {articles.length > 4 && (
           <div className="flex justify-center mt-5">
             <nav>
               <ul className="inline-flex items-center gap-3 -space-x-px">
@@ -156,7 +156,7 @@ const Articles = () => {
               </ul>
             </nav>
           </div>
-        )}
+        )} */}
       </div>
     </div>
   );

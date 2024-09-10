@@ -110,7 +110,7 @@ html {
 }
 
 #garista-overview iframe {
-  border-radius: 50px;
+  border-radius: 15px;
 }
 
 @media screen and (max-width: 860px) {

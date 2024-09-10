@@ -15,16 +15,7 @@ const Articles = async () => {
 
   return (
     <div id="Blog" className="flex flex-col gap-5 bg-white">
-      <ArticleHero />
-
-      <div
-        style={{ marginTop: "-300px" }}
-        className="max-w-3xl mx-auto flex-col md:hidden flex items-center gap-8 pb-20"
-      >
-        <div className="grid grid-cols-1 md:hidden">
-          <HeroArticleCard article={articles[0]} />
-        </div>
-      </div>
+      <ArticleHero article={articles[0]} />
 
       <div
         style={{ marginTop: "-200px" }}
@@ -37,7 +28,9 @@ const Articles = async () => {
         </div>
       </div>
 
-      <LatestBlogs articles={articles.slice(2)} />
+      <div className="mt-28 sm:mt-24 md:mt-0">
+        <LatestBlogs articles={articles.slice(2)} />
+      </div>
     </div>
   );
 };

@@ -43,6 +43,11 @@ export default function Pricing() {
           </div>
         </div>
 
+        <p className="text-start text-[#848199] text-xs md:hidden px-5 -mt-20">
+          Your subscription includes a set number of tables. If you add more
+          tables beyond the included amount, an additional fee will apply.
+        </p>
+
         <div className="flex flex-wrap justify-center md:shadow-sm xl:mx-10 md:bg-[#F5F8FF] md:rounded-[40px]">
           <div className="grid grid-cols-1 md:grid-cols-3">
             {pricingPlan.map(({ features, ...pricing }, idx) => (
@@ -80,11 +85,12 @@ export default function Pricing() {
               </PricingCard>
             ))}
           </div>
+
+          <p className="text-center text-[#848199] text-base md:text-lg -mt-10 pb-10 hidden md:block">
+            Your subscription includes a set number of tables. If you add more
+            tables beyond the included amount, an additional fee will apply.
+          </p>
         </div>
-        <p className="text-center text-[#848199] text-base md:text-lg">
-          Your subscription includes a set number of tables. If you add more
-          tables beyond the included amount, an additional fee will apply.
-        </p>
 
         <div className="md:mx-10 flex flex-col items-center gap-8 lg:gap-0 pt-10">
           {/* Our Trusted POS Partners */}

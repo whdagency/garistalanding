@@ -7,7 +7,7 @@ const HeroArticleCard = ({ article }: { article: Article }) => {
   return (
     <div
       key={article.id}
-      className="bg-white flex flex-col gap-3 md:rounded-xl md:py-5 md:px-5 overflow-hidden"
+      className="bg-white flex h-full flex-col gap-3 md:rounded-xl md:py-5 md:px-5 overflow-hidden"
       style={{
         boxShadow: "0px 15px 80px 0px #161E240D",
       }}
@@ -43,7 +43,7 @@ const HeroArticleCard = ({ article }: { article: Article }) => {
 
       <Link
         href={`/articles/${article.slug}`}
-        className="text-primaryColor group w-fit text-base md:text-base font-semibold flex items-center gap-1 px-5 md:px-0 pb-5 md:pb-0"
+        className="text-primaryColor group w-fit text-base md:text-base font-semibold flex items-center gap-1 px-5 md:px-0 pb-5 md:pb-0 mt-auto"
       >
         <span>Read More</span>
         <ChevronRight

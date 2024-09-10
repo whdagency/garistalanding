@@ -4,7 +4,7 @@ import { partnersIcon } from "@/constants";
 
 export default function Partners() {
   return (
-    <div id="Partners" className="mt-20">
+    <div id="Partners" className="mt-10 -mb-10 xl:-mb-0 xl:mt-20">
       <div>
         <Marquee autoFill={true}>
           <div className="flex items-center gap-5 py-5">

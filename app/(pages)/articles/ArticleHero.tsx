@@ -1,8 +1,9 @@
 "use client";
+import HeroArticleCard from "@/app/(pages)/articles/HeroArticleCard";
 import Image from "next/image";
 import React from "react";
 
-const ArticleHero = () => {
+const ArticleHero = ({ article }: { article: Article }) => {
   return (
     <section
       style={{
@@ -12,9 +13,9 @@ const ArticleHero = () => {
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
       }}
-      className="w-full overflow-x-hidden h-[90vh] pt-[150px]"
+      className="w-full md:overflow-x-hidden h-[90vh] 2xl:h-[60vh] pt-[150px]"
     >
-      <div className="flex flex-col px-4 md:px-8 items-center justify-center gap-5 text-center pb-32 relative">
+      <div className="flex flex-col md:px-8 items-center justify-center gap-5 text-center pb-32 relative">
         <div className="pt-4 flex flex-col items-center gap-5 relative">
           <Image
             src="/icons/hero-top-left.svg"
@@ -55,7 +56,7 @@ const ArticleHero = () => {
             className="hidden md:block"
           />
 
-          <h1 className="uppercase text-primaryColor font-bold text-base md:text-lg pt-5 md:-mt-10">
+          <h1 className="uppercase text-primaryColor font-bold text-base md:text-lg pt-5 md:-mt-10 -mt-5">
             Blog
           </h1>
 
@@ -130,11 +131,15 @@ const ArticleHero = () => {
           </h3>
           <p
             style={{ color: "#5D5D5D" }}
-            className="font-medium font-['Inter'] text-sm md:text-base"
+            className="font-medium font-['Inter'] px-4 text-sm md:text-base"
           >
             The latest in online ordering, QR codes, and essential resources for
             restaurants.
           </p>
+
+          <div className="grid grid-cols-1 md:hidden pt-5">
+            <HeroArticleCard article={article} />
+          </div>
         </div>
       </div>
     </section>

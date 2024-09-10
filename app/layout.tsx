@@ -71,6 +71,12 @@ export default function RootLayout({
   const pathname = usePathname();
   const [loadSplashScreen, setLoadSplashScreen] = useState(true);
 
+  useEffect(() => {
+    if (pathname !== "/") {
+      setLoadSplashScreen(false);
+    }
+  }, [pathname]);
+
   return (
     <I18nextProvider i18n={i18next}>
       <html lang="en">

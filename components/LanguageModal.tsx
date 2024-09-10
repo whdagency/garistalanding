@@ -2,7 +2,8 @@ import { ChevronUp } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+
+import { Drawer, DrawerContent, DrawerTrigger } from "@/components/ui/drawer";
 
 const languages = [
   {
@@ -115,7 +116,7 @@ const LanguageModal = () => {
             languages={languages}
             handleSwitch={handleSwitch}
             isOpen={isLangOpen}
-            setIsOpen={setIsOpen}
+            setIsOpen={setLangOpen}
           />
         </div>
       }
@@ -139,18 +140,22 @@ export const LanguageMobileModal = ({
   setIsOpen,
 }: LanguageMobileModalProps) => {
   return (
-    <Sheet open={isOpen} onOpenChange={setIsOpen}>
-      <SheetContent side={"bottom"} className="lg:hidden">
-        <div className="flex flex-col gap-y-4 py-5 items-start">
+    <Drawer
+      open={isOpen}
+      onOpenChange={setIsOpen}
+      onClose={() => setIsOpen(false)}
+    >
+      <DrawerContent className="lg:hidden" id="drawer-content">
+        <div className="flex flex-col mx-auto gap-y-4 py-5 items-start">
           {languages.map((language) => (
-            <SheetTrigger
+            <DrawerTrigger
               key={language.name}
-              className="flex flex-col items-center mx-auto"
+              className="flex flex-col items-center"
             >
               <span
                 key={language.name}
                 onClick={() => handleSwitch(language)}
-                className="group flex items-center w-full px-4 text-base text-gray-700 py-4 gap-5 cursor-pointer"
+                className="group flex items-center justify-center w-full px-4  py-4 gap-5 cursor-pointer"
               >
                 <Image
                   src={language.flag}
@@ -160,12 +165,12 @@ export const LanguageMobileModal = ({
                   loading="lazy"
                   className="object-contain rounded-full"
                 />
-                {language.name}
+                <span className="text-base text-gray-700">{language.name}</span>
               </span>
-            </SheetTrigger>
+            </DrawerTrigger>
           ))}
         </div>
-      </SheetContent>
-    </Sheet>
+      </DrawerContent>
+    </Drawer>
   );
 };
