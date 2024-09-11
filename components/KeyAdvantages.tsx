@@ -27,18 +27,16 @@ const KeyAdvantages = () => {
                 >
                   <div
                     style={{ color: item.textColor }}
-                    className="flex flex-col gap-20"
+                    className="flex flex-col gap-20 h-full"
                   >
-                    {hasShadow ? (
+                    {hasShadow && (
                       <p className={"flex-1 flex-grow text-sm font-medium"}>
                         {item.content}
                       </p>
-                    ) : (
-                      <p></p>
                     )}
 
                     {item.reduction !== undefined ? (
-                      <p className="text-3xl lg:text-4xl font-medium">
+                      <p className="text-3xl lg:text-4xl font-medium mt-auto">
                         {item.reduction}
                       </p>
                     ) : (

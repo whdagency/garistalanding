@@ -9,7 +9,7 @@ export default function About() {
 
   return (
     <div
-      id="Features"
+      id="AboutUs"
       className="container md:px-8 px-4 mt-20 rounded-[50px] md:rounded-[100px] bg-white mb-20 overflow-hidden"
     >
       <div className="pt-10">
