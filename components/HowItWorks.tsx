@@ -97,7 +97,7 @@ const HowItWorks = () => {
       <div
         ref={stepsContainerRef}
         className="container hidden lg:block md:px-8 px-4 mt-20 rounded-[50px] md:rounded-[100px] bg-white mb-20 overflow-hidden"
-        id="Features"
+        id="About"
       >
         <div className="flex flex-col gap-y-20 items-center justify-start bg-white rounded-[100px] pt-10 pb-[100px]">
           <div className="flex flex-col gap-8">
