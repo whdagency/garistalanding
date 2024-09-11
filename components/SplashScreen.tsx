@@ -8,7 +8,7 @@ type SplashScreenProps = {
 
 const SplashScreen = ({ setLoadSplashScreen }: SplashScreenProps) => {
   return (
-    <div className="flex flex-col items-center justify-center h-screen">
+    <div className="flex flex-col items-center justify-center h-screen -mt-5">
       <Lottie
         animationData={loaderAnimation}
         loop={false}

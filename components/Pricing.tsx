@@ -44,7 +44,7 @@ export default function Pricing() {
         </div>
 
         <p className="text-start text-[#848199] text-xs md:hidden px-5 -mt-20">
-          Your subscription includes a set number of tables. If you add more
+          * Your subscription includes a set number of tables. If you add more
           tables beyond the included amount, an additional fee will apply.
         </p>
 
@@ -86,8 +86,8 @@ export default function Pricing() {
             ))}
           </div>
 
-          <p className="text-center text-[#848199] text-base md:text-lg -mt-10 pb-10 hidden md:block">
-            Your subscription includes a set number of tables. If you add more
+          <p className="text-center text-[#848199] text-xs -mt-10 pb-10 hidden md:block">
+            * Your subscription includes a set number of tables. If you add more
             tables beyond the included amount, an additional fee will apply.
           </p>
         </div>

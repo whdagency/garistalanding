@@ -63,15 +63,15 @@ export const footerSections: FooterSection[] = [
     links: [
       {
         name: "Partners & Integrations",
-        href: "#Partners",
+        href: "/#Partners",
       },
       {
         name: "Who we are",
-        href: "#About",
+        href: "/#About",
       },
       {
         name: "Pricing",
-        href: "#Pricing",
+        href: "/#Pricing",
       },
     ],
   },
@@ -80,7 +80,7 @@ export const footerSections: FooterSection[] = [
     links: [
       {
         name: "Documentation",
-        href: "https://www.garista.com/docs",
+        href: "/docs",
         blank: true,
       },
       {
@@ -526,14 +526,14 @@ export const keyAdvantages: KeyAdvantages[] = [
   {
     content:
       "Faster service! Digital menus can significantly reduce your customers wait times",
-    reduction: "30%",
+    reduction: "70%",
     bgColor: "#1E1E1C",
     textColor: "#ffffff",
   },
   {
     content:
       "Diminished Staff Stress by automating order entry and reducing workload.",
-    reduction: "30%",
+    reduction: "55%",
     textColor: "#1E1E1C",
   },
   {
@@ -556,7 +556,7 @@ export const keyAdvantages: KeyAdvantages[] = [
   {
     content:
       "More customers prefer digital payments over cash or card payments. ",
-    reduction: "90%",
+    reduction: "68%",
     bgColor: "#ffffff",
     textColor: "#1E1E1C",
   },

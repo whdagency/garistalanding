@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import Link from "next/link";
 import Image from "next/image";
@@ -10,8 +10,14 @@ import { footerSections, footerSocials } from "@/constants";
 const DocsFooterBottom = () => {
   const { t } = useTranslation("global");
   const { theme } = useTheme();
+  const [currentTheme, setCurrentTheme] = useState("");
+
+  useEffect(() => {
+    theme === "dark" ? setCurrentTheme("dark") : setCurrentTheme("light");
+  }, [theme]);
+
   const footerImageSrc =
-    theme === "dark"
+    currentTheme === "dark"
       ? "/Footer/footer-logo-white.svg"
       : "/Footer/footer-logo.svg";
 
