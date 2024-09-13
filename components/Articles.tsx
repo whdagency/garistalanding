@@ -48,13 +48,13 @@ const Articles = () => {
           {articles.length > 0 && (
             <>
               {/* Latest Article */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-14">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-7 xl:gap-10">
                 <Image
                   src={articles[0]?.coverImage}
                   alt={articles[0]?.title}
                   width={1000}
                   height={1000}
-                  className="object-cover"
+                  className="object-cover w-full h-full"
                 />
 
                 <div className="flex flex-col gap-4 md:mt-5">
@@ -88,24 +88,27 @@ const Articles = () => {
               </div>
 
               {/* Articles */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 xl:gap-7 -mt-5">
                 {articles.length > 1 &&
                   currentArticles.map((article, index) => (
-                    <div className="grid grid-cols-1 gap-5" key={index}>
-                      <Image
-                        src={article?.coverImage}
-                        alt={article?.title}
-                        width={800}
-                        height={800}
-                        className="object-cover"
-                      />
+                    <div
+                      className="grid grid-cols-1 gap-5 h-full place-items-start place-content-start"
+                      key={index}
+                    >
+                      <div className="flex flex-col gap-4">
+                        <Image
+                          src={article?.coverImage}
+                          alt={article?.title}
+                          width={800}
+                          height={800}
+                          className="object-cover w-full"
+                        />
 
-                      <div className="flex flex-col gap-4 md:mt-5">
-                        <div className="flex items-center gap-3">
-                          <span className="text-xs rounded-full bg-[#001B790A] text-center text-capitalize text-[#6B7589] px-4 py-1 font-medium">
+                        <div className="flex items-center gap-2 w-full">
+                          <span className="text-xs rounded-full bg-[#001B790A] text-center text-capitalize text-[#6B7589] px-2 xl:px-4 py-1 font-medium">
                             {article?.category}
                           </span>
-                          <hr className="w-9 border-t-2 border-[#9BA5B9]" />
+                          <hr className="w-5 xl:w-9 border-t-2 border-[#9BA5B9]" />
                           <span className="text-xs text-[#9BA5B9] font-medium">
                             {new Date(article?.createdAt).toLocaleDateString(
                               "en-US",
@@ -115,19 +118,19 @@ const Articles = () => {
                             )}
                           </span>
                         </div>
+                      </div>
 
-                        <div className="flex flex-col gap-3">
-                          <Link
-                            href={`/articles/${article?.slug}`}
-                            className="text-2xl text-[#111827] font-semibold"
-                          >
-                            {article?.title}
-                          </Link>
+                      <div className="flex flex-col gap-3">
+                        <Link
+                          href={`/articles/${article?.slug}`}
+                          className="text-2xl text-[#111827] font-semibold"
+                        >
+                          {article?.title}
+                        </Link>
 
-                          <p className="text-sm text-[#3F4654] font-normal tracking-wide">
-                            {article?.excerpt}
-                          </p>
-                        </div>
+                        <p className="text-sm text-[#3F4654] font-normal tracking-wide">
+                          {article?.excerpt}
+                        </p>
                       </div>
                     </div>
                   ))}

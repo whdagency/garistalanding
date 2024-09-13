@@ -200,7 +200,7 @@ const PricingCard = ({
           }`}
         >
           {active && (
-            <span className="text-xs uppercase rounded-full px-5 py-2 bg-[#A3B9FF] font-medium text-white/80 absolute top-5 right-5">
+            <span className="text-xs uppercase rounded-full px-3 lg:px-5 py-2 bg-[#A3B9FF] font-medium text-white/80 absolute top-3 lg:top-5 right-5">
               Most Popular
             </span>
           )}

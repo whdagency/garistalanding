@@ -107,7 +107,7 @@ export default function Home() {
               alt="dashboard"
               width={100}
               height={50}
-              loading="lazy"
+              priority
               className="object-contain absolute hidden xl:block xl:-top-32 xl:-left-44 z-10"
             />
 
@@ -220,7 +220,7 @@ const HeroRevenueTime = ({
             alt="hero-revenue"
             width={25}
             height={25}
-            loading="lazy"
+            priority
             className="object-contain w-3 h-3 md:w-5 md:h-5"
           />
         </div>
@@ -277,7 +277,7 @@ const HeroAverage = ({ className, ...props }: HeroAverageProps) => {
           alt="hero-revenue"
           width={25}
           height={25}
-          loading="lazy"
+          priority
           className="object-contain w-3 h-3 md:w-5 md:h-5"
         />
       </div>
