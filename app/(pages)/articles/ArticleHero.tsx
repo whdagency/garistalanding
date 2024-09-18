@@ -13,7 +13,7 @@ const ArticleHero = ({ article }: { article: Article }) => {
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
       }}
-      className="w-full md:overflow-x-hidden h-[90vh] 2xl:h-[60vh] pt-[150px]"
+      className="w-full md:overflow-x-hidden py-[150px]"
     >
       <div className="flex flex-col md:px-8 items-center justify-center gap-5 text-center pb-32 relative">
         <div className="pt-4 flex flex-col items-center gap-5 relative">

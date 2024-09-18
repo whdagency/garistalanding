@@ -1,12 +1,16 @@
 "use client";
 
 import ArticleCard from "@/app/(pages)/articles/ArticleCard";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const LatestBlogs = ({ articles }: { articles: Article[] }) => {
-  const [filteredArticles, setFilteredArticles] = useState(articles);
+  const [filteredArticles, setFilteredArticles] = useState<Article[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
   const articlesPerPage = 18;
+
+  useEffect(() => {
+    setFilteredArticles(articles);
+  }, [articles]);
 
   const handleSearchFilter = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.value === "") {
@@ -16,8 +20,8 @@ const LatestBlogs = ({ articles }: { articles: Article[] }) => {
     }
 
     const value = e.target.value;
-    const filtered = articles.filter((article) =>
-      article.title.toLowerCase().includes(value.toLowerCase())
+    const filtered = articles?.filter((article) =>
+      article?.title.toLowerCase().includes(value.toLowerCase())
     );
 
     setFilteredArticles(filtered);
@@ -31,17 +35,17 @@ const LatestBlogs = ({ articles }: { articles: Article[] }) => {
   // Calculate the current articles to display
   const indexOfLastArticle = currentPage * articlesPerPage;
   const indexOfFirstArticle = indexOfLastArticle - articlesPerPage;
-  const currentArticles = filteredArticles.slice(
+  const currentArticles = filteredArticles?.slice(
     indexOfFirstArticle,
     indexOfLastArticle
   );
 
   // Calculate total pages
-  const totalPages = Math.ceil(filteredArticles.length / articlesPerPage);
+  const totalPages = Math.ceil(filteredArticles?.length / articlesPerPage);
 
   return (
-    <section className="flex flex-col gap-5 bg-white pb-20 px-4 md:px-8">
-      <div className="flex flex-col gap-5 items-center">
+    <section className="flex flex-col gap-5 bg-white pb-20 px-4 md:px-8 container">
+      <div className="flex flex-col gap-5 items-center pt-10">
         <h2 className="text-3xl md:text-4xl font-bold text-black/80 text-center w-fit mx-auto">
           Latest Blogs
         </h2>
@@ -58,10 +62,15 @@ const LatestBlogs = ({ articles }: { articles: Article[] }) => {
       </div>
 
       <div className="flex flex-col gap-5 items-center mx-auto pt-5">
-        {currentArticles.length > 0 ? (
+        {currentArticles?.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-            {currentArticles.map((article) => (
-              <ArticleCard article={article} key={article.id} />
+            {currentArticles?.map((article, index) => (
+              <ArticleCard
+                article={article}
+                key={article?.id}
+                checkHidden={true}
+                index={index}
+              />
             ))}
           </div>
         ) : (
@@ -69,7 +78,7 @@ const LatestBlogs = ({ articles }: { articles: Article[] }) => {
         )}
       </div>
 
-      {filteredArticles.length > articlesPerPage && (
+      {filteredArticles?.length > articlesPerPage && (
         <div className="flex justify-center gap-2 mt-5">
           {Array.from({ length: totalPages }, (_, index) => (
             <button

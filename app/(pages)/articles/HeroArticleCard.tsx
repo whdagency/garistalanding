@@ -6,20 +6,20 @@ import React from "react";
 const HeroArticleCard = ({ article }: { article: Article }) => {
   return (
     <div
-      key={article.id}
+      key={article?.id}
       className="bg-white flex h-full flex-col gap-3 md:rounded-xl md:py-5 md:px-5 overflow-hidden"
       style={{
         boxShadow: "0px 15px 80px 0px #161E240D",
       }}
     >
-      <div className="md:px-5 w-full">
+      <div className="md:px-5 w-full h-full md:h-[220px]">
         <Image
-          src={article.coverImage}
+          src={article?.coverImage}
           alt={"article cover image"}
           width={800}
           height={500}
           loading="lazy"
-          className="object-cover w-full"
+          className="object-cover w-full h-full"
         />
       </div>
 
@@ -28,21 +28,21 @@ const HeroArticleCard = ({ article }: { article: Article }) => {
           style={{ background: "#D4E0F7" }}
           className="text-sm font-semibold text-primaryColor w-fit px-3 py-1 rounded-md"
         >
-          {new Date(article.createdAt).toLocaleDateString("en-US", {
+          {new Date(article?.createdAt).toLocaleDateString("en-US", {
             dateStyle: "medium",
           })}
         </p>
 
         <h2 className="font-semibold text-start text-base text-black/80">
-          {article.title}
+          {article?.title}
         </h2>
         <p className="text-sm text-black/80 text-start font-normal leading-relaxed">
-          {article.excerpt}
+          {article?.excerpt}
         </p>
       </div>
 
       <Link
-        href={`/articles/${article.slug}`}
+        href={`/articles/${article?.slug}`}
         className="text-primaryColor group w-fit text-base md:text-base font-semibold flex items-center gap-1 px-5 md:px-0 pb-5 md:pb-0 mt-auto"
       >
         <span>Read More</span>

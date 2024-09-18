@@ -16,7 +16,7 @@ const Articles = () => {
       setArticles(formattedArticles);
     };
 
-    const interval = setInterval(fetchArticles, 60 * 1000 * 5); // refetch articles every 5 minutes
+    const interval = setInterval(fetchArticles, 60 * 1000 * 1); // refetch articles every 1 minute
 
     fetchArticles();
 
@@ -95,7 +95,7 @@ const Articles = () => {
                       className="grid grid-cols-1 gap-5 h-full place-items-start place-content-start"
                       key={index}
                     >
-                      <div className="flex flex-col gap-4">
+                      <div className="flex flex-col gap-4 w-full">
                         <Image
                           src={article?.coverImage}
                           alt={article?.title}
