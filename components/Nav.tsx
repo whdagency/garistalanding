@@ -103,7 +103,7 @@ function Nav({ activeSection }: Links) {
 
               <Link href={"https://admin.garista.com/login"} target={"_blank"}>
                 <button className="mx-10 me-auto font-semibold text-black/80 text-sm px-7 py-2 rounded-xl bg-white text-center">
-                  <a href="#">Log In</a>
+                  Log In
                 </button>
               </Link>
             </div>
