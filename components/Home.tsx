@@ -31,7 +31,7 @@ export default function Home() {
               </h2>
 
               <div className="text-black text-3xl md:text-4xl lg:text-[44px] 2xl:text-[55px] flex flex-col gap-2">
-                <p className="font-semibold text-center xl:text-left whitespace-nowrap text-ellipsis overflow-hidden">
+                <p className="font-semibold text-center xl:text-left whitespace-nowrap text-ellipsis">
                   Digitize Your{" "}
                   <TypeAnimation
                     preRenderFirstString={true}
