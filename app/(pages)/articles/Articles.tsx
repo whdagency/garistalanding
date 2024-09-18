@@ -14,7 +14,7 @@ const ArticlesPage = () => {
       setArticles(formattedArticles);
     };
 
-    const interval = setInterval(fetchArticles, 60 * 1000 * 1); // refetch articles every 1 minute
+    const interval = setInterval(fetchArticles, 5000); // refetch articles 5 seconds
 
     fetchArticles();
 
