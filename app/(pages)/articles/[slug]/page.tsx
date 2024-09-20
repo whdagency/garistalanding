@@ -61,11 +61,11 @@ const ArticleDetails = async ({ params: { slug } }: ArticleDetailsProps) => {
     <div className="flex flex-col bg-white gap-10">
       <ArticleDetailsHero article={article} />
 
-      <ArticleDetailsBanner article={article} className="-mt-44 md:-mt-60" />
+      <ArticleDetailsBanner article={article} className="-mt-60" />
 
       <div className="bg-white pb-20">
         <div className="px-4 flex flex-col items-center mx-auto">
-          <div className="pt-5 max-w-4xl">
+          <div className="pt-5 max-w-6xl">
             <hr className="bg-black mb-5 hidden md:block" />
 
             <article className="prose sm:pt-5">{article.content}</article>

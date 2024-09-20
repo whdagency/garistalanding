@@ -101,7 +101,7 @@ const Articles = () => {
                           alt={article?.title}
                           width={800}
                           height={800}
-                          className="object-cover w-full"
+                          className="object-cover w-full h-full md:h-[200px]"
                         />
 
                         <div className="flex items-center gap-2 w-full">

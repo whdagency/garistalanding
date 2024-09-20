@@ -10,9 +10,9 @@ const ArticleDetailsHero = ({ article }: { article: Article }) => {
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
       }}
-      className="w-full overflow-x-hidden h-[80vh] lg:h-[92vh] pt-[150px]"
+      className="w-full overflow-x-hidden py-[150px]"
     >
-      <div className="flex flex-col px-4 md:px-8 items-center justify-center gap-5 text-center">
+      <div className="flex flex-col px-4 md:px-8 items-center justify-center gap-5 text-center pb-32">
         <div className="pt-4 flex flex-col items-center gap-5 relative -mt-5">
           <h1 className="uppercase text-primaryColor font-bold text-base md:text-lg pt-5">
             Blog

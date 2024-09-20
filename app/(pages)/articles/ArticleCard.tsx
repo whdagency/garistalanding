@@ -21,12 +21,12 @@ const ArticleCard = ({
         alt="article cover image"
         width={800}
         height={600}
-        className="object-cover"
+        className="object-cover w-full h-full md:h-[200px]"
       />
 
       <div className="flex flex-col gap-4 p-5 h-full">
         <div className="flex flex-col gap-4 flex-1">
-          <p className="flex items-center gap-3">
+          <p className="flex items-center gap-3 -mt-5">
             <span className="text-base font-bold text-black">
               {article?.category}
             </span>
