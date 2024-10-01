@@ -5,8 +5,15 @@ import LatestBlogs from "@/app/(pages)/articles/LatestBlogs";
 import { getArticles } from "@/lib/articles";
 import React, { useEffect, useState } from "react";
 import { BLOCKS, INLINES } from "@contentful/rich-text-types";
-import Image from "next/image";
+import Image, { ImageLoader, ImageLoaderProps } from "next/image";
 import { Article, RenderOptions } from "@/types";
+
+const contentfulImageLoader: ImageLoader = ({
+  src,
+  width,
+}: ImageLoaderProps) => {
+  return `${src}?w=${width}`;
+};
 
 // Create a bespoke renderOptions object
 export const renderOptions: RenderOptions = {
@@ -52,11 +59,12 @@ export const renderOptions: RenderOptions = {
 
       return (
         <Image
-          src={`https://${url}`}
+          loader={contentfulImageLoader}
+          src={`https:${url}`}
           alt={description}
           width={width}
           height={height}
-          layout="responsive"
+          className="object-cover h-auto"
         />
       );
     },
