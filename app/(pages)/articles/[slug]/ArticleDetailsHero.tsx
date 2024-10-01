@@ -1,3 +1,4 @@
+import { Article } from "@/types";
 import React from "react";
 
 const ArticleDetailsHero = ({ article }: { article: Article }) => {

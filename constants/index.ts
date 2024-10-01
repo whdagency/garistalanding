@@ -38,6 +38,17 @@ import anim1 from "@/components/lottie/customize-menu-2.json" assert { type: "js
 import anim2 from "@/components/lottie/customize-menu-3.json" assert { type: "json" };
 import anim3 from "@/components/lottie/customize-menu-4.json" assert { type: "json" };
 import anim4 from "@/components/lottie/customize-menu-1.json" assert { type: "json" };
+import {
+  AboutUsContent,
+  BenefitsContent,
+  FeaturesInfo,
+  FooterSection,
+  InteractiveMenuContent,
+  Job,
+  KeyAdvantages,
+  PartnersIcon,
+  PricingPlan,
+} from "@/types";
 
 // Footer Sections
 export const footerSections: FooterSection[] = [

@@ -16,6 +16,7 @@ import anim4 from "@/components/lottie/customize-menu-4.json" assert { type: "js
 
 import { aboutUsContent } from "@/constants";
 import Image from "next/image";
+import { AboutUsTab } from "@/types";
 
 const sections = aboutUsContent.map((content, index) => {
   return {

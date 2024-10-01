@@ -1,9 +1,9 @@
 import { getEntries } from "@/app/actions/contentful.action";
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import { Asset, Entry } from "contentful";
 import { Document } from "@contentful/rich-text-types";
 import { readingTime } from "reading-time-estimator";
 import { documentToPlainTextString } from "@contentful/rich-text-plain-text-renderer";
+import { Article } from "@/types";
 
 export const getArticles = async (): Promise<Article[]> => {
   const entries = await getEntries("article");
@@ -27,7 +27,7 @@ export const getArticles = async (): Promise<Article[]> => {
       slug: fields.slug as string,
       coverImage: `https:${imageUrl}`,
       excerpt: fields.excerpt as string,
-      content: documentToReactComponents(fields.content as Document),
+      content: fields.content as Document,
       category: category as string,
       id: sys.id as string,
       createdAt: sys.createdAt as string,

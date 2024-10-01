@@ -1,4 +1,5 @@
 import { getEntries } from "@/app/actions/contentful.action";
+import { Career } from "@/types";
 
 export const getJobs = async (): Promise<Career[]> => {
   const entries = await getEntries("job");

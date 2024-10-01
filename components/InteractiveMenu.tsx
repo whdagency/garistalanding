@@ -6,6 +6,7 @@ import Link from "next/link";
 import React, { useCallback, useEffect, useState } from "react";
 import { DeviceFrameset } from "react-device-frameset";
 import "react-device-frameset/styles/marvel-devices.min.css";
+import { InteractiveMenuProps } from "@/types";
 
 const InteractiveMenu = () => {
   const {
@@ -15,11 +16,9 @@ const InteractiveMenu = () => {
     selectedSecondaryColor,
   } = interactiveMenuContent.themeSelection;
 
-
-
   return (
     <div>
-      <DeviceFrameset device="iPhone X"  color="black">
+      <DeviceFrameset device="iPhone X" color="black">
         <div
           suppressHydrationWarning
           className="relative flex flex-col items-center justify-center w-full max-h-[150vh] md:max-h-screen overflow-hidden"
@@ -61,8 +60,6 @@ const InteractiveMenu = () => {
           </footer>
         </div>
       </DeviceFrameset>
-
-
     </div>
   );
 };

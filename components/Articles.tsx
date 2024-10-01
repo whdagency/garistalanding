@@ -4,6 +4,7 @@ import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { getArticles } from "@/lib/articles";
+import { Article } from "@/types";
 
 const Articles = () => {
   const [articles, setArticles] = useState<Article[]>([]);

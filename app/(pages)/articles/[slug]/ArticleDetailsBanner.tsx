@@ -1,5 +1,6 @@
 "use client";
 import { cn } from "@/lib/utils";
+import { Article } from "@/types";
 import { Minus } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";

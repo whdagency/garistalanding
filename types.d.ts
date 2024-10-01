@@ -1,3 +1,6 @@
+import { Document } from "@contentful/rich-text-types";
+import { Options } from "contentful-management/dist/typings/entities/team-space-membership";
+
 declare type AboutUsTab = "display" | "order" | "manage" | "market";
 
 declare interface AboutUsContent {
@@ -137,7 +140,7 @@ declare interface Article {
   slug: string;
   coverImage: string;
   excerpt: string;
-  content: React.ReactNode;
+  content: Document;
   category: string;
   id: string;
   createdAt: string;
@@ -152,4 +155,30 @@ declare interface Social {
   twitter: string;
   instagram: string;
   linkedin: string;
+}
+
+declare interface EmbeddedEntryNode extends Node {
+  data: {
+    target: {
+      sys: {
+        contentType: {
+          sys: {
+            id: string;
+          };
+        };
+      };
+      fields: {
+        [key: string]: any;
+      };
+    };
+  };
+}
+
+declare interface RenderOptions {
+  renderNode: {
+    [key: string]: (
+      node: EmbeddedEntryNode,
+      children: ReactNode
+    ) => JSX.Element | null;
+  };
 }

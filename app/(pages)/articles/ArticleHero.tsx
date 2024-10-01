@@ -1,5 +1,6 @@
 "use client";
 import HeroArticleCard from "@/app/(pages)/articles/HeroArticleCard";
+import { Article } from "@/types";
 import Image from "next/image";
 import React from "react";
 

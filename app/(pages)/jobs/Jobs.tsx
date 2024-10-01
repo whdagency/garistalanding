@@ -13,6 +13,7 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import FooterBottom from "@/components/FooterBottom";
+import { Career } from "@/types";
 
 type JobsProps = {
   jobs: Career[];

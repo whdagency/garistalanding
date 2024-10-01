@@ -2,6 +2,7 @@
 
 import ArticleCard from "@/app/(pages)/articles/ArticleCard";
 import React, { useEffect, useState } from "react";
+import { Article } from "@/types";
 
 const LatestBlogs = ({ articles }: { articles: Article[] }) => {
   const [filteredArticles, setFilteredArticles] = useState<Article[]>([]);

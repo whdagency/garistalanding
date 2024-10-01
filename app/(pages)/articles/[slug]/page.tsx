@@ -4,6 +4,7 @@ import { getArticles } from "@/lib/articles";
 import ArticleDetailsHero from "@/app/(pages)/articles/[slug]/ArticleDetailsHero";
 import ArticleCard from "@/app/(pages)/articles/ArticleCard";
 import ArticleDetailsBanner from "@/app/(pages)/articles/[slug]/ArticleDetailsBanner";
+import ArticleDetailsContent from "@/app/(pages)/articles/[slug]/ArticleDetailsContent";
 
 type ArticleDetailsProps = {
   params: {
@@ -68,7 +69,7 @@ const ArticleDetails = async ({ params: { slug } }: ArticleDetailsProps) => {
           <div className="pt-5 max-w-6xl">
             <hr className="bg-black mb-5 hidden md:block" />
 
-            <article className="prose sm:pt-5">{article.content}</article>
+            <ArticleDetailsContent article={article} />
           </div>
 
           <div className="flex flex-col gap-10 items-center pt-20 max-w-7xl">

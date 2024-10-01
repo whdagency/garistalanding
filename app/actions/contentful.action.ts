@@ -1,7 +1,7 @@
 "use server";
 
 import { contentfulClient, contentfulCMA } from "@/lib/contentful";
-import { EntryCollection, EntrySkeletonType } from "contentful";
+import { EntrySkeletonType } from "contentful";
 import { KeyValueMap } from "contentful-management";
 
 // get all entries of a content type
@@ -10,6 +10,7 @@ export const getEntries = async <TContentType extends EntrySkeletonType>(
 ) => {
   const entries = await contentfulClient.getEntries<TContentType>({
     content_type: contentType,
+    include: 10,
   });
 
   return entries.items;
