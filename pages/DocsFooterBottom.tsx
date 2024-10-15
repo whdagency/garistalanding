@@ -82,7 +82,7 @@ const DocsFooterBottom = () => {
             </div>
 
             <span className="text-black dark:text-white font-medium">
-              {t("© Copyright 2024. WHD AGENCY. All rights reserved.")}
+              {t("© Copyright 2024. Garista. All rights reserved.")}
             </span>
           </div>
 

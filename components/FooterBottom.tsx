@@ -64,7 +64,7 @@ const FooterBottom = () => {
 
           <span className="text-black font-medium">
             {/* &copy; {t("2024 Garista, Inc. All rights reserved.")} */}
-            {t("© Copyright 2024. WHD AGENCY. All rights reserved.")}
+            {t("© Copyright 2024. Garista. All rights reserved.")}
           </span>
         </div>
 

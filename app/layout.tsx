@@ -85,6 +85,11 @@ export default function RootLayout({
       <html lang="en">
         <Head>
           <GoogleTagManager containerId="GTM-WHQRVMSC" />
+          <link
+            rel="shortcut icon"
+            href="/Logo/favicon-garista-white_blue.svg"
+            type="image/svg"
+          />
         </Head>
         <body
           className={`${myLocalFont.className} scroll-smooth relative overflow-x-hidden text-secondaryBg`}
